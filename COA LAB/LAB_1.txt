@@ -18,7 +18,7 @@ begin
     temp1 <= anot and bnot;
     c <= temp2 or temp1;
 end dataflow;
-
+--------------------------------------------------------
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
