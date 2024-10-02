@@ -31,7 +31,6 @@ int main()
     // Read message from the client
     read(fd, buffer, sizeof(buffer));
     printf("Server (PID: %d) received: %s\n", getpid(), buffer);
-
     // Prepare the reply message
     snprintf(reply, sizeof(reply), "Welcome from Server (PID: %d)", getpid());
 
