@@ -1,17 +1,17 @@
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 
-entity HalfAdder is
-    port (
-        a : in  STD_LOGIC;
-        b : out STD_LOGIC;
-		  s : out STD_LOGIC;
-		  c : out STD_LOGIC
+ENTITY HalfAdder IS
+    PORT (
+        a : IN  STD_LOGIC;
+        b : IN  STD_LOGIC;
+        s : OUT STD_LOGIC;
+        c : OUT STD_LOGIC
     );
-end HalfAdder;
+END HalfAdder;
 
-architecture df of HalfAdder is 
-begin 
-	s <= a xor b;
-	c <= a and b;
-end HalfAdder;
+ARCHITECTURE df OF HalfAdder IS
+BEGIN
+    s <= a XOR b;
+    c <= a AND b;
+END df;

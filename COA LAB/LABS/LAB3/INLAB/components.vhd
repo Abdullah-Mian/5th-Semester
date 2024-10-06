@@ -1,42 +1,40 @@
-library ieee; 
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
 
-use ieee.std_logic_1164.all;
+PACKAGE components IS 
+    COMPONENT HalfAdder IS 
+        PORT (
+            a : IN  STD_LOGIC;
+            b : IN  STD_LOGIC;
+            s : OUT STD_LOGIC;
+            c : OUT STD_LOGIC
+        );
+    END COMPONENT;
 
-package components is 
-	component HalfAdder is 
-		port (
-        a : in  STD_LOGIC;
-        b : out STD_LOGIC;
-		  s : out STD_LOGIC;
-		  c : out STD_LOGIC
-    );
-end component;
+    COMPONENT FullAdder IS
+        PORT (
+            a : IN  STD_LOGIC;
+            b : IN  STD_LOGIC;
+            c : IN  STD_LOGIC;
+            sum : OUT STD_LOGIC;
+            carry : OUT STD_LOGIC
+        );
+    END COMPONENT;
 
-component FullAdder is
-    port (
-        a : in  STD_LOGIC;
-        b : out STD_LOGIC;
-		  c : out STD_LOGIC;
-		  sum : out STD_LOGIC;
-		  carry : out STD_LOGIC
-    );
-end component;
-component FourBitAdder is
-    port (
-        a        : in  STD_LOGIC_VECTOR(3 DOWNTO 0);
-        b        : in  STD_LOGIC_VECTOR(3 DOWNTO 0);
-        sum      : out STD_LOGIC_VECTOR(3 DOWNTO 0);
-        carryOut : out STD_LOGIC
-    );
-end component;
+    COMPONENT FourBitAdder IS
+        PORT (
+            a        : IN  STD_LOGIC_VECTOR(3 DOWNTO 0);
+            b        : IN  STD_LOGIC_VECTOR(3 DOWNTO 0);
+            sum      : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+            carryOut : OUT STD_LOGIC
+        );
+    END COMPONENT;
 
-component FourBitAND is
-    port (
-        a        : in  STD_LOGIC_VECTOR(3 DOWNTO 0);
-        b        : in  STD_LOGIC_VECTOR(3 DOWNTO 0);
-        r      : out STD_LOGIC_VECTOR(3 DOWNTO 0);
-        
-    );
-end component;
-
-end components;
+    COMPONENT FourBitAND IS
+        PORT (
+            a : IN  STD_LOGIC_VECTOR(3 DOWNTO 0);
+            b : IN  STD_LOGIC_VECTOR(3 DOWNTO 0);
+            r : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
+        );
+    END COMPONENT;
+END components;
