@@ -10,26 +10,26 @@ z2
 cModel Technology
 Z0 dD:/5th-Semester/COA LAB/LABS/LAB3/PreLab/simulation/qsim
 Ecircuit1
-Z1 w1727757791
+Z1 w1727830107
 Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
 Z3 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 WOh:M[al;oVzG5c`<He>D0
 Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
 Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z6 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 Z7 DPx10 cycloneive 21 cycloneive_components 0 22 zGMDhP>8e@2k@f0e<PY]k2
-!i122 0
+!i122 2
 R0
 Z8 8circuit1.vho
 Z9 Fcircuit1.vho
 l0
 L78 1
-VALQCHhQz7B`zo3<6LY=Df1
-!s100 9M71kG>a==Bj9[F<co:LM3
+VdA2TcZQSjO6=nV[D?z5EH2
+!s100 ^i2J4PMT93]ZzU1znAGc[0
 Z10 OV;C;2020.1;71
 32
-Z11 !s110 1727757792
+Z11 !s110 1727830110
 !i10b 1
-Z12 !s108 1727757792.000000
+Z12 !s108 1727830110.000000
 Z13 !s90 -work|work|circuit1.vho|
 Z14 !s107 circuit1.vho|
 !i113 1
@@ -42,12 +42,12 @@ R4
 R5
 R6
 R7
-DEx4 work 8 circuit1 0 22 ALQCHhQz7B`zo3<6LY=Df1
-!i122 0
+DEx4 work 8 circuit1 0 22 dA2TcZQSjO6=nV[D?z5EH2
+!i122 2
 l132
 L98 156
-VYKazDkcF:RK=SKjXfB4]X3
-!s100 21gSCGRe_:[gF0L2P4mfk3
+V``NmRUXS=E;O>STQ<8kbd2
+!s100 h?O1766JF=5RkMWgRb5D70
 R10
 32
 R11
@@ -59,10 +59,10 @@ R14
 R15
 R16
 Ecircuit1_vhd_vec_tst
-Z17 w1727757790
+Z17 w1727830106
 R5
 R6
-!i122 1
+!i122 3
 R0
 Z18 8Waveform.vwf.vht
 Z19 FWaveform.vwf.vht
@@ -76,26 +76,26 @@ R11
 !i10b 1
 R12
 Z20 !s90 -work|work|Waveform.vwf.vht|
-!s107 Waveform.vwf.vht|
+Z21 !s107 Waveform.vwf.vht|
 !i113 1
 R15
 R16
 Acircuit1_arch
 R5
 R6
-DEx4 work 20 circuit1_vhd_vec_tst 0 22 P?Uo7JCFg2=P7[kdU4;kS2
-!i122 1
+Z22 DEx4 work 20 circuit1_vhd_vec_tst 0 22 P?Uo7JCFg2=P7[kdU4;kS2
+!i122 3
 l53
-L34 79
-VBDDi:0]Ei:_X3^Pkaa56e0
-!s100 `z0^jcX<l]hFILUMG^^@B1
+Z23 L34 79
+Vm]_oZ]k;8358zHlN01N_>3
+!s100 0ia>Z^hT`V[JmD<SDG=JF0
 R10
 32
 R11
 !i10b 1
 R12
 R20
-Z21 !s107 Waveform.vwf.vht|
+R21
 !i113 1
 R15
 R16
@@ -107,7 +107,7 @@ R4
 R5
 R6
 R7
-!i122 0
+!i122 2
 R0
 R8
 R9
@@ -133,7 +133,7 @@ R5
 R6
 R7
 DEx4 work 10 hard_block 0 22 B]0;STalBkCB1_B4BXQDW2
-!i122 0
+!i122 2
 l65
 L51 20
 Via>5o7W??azG@W@@eFOTF0
