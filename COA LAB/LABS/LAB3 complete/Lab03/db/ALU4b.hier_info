@@ -1,0 +1,244 @@
+|ALU4b
+x[0] => add4b:INST1.a[0]
+x[0] => sub4b:INST2.a[0]
+x[0] => and_4:INST3.a[0]
+x[0] => or_4:INST4.a[0]
+x[0] => xor_4:INST5.a[0]
+x[0] => not_4:INST6.a[0]
+x[1] => add4b:INST1.a[1]
+x[1] => sub4b:INST2.a[1]
+x[1] => and_4:INST3.a[1]
+x[1] => or_4:INST4.a[1]
+x[1] => xor_4:INST5.a[1]
+x[1] => not_4:INST6.a[1]
+x[2] => add4b:INST1.a[2]
+x[2] => sub4b:INST2.a[2]
+x[2] => and_4:INST3.a[2]
+x[2] => or_4:INST4.a[2]
+x[2] => xor_4:INST5.a[2]
+x[2] => not_4:INST6.a[2]
+x[3] => add4b:INST1.a[3]
+x[3] => sub4b:INST2.a[3]
+x[3] => and_4:INST3.a[3]
+x[3] => or_4:INST4.a[3]
+x[3] => xor_4:INST5.a[3]
+x[3] => not_4:INST6.a[3]
+y[0] => add4b:INST1.b[0]
+y[0] => sub4b:INST2.b[0]
+y[0] => and_4:INST3.b[0]
+y[0] => or_4:INST4.b[0]
+y[0] => xor_4:INST5.b[0]
+y[1] => add4b:INST1.b[1]
+y[1] => sub4b:INST2.b[1]
+y[1] => and_4:INST3.b[1]
+y[1] => or_4:INST4.b[1]
+y[1] => xor_4:INST5.b[1]
+y[2] => add4b:INST1.b[2]
+y[2] => sub4b:INST2.b[2]
+y[2] => and_4:INST3.b[2]
+y[2] => or_4:INST4.b[2]
+y[2] => xor_4:INST5.b[2]
+y[3] => add4b:INST1.b[3]
+y[3] => sub4b:INST2.b[3]
+y[3] => and_4:INST3.b[3]
+y[3] => or_4:INST4.b[3]
+y[3] => xor_4:INST5.b[3]
+z[0] << Mux3.DB_MAX_OUTPUT_PORT_TYPE
+z[1] << Mux2.DB_MAX_OUTPUT_PORT_TYPE
+z[2] << Mux1.DB_MAX_OUTPUT_PORT_TYPE
+z[3] << Mux0.DB_MAX_OUTPUT_PORT_TYPE
+opcode[0] => Mux0.IN4
+opcode[0] => Mux1.IN4
+opcode[0] => Mux2.IN4
+opcode[0] => Mux3.IN4
+opcode[1] => Mux0.IN3
+opcode[1] => Mux1.IN3
+opcode[1] => Mux2.IN3
+opcode[1] => Mux3.IN3
+opcode[2] => Mux0.IN2
+opcode[2] => Mux1.IN2
+opcode[2] => Mux2.IN2
+opcode[2] => Mux3.IN2
+
+
+|ALU4b|add4b:INST1
+a[0] => HA:U1.a
+a[1] => FA:U2.a
+a[2] => FA:U3.a
+a[3] => FA:U4.a
+b[0] => HA:U1.b
+b[1] => FA:U2.b
+b[2] => FA:U3.b
+b[3] => FA:U4.b
+s[0] <= HA:U1.s
+s[1] <= FA:U2.s
+s[2] <= FA:U3.s
+s[3] <= FA:U4.s
+c <= FA:U4.cout
+
+
+|ALU4b|add4b:INST1|HA:U1
+a => s.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU4b|add4b:INST1|FA:U2
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU4b|add4b:INST1|FA:U3
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU4b|add4b:INST1|FA:U4
+a => s.IN0
+a => cout.IN0
+a => cout.IN0
+b => s.IN1
+b => cout.IN1
+b => cout.IN0
+cin => s.IN1
+cin => cout.IN1
+cin => cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU4b|sub4b:INST2
+a[0] => HS:UA1.a
+a[1] => FS:UA2.a
+a[2] => FS:UA3.a
+a[3] => FS:UA4.a
+b[0] => HS:UA1.b
+b[1] => FS:UA2.b
+b[2] => FS:UA3.b
+b[3] => FS:UA4.b
+d[0] <= HS:UA1.d
+d[1] <= FS:UA2.d
+d[2] <= FS:UA3.d
+d[3] <= FS:UA4.d
+boutt <= FS:UA4.bout
+
+
+|ALU4b|sub4b:INST2|HS:UA1
+a => d.IN0
+a => bout.IN0
+b => d.IN1
+b => bout.IN1
+d <= d.DB_MAX_OUTPUT_PORT_TYPE
+bout <= bout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU4b|sub4b:INST2|FS:UA2
+a => d.IN0
+a => bout.IN0
+b => d.IN1
+b => bout.IN1
+bin => d.IN1
+bin => bout.IN1
+d <= d.DB_MAX_OUTPUT_PORT_TYPE
+bout <= bout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU4b|sub4b:INST2|FS:UA3
+a => d.IN0
+a => bout.IN0
+b => d.IN1
+b => bout.IN1
+bin => d.IN1
+bin => bout.IN1
+d <= d.DB_MAX_OUTPUT_PORT_TYPE
+bout <= bout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU4b|sub4b:INST2|FS:UA4
+a => d.IN0
+a => bout.IN0
+b => d.IN1
+b => bout.IN1
+bin => d.IN1
+bin => bout.IN1
+d <= d.DB_MAX_OUTPUT_PORT_TYPE
+bout <= bout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU4b|and_4:INST3
+a[0] => c.IN0
+a[1] => c.IN0
+a[2] => c.IN0
+a[3] => c.IN0
+b[0] => c.IN1
+b[1] => c.IN1
+b[2] => c.IN1
+b[3] => c.IN1
+c[0] <= c.DB_MAX_OUTPUT_PORT_TYPE
+c[1] <= c.DB_MAX_OUTPUT_PORT_TYPE
+c[2] <= c.DB_MAX_OUTPUT_PORT_TYPE
+c[3] <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU4b|or_4:INST4
+a[0] => c.IN0
+a[1] => c.IN0
+a[2] => c.IN0
+a[3] => c.IN0
+b[0] => c.IN1
+b[1] => c.IN1
+b[2] => c.IN1
+b[3] => c.IN1
+c[0] <= c.DB_MAX_OUTPUT_PORT_TYPE
+c[1] <= c.DB_MAX_OUTPUT_PORT_TYPE
+c[2] <= c.DB_MAX_OUTPUT_PORT_TYPE
+c[3] <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU4b|xor_4:INST5
+a[0] => c.IN0
+a[1] => c.IN0
+a[2] => c.IN0
+a[3] => c.IN0
+b[0] => c.IN1
+b[1] => c.IN1
+b[2] => c.IN1
+b[3] => c.IN1
+c[0] <= c.DB_MAX_OUTPUT_PORT_TYPE
+c[1] <= c.DB_MAX_OUTPUT_PORT_TYPE
+c[2] <= c.DB_MAX_OUTPUT_PORT_TYPE
+c[3] <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU4b|not_4:INST6
+a[0] => c[0].DATAIN
+a[1] => c[1].DATAIN
+a[2] => c[2].DATAIN
+a[3] => c[3].DATAIN
+c[0] <= a[0].DB_MAX_OUTPUT_PORT_TYPE
+c[1] <= a[1].DB_MAX_OUTPUT_PORT_TYPE
+c[2] <= a[2].DB_MAX_OUTPUT_PORT_TYPE
+c[3] <= a[3].DB_MAX_OUTPUT_PORT_TYPE
+
+

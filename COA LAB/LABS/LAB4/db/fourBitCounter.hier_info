@@ -1,0 +1,43 @@
+|fourBitCounter
+binOut[0] <= dFlipFlop:U1.Q
+binOut[1] <= dFlipFlop:U2.Q
+binOut[2] <= dFlipFlop:U3.Q
+binOut[3] <= dFlipFlop:U4.Q
+clk => dFlipFlop:U1.clk
+clk => dFlipFlop:U2.clk
+clk => dFlipFlop:U3.clk
+clk => dFlipFlop:U4.clk
+
+
+|fourBitCounter|dFlipFlop:U1
+clk => Qnot~reg0.CLK
+clk => Q~reg0.CLK
+D => Q~reg0.DATAIN
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Qnot <= Qnot~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fourBitCounter|dFlipFlop:U2
+clk => Qnot~reg0.CLK
+clk => Q~reg0.CLK
+D => Q~reg0.DATAIN
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Qnot <= Qnot~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fourBitCounter|dFlipFlop:U3
+clk => Qnot~reg0.CLK
+clk => Q~reg0.CLK
+D => Q~reg0.DATAIN
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Qnot <= Qnot~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fourBitCounter|dFlipFlop:U4
+clk => Qnot~reg0.CLK
+clk => Q~reg0.CLK
+D => Q~reg0.DATAIN
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Qnot <= Qnot~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

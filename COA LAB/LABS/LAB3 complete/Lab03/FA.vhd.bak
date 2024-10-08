@@ -1,0 +1,22 @@
+library IEEE;
+
+--Code for FA.vhd
+
+use ieee.std_logic_1164.all;
+
+entity FA is
+    Port (
+        A : in  STD_LOGIC;    -- First input
+        B : in  STD_LOGIC;    -- Second input
+        Cin : in  STD_LOGIC;  -- Carry input
+        Sum : out  STD_LOGIC; -- Sum output
+        Cout : out  STD_LOGIC -- Carry output
+    );
+end FA;
+
+architecture Behavioral of FA is
+begin
+    -- Full adder logic
+    Sum <= A xor B xor Cin;
+    Cout <= (A and B) or (B and Cin) or (A and Cin);
+end Behavioral;

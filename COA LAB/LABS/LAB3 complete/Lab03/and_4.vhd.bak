@@ -1,0 +1,26 @@
+library IEEE;
+
+--Code for and4.vhd
+
+use ieee.std_logic_1164.all;
+
+entity and_4 is
+port(
+and4_ina1: in std_logic;
+and4_ina2: in std_logic;
+and4_ina3: in std_logic;
+and4_ina4: in std_logic;
+and4_inb1: in std_logic;
+and4_inb2: in std_logic;
+and4_inb3: in std_logic;
+and4_inb4: in std_logic;
+and4_out1: out std_logic;
+and4_out1: out std_logic;
+and4_out1: out std_logic;
+and4_out1: out std_logic);
+end nand_3;
+
+architecture df of nand_3 is
+begin
+nand3_out <= NOT (nand3_in1 AND nand3_in2 AND nand3_in3); 
+end df;

@@ -1,0 +1,29 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "binOut[0]",
+					"strict" : false
+				},
+				{
+					"name" : "binOut[1]",
+					"strict" : false
+				},
+				{
+					"name" : "binOut[2]",
+					"strict" : false
+				},
+				{
+					"name" : "binOut[3]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
