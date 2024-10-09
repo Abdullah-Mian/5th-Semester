@@ -64,4 +64,27 @@ set_global_assignment -name VHDL_FILE FullAdder.vhd
 set_global_assignment -name VHDL_FILE components.vhd
 set_global_assignment -name VHDL_FILE FourBitAdder.vhd
 set_global_assignment -name VHDL_FILE FourBitAND.vhd
+set_global_assignment -name VHDL_FILE HalfSubractor.vhd
+set_global_assignment -name VHDL_FILE FullSubractor.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
+set_global_assignment -name VHDL_FILE FourBitSubtractor.vhd
+set_global_assignment -name VHDL_FILE FourBitOR.vhd
+set_global_assignment -name VHDL_FILE FourBitXOR.vhd
+set_global_assignment -name VHDL_FILE FourBitNOT.vhd
+set_location_assignment PIN_F19 -to result[1]
+set_location_assignment PIN_E19 -to result[2]
+set_location_assignment PIN_F21 -to result[3]
+set_location_assignment PIN_AC26 -to x[0]
+set_location_assignment PIN_AD26 -to x[1]
+set_location_assignment PIN_AB26 -to x[2]
+set_location_assignment PIN_AC25 -to x[3]
+set_location_assignment PIN_AB28 -to y[0]
+set_location_assignment PIN_AC28 -to y[1]
+set_location_assignment PIN_AC27 -to y[2]
+set_location_assignment PIN_AD27 -to y[3]
+set_location_assignment PIN_AC24 -to opcode[0]
+set_location_assignment PIN_AB24 -to opcode[1]
+set_location_assignment PIN_AB23 -to opcode[2]
+set_location_assignment PIN_F18 -to carry
+set_location_assignment PIN_G19 -to result[0]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

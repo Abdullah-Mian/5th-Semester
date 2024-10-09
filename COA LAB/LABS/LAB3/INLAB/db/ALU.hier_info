@@ -1,28 +1,68 @@
 |ALU
 x[0] => FourBitAdder:U1.a[0]
 x[0] => FourBitAND:U2.a[0]
+x[0] => FourBitSubtractor:U3.a[0]
+x[0] => FourBitOR:U4.a[0]
+x[0] => FourBitXOR:U5.a[0]
+x[0] => FourBitNOT:U6.a[0]
 x[1] => FourBitAdder:U1.a[1]
 x[1] => FourBitAND:U2.a[1]
+x[1] => FourBitSubtractor:U3.a[1]
+x[1] => FourBitOR:U4.a[1]
+x[1] => FourBitXOR:U5.a[1]
+x[1] => FourBitNOT:U6.a[1]
 x[2] => FourBitAdder:U1.a[2]
 x[2] => FourBitAND:U2.a[2]
+x[2] => FourBitSubtractor:U3.a[2]
+x[2] => FourBitOR:U4.a[2]
+x[2] => FourBitXOR:U5.a[2]
+x[2] => FourBitNOT:U6.a[2]
 x[3] => FourBitAdder:U1.a[3]
 x[3] => FourBitAND:U2.a[3]
+x[3] => FourBitSubtractor:U3.a[3]
+x[3] => FourBitOR:U4.a[3]
+x[3] => FourBitXOR:U5.a[3]
+x[3] => FourBitNOT:U6.a[3]
 y[0] => FourBitAdder:U1.b[0]
 y[0] => FourBitAND:U2.b[0]
+y[0] => FourBitSubtractor:U3.b[0]
+y[0] => FourBitOR:U4.b[0]
+y[0] => FourBitXOR:U5.b[0]
 y[1] => FourBitAdder:U1.b[1]
 y[1] => FourBitAND:U2.b[1]
+y[1] => FourBitSubtractor:U3.b[1]
+y[1] => FourBitOR:U4.b[1]
+y[1] => FourBitXOR:U5.b[1]
 y[2] => FourBitAdder:U1.b[2]
 y[2] => FourBitAND:U2.b[2]
+y[2] => FourBitSubtractor:U3.b[2]
+y[2] => FourBitOR:U4.b[2]
+y[2] => FourBitXOR:U5.b[2]
 y[3] => FourBitAdder:U1.b[3]
 y[3] => FourBitAND:U2.b[3]
-result[0] <= result.DB_MAX_OUTPUT_PORT_TYPE
-result[1] <= result.DB_MAX_OUTPUT_PORT_TYPE
-result[2] <= result.DB_MAX_OUTPUT_PORT_TYPE
-result[3] <= result.DB_MAX_OUTPUT_PORT_TYPE
-carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
-opcode[0] => Equal0.IN2
-opcode[1] => Equal0.IN1
-opcode[2] => Equal0.IN0
+y[3] => FourBitSubtractor:U3.b[3]
+y[3] => FourBitOR:U4.b[3]
+y[3] => FourBitXOR:U5.b[3]
+result[0] << result.DB_MAX_OUTPUT_PORT_TYPE
+result[1] << result.DB_MAX_OUTPUT_PORT_TYPE
+result[2] << result.DB_MAX_OUTPUT_PORT_TYPE
+result[3] << result.DB_MAX_OUTPUT_PORT_TYPE
+carry << carry.DB_MAX_OUTPUT_PORT_TYPE
+opcode[0] => Equal0.IN1
+opcode[0] => Equal1.IN2
+opcode[0] => Equal2.IN1
+opcode[0] => Equal3.IN2
+opcode[0] => Equal4.IN2
+opcode[1] => Equal0.IN0
+opcode[1] => Equal1.IN1
+opcode[1] => Equal2.IN2
+opcode[1] => Equal3.IN1
+opcode[1] => Equal4.IN1
+opcode[2] => Equal0.IN2
+opcode[2] => Equal1.IN0
+opcode[2] => Equal2.IN0
+opcode[2] => Equal3.IN0
+opcode[2] => Equal4.IN0
 
 
 |ALU|FourBitAdder:U1
@@ -96,5 +136,113 @@ r[0] <= r.DB_MAX_OUTPUT_PORT_TYPE
 r[1] <= r.DB_MAX_OUTPUT_PORT_TYPE
 r[2] <= r.DB_MAX_OUTPUT_PORT_TYPE
 r[3] <= r.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|FourBitSubtractor:U3
+a[0] => HalfSubractor:U1.a
+a[1] => FullSubractor:U2.a
+a[2] => FullSubractor:U3.a
+a[3] => FullSubractor:U4.a
+b[0] => HalfSubractor:U1.b
+b[1] => FullSubractor:U2.b
+b[2] => FullSubractor:U3.b
+b[3] => FullSubractor:U4.b
+Difference[0] <= HalfSubractor:U1.diff
+Difference[1] <= FullSubractor:U2.diff
+Difference[2] <= FullSubractor:U3.diff
+Difference[3] <= FullSubractor:U4.diff
+Borrow <= FullSubractor:U4.borr
+
+
+|ALU|FourBitSubtractor:U3|HalfSubractor:U1
+a => diff.IN0
+a => borr.IN0
+b => diff.IN1
+b => borr.IN1
+diff <= diff.DB_MAX_OUTPUT_PORT_TYPE
+borr <= borr.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|FourBitSubtractor:U3|FullSubractor:U2
+a => diff.IN0
+a => borr.IN0
+a => borr.IN0
+b => diff.IN1
+b => borr.IN1
+b => borr.IN0
+bin => diff.IN1
+bin => borr.IN1
+bin => borr.IN1
+diff <= diff.DB_MAX_OUTPUT_PORT_TYPE
+borr <= borr.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|FourBitSubtractor:U3|FullSubractor:U3
+a => diff.IN0
+a => borr.IN0
+a => borr.IN0
+b => diff.IN1
+b => borr.IN1
+b => borr.IN0
+bin => diff.IN1
+bin => borr.IN1
+bin => borr.IN1
+diff <= diff.DB_MAX_OUTPUT_PORT_TYPE
+borr <= borr.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|FourBitSubtractor:U3|FullSubractor:U4
+a => diff.IN0
+a => borr.IN0
+a => borr.IN0
+b => diff.IN1
+b => borr.IN1
+b => borr.IN0
+bin => diff.IN1
+bin => borr.IN1
+bin => borr.IN1
+diff <= diff.DB_MAX_OUTPUT_PORT_TYPE
+borr <= borr.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|FourBitOR:U4
+a[0] => r.IN0
+a[1] => r.IN0
+a[2] => r.IN0
+a[3] => r.IN0
+b[0] => r.IN1
+b[1] => r.IN1
+b[2] => r.IN1
+b[3] => r.IN1
+r[0] <= r.DB_MAX_OUTPUT_PORT_TYPE
+r[1] <= r.DB_MAX_OUTPUT_PORT_TYPE
+r[2] <= r.DB_MAX_OUTPUT_PORT_TYPE
+r[3] <= r.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|FourBitXOR:U5
+a[0] => r.IN0
+a[1] => r.IN0
+a[2] => r.IN0
+a[3] => r.IN0
+b[0] => r.IN1
+b[1] => r.IN1
+b[2] => r.IN1
+b[3] => r.IN1
+r[0] <= r.DB_MAX_OUTPUT_PORT_TYPE
+r[1] <= r.DB_MAX_OUTPUT_PORT_TYPE
+r[2] <= r.DB_MAX_OUTPUT_PORT_TYPE
+r[3] <= r.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|FourBitNOT:U6
+a[0] => r[0].DATAIN
+a[1] => r[1].DATAIN
+a[2] => r[2].DATAIN
+a[3] => r[3].DATAIN
+r[0] <= a[0].DB_MAX_OUTPUT_PORT_TYPE
+r[1] <= a[1].DB_MAX_OUTPUT_PORT_TYPE
+r[2] <= a[2].DB_MAX_OUTPUT_PORT_TYPE
+r[3] <= a[3].DB_MAX_OUTPUT_PORT_TYPE
 
 

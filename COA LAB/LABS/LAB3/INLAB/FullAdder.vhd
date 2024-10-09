@@ -13,6 +13,6 @@ END FullAdder;
 
 ARCHITECTURE df OF FullAdder IS
 BEGIN
-    sum <= a XOR b XOR c;
+    sum <= (a XOR b) XOR c;
     carry <= (a AND b) OR (c AND (a XOR b));
 END df;

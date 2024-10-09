@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ALU
-Wed Oct  2 06:16:18 2024
+Wed Oct  9 16:48:35 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -14,9 +14,10 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -43,13 +44,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Oct  2 06:16:18 2024          ;
+; Analysis & Synthesis Status        ; Successful - Wed Oct  9 16:48:34 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; ALU                                            ;
 ; Top-level Entity Name              ; ALU                                            ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 9                                              ;
-;     Total combinational functions  ; 9                                              ;
+; Total logic elements               ; 21                                             ;
+;     Total combinational functions  ; 21                                             ;
 ;     Dedicated logic registers      ; 0                                              ;
 ; Total registers                    ; 0                                              ;
 ; Total pins                         ; 16                                             ;
@@ -151,8 +152,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 8           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -162,62 +163,70 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                    ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                             ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
-; ALU.vhd                          ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/ALU.vhd          ;         ;
-; HalfAdder.vhd                    ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/HalfAdder.vhd    ;         ;
-; FullAdder.vhd                    ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FullAdder.vhd    ;         ;
-; components.vhd                   ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/components.vhd   ;         ;
-; FourBitAdder.vhd                 ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitAdder.vhd ;         ;
-; FourBitAND.vhd                   ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitAND.vhd   ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                  ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
+; ALU.vhd                          ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/ALU.vhd               ;         ;
+; HalfAdder.vhd                    ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/HalfAdder.vhd         ;         ;
+; FullAdder.vhd                    ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FullAdder.vhd         ;         ;
+; components.vhd                   ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/components.vhd        ;         ;
+; FourBitAdder.vhd                 ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitAdder.vhd      ;         ;
+; FourBitAND.vhd                   ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitAND.vhd        ;         ;
+; HalfSubractor.vhd                ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/HalfSubractor.vhd     ;         ;
+; FullSubractor.vhd                ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FullSubractor.vhd     ;         ;
+; FourBitSubtractor.vhd            ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitSubtractor.vhd ;         ;
+; FourBitOR.vhd                    ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitOR.vhd         ;         ;
+; FourBitXOR.vhd                   ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitXOR.vhd        ;         ;
+; FourBitNOT.vhd                   ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitNOT.vhd        ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary            ;
-+---------------------------------------------+----------+
-; Resource                                    ; Usage    ;
-+---------------------------------------------+----------+
-; Estimated Total logic elements              ; 9        ;
-;                                             ;          ;
-; Total combinational functions               ; 9        ;
-; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 6        ;
-;     -- 3 input functions                    ; 3        ;
-;     -- <=2 input functions                  ; 0        ;
-;                                             ;          ;
-; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 9        ;
-;     -- arithmetic mode                      ; 0        ;
-;                                             ;          ;
-; Total registers                             ; 0        ;
-;     -- Dedicated logic registers            ; 0        ;
-;     -- I/O registers                        ; 0        ;
-;                                             ;          ;
-; I/O pins                                    ; 16       ;
-;                                             ;          ;
-; Embedded Multiplier 9-bit elements          ; 0        ;
-;                                             ;          ;
-; Maximum fan-out node                        ; Equal0~0 ;
-; Maximum fan-out                             ; 5        ;
-; Total fan-out                               ; 54       ;
-; Average fan-out                             ; 1.32     ;
-+---------------------------------------------+----------+
++---------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                   ;
++---------------------------------------------+-----------------+
+; Resource                                    ; Usage           ;
++---------------------------------------------+-----------------+
+; Estimated Total logic elements              ; 21              ;
+;                                             ;                 ;
+; Total combinational functions               ; 21              ;
+; Logic element usage by number of LUT inputs ;                 ;
+;     -- 4 input functions                    ; 18              ;
+;     -- 3 input functions                    ; 3               ;
+;     -- <=2 input functions                  ; 0               ;
+;                                             ;                 ;
+; Logic elements by mode                      ;                 ;
+;     -- normal mode                          ; 21              ;
+;     -- arithmetic mode                      ; 0               ;
+;                                             ;                 ;
+; Total registers                             ; 0               ;
+;     -- Dedicated logic registers            ; 0               ;
+;     -- I/O registers                        ; 0               ;
+;                                             ;                 ;
+; I/O pins                                    ; 16              ;
+;                                             ;                 ;
+; Embedded Multiplier 9-bit elements          ; 0               ;
+;                                             ;                 ;
+; Maximum fan-out node                        ; opcode[2]~input ;
+; Maximum fan-out                             ; 15              ;
+; Total fan-out                               ; 102             ;
+; Average fan-out                             ; 1.92            ;
++---------------------------------------------+-----------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                     ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+--------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name               ; Entity Name  ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+--------------+--------------+
-; |ALU                       ; 9 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 16   ; 0            ; |ALU                              ; ALU          ; work         ;
-;    |FourBitAdder:U1|       ; 3 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|FourBitAdder:U1              ; FourBitAdder ; work         ;
-;       |FullAdder:U2|       ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|FourBitAdder:U1|FullAdder:U2 ; FullAdder    ; work         ;
-;       |FullAdder:U3|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|FourBitAdder:U1|FullAdder:U3 ; FullAdder    ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+--------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                   ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                        ; Entity Name       ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------+-------------------+--------------+
+; |ALU                       ; 21 (18)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 16   ; 0            ; |ALU                                       ; ALU               ; work         ;
+;    |FourBitAdder:U1|       ; 1 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|FourBitAdder:U1                       ; FourBitAdder      ; work         ;
+;       |FullAdder:U2|       ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|FourBitAdder:U1|FullAdder:U2          ; FullAdder         ; work         ;
+;    |FourBitSubtractor:U3|  ; 2 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|FourBitSubtractor:U3                  ; FourBitSubtractor ; work         ;
+;       |FullSubractor:U2|   ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|FourBitSubtractor:U3|FullSubractor:U2 ; FullSubractor     ; work         ;
+;       |FullSubractor:U3|   ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ALU|FourBitSubtractor:U3|FullSubractor:U3 ; FullSubractor     ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -236,19 +245,28 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 8:1                ; 3 bits    ; 15 LEs        ; 12 LEs               ; 3 LEs                  ; No         ; |ALU|result                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 16                          ;
-; cycloneiii_lcell_comb ; 9                           ;
-;     normal            ; 9                           ;
+; cycloneiii_lcell_comb ; 21                          ;
+;     normal            ; 21                          ;
 ;         3 data inputs ; 3                           ;
-;         4 data inputs ; 6                           ;
+;         4 data inputs ; 18                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 2.30                        ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 3.69                        ;
 +-----------------------+-----------------------------+
 
 
@@ -267,10 +285,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Wed Oct  2 06:16:07 2024
+    Info: Processing started: Wed Oct  9 16:48:28 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ALU -c ALU
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
     Info (12022): Found design unit 1: ALU-struct File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/ALU.vhd Line: 15
     Info (12023): Found entity 1: ALU File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/ALU.vhd Line: 5
@@ -288,22 +306,46 @@ Info (12021): Found 2 design units, including 1 entities, in source file fourbit
 Info (12021): Found 2 design units, including 1 entities, in source file fourbitand.vhd
     Info (12022): Found design unit 1: FourBitAND-struct File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitAND.vhd Line: 12
     Info (12023): Found entity 1: FourBitAND File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitAND.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file halfsubractor.vhd
+    Info (12022): Found design unit 1: HalfSubractor-Struct File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/HalfSubractor.vhd Line: 13
+    Info (12023): Found entity 1: HalfSubractor File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/HalfSubractor.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file fullsubractor.vhd
+    Info (12022): Found design unit 1: FullSubractor-Struct File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FullSubractor.vhd Line: 14
+    Info (12023): Found entity 1: FullSubractor File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FullSubractor.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file fourbitsubtractor.vhd
+    Info (12022): Found design unit 1: FourBitSubtractor-struct File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitSubtractor.vhd Line: 14
+    Info (12023): Found entity 1: FourBitSubtractor File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitSubtractor.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file fourbitor.vhd
+    Info (12022): Found design unit 1: FourBitOR-struct File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitOR.vhd Line: 12
+    Info (12023): Found entity 1: FourBitOR File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitOR.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file fourbitxor.vhd
+    Info (12022): Found design unit 1: FourBitXOR-struct File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitXOR.vhd Line: 12
+    Info (12023): Found entity 1: FourBitXOR File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitXOR.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file fourbitnot.vhd
+    Info (12022): Found design unit 1: FourBitNOT-struct File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitNOT.vhd Line: 11
+    Info (12023): Found entity 1: FourBitNOT File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitNOT.vhd Line: 4
 Info (12127): Elaborating entity "ALU" for the top level hierarchy
-Info (12128): Elaborating entity "FourBitAdder" for hierarchy "FourBitAdder:U1" File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/ALU.vhd Line: 20
+Info (12128): Elaborating entity "FourBitAdder" for hierarchy "FourBitAdder:U1" File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/ALU.vhd Line: 25
 Info (12128): Elaborating entity "HalfAdder" for hierarchy "FourBitAdder:U1|HalfAdder:U1" File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitAdder.vhd Line: 17
 Info (12128): Elaborating entity "FullAdder" for hierarchy "FourBitAdder:U1|FullAdder:U2" File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitAdder.vhd Line: 24
-Info (12128): Elaborating entity "FourBitAND" for hierarchy "FourBitAND:U2" File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/ALU.vhd Line: 27
+Info (12128): Elaborating entity "FourBitAND" for hierarchy "FourBitAND:U2" File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/ALU.vhd Line: 32
+Info (12128): Elaborating entity "FourBitSubtractor" for hierarchy "FourBitSubtractor:U3" File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/ALU.vhd Line: 38
+Info (12128): Elaborating entity "HalfSubractor" for hierarchy "FourBitSubtractor:U3|HalfSubractor:U1" File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitSubtractor.vhd Line: 17
+Info (12128): Elaborating entity "FullSubractor" for hierarchy "FourBitSubtractor:U3|FullSubractor:U2" File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitSubtractor.vhd Line: 24
+Info (12128): Elaborating entity "FourBitOR" for hierarchy "FourBitOR:U4" File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/ALU.vhd Line: 45
+Info (12128): Elaborating entity "FourBitXOR" for hierarchy "FourBitXOR:U5" File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/ALU.vhd Line: 51
+Info (12128): Elaborating entity "FourBitNOT" for hierarchy "FourBitNOT:U6" File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/ALU.vhd Line: 57
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 25 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 37 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 11 input pins
     Info (21059): Implemented 5 output pins
-    Info (21061): Implemented 9 logic cells
+    Info (21061): Implemented 21 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4805 megabytes
-    Info: Processing ended: Wed Oct  2 06:16:18 2024
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:17
+    Info: Peak virtual memory: 4825 megabytes
+    Info: Processing ended: Wed Oct  9 16:48:35 2024
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:03
 
 
