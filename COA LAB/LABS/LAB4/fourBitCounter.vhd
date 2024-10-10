@@ -17,7 +17,7 @@ architecture Behavioral of fourBitCounter is
 
 begin
     -- First flip-flop (least significant bit)
-    U1 : dFlipFlop 
+    U1 : Dflipflop 
         port map (
             clk => clk,
             D => qnot0,
@@ -26,7 +26,7 @@ begin
         );
 
     -- Second flip-flop
-    U2 : dFlipFlop
+    U2 : Dflipflop
         port map (
             clk => clk,
             D => d1,
@@ -35,7 +35,7 @@ begin
         );
 
     -- Third flip-flop
-    U3 : dFlipFlop
+    U3 : Dflipflop
         port map (
             clk => clk,
             D => d2,
@@ -44,7 +44,7 @@ begin
         );
 
     -- Fourth flip-flop (most significant bit)
-    U4 : dFlipFlop
+    U4 : Dflipflop
         port map (
             clk => clk,
             D => d3,

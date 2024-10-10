@@ -1,16 +1,16 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity dFlipFlop is
+entity Dflipflop is
     port (
         clk   : in std_logic;
         D     : in std_logic;
         Q     : buffer std_logic;
         Qnot  : out std_logic
     );
-end dFlipFlop;
+end Dflipflop;
 
-architecture DFF of dFlipFlop is
+architecture DFF of Dflipflop is
 	--signal temp : std_logic;
 begin
     process (clk)

@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 package MyPackage is
-    component dFlipFlop is
+    component Dflipflop is
         port (
             clk   : in std_logic;
             D     : in std_logic;

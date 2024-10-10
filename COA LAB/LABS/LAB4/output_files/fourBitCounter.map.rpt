@@ -1,5 +1,5 @@
 Analysis & Synthesis report for fourBitCounter
-Tue Oct  8 11:27:27 2024
+Thu Oct 10 09:21:03 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -14,9 +14,9 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Port Connectivity Checks: "dFlipFlop:U4"
- 10. Port Connectivity Checks: "dFlipFlop:U3"
- 11. Port Connectivity Checks: "dFlipFlop:U2"
+  9. Port Connectivity Checks: "Dflipflop:U4"
+ 10. Port Connectivity Checks: "Dflipflop:U3"
+ 11. Port Connectivity Checks: "Dflipflop:U2"
  12. Post-Synthesis Netlist Statistics for Top Partition
  13. Elapsed Time Per Partition
  14. Analysis & Synthesis Messages
@@ -46,7 +46,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Oct  8 11:27:27 2024          ;
+; Analysis & Synthesis Status        ; Successful - Thu Oct 10 09:21:03 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; fourBitCounter                                 ;
 ; Top-level Entity Name              ; fourBitCounter                                 ;
@@ -154,27 +154,27 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 8           ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 8           ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-8         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                         ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------+---------+
-; dFlipFlop.vhd                    ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB4/dFlipFlop.vhd      ;         ;
-; MyPackage.vhd                    ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB4/MyPackage.vhd      ;         ;
-; fourBitCounter.vhd               ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB4/fourBitCounter.vhd ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                    ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                             ; Library ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------+---------+
+; dFlipFlop.vhd                    ; yes             ; User VHDL File  ; D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB4/dFlipFlop.vhd      ;         ;
+; MyPackage.vhd                    ; yes             ; User VHDL File  ; D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB4/MyPackage.vhd      ;         ;
+; fourBitCounter.vhd               ; yes             ; User VHDL File  ; D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB4/fourBitCounter.vhd ;         ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -202,7 +202,7 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                ;
 ; Embedded Multiplier 9-bit elements          ; 0              ;
 ;                                             ;                ;
-; Maximum fan-out node                        ; dFlipFlop:U1|Q ;
+; Maximum fan-out node                        ; Dflipflop:U1|Q ;
 ; Maximum fan-out                             ; 5              ;
 ; Total fan-out                               ; 29             ;
 ; Average fan-out                             ; 1.53           ;
@@ -215,10 +215,10 @@ https://fpgasoftware.intel.com/eula.
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name          ; Entity Name    ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------+----------------+--------------+
 ; |fourBitCounter            ; 4 (0)               ; 5 (0)                     ; 0           ; 0            ; 0       ; 0         ; 5    ; 0            ; |fourBitCounter              ; fourBitCounter ; work         ;
-;    |dFlipFlop:U1|          ; 1 (1)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fourBitCounter|dFlipFlop:U1 ; dFlipFlop      ; work         ;
-;    |dFlipFlop:U2|          ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fourBitCounter|dFlipFlop:U2 ; dFlipFlop      ; work         ;
-;    |dFlipFlop:U3|          ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fourBitCounter|dFlipFlop:U3 ; dFlipFlop      ; work         ;
-;    |dFlipFlop:U4|          ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fourBitCounter|dFlipFlop:U4 ; dFlipFlop      ; work         ;
+;    |Dflipflop:U1|          ; 1 (1)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fourBitCounter|Dflipflop:U1 ; Dflipflop      ; work         ;
+;    |Dflipflop:U2|          ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fourBitCounter|Dflipflop:U2 ; Dflipflop      ; work         ;
+;    |Dflipflop:U3|          ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fourBitCounter|Dflipflop:U3 ; Dflipflop      ; work         ;
+;    |Dflipflop:U4|          ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fourBitCounter|Dflipflop:U4 ; Dflipflop      ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------+----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -239,7 +239,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "dFlipFlop:U4"                                                                       ;
+; Port Connectivity Checks: "Dflipflop:U4"                                                                       ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -248,7 +248,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "dFlipFlop:U3"                                                                       ;
+; Port Connectivity Checks: "Dflipflop:U3"                                                                       ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -257,7 +257,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "dFlipFlop:U2"                                                                       ;
+; Port Connectivity Checks: "Dflipflop:U2"                                                                       ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -300,23 +300,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Tue Oct  8 11:27:21 2024
+    Info: Processing started: Thu Oct 10 09:20:49 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fourBitCounter -c fourBitCounter
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file dflipflop.vhd
-    Info (12022): Found design unit 1: dFlipFlop-DFF File: D:/5th-Semester/COA LAB/LABS/LAB4/dFlipFlop.vhd Line: 13
-    Info (12023): Found entity 1: dFlipFlop File: D:/5th-Semester/COA LAB/LABS/LAB4/dFlipFlop.vhd Line: 4
+    Info (12022): Found design unit 1: Dflipflop-DFF File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB4/dFlipFlop.vhd Line: 13
+    Info (12023): Found entity 1: Dflipflop File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB4/dFlipFlop.vhd Line: 4
 Info (12021): Found 1 design units, including 0 entities, in source file mypackage.vhd
-    Info (12022): Found design unit 1: MyPackage File: D:/5th-Semester/COA LAB/LABS/LAB4/MyPackage.vhd Line: 4
+    Info (12022): Found design unit 1: MyPackage File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB4/MyPackage.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file fourbitcounter.vhd
-    Info (12022): Found design unit 1: fourBitCounter-Behavioral File: D:/5th-Semester/COA LAB/LABS/LAB4/fourBitCounter.vhd Line: 12
-    Info (12023): Found entity 1: fourBitCounter File: D:/5th-Semester/COA LAB/LABS/LAB4/fourBitCounter.vhd Line: 5
+    Info (12022): Found design unit 1: fourBitCounter-Behavioral File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB4/fourBitCounter.vhd Line: 12
+    Info (12023): Found entity 1: fourBitCounter File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB4/fourBitCounter.vhd Line: 5
 Info (12127): Elaborating entity "fourBitCounter" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at fourBitCounter.vhd(15): object "qnot1" assigned a value but never read File: D:/5th-Semester/COA LAB/LABS/LAB4/fourBitCounter.vhd Line: 15
-Warning (10036): Verilog HDL or VHDL warning at fourBitCounter.vhd(15): object "qnot2" assigned a value but never read File: D:/5th-Semester/COA LAB/LABS/LAB4/fourBitCounter.vhd Line: 15
-Warning (10036): Verilog HDL or VHDL warning at fourBitCounter.vhd(15): object "qnot3" assigned a value but never read File: D:/5th-Semester/COA LAB/LABS/LAB4/fourBitCounter.vhd Line: 15
-Info (12128): Elaborating entity "dFlipFlop" for hierarchy "dFlipFlop:U1" File: D:/5th-Semester/COA LAB/LABS/LAB4/fourBitCounter.vhd Line: 20
+Warning (10036): Verilog HDL or VHDL warning at fourBitCounter.vhd(15): object "qnot1" assigned a value but never read File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB4/fourBitCounter.vhd Line: 15
+Warning (10036): Verilog HDL or VHDL warning at fourBitCounter.vhd(15): object "qnot2" assigned a value but never read File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB4/fourBitCounter.vhd Line: 15
+Warning (10036): Verilog HDL or VHDL warning at fourBitCounter.vhd(15): object "qnot3" assigned a value but never read File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB4/fourBitCounter.vhd Line: 15
+Info (12128): Elaborating entity "Dflipflop" for hierarchy "Dflipflop:U1" File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB4/fourBitCounter.vhd Line: 20
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -325,9 +325,9 @@ Info (21057): Implemented 10 device resources after synthesis - the final resour
     Info (21059): Implemented 4 output pins
     Info (21061): Implemented 5 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4853 megabytes
-    Info: Processing ended: Tue Oct  8 11:27:27 2024
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Peak virtual memory: 4794 megabytes
+    Info: Processing ended: Thu Oct 10 09:21:03 2024
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:31
 
 

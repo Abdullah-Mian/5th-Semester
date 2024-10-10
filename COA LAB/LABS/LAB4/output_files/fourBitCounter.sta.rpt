@@ -1,5 +1,5 @@
 Timing Analyzer report for fourBitCounter
-Tue Oct  8 11:27:40 2024
+Thu Oct 10 09:21:30 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -94,15 +94,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 8           ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.03        ;
-; Maximum used               ; 8           ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-8         ;   0.4%      ;
+;     Processor 2            ;   0.2%      ;
 +----------------------------+-------------+
 
 
@@ -175,17 +175,17 @@ No paths to report.
 +--------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node         ; To Node           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
-; -0.333 ; dFlipFlop:U1|Q    ; dFlipFlop:U4|Q    ; clk          ; clk         ; 1.000        ; -0.081     ; 1.250      ;
-; -0.195 ; dFlipFlop:U2|Q    ; dFlipFlop:U3|Q    ; clk          ; clk         ; 1.000        ; -0.081     ; 1.112      ;
-; -0.183 ; dFlipFlop:U3|Q    ; dFlipFlop:U4|Q    ; clk          ; clk         ; 1.000        ; -0.081     ; 1.100      ;
-; 0.075  ; dFlipFlop:U1|Q    ; dFlipFlop:U2|Q    ; clk          ; clk         ; 1.000        ; -0.081     ; 0.842      ;
-; 0.075  ; dFlipFlop:U1|Q    ; dFlipFlop:U1|Qnot ; clk          ; clk         ; 1.000        ; -0.081     ; 0.842      ;
-; 0.075  ; dFlipFlop:U1|Q    ; dFlipFlop:U3|Q    ; clk          ; clk         ; 1.000        ; -0.081     ; 0.842      ;
-; 0.083  ; dFlipFlop:U2|Q    ; dFlipFlop:U4|Q    ; clk          ; clk         ; 1.000        ; -0.081     ; 0.834      ;
-; 0.128  ; dFlipFlop:U1|Qnot ; dFlipFlop:U1|Q    ; clk          ; clk         ; 1.000        ; -0.081     ; 0.789      ;
-; 0.152  ; dFlipFlop:U4|Q    ; dFlipFlop:U4|Q    ; clk          ; clk         ; 1.000        ; -0.081     ; 0.765      ;
-; 0.152  ; dFlipFlop:U3|Q    ; dFlipFlop:U3|Q    ; clk          ; clk         ; 1.000        ; -0.081     ; 0.765      ;
-; 0.152  ; dFlipFlop:U2|Q    ; dFlipFlop:U2|Q    ; clk          ; clk         ; 1.000        ; -0.081     ; 0.765      ;
+; -0.333 ; Dflipflop:U1|Q    ; Dflipflop:U4|Q    ; clk          ; clk         ; 1.000        ; -0.081     ; 1.250      ;
+; -0.195 ; Dflipflop:U2|Q    ; Dflipflop:U3|Q    ; clk          ; clk         ; 1.000        ; -0.081     ; 1.112      ;
+; -0.183 ; Dflipflop:U3|Q    ; Dflipflop:U4|Q    ; clk          ; clk         ; 1.000        ; -0.081     ; 1.100      ;
+; 0.075  ; Dflipflop:U1|Q    ; Dflipflop:U2|Q    ; clk          ; clk         ; 1.000        ; -0.081     ; 0.842      ;
+; 0.075  ; Dflipflop:U1|Q    ; Dflipflop:U1|Qnot ; clk          ; clk         ; 1.000        ; -0.081     ; 0.842      ;
+; 0.075  ; Dflipflop:U1|Q    ; Dflipflop:U3|Q    ; clk          ; clk         ; 1.000        ; -0.081     ; 0.842      ;
+; 0.083  ; Dflipflop:U2|Q    ; Dflipflop:U4|Q    ; clk          ; clk         ; 1.000        ; -0.081     ; 0.834      ;
+; 0.128  ; Dflipflop:U1|Qnot ; Dflipflop:U1|Q    ; clk          ; clk         ; 1.000        ; -0.081     ; 0.789      ;
+; 0.152  ; Dflipflop:U4|Q    ; Dflipflop:U4|Q    ; clk          ; clk         ; 1.000        ; -0.081     ; 0.765      ;
+; 0.152  ; Dflipflop:U3|Q    ; Dflipflop:U3|Q    ; clk          ; clk         ; 1.000        ; -0.081     ; 0.765      ;
+; 0.152  ; Dflipflop:U2|Q    ; Dflipflop:U2|Q    ; clk          ; clk         ; 1.000        ; -0.081     ; 0.765      ;
 +--------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -194,17 +194,17 @@ No paths to report.
 +-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node         ; To Node           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
-; 0.402 ; dFlipFlop:U4|Q    ; dFlipFlop:U4|Q    ; clk          ; clk         ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; dFlipFlop:U3|Q    ; dFlipFlop:U3|Q    ; clk          ; clk         ; 0.000        ; 0.081      ; 0.669      ;
-; 0.402 ; dFlipFlop:U2|Q    ; dFlipFlop:U2|Q    ; clk          ; clk         ; 0.000        ; 0.081      ; 0.669      ;
-; 0.429 ; dFlipFlop:U1|Qnot ; dFlipFlop:U1|Q    ; clk          ; clk         ; 0.000        ; 0.081      ; 0.696      ;
-; 0.450 ; dFlipFlop:U2|Q    ; dFlipFlop:U4|Q    ; clk          ; clk         ; 0.000        ; 0.081      ; 0.717      ;
-; 0.456 ; dFlipFlop:U1|Q    ; dFlipFlop:U3|Q    ; clk          ; clk         ; 0.000        ; 0.081      ; 0.723      ;
-; 0.457 ; dFlipFlop:U1|Q    ; dFlipFlop:U1|Qnot ; clk          ; clk         ; 0.000        ; 0.081      ; 0.724      ;
-; 0.457 ; dFlipFlop:U1|Q    ; dFlipFlop:U2|Q    ; clk          ; clk         ; 0.000        ; 0.081      ; 0.724      ;
-; 0.661 ; dFlipFlop:U3|Q    ; dFlipFlop:U4|Q    ; clk          ; clk         ; 0.000        ; 0.081      ; 0.928      ;
-; 0.669 ; dFlipFlop:U2|Q    ; dFlipFlop:U3|Q    ; clk          ; clk         ; 0.000        ; 0.081      ; 0.936      ;
-; 0.831 ; dFlipFlop:U1|Q    ; dFlipFlop:U4|Q    ; clk          ; clk         ; 0.000        ; 0.081      ; 1.098      ;
+; 0.402 ; Dflipflop:U4|Q    ; Dflipflop:U4|Q    ; clk          ; clk         ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; Dflipflop:U3|Q    ; Dflipflop:U3|Q    ; clk          ; clk         ; 0.000        ; 0.081      ; 0.669      ;
+; 0.402 ; Dflipflop:U2|Q    ; Dflipflop:U2|Q    ; clk          ; clk         ; 0.000        ; 0.081      ; 0.669      ;
+; 0.429 ; Dflipflop:U1|Qnot ; Dflipflop:U1|Q    ; clk          ; clk         ; 0.000        ; 0.081      ; 0.696      ;
+; 0.450 ; Dflipflop:U2|Q    ; Dflipflop:U4|Q    ; clk          ; clk         ; 0.000        ; 0.081      ; 0.717      ;
+; 0.456 ; Dflipflop:U1|Q    ; Dflipflop:U3|Q    ; clk          ; clk         ; 0.000        ; 0.081      ; 0.723      ;
+; 0.457 ; Dflipflop:U1|Q    ; Dflipflop:U1|Qnot ; clk          ; clk         ; 0.000        ; 0.081      ; 0.724      ;
+; 0.457 ; Dflipflop:U1|Q    ; Dflipflop:U2|Q    ; clk          ; clk         ; 0.000        ; 0.081      ; 0.724      ;
+; 0.661 ; Dflipflop:U3|Q    ; Dflipflop:U4|Q    ; clk          ; clk         ; 0.000        ; 0.081      ; 0.928      ;
+; 0.669 ; Dflipflop:U2|Q    ; Dflipflop:U3|Q    ; clk          ; clk         ; 0.000        ; 0.081      ; 0.936      ;
+; 0.831 ; Dflipflop:U1|Q    ; Dflipflop:U4|Q    ; clk          ; clk         ; 0.000        ; 0.081      ; 1.098      ;
 +-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -268,17 +268,17 @@ No paths to report.
 +--------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node         ; To Node           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
-; -0.195 ; dFlipFlop:U1|Q    ; dFlipFlop:U4|Q    ; clk          ; clk         ; 1.000        ; -0.072     ; 1.122      ;
-; -0.076 ; dFlipFlop:U2|Q    ; dFlipFlop:U3|Q    ; clk          ; clk         ; 1.000        ; -0.072     ; 1.003      ;
-; -0.066 ; dFlipFlop:U3|Q    ; dFlipFlop:U4|Q    ; clk          ; clk         ; 1.000        ; -0.072     ; 0.993      ;
-; 0.163  ; dFlipFlop:U1|Q    ; dFlipFlop:U2|Q    ; clk          ; clk         ; 1.000        ; -0.072     ; 0.764      ;
-; 0.163  ; dFlipFlop:U1|Q    ; dFlipFlop:U1|Qnot ; clk          ; clk         ; 1.000        ; -0.072     ; 0.764      ;
-; 0.163  ; dFlipFlop:U1|Q    ; dFlipFlop:U3|Q    ; clk          ; clk         ; 1.000        ; -0.072     ; 0.764      ;
-; 0.171  ; dFlipFlop:U2|Q    ; dFlipFlop:U4|Q    ; clk          ; clk         ; 1.000        ; -0.072     ; 0.756      ;
-; 0.217  ; dFlipFlop:U1|Qnot ; dFlipFlop:U1|Q    ; clk          ; clk         ; 1.000        ; -0.072     ; 0.710      ;
-; 0.244  ; dFlipFlop:U4|Q    ; dFlipFlop:U4|Q    ; clk          ; clk         ; 1.000        ; -0.072     ; 0.683      ;
-; 0.244  ; dFlipFlop:U3|Q    ; dFlipFlop:U3|Q    ; clk          ; clk         ; 1.000        ; -0.072     ; 0.683      ;
-; 0.244  ; dFlipFlop:U2|Q    ; dFlipFlop:U2|Q    ; clk          ; clk         ; 1.000        ; -0.072     ; 0.683      ;
+; -0.195 ; Dflipflop:U1|Q    ; Dflipflop:U4|Q    ; clk          ; clk         ; 1.000        ; -0.072     ; 1.122      ;
+; -0.076 ; Dflipflop:U2|Q    ; Dflipflop:U3|Q    ; clk          ; clk         ; 1.000        ; -0.072     ; 1.003      ;
+; -0.066 ; Dflipflop:U3|Q    ; Dflipflop:U4|Q    ; clk          ; clk         ; 1.000        ; -0.072     ; 0.993      ;
+; 0.163  ; Dflipflop:U1|Q    ; Dflipflop:U2|Q    ; clk          ; clk         ; 1.000        ; -0.072     ; 0.764      ;
+; 0.163  ; Dflipflop:U1|Q    ; Dflipflop:U1|Qnot ; clk          ; clk         ; 1.000        ; -0.072     ; 0.764      ;
+; 0.163  ; Dflipflop:U1|Q    ; Dflipflop:U3|Q    ; clk          ; clk         ; 1.000        ; -0.072     ; 0.764      ;
+; 0.171  ; Dflipflop:U2|Q    ; Dflipflop:U4|Q    ; clk          ; clk         ; 1.000        ; -0.072     ; 0.756      ;
+; 0.217  ; Dflipflop:U1|Qnot ; Dflipflop:U1|Q    ; clk          ; clk         ; 1.000        ; -0.072     ; 0.710      ;
+; 0.244  ; Dflipflop:U4|Q    ; Dflipflop:U4|Q    ; clk          ; clk         ; 1.000        ; -0.072     ; 0.683      ;
+; 0.244  ; Dflipflop:U3|Q    ; Dflipflop:U3|Q    ; clk          ; clk         ; 1.000        ; -0.072     ; 0.683      ;
+; 0.244  ; Dflipflop:U2|Q    ; Dflipflop:U2|Q    ; clk          ; clk         ; 1.000        ; -0.072     ; 0.683      ;
 +--------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -287,17 +287,17 @@ No paths to report.
 +-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node         ; To Node           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
-; 0.354 ; dFlipFlop:U4|Q    ; dFlipFlop:U4|Q    ; clk          ; clk         ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; dFlipFlop:U3|Q    ; dFlipFlop:U3|Q    ; clk          ; clk         ; 0.000        ; 0.072      ; 0.597      ;
-; 0.354 ; dFlipFlop:U2|Q    ; dFlipFlop:U2|Q    ; clk          ; clk         ; 0.000        ; 0.072      ; 0.597      ;
-; 0.397 ; dFlipFlop:U1|Qnot ; dFlipFlop:U1|Q    ; clk          ; clk         ; 0.000        ; 0.072      ; 0.640      ;
-; 0.407 ; dFlipFlop:U2|Q    ; dFlipFlop:U4|Q    ; clk          ; clk         ; 0.000        ; 0.072      ; 0.650      ;
-; 0.413 ; dFlipFlop:U1|Q    ; dFlipFlop:U3|Q    ; clk          ; clk         ; 0.000        ; 0.072      ; 0.656      ;
-; 0.413 ; dFlipFlop:U1|Q    ; dFlipFlop:U2|Q    ; clk          ; clk         ; 0.000        ; 0.072      ; 0.656      ;
-; 0.414 ; dFlipFlop:U1|Q    ; dFlipFlop:U1|Qnot ; clk          ; clk         ; 0.000        ; 0.072      ; 0.657      ;
-; 0.605 ; dFlipFlop:U3|Q    ; dFlipFlop:U4|Q    ; clk          ; clk         ; 0.000        ; 0.072      ; 0.848      ;
-; 0.612 ; dFlipFlop:U2|Q    ; dFlipFlop:U3|Q    ; clk          ; clk         ; 0.000        ; 0.072      ; 0.855      ;
-; 0.770 ; dFlipFlop:U1|Q    ; dFlipFlop:U4|Q    ; clk          ; clk         ; 0.000        ; 0.072      ; 1.013      ;
+; 0.354 ; Dflipflop:U4|Q    ; Dflipflop:U4|Q    ; clk          ; clk         ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; Dflipflop:U3|Q    ; Dflipflop:U3|Q    ; clk          ; clk         ; 0.000        ; 0.072      ; 0.597      ;
+; 0.354 ; Dflipflop:U2|Q    ; Dflipflop:U2|Q    ; clk          ; clk         ; 0.000        ; 0.072      ; 0.597      ;
+; 0.397 ; Dflipflop:U1|Qnot ; Dflipflop:U1|Q    ; clk          ; clk         ; 0.000        ; 0.072      ; 0.640      ;
+; 0.407 ; Dflipflop:U2|Q    ; Dflipflop:U4|Q    ; clk          ; clk         ; 0.000        ; 0.072      ; 0.650      ;
+; 0.413 ; Dflipflop:U1|Q    ; Dflipflop:U3|Q    ; clk          ; clk         ; 0.000        ; 0.072      ; 0.656      ;
+; 0.413 ; Dflipflop:U1|Q    ; Dflipflop:U2|Q    ; clk          ; clk         ; 0.000        ; 0.072      ; 0.656      ;
+; 0.414 ; Dflipflop:U1|Q    ; Dflipflop:U1|Qnot ; clk          ; clk         ; 0.000        ; 0.072      ; 0.657      ;
+; 0.605 ; Dflipflop:U3|Q    ; Dflipflop:U4|Q    ; clk          ; clk         ; 0.000        ; 0.072      ; 0.848      ;
+; 0.612 ; Dflipflop:U2|Q    ; Dflipflop:U3|Q    ; clk          ; clk         ; 0.000        ; 0.072      ; 0.855      ;
+; 0.770 ; Dflipflop:U1|Q    ; Dflipflop:U4|Q    ; clk          ; clk         ; 0.000        ; 0.072      ; 1.013      ;
 +-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -351,17 +351,17 @@ No paths to report.
 +-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node         ; To Node           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
-; 0.342 ; dFlipFlop:U1|Q    ; dFlipFlop:U4|Q    ; clk          ; clk         ; 1.000        ; -0.041     ; 0.604      ;
-; 0.417 ; dFlipFlop:U2|Q    ; dFlipFlop:U3|Q    ; clk          ; clk         ; 1.000        ; -0.041     ; 0.529      ;
-; 0.423 ; dFlipFlop:U3|Q    ; dFlipFlop:U4|Q    ; clk          ; clk         ; 1.000        ; -0.041     ; 0.523      ;
-; 0.550 ; dFlipFlop:U1|Q    ; dFlipFlop:U2|Q    ; clk          ; clk         ; 1.000        ; -0.041     ; 0.396      ;
-; 0.550 ; dFlipFlop:U1|Q    ; dFlipFlop:U3|Q    ; clk          ; clk         ; 1.000        ; -0.041     ; 0.396      ;
-; 0.553 ; dFlipFlop:U1|Q    ; dFlipFlop:U1|Qnot ; clk          ; clk         ; 1.000        ; -0.041     ; 0.393      ;
-; 0.555 ; dFlipFlop:U2|Q    ; dFlipFlop:U4|Q    ; clk          ; clk         ; 1.000        ; -0.041     ; 0.391      ;
-; 0.573 ; dFlipFlop:U1|Qnot ; dFlipFlop:U1|Q    ; clk          ; clk         ; 1.000        ; -0.041     ; 0.373      ;
-; 0.587 ; dFlipFlop:U4|Q    ; dFlipFlop:U4|Q    ; clk          ; clk         ; 1.000        ; -0.041     ; 0.359      ;
-; 0.587 ; dFlipFlop:U3|Q    ; dFlipFlop:U3|Q    ; clk          ; clk         ; 1.000        ; -0.041     ; 0.359      ;
-; 0.587 ; dFlipFlop:U2|Q    ; dFlipFlop:U2|Q    ; clk          ; clk         ; 1.000        ; -0.041     ; 0.359      ;
+; 0.342 ; Dflipflop:U1|Q    ; Dflipflop:U4|Q    ; clk          ; clk         ; 1.000        ; -0.041     ; 0.604      ;
+; 0.417 ; Dflipflop:U2|Q    ; Dflipflop:U3|Q    ; clk          ; clk         ; 1.000        ; -0.041     ; 0.529      ;
+; 0.423 ; Dflipflop:U3|Q    ; Dflipflop:U4|Q    ; clk          ; clk         ; 1.000        ; -0.041     ; 0.523      ;
+; 0.550 ; Dflipflop:U1|Q    ; Dflipflop:U2|Q    ; clk          ; clk         ; 1.000        ; -0.041     ; 0.396      ;
+; 0.550 ; Dflipflop:U1|Q    ; Dflipflop:U3|Q    ; clk          ; clk         ; 1.000        ; -0.041     ; 0.396      ;
+; 0.553 ; Dflipflop:U1|Q    ; Dflipflop:U1|Qnot ; clk          ; clk         ; 1.000        ; -0.041     ; 0.393      ;
+; 0.555 ; Dflipflop:U2|Q    ; Dflipflop:U4|Q    ; clk          ; clk         ; 1.000        ; -0.041     ; 0.391      ;
+; 0.573 ; Dflipflop:U1|Qnot ; Dflipflop:U1|Q    ; clk          ; clk         ; 1.000        ; -0.041     ; 0.373      ;
+; 0.587 ; Dflipflop:U4|Q    ; Dflipflop:U4|Q    ; clk          ; clk         ; 1.000        ; -0.041     ; 0.359      ;
+; 0.587 ; Dflipflop:U3|Q    ; Dflipflop:U3|Q    ; clk          ; clk         ; 1.000        ; -0.041     ; 0.359      ;
+; 0.587 ; Dflipflop:U2|Q    ; Dflipflop:U2|Q    ; clk          ; clk         ; 1.000        ; -0.041     ; 0.359      ;
 +-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -370,17 +370,17 @@ No paths to report.
 +-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node         ; To Node           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
-; 0.182 ; dFlipFlop:U4|Q    ; dFlipFlop:U4|Q    ; clk          ; clk         ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; dFlipFlop:U3|Q    ; dFlipFlop:U3|Q    ; clk          ; clk         ; 0.000        ; 0.041      ; 0.307      ;
-; 0.182 ; dFlipFlop:U2|Q    ; dFlipFlop:U2|Q    ; clk          ; clk         ; 0.000        ; 0.041      ; 0.307      ;
-; 0.189 ; dFlipFlop:U1|Qnot ; dFlipFlop:U1|Q    ; clk          ; clk         ; 0.000        ; 0.041      ; 0.314      ;
-; 0.205 ; dFlipFlop:U2|Q    ; dFlipFlop:U4|Q    ; clk          ; clk         ; 0.000        ; 0.041      ; 0.330      ;
-; 0.208 ; dFlipFlop:U1|Q    ; dFlipFlop:U3|Q    ; clk          ; clk         ; 0.000        ; 0.041      ; 0.333      ;
-; 0.208 ; dFlipFlop:U1|Q    ; dFlipFlop:U2|Q    ; clk          ; clk         ; 0.000        ; 0.041      ; 0.333      ;
-; 0.213 ; dFlipFlop:U1|Q    ; dFlipFlop:U1|Qnot ; clk          ; clk         ; 0.000        ; 0.041      ; 0.338      ;
-; 0.302 ; dFlipFlop:U3|Q    ; dFlipFlop:U4|Q    ; clk          ; clk         ; 0.000        ; 0.041      ; 0.427      ;
-; 0.306 ; dFlipFlop:U2|Q    ; dFlipFlop:U3|Q    ; clk          ; clk         ; 0.000        ; 0.041      ; 0.431      ;
-; 0.372 ; dFlipFlop:U1|Q    ; dFlipFlop:U4|Q    ; clk          ; clk         ; 0.000        ; 0.041      ; 0.497      ;
+; 0.182 ; Dflipflop:U4|Q    ; Dflipflop:U4|Q    ; clk          ; clk         ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; Dflipflop:U3|Q    ; Dflipflop:U3|Q    ; clk          ; clk         ; 0.000        ; 0.041      ; 0.307      ;
+; 0.182 ; Dflipflop:U2|Q    ; Dflipflop:U2|Q    ; clk          ; clk         ; 0.000        ; 0.041      ; 0.307      ;
+; 0.189 ; Dflipflop:U1|Qnot ; Dflipflop:U1|Q    ; clk          ; clk         ; 0.000        ; 0.041      ; 0.314      ;
+; 0.205 ; Dflipflop:U2|Q    ; Dflipflop:U4|Q    ; clk          ; clk         ; 0.000        ; 0.041      ; 0.330      ;
+; 0.208 ; Dflipflop:U1|Q    ; Dflipflop:U3|Q    ; clk          ; clk         ; 0.000        ; 0.041      ; 0.333      ;
+; 0.208 ; Dflipflop:U1|Q    ; Dflipflop:U2|Q    ; clk          ; clk         ; 0.000        ; 0.041      ; 0.333      ;
+; 0.213 ; Dflipflop:U1|Q    ; Dflipflop:U1|Qnot ; clk          ; clk         ; 0.000        ; 0.041      ; 0.338      ;
+; 0.302 ; Dflipflop:U3|Q    ; Dflipflop:U4|Q    ; clk          ; clk         ; 0.000        ; 0.041      ; 0.427      ;
+; 0.306 ; Dflipflop:U2|Q    ; Dflipflop:U3|Q    ; clk          ; clk         ; 0.000        ; 0.041      ; 0.431      ;
+; 0.372 ; Dflipflop:U1|Q    ; Dflipflop:U4|Q    ; clk          ; clk         ; 0.000        ; 0.041      ; 0.497      ;
 +-------+-------------------+-------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -555,11 +555,11 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Tue Oct  8 11:27:39 2024
+    Info: Processing started: Thu Oct 10 09:21:27 2024
 Info: Command: quartus_sta fourBitCounter -c fourBitCounter
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'fourBitCounter.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
@@ -627,9 +627,9 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4877 megabytes
-    Info: Processing ended: Tue Oct  8 11:27:40 2024
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 4824 megabytes
+    Info: Processing ended: Thu Oct 10 09:21:30 2024
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
 
 
