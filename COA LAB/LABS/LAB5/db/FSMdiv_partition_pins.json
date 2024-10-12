@@ -1,0 +1,49 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "remaind[0]",
+					"strict" : false
+				},
+				{
+					"name" : "remaind[1]",
+					"strict" : false
+				},
+				{
+					"name" : "remaind[2]",
+					"strict" : false
+				},
+				{
+					"name" : "remaind[3]",
+					"strict" : false
+				},
+				{
+					"name" : "quot[0]",
+					"strict" : false
+				},
+				{
+					"name" : "quot[1]",
+					"strict" : false
+				},
+				{
+					"name" : "quot[2]",
+					"strict" : false
+				},
+				{
+					"name" : "quot[3]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "letstart",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

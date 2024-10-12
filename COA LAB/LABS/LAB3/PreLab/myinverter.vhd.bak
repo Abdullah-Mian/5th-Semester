@@ -1,0 +1,23 @@
+library IEEE;
+
+use ieee.std logic 1164.all;
+
+entity myinverter is
+
+port(
+
+inv in: in std logic;
+
+inv out: out std logic
+
+);
+
+end myinverter;
+
+architecture bhv of myinverter is
+
+begin
+
+inv_out <= not inv_in;
+
+end bhv;

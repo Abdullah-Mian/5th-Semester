@@ -1,0 +1,144 @@
+-------------------------PRE LAB
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY TwoDecode4 IS
+    PORT (
+        inVector : IN std_logic_vector(1 DOWNTO 0);
+        outVector : OUT std_logic_vector(3 DOWNTO 0)
+    );	
+END TwoDecode4;
+
+architecture Behavioural of TwoDecode4 is 
+begin 
+	outVector <= "0011" when (inVector = "00") else
+					 "0110" when (inVector = "01") else
+					 "1100" when (inVector = "10") else
+					 "1001";
+end Behavioural;
+
+
+
+
+
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY threeTo8 IS
+    PORT (
+        inVector : IN std_logic_vector(2 DOWNTO 0);
+        outVector : OUT std_logic_vector(7 DOWNTO 0)
+    );
+END threeTo8;
+
+
+architecture Behavioural of threeTo8 is 
+begin 
+	outVector <= "00000001" when (inVector = "000") else
+					 "00000010 " when (inVector = "001") else
+					 "00000100" when (inVector = "010") else
+					 "00000000" when others;
+end Behavioural;
+
+
+
+-------------------INLAB 1
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY threeTo8 IS
+    PORT (
+        inVector : IN std_logic_vector(2 DOWNTO 0);
+        outVector : OUT std_logic_vector(7 DOWNTO 0)
+    );
+END threeTo8;
+
+architecture Behavioural of threeTo8 is 
+begin 
+	outVector <= "00000001" when (inVector = "000") else
+					 "00000010" when (inVector = "001") else  
+					 "00000100" when (inVector = "010") else
+					 "00001000" when (inVector = "011") else  
+					 "00010000" when (inVector = "100") else
+					 "00100000" when (inVector = "101") else
+					 "01000000" when (inVector = "110") else
+					 "10000000" when (inVector = "111") else
+					 "00000000" ;  
+end Behavioural;
+
+
+
+--------------SEVEN SEGMENT DISPLAY
+
+
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY sevenSegement IS
+    PORT (
+        bininput : IN std_logic_vector(3 DOWNTO 0);  
+        cathodes : OUT std_logic_vector(6 DOWNTO 0)  
+    );
+END sevenSegement;
+
+architecture Behavioural of sevenSegement is 
+begin 
+    cathodes <= "1000000" when (bininput = "0000") else 
+               "1111001" when (bininput = "0001") else  
+               "0100100" when (bininput = "0010") else  
+               "0110000" when (bininput = "0011") else  
+               "0011001" when (bininput = "0100") else  
+               "0010010" when (bininput = "0101") else  
+               "0000010" when (bininput = "0110") else  
+               "1111000" when (bininput = "0111") else  
+               "0000000" when (bininput = "1000") else  
+               "0010000" when (bininput = "1001") else  
+               "0001000" when (bininput = "1010") else  
+               "0000011" when (bininput = "1011") else  
+               "1000110" when (bininput = "1100") else  
+               "0100001" when (bininput = "1101") else  
+               "0000110" when (bininput = "1110") else  
+               "0001110" when (bininput = "1111") else  
+               "1111111"; 
+end Behavioural;
+
+
+------------2 seven segments
+
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY sevenSegement IS
+    PORT (
+        bininput : IN std_logic_vector(3 DOWNTO 0);  
+        cathodes : OUT std_logic_vector(6 DOWNTO 0); 
+		 cathodes2 : OUT std_logic_vector(6 DOWNTO 0)  
+    );
+END sevenSegement;
+
+architecture Behavioural of sevenSegement is 
+SIGNAL TEMP : std_logic_vector(6 DOWNTO 0)  ;
+begin 
+
+	cathodes <= TEMP;
+	cathodes2 <= TEMP;
+    TEMP <= "1000000" when (bininput = "0000") else 
+               "1111001" when (bininput = "0001") else  
+               "0100100" when (bininput = "0010") else  
+               "0110000" when (bininput = "0011") else  
+               "0011001" when (bininput = "0100") else  
+               "0010010" when (bininput = "0101") else  
+               "0000010" when (bininput = "0110") else  
+               "1111000" when (bininput = "0111") else  
+               "0000000" when (bininput = "1000") else  
+               "0010000" when (bininput = "1001") else  
+               "0001000" when (bininput = "1010") else  
+               "0000011" when (bininput = "1011") else  
+               "1000110" when (bininput = "1100") else  
+               "0100001" when (bininput = "1101") else  
+               "0000110" when (bininput = "1110") else  
+               "0001110" when (bininput = "1111") else  
+               "1111111"; 
+					
+	
+end Behavioural;

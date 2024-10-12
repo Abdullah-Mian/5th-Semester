@@ -1,0 +1,17 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+entity FullAdder is
+    port (
+        a : in  STD_LOGIC;
+        b : out STD_LOGIC;
+		  s : out STD_LOGIC;
+		  c : out STD_LOGIC
+    );
+end FullAdder;
+
+architecture dataFlow of FullAdder is 
+begin 
+	s <= a xor b;
+	c <= a and b;
+end FullAdder;
