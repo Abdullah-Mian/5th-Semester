@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition"
 
-// DATE "10/09/2024 16:48:46"
+// DATE "10/10/2024 15:30:17"
 
 // 
 // Device: Altera EP4CE115F29C7 Package FBGA780
@@ -600,28 +600,28 @@ defparam \result~8 .sum_lutc_input = "datac";
 // Location: LCCOMB_X109_Y11_N12
 cycloneive_lcell_comb \carry~0 (
 // Equation(s):
-// \carry~0_combout  = (\opcode[0]~input_o  & ((\x[3]~input_o  & (\U3|U3|borr~0_combout  & \y[3]~input_o )) # (!\x[3]~input_o  & ((\U3|U3|borr~0_combout ) # (\y[3]~input_o )))))
+// \carry~0_combout  = (\opcode[1]~input_o  & ((\x[3]~input_o  & (\U3|U3|borr~0_combout  & \y[3]~input_o )) # (!\x[3]~input_o  & ((\U3|U3|borr~0_combout ) # (\y[3]~input_o )))))
 
 	.dataa(\x[3]~input_o ),
-	.datab(\opcode[0]~input_o ),
-	.datac(\U3|U3|borr~0_combout ),
+	.datab(\U3|U3|borr~0_combout ),
+	.datac(\opcode[1]~input_o ),
 	.datad(\y[3]~input_o ),
 	.cin(gnd),
 	.combout(\carry~0_combout ),
 	.cout());
 // synopsys translate_off
-defparam \carry~0 .lut_mask = 16'hC440;
+defparam \carry~0 .lut_mask = 16'hD040;
 defparam \carry~0 .sum_lutc_input = "datac";
 // synopsys translate_on
 
-// Location: LCCOMB_X109_Y11_N14
+// Location: LCCOMB_X109_Y11_N30
 cycloneive_lcell_comb \carry~1 (
 // Equation(s):
-// \carry~1_combout  = (!\opcode[0]~input_o  & ((\x[3]~input_o  & ((\result~7_combout ) # (\y[3]~input_o ))) # (!\x[3]~input_o  & (\result~7_combout  & \y[3]~input_o ))))
+// \carry~1_combout  = (!\opcode[1]~input_o  & ((\x[3]~input_o  & ((\result~7_combout ) # (\y[3]~input_o ))) # (!\x[3]~input_o  & (\result~7_combout  & \y[3]~input_o ))))
 
 	.dataa(\x[3]~input_o ),
 	.datab(\result~7_combout ),
-	.datac(\opcode[0]~input_o ),
+	.datac(\opcode[1]~input_o ),
 	.datad(\y[3]~input_o ),
 	.cin(gnd),
 	.combout(\carry~1_combout ),
@@ -634,17 +634,17 @@ defparam \carry~1 .sum_lutc_input = "datac";
 // Location: LCCOMB_X109_Y11_N8
 cycloneive_lcell_comb \carry~2 (
 // Equation(s):
-// \carry~2_combout  = (!\opcode[1]~input_o  & (!\opcode[2]~input_o  & ((\carry~0_combout ) # (\carry~1_combout ))))
+// \carry~2_combout  = (!\opcode[0]~input_o  & (!\opcode[2]~input_o  & ((\carry~0_combout ) # (\carry~1_combout ))))
 
 	.dataa(\carry~0_combout ),
-	.datab(\carry~1_combout ),
-	.datac(\opcode[1]~input_o ),
+	.datab(\opcode[0]~input_o ),
+	.datac(\carry~1_combout ),
 	.datad(\opcode[2]~input_o ),
 	.cin(gnd),
 	.combout(\carry~2_combout ),
 	.cout());
 // synopsys translate_off
-defparam \carry~2 .lut_mask = 16'h000E;
+defparam \carry~2 .lut_mask = 16'h0032;
 defparam \carry~2 .sum_lutc_input = "datac";
 // synopsys translate_on
 

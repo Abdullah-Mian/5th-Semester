@@ -67,6 +67,6 @@ BEGIN
               NOTT;
 
     carry <= C WHEN opcode = "000" ELSE 
-              B WHEN opcode = "001" ELSE 
+              B WHEN opcode = "010" ELSE 
               '0';
 END struct;

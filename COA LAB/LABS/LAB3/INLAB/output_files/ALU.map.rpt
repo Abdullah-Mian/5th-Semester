@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ALU
-Wed Oct  9 16:48:35 2024
+Thu Oct 10 15:29:51 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -44,7 +44,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Oct  9 16:48:34 2024          ;
+; Analysis & Synthesis Status        ; Successful - Thu Oct 10 15:29:51 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; ALU                                            ;
 ; Top-level Entity Name              ; ALU                                            ;
@@ -152,8 +152,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 8           ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -163,24 +163,24 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                  ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
-; ALU.vhd                          ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/ALU.vhd               ;         ;
-; HalfAdder.vhd                    ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/HalfAdder.vhd         ;         ;
-; FullAdder.vhd                    ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FullAdder.vhd         ;         ;
-; components.vhd                   ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/components.vhd        ;         ;
-; FourBitAdder.vhd                 ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitAdder.vhd      ;         ;
-; FourBitAND.vhd                   ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitAND.vhd        ;         ;
-; HalfSubractor.vhd                ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/HalfSubractor.vhd     ;         ;
-; FullSubractor.vhd                ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FullSubractor.vhd     ;         ;
-; FourBitSubtractor.vhd            ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitSubtractor.vhd ;         ;
-; FourBitOR.vhd                    ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitOR.vhd         ;         ;
-; FourBitXOR.vhd                   ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitXOR.vhd        ;         ;
-; FourBitNOT.vhd                   ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitNOT.vhd        ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                             ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                      ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
+; ALU.vhd                          ; yes             ; User VHDL File  ; D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/ALU.vhd               ;         ;
+; HalfAdder.vhd                    ; yes             ; User VHDL File  ; D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/HalfAdder.vhd         ;         ;
+; FullAdder.vhd                    ; yes             ; User VHDL File  ; D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/FullAdder.vhd         ;         ;
+; components.vhd                   ; yes             ; User VHDL File  ; D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/components.vhd        ;         ;
+; FourBitAdder.vhd                 ; yes             ; User VHDL File  ; D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitAdder.vhd      ;         ;
+; FourBitAND.vhd                   ; yes             ; User VHDL File  ; D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitAND.vhd        ;         ;
+; HalfSubractor.vhd                ; yes             ; User VHDL File  ; D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/HalfSubractor.vhd     ;         ;
+; FullSubractor.vhd                ; yes             ; User VHDL File  ; D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/FullSubractor.vhd     ;         ;
+; FourBitSubtractor.vhd            ; yes             ; User VHDL File  ; D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitSubtractor.vhd ;         ;
+; FourBitOR.vhd                    ; yes             ; User VHDL File  ; D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitOR.vhd         ;         ;
+; FourBitXOR.vhd                   ; yes             ; User VHDL File  ; D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitXOR.vhd        ;         ;
+; FourBitNOT.vhd                   ; yes             ; User VHDL File  ; D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitNOT.vhd        ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------------+
@@ -275,7 +275,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -285,56 +285,56 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Wed Oct  9 16:48:28 2024
+    Info: Processing started: Thu Oct 10 15:29:34 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ALU -c ALU
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
-    Info (12022): Found design unit 1: ALU-struct File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/ALU.vhd Line: 15
-    Info (12023): Found entity 1: ALU File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/ALU.vhd Line: 5
+    Info (12022): Found design unit 1: ALU-struct File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/ALU.vhd Line: 15
+    Info (12023): Found entity 1: ALU File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/ALU.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file halfadder.vhd
-    Info (12022): Found design unit 1: HalfAdder-df File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/HalfAdder.vhd Line: 13
-    Info (12023): Found entity 1: HalfAdder File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/HalfAdder.vhd Line: 4
+    Info (12022): Found design unit 1: HalfAdder-df File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/HalfAdder.vhd Line: 13
+    Info (12023): Found entity 1: HalfAdder File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/HalfAdder.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file fulladder.vhd
-    Info (12022): Found design unit 1: FullAdder-df File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FullAdder.vhd Line: 14
-    Info (12023): Found entity 1: FullAdder File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FullAdder.vhd Line: 4
+    Info (12022): Found design unit 1: FullAdder-df File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/FullAdder.vhd Line: 14
+    Info (12023): Found entity 1: FullAdder File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/FullAdder.vhd Line: 4
 Info (12021): Found 1 design units, including 0 entities, in source file components.vhd
-    Info (12022): Found design unit 1: components File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/components.vhd Line: 4
+    Info (12022): Found design unit 1: components File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/components.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file fourbitadder.vhd
-    Info (12022): Found design unit 1: FourBitAdder-struct File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitAdder.vhd Line: 14
-    Info (12023): Found entity 1: FourBitAdder File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitAdder.vhd Line: 5
+    Info (12022): Found design unit 1: FourBitAdder-struct File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitAdder.vhd Line: 14
+    Info (12023): Found entity 1: FourBitAdder File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitAdder.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file fourbitand.vhd
-    Info (12022): Found design unit 1: FourBitAND-struct File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitAND.vhd Line: 12
-    Info (12023): Found entity 1: FourBitAND File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitAND.vhd Line: 4
+    Info (12022): Found design unit 1: FourBitAND-struct File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitAND.vhd Line: 12
+    Info (12023): Found entity 1: FourBitAND File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitAND.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file halfsubractor.vhd
-    Info (12022): Found design unit 1: HalfSubractor-Struct File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/HalfSubractor.vhd Line: 13
-    Info (12023): Found entity 1: HalfSubractor File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/HalfSubractor.vhd Line: 4
+    Info (12022): Found design unit 1: HalfSubractor-Struct File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/HalfSubractor.vhd Line: 13
+    Info (12023): Found entity 1: HalfSubractor File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/HalfSubractor.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file fullsubractor.vhd
-    Info (12022): Found design unit 1: FullSubractor-Struct File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FullSubractor.vhd Line: 14
-    Info (12023): Found entity 1: FullSubractor File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FullSubractor.vhd Line: 4
+    Info (12022): Found design unit 1: FullSubractor-Struct File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/FullSubractor.vhd Line: 14
+    Info (12023): Found entity 1: FullSubractor File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/FullSubractor.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file fourbitsubtractor.vhd
-    Info (12022): Found design unit 1: FourBitSubtractor-struct File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitSubtractor.vhd Line: 14
-    Info (12023): Found entity 1: FourBitSubtractor File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitSubtractor.vhd Line: 5
+    Info (12022): Found design unit 1: FourBitSubtractor-struct File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitSubtractor.vhd Line: 14
+    Info (12023): Found entity 1: FourBitSubtractor File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitSubtractor.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file fourbitor.vhd
-    Info (12022): Found design unit 1: FourBitOR-struct File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitOR.vhd Line: 12
-    Info (12023): Found entity 1: FourBitOR File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitOR.vhd Line: 4
+    Info (12022): Found design unit 1: FourBitOR-struct File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitOR.vhd Line: 12
+    Info (12023): Found entity 1: FourBitOR File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitOR.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file fourbitxor.vhd
-    Info (12022): Found design unit 1: FourBitXOR-struct File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitXOR.vhd Line: 12
-    Info (12023): Found entity 1: FourBitXOR File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitXOR.vhd Line: 4
+    Info (12022): Found design unit 1: FourBitXOR-struct File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitXOR.vhd Line: 12
+    Info (12023): Found entity 1: FourBitXOR File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitXOR.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file fourbitnot.vhd
-    Info (12022): Found design unit 1: FourBitNOT-struct File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitNOT.vhd Line: 11
-    Info (12023): Found entity 1: FourBitNOT File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitNOT.vhd Line: 4
+    Info (12022): Found design unit 1: FourBitNOT-struct File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitNOT.vhd Line: 11
+    Info (12023): Found entity 1: FourBitNOT File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitNOT.vhd Line: 4
 Info (12127): Elaborating entity "ALU" for the top level hierarchy
-Info (12128): Elaborating entity "FourBitAdder" for hierarchy "FourBitAdder:U1" File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/ALU.vhd Line: 25
-Info (12128): Elaborating entity "HalfAdder" for hierarchy "FourBitAdder:U1|HalfAdder:U1" File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitAdder.vhd Line: 17
-Info (12128): Elaborating entity "FullAdder" for hierarchy "FourBitAdder:U1|FullAdder:U2" File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitAdder.vhd Line: 24
-Info (12128): Elaborating entity "FourBitAND" for hierarchy "FourBitAND:U2" File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/ALU.vhd Line: 32
-Info (12128): Elaborating entity "FourBitSubtractor" for hierarchy "FourBitSubtractor:U3" File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/ALU.vhd Line: 38
-Info (12128): Elaborating entity "HalfSubractor" for hierarchy "FourBitSubtractor:U3|HalfSubractor:U1" File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitSubtractor.vhd Line: 17
-Info (12128): Elaborating entity "FullSubractor" for hierarchy "FourBitSubtractor:U3|FullSubractor:U2" File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitSubtractor.vhd Line: 24
-Info (12128): Elaborating entity "FourBitOR" for hierarchy "FourBitOR:U4" File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/ALU.vhd Line: 45
-Info (12128): Elaborating entity "FourBitXOR" for hierarchy "FourBitXOR:U5" File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/ALU.vhd Line: 51
-Info (12128): Elaborating entity "FourBitNOT" for hierarchy "FourBitNOT:U6" File: D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/ALU.vhd Line: 57
+Info (12128): Elaborating entity "FourBitAdder" for hierarchy "FourBitAdder:U1" File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/ALU.vhd Line: 25
+Info (12128): Elaborating entity "HalfAdder" for hierarchy "FourBitAdder:U1|HalfAdder:U1" File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitAdder.vhd Line: 17
+Info (12128): Elaborating entity "FullAdder" for hierarchy "FourBitAdder:U1|FullAdder:U2" File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitAdder.vhd Line: 24
+Info (12128): Elaborating entity "FourBitAND" for hierarchy "FourBitAND:U2" File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/ALU.vhd Line: 32
+Info (12128): Elaborating entity "FourBitSubtractor" for hierarchy "FourBitSubtractor:U3" File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/ALU.vhd Line: 38
+Info (12128): Elaborating entity "HalfSubractor" for hierarchy "FourBitSubtractor:U3|HalfSubractor:U1" File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitSubtractor.vhd Line: 17
+Info (12128): Elaborating entity "FullSubractor" for hierarchy "FourBitSubtractor:U3|FullSubractor:U2" File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/FourBitSubtractor.vhd Line: 24
+Info (12128): Elaborating entity "FourBitOR" for hierarchy "FourBitOR:U4" File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/ALU.vhd Line: 45
+Info (12128): Elaborating entity "FourBitXOR" for hierarchy "FourBitXOR:U5" File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/ALU.vhd Line: 51
+Info (12128): Elaborating entity "FourBitNOT" for hierarchy "FourBitNOT:U6" File: D:/@home/faizy/Desktop/5th-Semester/COA LAB/LABS/LAB3/INLAB/ALU.vhd Line: 57
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -343,9 +343,9 @@ Info (21057): Implemented 37 device resources after synthesis - the final resour
     Info (21059): Implemented 5 output pins
     Info (21061): Implemented 21 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4825 megabytes
-    Info: Processing ended: Wed Oct  9 16:48:35 2024
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Peak virtual memory: 4785 megabytes
+    Info: Processing ended: Thu Oct 10 15:29:51 2024
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:34
 
 

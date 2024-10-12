@@ -43,11 +43,11 @@ y[3] => FourBitAND:U2.b[3]
 y[3] => FourBitSubtractor:U3.b[3]
 y[3] => FourBitOR:U4.b[3]
 y[3] => FourBitXOR:U5.b[3]
-result[0] << result.DB_MAX_OUTPUT_PORT_TYPE
-result[1] << result.DB_MAX_OUTPUT_PORT_TYPE
-result[2] << result.DB_MAX_OUTPUT_PORT_TYPE
-result[3] << result.DB_MAX_OUTPUT_PORT_TYPE
-carry << carry.DB_MAX_OUTPUT_PORT_TYPE
+result[0] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= result.DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= result.DB_MAX_OUTPUT_PORT_TYPE
+carry <= carry.DB_MAX_OUTPUT_PORT_TYPE
 opcode[0] => Equal0.IN1
 opcode[0] => Equal1.IN2
 opcode[0] => Equal2.IN1
