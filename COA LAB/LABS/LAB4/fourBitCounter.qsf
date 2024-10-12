@@ -111,5 +111,9 @@ set_global_assignment -name DEVICE 5CGXFC7C7F23C8
 set_global_assignment -name TOP_LEVEL_ENTITY fourBitCounter
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 23.1STD.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:54:06  OCTOBER 09, 2024"
+<<<<<<< HEAD
+set_global_assignment -name LAST_QUARTUS_VERSION "23.1std.1 Lite Edition"
+>>>>>>> 65ceb7fe2810e4c4f14387fa829c229c565b2ccd
+=======
 set_global_assignment -name LAST_QUARTUS_VERSION "23.1std.1 Lite Edition"
 >>>>>>> 65ceb7fe2810e4c4f14387fa829c229c565b2ccd
