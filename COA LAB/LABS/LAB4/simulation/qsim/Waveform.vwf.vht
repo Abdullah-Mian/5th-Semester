@@ -19,9 +19,9 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "10/08/2024 10:51:16"
+-- Generated on "10/14/2024 18:44:03"
                                                              
--- Vhdl Test Bench(with test vectors) for design  :          dFlipFlop
+-- Vhdl Test Bench(with test vectors) for design  :          fourBitCounter
 -- 
 -- Simulation tool : 3rd Party
 -- 
@@ -29,64 +29,38 @@
 LIBRARY ieee;                                               
 USE ieee.std_logic_1164.all;                                
 
-ENTITY dFlipFlop_vhd_vec_tst IS
-END dFlipFlop_vhd_vec_tst;
-ARCHITECTURE dFlipFlop_arch OF dFlipFlop_vhd_vec_tst IS
+ENTITY fourBitCounter_vhd_vec_tst IS
+END fourBitCounter_vhd_vec_tst;
+ARCHITECTURE fourBitCounter_arch OF fourBitCounter_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
+SIGNAL binOut : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL clk : STD_LOGIC;
-SIGNAL D : STD_LOGIC;
-SIGNAL Q : STD_LOGIC;
-SIGNAL Qnot : STD_LOGIC;
-COMPONENT dFlipFlop
+COMPONENT fourBitCounter
 	PORT (
-	clk : IN STD_LOGIC;
-	D : IN STD_LOGIC;
-	Q : BUFFER STD_LOGIC;
-	Qnot : OUT STD_LOGIC
+	binOut : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+	clk : IN STD_LOGIC
 	);
 END COMPONENT;
 BEGIN
-	i1 : dFlipFlop
+	i1 : fourBitCounter
 	PORT MAP (
 -- list connections between master ports and signals
-	clk => clk,
-	D => D,
-	Q => Q,
-	Qnot => Qnot
+	binOut => binOut,
+	clk => clk
 	);
 
 -- clk
 t_prcs_clk: PROCESS
 BEGIN
-	clk <= '0';
-	WAIT FOR 20000 ps;
-	clk <= '1';
-	WAIT FOR 320000 ps;
-	clk <= '0';
-	WAIT FOR 60000 ps;
-	clk <= '1';
-	WAIT FOR 80000 ps;
-	clk <= '0';
-	WAIT FOR 60000 ps;
-	clk <= '1';
-	WAIT FOR 40000 ps;
+	FOR i IN 1 TO 12
+	LOOP
+		clk <= '0';
+		WAIT FOR 40000 ps;
+		clk <= '1';
+		WAIT FOR 40000 ps;
+	END LOOP;
 	clk <= '0';
 WAIT;
 END PROCESS t_prcs_clk;
-
--- D
-t_prcs_D: PROCESS
-BEGIN
-	D <= '0';
-	WAIT FOR 140000 ps;
-	D <= '1';
-	WAIT FOR 200000 ps;
-	D <= '0';
-	WAIT FOR 60000 ps;
-	D <= '1';
-	WAIT FOR 80000 ps;
-	D <= '0';
-WAIT;
-END PROCESS t_prcs_D;
-END dFlipFlop_arch;
+END fourBitCounter_arch;

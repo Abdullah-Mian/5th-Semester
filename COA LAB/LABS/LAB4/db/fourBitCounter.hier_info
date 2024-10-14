@@ -10,34 +10,30 @@ clk => dFlipFlop:U4.clk
 
 
 |fourBitCounter|dFlipFlop:U1
-clk => Qnot~reg0.CLK
-clk => Q~reg0.CLK
-D => Q~reg0.DATAIN
-Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Qnot <= Qnot~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => Q_internal.CLK
+D => Q_internal.DATAIN
+Q <= Q_internal.DB_MAX_OUTPUT_PORT_TYPE
+Qnot <= Q_internal.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |fourBitCounter|dFlipFlop:U2
-clk => Qnot~reg0.CLK
-clk => Q~reg0.CLK
-D => Q~reg0.DATAIN
-Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Qnot <= Qnot~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => Q_internal.CLK
+D => Q_internal.DATAIN
+Q <= Q_internal.DB_MAX_OUTPUT_PORT_TYPE
+Qnot <= Q_internal.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |fourBitCounter|dFlipFlop:U3
-clk => Qnot~reg0.CLK
-clk => Q~reg0.CLK
-D => Q~reg0.DATAIN
-Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Qnot <= Qnot~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => Q_internal.CLK
+D => Q_internal.DATAIN
+Q <= Q_internal.DB_MAX_OUTPUT_PORT_TYPE
+Qnot <= Q_internal.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |fourBitCounter|dFlipFlop:U4
-clk => Qnot~reg0.CLK
-clk => Q~reg0.CLK
-D => Q~reg0.DATAIN
-Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
-Qnot <= Qnot~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => Q_internal.CLK
+D => Q_internal.DATAIN
+Q <= Q_internal.DB_MAX_OUTPUT_PORT_TYPE
+Qnot <= Q_internal.DB_MAX_OUTPUT_PORT_TYPE
 
 

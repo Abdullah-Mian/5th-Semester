@@ -17,10 +17,10 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition"
 
--- DATE "10/08/2024 11:29:33"
+-- DATE "10/14/2024 18:44:03"
 
 -- 
--- Device: Altera EP4CE115F29C7 Package FBGA780
+-- Device: Altera EP4CE6E22C6 Package TQFP144
 -- 
 
 -- 
@@ -41,11 +41,11 @@ ENTITY 	hard_block IS
 END hard_block;
 
 -- Design Ports Information
--- ~ALTERA_ASDO_DATA1~	=>  Location: PIN_F4,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- ~ALTERA_FLASH_nCE_nCSO~	=>  Location: PIN_E2,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- ~ALTERA_DCLK~	=>  Location: PIN_P3,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- ~ALTERA_DATA0~	=>  Location: PIN_N7,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- ~ALTERA_nCEO~	=>  Location: PIN_P28,	 I/O Standard: 2.5 V,	 Current Strength: 8mA
+-- ~ALTERA_ASDO_DATA1~	=>  Location: PIN_6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- ~ALTERA_FLASH_nCE_nCSO~	=>  Location: PIN_8,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- ~ALTERA_DCLK~	=>  Location: PIN_12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- ~ALTERA_DATA0~	=>  Location: PIN_13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- ~ALTERA_nCEO~	=>  Location: PIN_101,	 I/O Standard: 2.5 V,	 Current Strength: 8mA
 
 
 ARCHITECTURE structure OF hard_block IS
@@ -85,11 +85,11 @@ ENTITY 	fourBitCounter IS
 END fourBitCounter;
 
 -- Design Ports Information
--- binOut[0]	=>  Location: PIN_J12,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- binOut[1]	=>  Location: PIN_A11,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- binOut[2]	=>  Location: PIN_J13,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- binOut[3]	=>  Location: PIN_B11,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- clk	=>  Location: PIN_J1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- binOut[0]	=>  Location: PIN_32,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- binOut[1]	=>  Location: PIN_31,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- binOut[2]	=>  Location: PIN_34,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- binOut[3]	=>  Location: PIN_33,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- clk	=>  Location: PIN_23,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
 
 ARCHITECTURE structure OF fourBitCounter IS
@@ -111,16 +111,14 @@ SIGNAL \binOut[2]~output_o\ : std_logic;
 SIGNAL \binOut[3]~output_o\ : std_logic;
 SIGNAL \clk~input_o\ : std_logic;
 SIGNAL \clk~inputclkctrl_outclk\ : std_logic;
-SIGNAL \U1|Qnot~0_combout\ : std_logic;
-SIGNAL \U1|Qnot~q\ : std_logic;
-SIGNAL \U1|Q~feeder_combout\ : std_logic;
-SIGNAL \U1|Q~q\ : std_logic;
-SIGNAL \U2|Q~0_combout\ : std_logic;
-SIGNAL \U2|Q~q\ : std_logic;
-SIGNAL \U3|Q~0_combout\ : std_logic;
-SIGNAL \U3|Q~q\ : std_logic;
-SIGNAL \U4|Q~0_combout\ : std_logic;
-SIGNAL \U4|Q~q\ : std_logic;
+SIGNAL \U1|Q_internal~0_combout\ : std_logic;
+SIGNAL \U1|Q_internal~q\ : std_logic;
+SIGNAL \U2|Q_internal~0_combout\ : std_logic;
+SIGNAL \U2|Q_internal~q\ : std_logic;
+SIGNAL \U3|Q_internal~0_combout\ : std_logic;
+SIGNAL \U3|Q_internal~q\ : std_logic;
+SIGNAL \U4|Q_internal~0_combout\ : std_logic;
+SIGNAL \U4|Q_internal~q\ : std_logic;
 
 COMPONENT hard_block
     PORT (
@@ -144,7 +142,7 @@ PORT MAP (
 	devclrn => ww_devclrn,
 	devpor => ww_devpor);
 
--- Location: IOOBUF_X40_Y73_N9
+-- Location: IOOBUF_X0_Y6_N16
 \binOut[0]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -152,11 +150,11 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \U1|Q~q\,
+	i => \U1|Q_internal~q\,
 	devoe => ww_devoe,
 	o => \binOut[0]~output_o\);
 
--- Location: IOOBUF_X42_Y73_N2
+-- Location: IOOBUF_X0_Y7_N2
 \binOut[1]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -164,11 +162,11 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \U2|Q~q\,
+	i => \U2|Q_internal~q\,
 	devoe => ww_devoe,
 	o => \binOut[1]~output_o\);
 
--- Location: IOOBUF_X40_Y73_N2
+-- Location: IOOBUF_X0_Y5_N16
 \binOut[2]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -176,11 +174,11 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \U3|Q~q\,
+	i => \U3|Q_internal~q\,
 	devoe => ww_devoe,
 	o => \binOut[2]~output_o\);
 
--- Location: IOOBUF_X42_Y73_N9
+-- Location: IOOBUF_X0_Y6_N23
 \binOut[3]~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -188,11 +186,11 @@ GENERIC MAP (
 	open_drain_output => "false")
 -- pragma translate_on
 PORT MAP (
-	i => \U4|Q~q\,
+	i => \U4|Q_internal~q\,
 	devoe => ww_devoe,
 	o => \binOut[3]~output_o\);
 
--- Location: IOIBUF_X0_Y36_N8
+-- Location: IOIBUF_X0_Y11_N8
 \clk~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -216,22 +214,22 @@ PORT MAP (
 	devpor => ww_devpor,
 	outclk => \clk~inputclkctrl_outclk\);
 
--- Location: LCCOMB_X42_Y72_N16
-\U1|Qnot~0\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X1_Y6_N12
+\U1|Q_internal~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \U1|Qnot~0_combout\ = !\U1|Q~q\
+-- \U1|Q_internal~0_combout\ = !\U1|Q_internal~q\
 
 -- pragma translate_off
 GENERIC MAP (
-	lut_mask => "0000000011111111",
+	lut_mask => "0000111100001111",
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datad => \U1|Q~q\,
-	combout => \U1|Qnot~0_combout\);
+	datac => \U1|Q_internal~q\,
+	combout => \U1|Q_internal~0_combout\);
 
--- Location: FF_X42_Y72_N17
-\U1|Qnot\ : dffeas
+-- Location: FF_X1_Y6_N13
+\U1|Q_internal\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -239,43 +237,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
-	d => \U1|Qnot~0_combout\,
+	d => \U1|Q_internal~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \U1|Qnot~q\);
+	q => \U1|Q_internal~q\);
 
--- Location: LCCOMB_X42_Y72_N24
-\U1|Q~feeder\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X1_Y6_N18
+\U2|Q_internal~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \U1|Q~feeder_combout\ = \U1|Qnot~q\
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "1111111100000000",
-	sum_lutc_input => "datac")
--- pragma translate_on
-PORT MAP (
-	datad => \U1|Qnot~q\,
-	combout => \U1|Q~feeder_combout\);
-
--- Location: FF_X42_Y72_N25
-\U1|Q\ : dffeas
--- pragma translate_off
-GENERIC MAP (
-	is_wysiwyg => "true",
-	power_up => "low")
--- pragma translate_on
-PORT MAP (
-	clk => \clk~inputclkctrl_outclk\,
-	d => \U1|Q~feeder_combout\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	q => \U1|Q~q\);
-
--- Location: LCCOMB_X42_Y72_N18
-\U2|Q~0\ : cycloneive_lcell_comb
--- Equation(s):
--- \U2|Q~0_combout\ = \U2|Q~q\ $ (\U1|Q~q\)
+-- \U2|Q_internal~0_combout\ = \U2|Q_internal~q\ $ (\U1|Q_internal~q\)
 
 -- pragma translate_off
 GENERIC MAP (
@@ -283,12 +253,12 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datac => \U2|Q~q\,
-	datad => \U1|Q~q\,
-	combout => \U2|Q~0_combout\);
+	datac => \U2|Q_internal~q\,
+	datad => \U1|Q_internal~q\,
+	combout => \U2|Q_internal~0_combout\);
 
--- Location: FF_X42_Y72_N19
-\U2|Q\ : dffeas
+-- Location: FF_X1_Y6_N19
+\U2|Q_internal\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -296,15 +266,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
-	d => \U2|Q~0_combout\,
+	d => \U2|Q_internal~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \U2|Q~q\);
+	q => \U2|Q_internal~q\);
 
--- Location: LCCOMB_X42_Y72_N20
-\U3|Q~0\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X1_Y6_N20
+\U3|Q_internal~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \U3|Q~0_combout\ = \U3|Q~q\ $ (((\U2|Q~q\ & \U1|Q~q\)))
+-- \U3|Q_internal~0_combout\ = \U3|Q_internal~q\ $ (((\U2|Q_internal~q\ & \U1|Q_internal~q\)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -312,13 +282,13 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	datab => \U2|Q~q\,
-	datac => \U3|Q~q\,
-	datad => \U1|Q~q\,
-	combout => \U3|Q~0_combout\);
+	datab => \U2|Q_internal~q\,
+	datac => \U3|Q_internal~q\,
+	datad => \U1|Q_internal~q\,
+	combout => \U3|Q_internal~0_combout\);
 
--- Location: FF_X42_Y72_N21
-\U3|Q\ : dffeas
+-- Location: FF_X1_Y6_N21
+\U3|Q_internal\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -326,15 +296,15 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
-	d => \U3|Q~0_combout\,
+	d => \U3|Q_internal~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \U3|Q~q\);
+	q => \U3|Q_internal~q\);
 
--- Location: LCCOMB_X42_Y72_N26
-\U4|Q~0\ : cycloneive_lcell_comb
+-- Location: LCCOMB_X1_Y6_N22
+\U4|Q_internal~0\ : cycloneive_lcell_comb
 -- Equation(s):
--- \U4|Q~0_combout\ = \U4|Q~q\ $ (((\U1|Q~q\ & (\U3|Q~q\ & \U2|Q~q\))))
+-- \U4|Q_internal~0_combout\ = \U4|Q_internal~q\ $ (((\U1|Q_internal~q\ & (\U3|Q_internal~q\ & \U2|Q_internal~q\))))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -342,14 +312,14 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => \U1|Q~q\,
-	datab => \U3|Q~q\,
-	datac => \U4|Q~q\,
-	datad => \U2|Q~q\,
-	combout => \U4|Q~0_combout\);
+	dataa => \U1|Q_internal~q\,
+	datab => \U3|Q_internal~q\,
+	datac => \U4|Q_internal~q\,
+	datad => \U2|Q_internal~q\,
+	combout => \U4|Q_internal~0_combout\);
 
--- Location: FF_X42_Y72_N27
-\U4|Q\ : dffeas
+-- Location: FF_X1_Y6_N23
+\U4|Q_internal\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
 	is_wysiwyg => "true",
@@ -357,10 +327,10 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	clk => \clk~inputclkctrl_outclk\,
-	d => \U4|Q~0_combout\,
+	d => \U4|Q_internal~0_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
-	q => \U4|Q~q\);
+	q => \U4|Q_internal~q\);
 
 ww_binOut(0) <= \binOut[0]~output_o\;
 

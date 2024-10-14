@@ -9,8 +9,8 @@ z2
 !i10f 100
 cModel Technology
 Z0 dD:/5th-Semester/COA LAB/LABS/LAB4/simulation/qsim
-Edflipflop
-Z1 w1728366676
+Efourbitcounter
+Z1 w1728913443
 Z2 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 WOh:M[al;oVzG5c`<He>D0
 Z3 DPx10 cycloneive 21 cycloneive_components 0 22 zGMDhP>8e@2k@f0e<PY]k2
 Z4 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
@@ -19,118 +19,24 @@ Z6 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
 Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z8 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 Z9 DPx6 altera 28 altera_primitives_components 0 22 ca:ehlQAg4;_gVV:^8MAg3
-!i122 6
+!i122 2
 R0
 Z10 8fourBitCounter.vho
 Z11 FfourBitCounter.vho
 l0
-Z12 L80 1
-V^[52[dgiohIgJmeP[GdlN0
-!s100 PMzhTVCOC_AKTa0A[B8543
-Z13 OV;C;2020.1;71
-32
-Z14 !s110 1728366677
-!i10b 1
-Z15 !s108 1728366677.000000
-Z16 !s90 -work|work|fourBitCounter.vho|
-Z17 !s107 fourBitCounter.vho|
-!i113 1
-Z18 o-work work
-Z19 tExplicit 1 CvgOpt 0
-Astructure
-R2
-R3
-R4
-R5
-R6
-R7
-R8
-R9
-DEx4 work 9 dflipflop 0 22 ^[52[dgiohIgJmeP[GdlN0
-!i122 6
-l128
-L96 168
-VPLVN:;o^EH6WHSoE8BQHW2
-!s100 Vkg[UL;z`<X@a>GOnPa5?0
-R13
-32
-R14
-!i10b 1
-R15
-R16
-R17
-!i113 1
-R18
-R19
-Edflipflop_vhd_vec_tst
-R1
-R7
-R8
-!i122 7
-R0
-Z20 8Waveform.vwf.vht
-Z21 FWaveform.vwf.vht
-l0
-Z22 L32 1
-VgCSj=:mToTS^^<GYmZm;P1
-!s100 6NW`R<E3QY^hFKYIS5=Fz0
-R13
-32
-R14
-!i10b 1
-R15
-Z23 !s90 -work|work|Waveform.vwf.vht|
-Z24 !s107 Waveform.vwf.vht|
-!i113 1
-R18
-R19
-Adflipflop_arch
-R7
-R8
-DEx4 work 21 dflipflop_vhd_vec_tst 0 22 gCSj=:mToTS^^<GYmZm;P1
-!i122 7
-l49
-L34 59
-VgMT<`B=JggCCC<FlWZUf23
-!s100 `K@HMRbC^46CPff4GjJ3z1
-R13
-32
-R14
-!i10b 1
-R15
-R23
-R24
-!i113 1
-R18
-R19
-Efourbitcounter
-Z25 w1728368973
-R2
-R3
-R4
-R5
-R6
-R7
-R8
-R9
-!i122 16
-R0
-R10
-R11
-l0
-R12
+L80 1
 V3?>0?;^VCWT9`Lmlj:?H?0
 !s100 =DiJ4dm`73ZjcXfZ8[<>m3
-R13
+Z12 OV;C;2020.1;71
 32
-Z26 !s110 1728368973
+Z13 !s110 1728913444
 !i10b 1
-Z27 !s108 1728368973.000000
-R16
-R17
+Z14 !s108 1728913443.000000
+Z15 !s90 -work|work|fourBitCounter.vho|
+Z16 !s107 fourBitCounter.vho|
 !i113 1
-R18
-R19
+Z17 o-work work
+Z18 tExplicit 1 CvgOpt 0
 Astructure
 R2
 R3
@@ -141,71 +47,71 @@ R7
 R8
 R9
 DEx4 work 14 fourbitcounter 0 22 3?>0?;^VCWT9`Lmlj:?H?0
-!i122 16
-l132
-L95 278
-ViO812?cBDciU=_X2D:L7K3
-!s100 06jF_bG;aHAYlaVP:F:>D2
-R13
+!i122 2
+l130
+L95 248
+VlFX89InW47fJ887`G^bh83
+!s100 P^BKMSEI8MJF0@V6<CDh:1
+R12
 32
-R26
+R13
 !i10b 1
-R27
+R14
+R15
 R16
-R17
 !i113 1
+R17
 R18
-R19
 Efourbitcounter_vhd_vec_tst
-Z28 w1728368972
+R1
 R7
 R8
-!i122 17
+!i122 3
 R0
-Z29 8Waveform2.vwf.vht
-Z30 FWaveform2.vwf.vht
+Z19 8Waveform.vwf.vht
+Z20 FWaveform.vwf.vht
 l0
-R22
+L32 1
 VYYCW2>88[oAkBPnhWmjV73
 !s100 B4Q]OZ0j;HM;1=JFLI:PU2
-R13
+R12
 32
-R26
+R13
 !i10b 1
-R27
-Z31 !s90 -work|work|Waveform2.vwf.vht|
-!s107 Waveform2.vwf.vht|
+Z21 !s108 1728913444.000000
+Z22 !s90 -work|work|Waveform.vwf.vht|
+Z23 !s107 Waveform.vwf.vht|
 !i113 1
+R17
 R18
-R19
 Afourbitcounter_arch
 R7
 R8
-Z32 DEx4 work 26 fourbitcounter_vhd_vec_tst 0 22 YYCW2>88[oAkBPnhWmjV73
-!i122 17
+Z24 DEx4 work 26 fourbitcounter_vhd_vec_tst 0 22 YYCW2>88[oAkBPnhWmjV73
+!i122 3
 l45
-Z33 L34 33
-Z34 V4:BEMezJ6BaIPgUaVTPFT2
-Z35 !s100 jfLPZ<h`zJOYm8ojC]Be_2
-R13
+Z25 L34 33
+Z26 V4:BEMezJ6BaIPgUaVTPFT2
+Z27 !s100 jfLPZ<h`zJOYm8ojC]Be_2
+R12
 32
-R26
+R13
 !i10b 1
-R27
-R31
-Z36 !s107 Waveform2.vwf.vht|
+R21
+R22
+R23
 !i113 1
+R17
 R18
-R19
 Ehard_block
-R25
+R1
 R4
 R2
 R6
 R7
 R8
 R3
-!i122 16
+!i122 2
 R0
 R10
 R11
@@ -213,16 +119,16 @@ l0
 L35 1
 VB]0;STalBkCB1_B4BXQDW2
 !s100 >mXi5[`cD`bFC`UBKA<om3
-R13
+R12
 32
-R26
+R13
 !i10b 1
-R27
+R14
+R15
 R16
-R17
 !i113 1
+R17
 R18
-R19
 Astructure
 R4
 R2
@@ -231,18 +137,18 @@ R7
 R8
 R3
 DEx4 work 10 hard_block 0 22 B]0;STalBkCB1_B4BXQDW2
-!i122 16
+!i122 2
 l65
 L51 20
 Via>5o7W??azG@W@@eFOTF0
 !s100 [5;Wd8QGQ>@2NGoJ1I]Y43
-R13
+R12
 32
-R26
+R13
 !i10b 1
-R27
+R14
+R15
 R16
-R17
 !i113 1
+R17
 R18
-R19
