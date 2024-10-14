@@ -1,0 +1,167 @@
+--Sequence Detector
+library ieee;
+use ieee.std_logic_1164.all;
+--use ieee.numeric_std.all;  -- Use this library for numeric operations
+
+entity Sequence_Detector is
+    port (
+        clk      : in std_logic;
+        x        : in std_logic;
+        result   : out std_logic
+    );
+end Sequence_Detector;
+
+architecture behav of Sequence_Detector is
+
+    -- Define states using std_logic_vector
+    constant one   : std_logic_vector(4 downto 0) := "00001";
+    constant two   : std_logic_vector(4 downto 0) := "00010";
+    constant three : std_logic_vector(4 downto 0) := "00100";
+    constant four  : std_logic_vector(4 downto 0) := "01000";
+    constant five  : std_logic_vector(4 downto 0) := "10000";
+
+    -- State memory
+    signal mystate : std_logic_vector(4 downto 0) := one;
+
+begin
+    process (clk)
+    begin
+        if rising_edge(clk) then  -- Use the rising_edge function for clock events
+            case mystate is
+                when one =>
+                    -- Assuming 'result' output is controlled in some way
+                    result <= '0';
+
+                    -- Transition condition for state 'two'
+                    if (x = '1') then
+                        mystate <= two;
+                    else
+                        mystate <= one;
+                    end if;
+
+                when two =>
+                    result <= '0';  -- Assign default value for result
+
+                    -- Transition condition for state 'three'
+                    if (x = '1') then
+                       mystate <= three;
+                    else
+                        mystate <= one;
+                    end if;
+
+                when three =>
+                    result <= '0';  -- Assign default value for result
+
+                    -- Transition condition for state 'four'
+                    if (x = '0') then
+                       mystate <= four;
+                    else
+                        mystate <= three;
+                    end if;
+
+                when four =>
+                    result <= '1';  -- Assign result in state 'four'
+
+                    -- Transition condition for state 'five'
+                    if (x = '1') then
+                       mystate <= five;
+                    else
+                        mystate <= one; 
+                    end if;
+
+                when five =>
+                    result <= '1';  -- Assign result in state 'five'
+
+                    -- Transition condition for returning to state 'one'
+                    if (x = '0') then
+                       mystate <= one;
+                    else
+                        mystate <= two; -- Non-overlapping transition back to state 'two'
+                    end if;
+
+                when others =>
+                    mystate <= one;  -- Default state
+            end case;
+        end if;
+    end process;
+end behav;
+
+------------------------------------------
+--- Sequence Detector using vector as input
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all; -- Use numeric_std for arithmetic operations
+
+entity stm is
+    port(
+        clk  : in std_logic;
+        seq  : in std_logic_vector(3 downto 0); 
+        res  : out std_logic 
+    );
+end stm;
+
+architecture beh of stm is
+    -- Signal and constant declarations
+    signal mystate : std_logic_vector(4 downto 0) := "00001"; -- Initialize state
+    
+    constant s0 : std_logic_vector(4 downto 0) := "00001";
+    constant s1 : std_logic_vector(4 downto 0) := "00010";
+    constant s2 : std_logic_vector(4 downto 0) := "00100";
+    constant s3 : std_logic_vector(4 downto 0) := "01000";
+    constant s4 : std_logic_vector(4 downto 0) := "10000";
+  
+begin
+    process(clk)
+    begin
+        if rising_edge(clk) then
+            case mystate is
+                -- State s0
+                when s0 =>
+                    res <= '0'; -- Reset 'res'
+                    if seq(0)= '1' then
+                        mystate <= s1;
+                    else
+                        mystate <= s0;
+                    end if;
+                
+                -- State s1
+                when s1 =>
+                    res <= '0'; -- Ensure 'res' remains low in this state
+                    if seq(1) = '0' then
+                        mystate <= s2;
+                    else
+                        mystate <= s1;
+                    end if;
+                    
+                -- State s2
+                when s2 =>
+                    res <= '0'; -- Keep 'res' low
+                    if seq(2) = '1' then
+                        mystate <= s3;
+                    else
+                        mystate <= s0;
+                    end if;
+                    
+                -- State s3
+                when s3 =>
+                    res <= '0'; -- Still low
+                    if seq(3) = '1' then
+                        mystate <= s4;
+                    else
+                        mystate <= s2;
+                    end if;
+                    
+                -- State s4
+                when s4 =>
+                    res <= '1'; -- Set 'res' high
+                    mystate <= s0; -- Transition back to s0
+                    
+                -- Default case
+                when others =>
+                    res <= '0'; -- Default to '0'
+                    mystate <= s0;
+            end case;
+        end if;
+    end process;
+end beh;

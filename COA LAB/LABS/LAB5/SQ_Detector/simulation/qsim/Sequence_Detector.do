@@ -1,7 +1,7 @@
 onerror {exit -code 1}
 vlib work
 vcom -work work Sequence_Detector.vho
-vcom -work work Waveform.vwf.vht
+vcom -work work Waveform1.vwf.vht
 vsim  -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.Sequence_Detector_vhd_vec_tst
 vcd file -direction Sequence_Detector.msim.vcd
 vcd add -internal Sequence_Detector_vhd_vec_tst/*

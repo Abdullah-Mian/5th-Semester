@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Oct 15 00:28:07 2024
+Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+Revision Name : DifferentSpeedLEDs
+Top-level Entity Name : DifferentSpeedLEDs
+Family : Cyclone IV E
+Total logic elements : 35
+    Total combinational functions : 35
+    Dedicated logic registers : 32
+Total registers : 32
+Total pins : 6
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

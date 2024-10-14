@@ -1,0 +1,41 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all; -- Added for arithmetic operations
+
+entity WheelOfFortune is
+    port (
+        clk    : in  std_logic;
+        sclk   : out std_logic;
+        opcode : in  std_logic_vector(2 downto 0);
+		  reset : in std_logic
+    );
+end WheelOfFortune;
+
+architecture behv of WheelOfFortune is
+    signal count: unsigned(31 downto 0) := (others => '0'); -- Changed to unsigned type
+    signal countSpeed : std_logic_vector(3 downto 0);
+begin
+   process (clk, reset)
+		begin
+			if (reset = '1') then
+				count <= X"00000000"; -- Reset the counter to all zeros
+			elsif (clk'event and clk = '1') then
+				count <= count + 1; -- Increment the counter
+			end if;
+	end process;
+
+
+    -- Assign different speed signals from count
+    countSpeed(0) <= count(20);
+    countSpeed(1) <= count(31);
+    countSpeed(2) <= count(15);
+    countSpeed(3) <= count(2);
+
+    -- Select sclk based on opcode value
+    with opcode select
+        sclk <= countSpeed(0) when "000",
+                countSpeed(1) when "100",
+                countSpeed(2) when "010",
+                countSpeed(3) when "001",
+                '0'            when others; -- Default case
+end behv;

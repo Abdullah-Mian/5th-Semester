@@ -1,5 +1,5 @@
 Flow report for Sequence_Detector
-Thu Oct 10 20:06:42 2024
+Tue Oct 15 01:00:48 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Thu Oct 10 20:06:42 2024          ;
+; Flow Status                        ; Successful - Tue Oct 15 01:00:48 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; Sequence_Detector                              ;
 ; Top-level Entity Name              ; Sequence_Detector                              ;
@@ -114,6 +114,8 @@ https://fpgasoftware.intel.com/eula.
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4643 MB             ; 00:00:00                           ;
 ; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4642 MB             ; 00:00:00                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4643 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4642 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4643 MB             ; 00:00:00                           ;
 ; Total                ; 00:00:21     ; --                      ; --                  ; 00:00:09                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
@@ -127,6 +129,8 @@ https://fpgasoftware.intel.com/eula.
 ; Fitter               ; Mian             ; Windows 10 ; 10.0       ; x86_64         ;
 ; Assembler            ; Mian             ; Windows 10 ; 10.0       ; x86_64         ;
 ; Timing Analyzer      ; Mian             ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; Mian             ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; Mian             ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; Mian             ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; Mian             ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; Mian             ; Windows 10 ; 10.0       ; x86_64         ;
@@ -158,6 +162,8 @@ quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_f
 quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Sequence_Detector -c Sequence_Detector --vector_source="D:/5th-Semester/COA LAB/LABS/LAB5/SQ_Detector/Waveform.vwf" --testbench_file="D:/5th-Semester/COA LAB/LABS/LAB5/SQ_Detector/simulation/qsim/Waveform.vwf.vht"
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="D:/5th-Semester/COA LAB/LABS/LAB5/SQ_Detector/simulation/qsim/" Sequence_Detector -c Sequence_Detector
 quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Sequence_Detector -c Sequence_Detector --vector_source="D:/5th-Semester/COA LAB/LABS/LAB5/SQ_Detector/Waveform.vwf" --testbench_file="D:/5th-Semester/COA LAB/LABS/LAB5/SQ_Detector/simulation/qsim/Waveform.vwf.vht"
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="D:/5th-Semester/COA LAB/LABS/LAB5/SQ_Detector/simulation/qsim/" Sequence_Detector -c Sequence_Detector
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Sequence_Detector -c Sequence_Detector --vector_source="D:/5th-Semester/COA LAB/LABS/LAB5/SQ_Detector/Waveform1.vwf" --testbench_file="D:/5th-Semester/COA LAB/LABS/LAB5/SQ_Detector/simulation/qsim/Waveform1.vwf.vht"
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="D:/5th-Semester/COA LAB/LABS/LAB5/SQ_Detector/simulation/qsim/" Sequence_Detector -c Sequence_Detector
 
 

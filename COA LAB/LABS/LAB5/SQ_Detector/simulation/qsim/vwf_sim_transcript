@@ -7,7 +7,7 @@ Note: if both Questa Intel FPGA Edition and ModelSim executables are available, 
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Sequence_Detector -c Sequence_Detector --vector_source="D:/5th-Semester/COA LAB/LABS/LAB5/SQ_Detector/Waveform.vwf" --testbench_file="D:/5th-Semester/COA LAB/LABS/LAB5/SQ_Detector/simulation/qsim/Waveform.vwf.vht"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Sequence_Detector -c Sequence_Detector --vector_source="D:/5th-Semester/COA LAB/LABS/LAB5/SQ_Detector/Waveform1.vwf" --testbench_file="D:/5th-Semester/COA LAB/LABS/LAB5/SQ_Detector/simulation/qsim/Waveform1.vwf.vht"
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -26,8 +26,8 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Thu Oct 10 20:06:41 2024
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Sequence_Detector -c Sequence_Detector --vector_source="D:/5th-Semester/COA LAB/LABS/LAB5/SQ_Detector/Waveform.vwf" --testbench_file="D:/5th-Semester/COA LAB/LABS/LAB5/SQ_Detector/simulation/qsim/Waveform.vwf.vht"
+    Info: Processing started: Tue Oct 15 01:00:47 2024
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Sequence_Detector -c Sequence_Detector --vector_source="D:/5th-Semester/COA LAB/LABS/LAB5/SQ_Detector/Waveform1.vwf" --testbench_file="D:/5th-Semester/COA LAB/LABS/LAB5/SQ_Detector/simulation/qsim/Waveform1.vwf.vht"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
 Completed successfully. 
@@ -53,14 +53,14 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Thu Oct 10 20:06:41 2024
+    Info: Processing started: Tue Oct 15 01:00:48 2024
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="D:/5th-Semester/COA LAB/LABS/LAB5/SQ_Detector/simulation/qsim/" Sequence_Detector -c Sequence_Detector
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file Sequence_Detector.vho in folder "D:/5th-Semester/COA LAB/LABS/LAB5/SQ_Detector/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4651 megabytes
-    Info: Processing ended: Thu Oct 10 20:06:42 2024
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Tue Oct 15 01:00:48 2024
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
 Completed successfully. 
@@ -87,7 +87,7 @@ Reading pref.tcl
 
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 
-# Start time: 20:06:42 on Oct 10,2024
+# Start time: 01:00:49 on Oct 15,2024
 # vcom -work work Sequence_Detector.vho 
 
 # -- Loading package STANDARD
@@ -114,14 +114,14 @@ Reading pref.tcl
 
 # -- Compiling architecture structure of Sequence_Detector
 
-# End time: 20:06:42 on Oct 10,2024, Elapsed time: 0:00:00
+# End time: 01:00:49 on Oct 15,2024, Elapsed time: 0:00:00
 
 # Errors: 0, Warnings: 0
 
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 
-# Start time: 20:06:42 on Oct 10,2024
-# vcom -work work Waveform.vwf.vht 
+# Start time: 01:00:49 on Oct 15,2024
+# vcom -work work Waveform1.vwf.vht 
 
 # -- Loading package STANDARD
 
@@ -133,12 +133,11 @@ Reading pref.tcl
 
 # -- Compiling architecture Sequence_Detector_arch of Sequence_Detector_vhd_vec_tst
 
-# End time: 20:06:42 on Oct 10,2024, Elapsed time: 0:00:00
-
+# End time: 01:00:49 on Oct 15,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 # vsim -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.Sequence_Detector_vhd_vec_tst 
-# Start time: 20:06:42 on Oct 10,2024
+# Start time: 01:00:49 on Oct 15,2024
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -161,20 +160,20 @@ Reading pref.tcl
 
 # after#35
 
-# End time: 20:06:43 on Oct 10,2024, Elapsed time: 0:00:01
+# End time: 01:00:49 on Oct 15,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading D:/5th-Semester/COA LAB/LABS/LAB5/SQ_Detector/Waveform.vwf...
+Reading D:/5th-Semester/COA LAB/LABS/LAB5/SQ_Detector/Waveform1.vwf...
 
 Reading D:/5th-Semester/COA LAB/LABS/LAB5/SQ_Detector/simulation/qsim/Sequence_Detector.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to D:/5th-Semester/COA LAB/LABS/LAB5/SQ_Detector/simulation/qsim/Sequence_Detector_20241010200643.sim.vwf
+Writing the resulting VWF to D:/5th-Semester/COA LAB/LABS/LAB5/SQ_Detector/simulation/qsim/Sequence_Detector_20241015010050.sim.vwf
 
 Finished VCD to VWF conversion.
 

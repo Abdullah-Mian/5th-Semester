@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "10/10/2024 19:49:04"
+-- Generated on "10/15/2024 01:00:47"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          Sequence_Detector
 -- 
@@ -40,7 +40,7 @@ SIGNAL x : STD_LOGIC;
 COMPONENT Sequence_Detector
 	PORT (
 	clk : IN STD_LOGIC;
-	result : BUFFER STD_LOGIC;
+	result : OUT STD_LOGIC;
 	x : IN STD_LOGIC
 	);
 END COMPONENT;
@@ -56,21 +56,13 @@ BEGIN
 -- clk
 t_prcs_clk: PROCESS
 BEGIN
-	clk <= '0';
-	WAIT FOR 100000 ps;
-	clk <= '1';
-	WAIT FOR 40000 ps;
-	FOR i IN 1 TO 6
+	FOR i IN 1 TO 12
 	LOOP
 		clk <= '0';
 		WAIT FOR 40000 ps;
 		clk <= '1';
 		WAIT FOR 40000 ps;
 	END LOOP;
-	clk <= '0';
-	WAIT FOR 40000 ps;
-	clk <= '1';
-	WAIT FOR 20000 ps;
 	clk <= '0';
 WAIT;
 END PROCESS t_prcs_clk;
@@ -79,13 +71,13 @@ END PROCESS t_prcs_clk;
 t_prcs_x: PROCESS
 BEGIN
 	x <= '0';
-	WAIT FOR 80000 ps;
+	WAIT FOR 30000 ps;
 	x <= '1';
-	WAIT FOR 40000 ps;
+	WAIT FOR 30000 ps;
 	x <= '0';
-	WAIT FOR 40000 ps;
+	WAIT FOR 50000 ps;
 	x <= '1';
-	WAIT FOR 40000 ps;
+	WAIT FOR 30000 ps;
 	x <= '0';
 	WAIT FOR 120000 ps;
 	x <= '1';
