@@ -43,7 +43,7 @@ begin
 		hexin => fcount(15 downto 12), -------> SSD3 
 		hexout => ssd3	
 	);
-	u2: ssd port map.
+	u2: ssd port map
 	(
 		hexin => fcount(11 downto 8), -------> SSD3 
 		hexout => ssd2	
