@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition"
 
-// DATE "10/14/2024 23:19:14"
+// DATE "10/15/2024 09:04:34"
 
 // 
 // Device: Altera EP4CE115F29C7 Package FBGA780
@@ -36,8 +36,8 @@ input 	clk;
 output 	sclk;
 
 // Design Ports Information
-// sclk	=>  Location: PIN_P1,	 I/O Standard: 2.5 V,	 Current Strength: Default
-// clk	=>  Location: PIN_J1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sclk	=>  Location: PIN_G28,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// clk	=>  Location: PIN_G27,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
 
 wire gnd;
@@ -53,7 +53,6 @@ tri1 devpor;
 tri1 devoe;
 wire \sclk~output_o ;
 wire \clk~input_o ;
-wire \clk~inputclkctrl_outclk ;
 wire \count[0]~6_combout ;
 wire \count[1]~2_combout ;
 wire \count[1]~3 ;
@@ -66,7 +65,7 @@ hard_block auto_generated_inst(
 	.devclrn(devclrn),
 	.devoe(devoe));
 
-// Location: IOOBUF_X0_Y42_N2
+// Location: IOOBUF_X115_Y52_N9
 cycloneive_io_obuf \sclk~output (
 	.i(count[2]),
 	.oe(vcc),
@@ -79,7 +78,7 @@ defparam \sclk~output .bus_hold = "false";
 defparam \sclk~output .open_drain_output = "false";
 // synopsys translate_on
 
-// Location: IOIBUF_X0_Y36_N8
+// Location: IOIBUF_X115_Y52_N1
 cycloneive_io_ibuf \clk~input (
 	.i(clk),
 	.ibar(gnd),
@@ -89,20 +88,7 @@ defparam \clk~input .bus_hold = "false";
 defparam \clk~input .simulate_z_as = "z";
 // synopsys translate_on
 
-// Location: CLKCTRL_G2
-cycloneive_clkctrl \clk~inputclkctrl (
-	.ena(vcc),
-	.inclk({vcc,vcc,vcc,\clk~input_o }),
-	.clkselect(2'b00),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.outclk(\clk~inputclkctrl_outclk ));
-// synopsys translate_off
-defparam \clk~inputclkctrl .clock_type = "global clock";
-defparam \clk~inputclkctrl .ena_register_mode = "none";
-// synopsys translate_on
-
-// Location: LCCOMB_X1_Y42_N12
+// Location: LCCOMB_X114_Y52_N16
 cycloneive_lcell_comb \count[0]~6 (
 // Equation(s):
 // \count[0]~6_combout  = !count[0]
@@ -119,9 +105,9 @@ defparam \count[0]~6 .lut_mask = 16'h0F0F;
 defparam \count[0]~6 .sum_lutc_input = "datac";
 // synopsys translate_on
 
-// Location: FF_X1_Y42_N13
+// Location: FF_X114_Y52_N17
 dffeas \count[0] (
-	.clk(\clk~inputclkctrl_outclk ),
+	.clk(\clk~input_o ),
 	.d(\count[0]~6_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
@@ -138,14 +124,14 @@ defparam \count[0] .is_wysiwyg = "true";
 defparam \count[0] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X1_Y42_N8
+// Location: LCCOMB_X114_Y52_N26
 cycloneive_lcell_comb \count[1]~2 (
 // Equation(s):
-// \count[1]~2_combout  = (count[0] & (count[1] $ (VCC))) # (!count[0] & (count[1] & VCC))
-// \count[1]~3  = CARRY((count[0] & count[1]))
+// \count[1]~2_combout  = (count[1] & (count[0] $ (VCC))) # (!count[1] & (count[0] & VCC))
+// \count[1]~3  = CARRY((count[1] & count[0]))
 
-	.dataa(count[0]),
-	.datab(count[1]),
+	.dataa(count[1]),
+	.datab(count[0]),
 	.datac(gnd),
 	.datad(vcc),
 	.cin(gnd),
@@ -156,9 +142,9 @@ defparam \count[1]~2 .lut_mask = 16'h6688;
 defparam \count[1]~2 .sum_lutc_input = "datac";
 // synopsys translate_on
 
-// Location: FF_X1_Y42_N9
+// Location: FF_X114_Y52_N27
 dffeas \count[1] (
-	.clk(\clk~inputclkctrl_outclk ),
+	.clk(\clk~input_o ),
 	.d(\count[1]~2_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
@@ -175,7 +161,7 @@ defparam \count[1] .is_wysiwyg = "true";
 defparam \count[1] .power_up = "low";
 // synopsys translate_on
 
-// Location: LCCOMB_X1_Y42_N10
+// Location: LCCOMB_X114_Y52_N28
 cycloneive_lcell_comb \count[2]~4 (
 // Equation(s):
 // \count[2]~4_combout  = \count[1]~3  $ (count[2])
@@ -192,9 +178,9 @@ defparam \count[2]~4 .lut_mask = 16'h0FF0;
 defparam \count[2]~4 .sum_lutc_input = "cin";
 // synopsys translate_on
 
-// Location: FF_X1_Y42_N11
+// Location: FF_X114_Y52_N29
 dffeas \count[2] (
-	.clk(\clk~inputclkctrl_outclk ),
+	.clk(\clk~input_o ),
 	.d(\count[2]~4_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
