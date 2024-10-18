@@ -16,10 +16,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "binOut[3]",
-					"strict" : false
-				},
-				{
 					"name" : "opcode",
 					"strict" : false
 				},
