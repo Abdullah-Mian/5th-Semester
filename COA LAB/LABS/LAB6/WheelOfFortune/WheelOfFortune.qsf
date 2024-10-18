@@ -68,4 +68,6 @@ set_location_assignment PIN_AB28 -to opcode[0]
 set_location_assignment PIN_AC28 -to opcode[1]
 set_location_assignment PIN_AC27 -to opcode[2]
 set_location_assignment PIN_AD27 -to reset
+set_global_assignment -name VHDL_FILE sevenSegement.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

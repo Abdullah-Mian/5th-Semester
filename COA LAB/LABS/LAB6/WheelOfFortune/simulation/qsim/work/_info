@@ -1,0 +1,154 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/5th-Semester/COA LAB/LABS/LAB6/WheelOfFortune/simulation/qsim
+Ehard_block
+Z1 w1729266504
+Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z3 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 WOh:M[al;oVzG5c`<He>D0
+Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z6 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z7 DPx10 cycloneive 21 cycloneive_components 0 22 zGMDhP>8e@2k@f0e<PY]k2
+!i122 10
+R0
+Z8 8WheelOfFortune.vho
+Z9 FWheelOfFortune.vho
+l0
+L35 1
+VB]0;STalBkCB1_B4BXQDW2
+!s100 >mXi5[`cD`bFC`UBKA<om3
+Z10 OV;C;2020.1;71
+32
+Z11 !s110 1729266505
+!i10b 1
+Z12 !s108 1729266505.000000
+Z13 !s90 -work|work|WheelOfFortune.vho|
+Z14 !s107 WheelOfFortune.vho|
+!i113 1
+Z15 o-work work
+Z16 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 10 hard_block 0 22 B]0;STalBkCB1_B4BXQDW2
+!i122 10
+l65
+L51 20
+Via>5o7W??azG@W@@eFOTF0
+!s100 [5;Wd8QGQ>@2NGoJ1I]Y43
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Ewheeloffortune
+R1
+R3
+R7
+R2
+Z17 DPx6 altera 11 dffeas_pack 0 22 dc5N=DKXMMTVYdUQ@D3FA2
+R4
+R5
+R6
+Z18 DPx6 altera 28 altera_primitives_components 0 22 ca:ehlQAg4;_gVV:^8MAg3
+!i122 10
+R0
+R8
+R9
+l0
+L80 1
+VZDRgB0eNPT:FP<mlA?:];1
+!s100 5gE0P585DF=C6U:8[>NJ<3
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Astructure
+R3
+R7
+R2
+R17
+R4
+R5
+R6
+R18
+DEx4 work 14 wheeloffortune 0 22 ZDRgB0eNPT:FP<mlA?:];1
+!i122 10
+l324
+L133 2729
+VjQKKTTDRm4hRc_Z4=c7Jl1
+!s100 ocGSj6di7P_n2P@[:5TlV3
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Ewheeloffortune_vhd_vec_tst
+R1
+R5
+R6
+!i122 11
+R0
+Z19 8Waveform.vwf.vht
+Z20 FWaveform.vwf.vht
+l0
+L32 1
+V9ECXgFhkRMDfienGcPV8d3
+!s100 gdG9HJ?@24dXHf08]XSIO1
+R10
+32
+R11
+!i10b 1
+R12
+Z21 !s90 -work|work|Waveform.vwf.vht|
+Z22 !s107 Waveform.vwf.vht|
+!i113 1
+R15
+R16
+Awheeloffortune_arch
+R5
+R6
+Z23 DEx4 work 26 wheeloffortune_vhd_vec_tst 0 22 9ECXgFhkRMDfienGcPV8d3
+!i122 11
+l57
+L34 60
+V;_M=]zF@KIcX^aBG3<Ca=1
+!s100 h]GjmC2jDfoZ7hA2_gQKf2
+R10
+32
+R11
+!i10b 1
+R12
+R21
+R22
+!i113 1
+R15
+R16

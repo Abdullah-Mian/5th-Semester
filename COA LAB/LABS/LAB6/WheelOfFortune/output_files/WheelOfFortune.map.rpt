@@ -1,5 +1,5 @@
 Analysis & Synthesis report for WheelOfFortune
-Tue Oct 15 11:22:12 2024
+Fri Oct 18 20:42:52 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -45,16 +45,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Oct 15 11:22:12 2024          ;
+; Analysis & Synthesis Status        ; Successful - Fri Oct 18 20:42:52 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; WheelOfFortune                                 ;
 ; Top-level Entity Name              ; WheelOfFortune                                 ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 36                                             ;
-;     Total combinational functions  ; 34                                             ;
-;     Dedicated logic registers      ; 30                                             ;
-; Total registers                    ; 30                                             ;
-; Total pins                         ; 9                                              ;
+; Total logic elements               ; 74                                             ;
+;     Total combinational functions  ; 72                                             ;
+;     Dedicated logic registers      ; 46                                             ;
+; Total registers                    ; 46                                             ;
+; Total pins                         ; 37                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
@@ -171,6 +171,7 @@ https://fpgasoftware.intel.com/eula.
 ; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                        ; Library ;
 +----------------------------------+-----------------+-----------------+---------------------------------------------------------------------+---------+
 ; WheelOfFortune.vhd               ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB6/WheelOfFortune/WheelOfFortune.vhd ;         ;
+; sevenSegement.vhd                ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB6/WheelOfFortune/sevenSegement.vhd  ;         ;
 +----------------------------------+-----------------+-----------------+---------------------------------------------------------------------+---------+
 
 
@@ -179,40 +180,43 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 36        ;
+; Estimated Total logic elements              ; 74        ;
 ;                                             ;           ;
-; Total combinational functions               ; 34        ;
+; Total combinational functions               ; 72        ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 0         ;
-;     -- 3 input functions                    ; 7         ;
-;     -- <=2 input functions                  ; 27        ;
+;     -- 4 input functions                    ; 21        ;
+;     -- 3 input functions                    ; 9         ;
+;     -- <=2 input functions                  ; 42        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 10        ;
-;     -- arithmetic mode                      ; 24        ;
+;     -- normal mode                          ; 34        ;
+;     -- arithmetic mode                      ; 38        ;
 ;                                             ;           ;
-; Total registers                             ; 30        ;
-;     -- Dedicated logic registers            ; 30        ;
+; Total registers                             ; 46        ;
+;     -- Dedicated logic registers            ; 46        ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 9         ;
+; I/O pins                                    ; 37        ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 26        ;
-; Total fan-out                               ; 170       ;
-; Average fan-out                             ; 2.07      ;
+; Total fan-out                               ; 376       ;
+; Average fan-out                             ; 1.96      ;
 +---------------------------------------------+-----------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+----------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name    ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+----------------+--------------+
-; |WheelOfFortune            ; 34 (34)             ; 30 (30)                   ; 0           ; 0            ; 0       ; 0         ; 9    ; 0            ; |WheelOfFortune     ; WheelOfFortune ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+----------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------+----------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name              ; Entity Name    ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------+----------------+--------------+
+; |WheelOfFortune            ; 72 (50)             ; 46 (46)                   ; 0           ; 0            ; 0       ; 0         ; 37   ; 0            ; |WheelOfFortune                  ; WheelOfFortune ; work         ;
+;    |sevenSegement:u0|      ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WheelOfFortune|sevenSegement:u0 ; sevenSegement  ; work         ;
+;    |sevenSegement:u2|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WheelOfFortune|sevenSegement:u2 ; sevenSegement  ; work         ;
+;    |sevenSegement:u3|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WheelOfFortune|sevenSegement:u3 ; sevenSegement  ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------+----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -231,7 +235,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 30    ;
+; Total registers                              ; 46    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 26    ;
@@ -256,20 +260,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 9                           ;
-; cycloneiii_ff         ; 30                          ;
+; boundary_port         ; 37                          ;
+; cycloneiii_ff         ; 46                          ;
 ;     CLR               ; 26                          ;
-;     plain             ; 4                           ;
-; cycloneiii_lcell_comb ; 35                          ;
-;     arith             ; 24                          ;
-;         2 data inputs ; 23                          ;
-;         3 data inputs ; 1                           ;
-;     normal            ; 11                          ;
-;         1 data inputs ; 5                           ;
-;         3 data inputs ; 6                           ;
+;     plain             ; 20                          ;
+; cycloneiii_lcell_comb ; 76                          ;
+;     arith             ; 38                          ;
+;         2 data inputs ; 36                          ;
+;         3 data inputs ; 2                           ;
+;     normal            ; 38                          ;
+;         1 data inputs ; 10                          ;
+;         3 data inputs ; 7                           ;
+;         4 data inputs ; 21                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.40                        ;
-; Average LUT depth     ; 2.44                        ;
+; Average LUT depth     ; 2.16                        ;
 +-----------------------+-----------------------------+
 
 
@@ -288,33 +293,37 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Tue Oct 15 11:22:06 2024
+    Info: Processing started: Fri Oct 18 20:42:45 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off WheelOfFortune -c WheelOfFortune
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file wheeloffortune.vhd
-    Info (12022): Found design unit 1: WheelOfFortune-behv File: D:/5th-Semester/COA LAB/LABS/LAB6/WheelOfFortune/WheelOfFortune.vhd Line: 16
-    Info (12023): Found entity 1: WheelOfFortune File: D:/5th-Semester/COA LAB/LABS/LAB6/WheelOfFortune/WheelOfFortune.vhd Line: 7
+    Info (12022): Found design unit 1: WheelOfFortune-behv File: D:/5th-Semester/COA LAB/LABS/LAB6/WheelOfFortune/WheelOfFortune.vhd Line: 15
+    Info (12023): Found entity 1: WheelOfFortune File: D:/5th-Semester/COA LAB/LABS/LAB6/WheelOfFortune/WheelOfFortune.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file sevensegement.vhd
+    Info (12022): Found design unit 1: sevenSegement-Behavioural File: D:/5th-Semester/COA LAB/LABS/LAB6/WheelOfFortune/sevenSegement.vhd Line: 11
+    Info (12023): Found entity 1: sevenSegement File: D:/5th-Semester/COA LAB/LABS/LAB6/WheelOfFortune/sevenSegement.vhd Line: 4
 Info (12127): Elaborating entity "WheelOfFortune" for the top level hierarchy
-Warning (10492): VHDL Process Statement warning at WheelOfFortune.vhd(49): signal "count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/5th-Semester/COA LAB/LABS/LAB6/WheelOfFortune/WheelOfFortune.vhd Line: 49
-Warning (10492): VHDL Process Statement warning at WheelOfFortune.vhd(51): signal "count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/5th-Semester/COA LAB/LABS/LAB6/WheelOfFortune/WheelOfFortune.vhd Line: 51
-Warning (10492): VHDL Process Statement warning at WheelOfFortune.vhd(53): signal "count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/5th-Semester/COA LAB/LABS/LAB6/WheelOfFortune/WheelOfFortune.vhd Line: 53
-Warning (10492): VHDL Process Statement warning at WheelOfFortune.vhd(55): signal "count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/5th-Semester/COA LAB/LABS/LAB6/WheelOfFortune/WheelOfFortune.vhd Line: 55
-Warning (10492): VHDL Process Statement warning at WheelOfFortune.vhd(57): signal "count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/5th-Semester/COA LAB/LABS/LAB6/WheelOfFortune/WheelOfFortune.vhd Line: 57
+Warning (10492): VHDL Process Statement warning at WheelOfFortune.vhd(80): signal "count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/5th-Semester/COA LAB/LABS/LAB6/WheelOfFortune/WheelOfFortune.vhd Line: 80
+Warning (10492): VHDL Process Statement warning at WheelOfFortune.vhd(82): signal "count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/5th-Semester/COA LAB/LABS/LAB6/WheelOfFortune/WheelOfFortune.vhd Line: 82
+Warning (10492): VHDL Process Statement warning at WheelOfFortune.vhd(84): signal "count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/5th-Semester/COA LAB/LABS/LAB6/WheelOfFortune/WheelOfFortune.vhd Line: 84
+Warning (10492): VHDL Process Statement warning at WheelOfFortune.vhd(86): signal "count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/5th-Semester/COA LAB/LABS/LAB6/WheelOfFortune/WheelOfFortune.vhd Line: 86
+Warning (10492): VHDL Process Statement warning at WheelOfFortune.vhd(88): signal "count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/5th-Semester/COA LAB/LABS/LAB6/WheelOfFortune/WheelOfFortune.vhd Line: 88
+Info (12128): Elaborating entity "sevenSegement" for hierarchy "sevenSegement:u3" File: D:/5th-Semester/COA LAB/LABS/LAB6/WheelOfFortune/WheelOfFortune.vhd Line: 41
 Warning (19016): Clock multiplexers are found and protected
-    Warning (19017): Found clock multiplexer Mux0 File: D:/5th-Semester/COA LAB/LABS/LAB6/WheelOfFortune/WheelOfFortune.vhd Line: 47
+    Warning (19017): Found clock multiplexer Mux0 File: D:/5th-Semester/COA LAB/LABS/LAB6/WheelOfFortune/WheelOfFortune.vhd Line: 78
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 6 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 45 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 112 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
-    Info (21059): Implemented 4 output pins
-    Info (21061): Implemented 36 logic cells
+    Info (21059): Implemented 32 output pins
+    Info (21061): Implemented 75 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 4857 megabytes
-    Info: Processing ended: Tue Oct 15 11:22:12 2024
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Peak virtual memory: 4868 megabytes
+    Info: Processing ended: Fri Oct 18 20:42:52 2024
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:04
 
 
