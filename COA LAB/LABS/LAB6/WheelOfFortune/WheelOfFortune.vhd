@@ -36,7 +36,7 @@ begin
         end if;
     end process;
     
-    fclk <= count(0);
+    fclk <= count(25);
     
     u3: sevenSegement port map (
         bininput => fcount(15 downto 12),

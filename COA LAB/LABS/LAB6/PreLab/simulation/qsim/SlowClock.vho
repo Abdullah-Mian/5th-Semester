@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition"
 
--- DATE "10/14/2024 23:19:26"
+-- DATE "10/18/2024 21:48:11"
 
 -- 
 -- Device: Altera EP4CE115F29C7 Package FBGA780
@@ -85,8 +85,8 @@ ENTITY 	Slowclock IS
 END Slowclock;
 
 -- Design Ports Information
--- sclk	=>  Location: PIN_P1,	 I/O Standard: 2.5 V,	 Current Strength: Default
--- clk	=>  Location: PIN_J1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- sclk	=>  Location: PIN_G28,	 I/O Standard: 2.5 V,	 Current Strength: Default
+-- clk	=>  Location: PIN_G27,	 I/O Standard: 2.5 V,	 Current Strength: Default
 
 
 ARCHITECTURE structure OF Slowclock IS
@@ -101,10 +101,8 @@ SIGNAL ww_devclrn : std_logic;
 SIGNAL ww_devpor : std_logic;
 SIGNAL ww_clk : std_logic;
 SIGNAL ww_sclk : std_logic;
-SIGNAL \clk~inputclkctrl_INCLK_bus\ : std_logic_vector(3 DOWNTO 0);
 SIGNAL \sclk~output_o\ : std_logic;
 SIGNAL \clk~input_o\ : std_logic;
-SIGNAL \clk~inputclkctrl_outclk\ : std_logic;
 SIGNAL \count[0]~6_combout\ : std_logic;
 SIGNAL \count[1]~2_combout\ : std_logic;
 SIGNAL \count[1]~3\ : std_logic;
@@ -125,15 +123,13 @@ sclk <= ww_sclk;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
-
-\clk~inputclkctrl_INCLK_bus\ <= (vcc & vcc & vcc & \clk~input_o\);
 auto_generated_inst : hard_block
 PORT MAP (
 	devoe => ww_devoe,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor);
 
--- Location: IOOBUF_X0_Y42_N2
+-- Location: IOOBUF_X115_Y52_N9
 \sclk~output\ : cycloneive_io_obuf
 -- pragma translate_off
 GENERIC MAP (
@@ -145,7 +141,7 @@ PORT MAP (
 	devoe => ww_devoe,
 	o => \sclk~output_o\);
 
--- Location: IOIBUF_X0_Y36_N8
+-- Location: IOIBUF_X115_Y52_N1
 \clk~input\ : cycloneive_io_ibuf
 -- pragma translate_off
 GENERIC MAP (
@@ -156,20 +152,7 @@ PORT MAP (
 	i => ww_clk,
 	o => \clk~input_o\);
 
--- Location: CLKCTRL_G2
-\clk~inputclkctrl\ : cycloneive_clkctrl
--- pragma translate_off
-GENERIC MAP (
-	clock_type => "global clock",
-	ena_register_mode => "none")
--- pragma translate_on
-PORT MAP (
-	inclk => \clk~inputclkctrl_INCLK_bus\,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	outclk => \clk~inputclkctrl_outclk\);
-
--- Location: LCCOMB_X1_Y42_N12
+-- Location: LCCOMB_X114_Y52_N16
 \count[0]~6\ : cycloneive_lcell_comb
 -- Equation(s):
 -- \count[0]~6_combout\ = !count(0)
@@ -183,7 +166,7 @@ PORT MAP (
 	datac => count(0),
 	combout => \count[0]~6_combout\);
 
--- Location: FF_X1_Y42_N13
+-- Location: FF_X114_Y52_N17
 \count[0]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -191,17 +174,17 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clk~inputclkctrl_outclk\,
+	clk => \clk~input_o\,
 	d => \count[0]~6_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => count(0));
 
--- Location: LCCOMB_X1_Y42_N8
+-- Location: LCCOMB_X114_Y52_N26
 \count[1]~2\ : cycloneive_lcell_comb
 -- Equation(s):
--- \count[1]~2_combout\ = (count(0) & (count(1) $ (VCC))) # (!count(0) & (count(1) & VCC))
--- \count[1]~3\ = CARRY((count(0) & count(1)))
+-- \count[1]~2_combout\ = (count(1) & (count(0) $ (VCC))) # (!count(1) & (count(0) & VCC))
+-- \count[1]~3\ = CARRY((count(1) & count(0)))
 
 -- pragma translate_off
 GENERIC MAP (
@@ -209,13 +192,13 @@ GENERIC MAP (
 	sum_lutc_input => "datac")
 -- pragma translate_on
 PORT MAP (
-	dataa => count(0),
-	datab => count(1),
+	dataa => count(1),
+	datab => count(0),
 	datad => VCC,
 	combout => \count[1]~2_combout\,
 	cout => \count[1]~3\);
 
--- Location: FF_X1_Y42_N9
+-- Location: FF_X114_Y52_N27
 \count[1]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -223,13 +206,13 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clk~inputclkctrl_outclk\,
+	clk => \clk~input_o\,
 	d => \count[1]~2_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,
 	q => count(1));
 
--- Location: LCCOMB_X1_Y42_N10
+-- Location: LCCOMB_X114_Y52_N28
 \count[2]~4\ : cycloneive_lcell_comb
 -- Equation(s):
 -- \count[2]~4_combout\ = \count[1]~3\ $ (count(2))
@@ -244,7 +227,7 @@ PORT MAP (
 	cin => \count[1]~3\,
 	combout => \count[2]~4_combout\);
 
--- Location: FF_X1_Y42_N11
+-- Location: FF_X114_Y52_N29
 \count[2]\ : dffeas
 -- pragma translate_off
 GENERIC MAP (
@@ -252,7 +235,7 @@ GENERIC MAP (
 	power_up => "low")
 -- pragma translate_on
 PORT MAP (
-	clk => \clk~inputclkctrl_outclk\,
+	clk => \clk~input_o\,
 	d => \count[2]~4_combout\,
 	devclrn => ww_devclrn,
 	devpor => ww_devpor,

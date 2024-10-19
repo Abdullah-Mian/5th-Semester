@@ -10,14 +10,14 @@ z2
 cModel Technology
 Z0 dD:/5th-Semester/COA LAB/LABS/LAB6/PreLab/simulation/qsim
 Ehard_block
-Z1 w1728929966
+Z1 w1729270091
 Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
 Z3 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 WOh:M[al;oVzG5c`<He>D0
 Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
 Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z6 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 Z7 DPx10 cycloneive 21 cycloneive_components 0 22 zGMDhP>8e@2k@f0e<PY]k2
-!i122 6
+!i122 8
 R0
 Z8 8SlowClock.vho
 Z9 FSlowClock.vho
@@ -27,9 +27,9 @@ VB]0;STalBkCB1_B4BXQDW2
 !s100 >mXi5[`cD`bFC`UBKA<om3
 Z10 OV;C;2020.1;71
 32
-Z11 !s110 1728929966
+Z11 !s110 1729270093
 !i10b 1
-Z12 !s108 1728929966.000000
+Z12 !s108 1729270093.000000
 Z13 !s90 -work|work|SlowClock.vho|
 Z14 !s107 SlowClock.vho|
 !i113 1
@@ -43,7 +43,7 @@ R5
 R6
 R7
 DEx4 work 10 hard_block 0 22 B]0;STalBkCB1_B4BXQDW2
-!i122 6
+!i122 8
 l65
 L51 20
 Via>5o7W??azG@W@@eFOTF0
@@ -68,7 +68,7 @@ R4
 R5
 R6
 Z18 DPx6 altera 28 altera_primitives_components 0 22 ca:ehlQAg4;_gVV:^8MAg3
-!i122 6
+!i122 8
 R0
 R8
 R9
@@ -96,11 +96,11 @@ R5
 R6
 R18
 DEx4 work 9 slowclock 0 22 <_kjEL1HSB5J<j7b6hFol0
-!i122 6
-l121
-L92 171
-V6aK7C]]bjNE@>PA9TSI`l2
-!s100 D^XB5>z8FacU`;i6G]C3W0
+!i122 8
+l119
+L92 154
+VHG?F<L?M933BFF:iz]g6K3
+!s100 j_J_h>UjAa^Y4aJJV9N5H3
 R10
 32
 R11
@@ -112,13 +112,13 @@ R14
 R15
 R16
 Eslowclock_vhd_vec_tst
-Z19 w1728929965
+Z19 w1729270090
 R5
 R6
-!i122 7
+!i122 9
 R0
-Z20 8Waveform.vwf.vht
-Z21 FWaveform.vwf.vht
+Z20 8Waveform1.vwf.vht
+Z21 FWaveform1.vwf.vht
 l0
 L32 1
 Vn08f<[3_DoQ6>^@cETjlk1
@@ -128,27 +128,27 @@ R10
 R11
 !i10b 1
 R12
-Z22 !s90 -work|work|Waveform.vwf.vht|
-Z23 !s107 Waveform.vwf.vht|
+Z22 !s90 -work|work|Waveform1.vwf.vht|
+!s107 Waveform1.vwf.vht|
 !i113 1
 R15
 R16
 Aslowclock_arch
 R5
 R6
-Z24 DEx4 work 21 slowclock_vhd_vec_tst 0 22 n08f<[3_DoQ6>^@cETjlk1
-!i122 7
+Z23 DEx4 work 21 slowclock_vhd_vec_tst 0 22 n08f<[3_DoQ6>^@cETjlk1
+!i122 9
 l45
-Z25 L34 31
-Z26 VBX^SjVWDfI=hRREa=8V061
-Z27 !s100 `8GCo1BS`537SW50_N0mc3
+L34 33
+V:NY2KF5S<TZbDSaNVbV4E2
+!s100 io<0T[H:@N;ng?P[In:eU3
 R10
 32
 R11
 !i10b 1
 R12
 R22
-R23
+Z24 !s107 Waveform1.vwf.vht|
 !i113 1
 R15
 R16

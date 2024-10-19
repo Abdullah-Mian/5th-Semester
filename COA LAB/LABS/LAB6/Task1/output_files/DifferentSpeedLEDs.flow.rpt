@@ -1,5 +1,5 @@
 Flow report for DifferentSpeedLEDs
-Tue Oct 15 10:56:36 2024
+Fri Oct 18 22:02:31 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Tue Oct 15 10:56:36 2024          ;
+; Flow Status                        ; Successful - Fri Oct 18 22:02:31 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; DifferentSpeedLEDs                             ;
 ; Top-level Entity Name              ; DifferentSpeedLEDs                             ;
@@ -104,7 +104,9 @@ https://fpgasoftware.intel.com/eula.
 ; Assembler            ; 00:00:02     ; 1.0                     ; 4705 MB             ; 00:00:01                           ;
 ; Timing Analyzer      ; 00:00:01     ; 1.0                     ; 4877 MB             ; 00:00:01                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4643 MB             ; 00:00:00                           ;
-; Total                ; 00:00:17     ; --                      ; --                  ; 00:00:12                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4642 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4643 MB             ; 00:00:00                           ;
+; Total                ; 00:00:18     ; --                      ; --                  ; 00:00:12                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -118,6 +120,8 @@ https://fpgasoftware.intel.com/eula.
 ; Assembler            ; Mian             ; Windows 10 ; 10.0       ; x86_64         ;
 ; Timing Analyzer      ; Mian             ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; Mian             ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; Mian             ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; Mian             ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -129,6 +133,8 @@ quartus_fit --read_settings_files=off --write_settings_files=off DifferentSpeedL
 quartus_asm --read_settings_files=off --write_settings_files=off DifferentSpeedLEDs -c DifferentSpeedLEDs
 quartus_sta DifferentSpeedLEDs -c DifferentSpeedLEDs
 quartus_eda --read_settings_files=off --write_settings_files=off DifferentSpeedLEDs -c DifferentSpeedLEDs
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off DifferentSpeedLEDs -c DifferentSpeedLEDs --vector_source="D:/5th-Semester/COA LAB/LABS/LAB6/Task1/Waveform.vwf" --testbench_file="D:/5th-Semester/COA LAB/LABS/LAB6/Task1/simulation/qsim/Waveform.vwf.vht"
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="D:/5th-Semester/COA LAB/LABS/LAB6/Task1/simulation/qsim/" DifferentSpeedLEDs -c DifferentSpeedLEDs
 
 
 

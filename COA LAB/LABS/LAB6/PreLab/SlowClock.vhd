@@ -1,6 +1,6 @@
 	library ieee;
 	use ieee.std_logic_1164.all;
-	use ieee.numeric_std.all; -- Added for arithmetic operations
+	use ieee.std_logic_unsigned.all;
 
 	entity Slowclock is
 		 port (
@@ -10,7 +10,7 @@
 	end Slowclock;
 
 	architecture behv of Slowclock is
-		 signal count: unsigned(31 downto 0) := (others => '0'); -- Changed to unsigned type
+		 signal count   : std_logic_vector(31 downto 0) := X"00000000";
 	begin
 		 process (clk)
 		 begin
