@@ -14,7 +14,7 @@ end DifferentSpeedLEDs;
 
 architecture behv of DifferentSpeedLEDs is
     signal count: std_logic_vector(31 downto 0) :=  X"00000000";--(others => '0'); -- Changed to unsigned type
-    signal countSpeed : std_logic_vector(3 downto 0);
+   -- signal countSpeed : std_logic_vector(3 downto 0);
 	 signal sclk: std_logic;
 	 signal ledout: std_logic_vector(3 downto 0);
 begin

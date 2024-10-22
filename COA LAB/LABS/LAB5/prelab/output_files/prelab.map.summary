@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Oct 19 12:35:35 2024
+Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+Revision Name : prelab
+Top-level Entity Name : counter_4bit
+Family : Cyclone IV E
+Total logic elements : 11
+    Total combinational functions : 11
+    Dedicated logic registers : 4
+Total registers : 4
+Total pins : 9
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

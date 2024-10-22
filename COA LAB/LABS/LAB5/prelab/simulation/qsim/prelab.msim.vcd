@@ -1,0 +1,531 @@
+$comment
+	File created using the following command:
+		vcd file prelab.msim.vcd -direction
+$end
+$date
+	Sat Oct 19 12:42:37 2024
+$end
+$version
+	ModelSim Version 2020.1
+$end
+$timescale
+	1ps
+$end
+
+$scope module counter_4bit_vhd_vec_tst $end
+$var wire 1 ! clk $end
+$var wire 1 " reset $end
+$var wire 1 # segment [6] $end
+$var wire 1 $ segment [5] $end
+$var wire 1 % segment [4] $end
+$var wire 1 & segment [3] $end
+$var wire 1 ' segment [2] $end
+$var wire 1 ( segment [1] $end
+$var wire 1 ) segment [0] $end
+
+$scope module i1 $end
+$var wire 1 * gnd $end
+$var wire 1 + vcc $end
+$var wire 1 , unknown $end
+$var wire 1 - devoe $end
+$var wire 1 . devclrn $end
+$var wire 1 / devpor $end
+$var wire 1 0 ww_devoe $end
+$var wire 1 1 ww_devclrn $end
+$var wire 1 2 ww_devpor $end
+$var wire 1 3 ww_clk $end
+$var wire 1 4 ww_reset $end
+$var wire 1 5 ww_segment [6] $end
+$var wire 1 6 ww_segment [5] $end
+$var wire 1 7 ww_segment [4] $end
+$var wire 1 8 ww_segment [3] $end
+$var wire 1 9 ww_segment [2] $end
+$var wire 1 : ww_segment [1] $end
+$var wire 1 ; ww_segment [0] $end
+$var wire 1 < \reset~inputclkctrl_INCLK_bus\ [3] $end
+$var wire 1 = \reset~inputclkctrl_INCLK_bus\ [2] $end
+$var wire 1 > \reset~inputclkctrl_INCLK_bus\ [1] $end
+$var wire 1 ? \reset~inputclkctrl_INCLK_bus\ [0] $end
+$var wire 1 @ \clk~inputclkctrl_INCLK_bus\ [3] $end
+$var wire 1 A \clk~inputclkctrl_INCLK_bus\ [2] $end
+$var wire 1 B \clk~inputclkctrl_INCLK_bus\ [1] $end
+$var wire 1 C \clk~inputclkctrl_INCLK_bus\ [0] $end
+$var wire 1 D \segment[0]~output_o\ $end
+$var wire 1 E \segment[1]~output_o\ $end
+$var wire 1 F \segment[2]~output_o\ $end
+$var wire 1 G \segment[3]~output_o\ $end
+$var wire 1 H \segment[4]~output_o\ $end
+$var wire 1 I \segment[5]~output_o\ $end
+$var wire 1 J \segment[6]~output_o\ $end
+$var wire 1 K \clk~input_o\ $end
+$var wire 1 L \clk~inputclkctrl_outclk\ $end
+$var wire 1 M \counter[0]~3_combout\ $end
+$var wire 1 N \reset~input_o\ $end
+$var wire 1 O \reset~inputclkctrl_outclk\ $end
+$var wire 1 P \counter[1]~0_combout\ $end
+$var wire 1 Q \counter[2]~1_combout\ $end
+$var wire 1 R \counter[3]~2_combout\ $end
+$var wire 1 S \Mux6~0_combout\ $end
+$var wire 1 T \Mux5~0_combout\ $end
+$var wire 1 U \Mux4~0_combout\ $end
+$var wire 1 V \Mux3~0_combout\ $end
+$var wire 1 W \Mux2~0_combout\ $end
+$var wire 1 X \Mux1~0_combout\ $end
+$var wire 1 Y \Mux0~0_combout\ $end
+$var wire 1 Z counter [3] $end
+$var wire 1 [ counter [2] $end
+$var wire 1 \ counter [1] $end
+$var wire 1 ] counter [0] $end
+$var wire 1 ^ \ALT_INV_reset~inputclkctrl_outclk\ $end
+$var wire 1 _ \ALT_INV_Mux0~0_combout\ $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+0*
+1+
+x,
+1-
+1.
+1/
+10
+11
+12
+03
+04
+0D
+0E
+0F
+0G
+0H
+0I
+1J
+0K
+0L
+1M
+0N
+0O
+0P
+0Q
+0R
+0S
+0T
+0U
+0V
+0W
+0X
+0Y
+1^
+1_
+15
+06
+07
+08
+09
+0:
+0;
+0Z
+0[
+0\
+0]
+1@
+1A
+1B
+0C
+1<
+1=
+1>
+0?
+1#
+0$
+0%
+0&
+0'
+0(
+0)
+$end
+#40000
+1!
+13
+1K
+1C
+1L
+1]
+0M
+1P
+1S
+1V
+1W
+1X
+1I
+1H
+1G
+1D
+16
+17
+18
+1;
+1)
+1&
+1%
+1$
+#80000
+0!
+03
+0K
+0C
+0L
+#120000
+1!
+13
+1K
+1C
+1L
+0]
+1\
+1M
+0S
+1U
+0V
+0W
+1Y
+0_
+0H
+0G
+1F
+0D
+0J
+07
+08
+19
+0;
+05
+0)
+1'
+0&
+0%
+0#
+#160000
+0!
+03
+0K
+0C
+0L
+#200000
+1!
+13
+1K
+1C
+1L
+1]
+0M
+0P
+1Q
+0U
+1W
+1H
+0F
+17
+09
+0'
+1%
+#240000
+0!
+03
+0K
+0C
+0L
+#280000
+1!
+13
+1K
+1C
+1L
+0]
+0\
+1[
+1M
+1S
+1V
+0X
+0I
+1G
+1D
+06
+18
+1;
+1)
+1&
+0$
+#320000
+0!
+03
+0K
+0C
+0L
+#360000
+1!
+13
+1K
+1C
+1L
+1]
+0M
+1P
+0S
+1T
+0V
+0G
+1E
+0D
+08
+1:
+0;
+0)
+1(
+0&
+#400000
+0!
+03
+0K
+0C
+0L
+#410000
+1"
+14
+1N
+1?
+1O
+0^
+0]
+0[
+1M
+0P
+0Q
+0T
+0W
+0Y
+1_
+0H
+0E
+1J
+07
+0:
+15
+0(
+0%
+1#
+#420000
+0"
+04
+0N
+0?
+0O
+1^
+#440000
+1!
+13
+1K
+1C
+1L
+1]
+0M
+1P
+1S
+1V
+1W
+1X
+1I
+1H
+1G
+1D
+16
+17
+18
+1;
+1)
+1&
+1%
+1$
+#480000
+0!
+03
+0K
+0C
+0L
+#520000
+1!
+13
+1K
+1C
+1L
+0]
+1\
+1M
+0S
+1U
+0V
+0W
+1Y
+0_
+0H
+0G
+1F
+0D
+0J
+07
+08
+19
+0;
+05
+0)
+1'
+0&
+0%
+0#
+#560000
+0!
+03
+0K
+0C
+0L
+#600000
+1!
+13
+1K
+1C
+1L
+1]
+0M
+0P
+1Q
+0U
+1W
+1H
+0F
+17
+09
+0'
+1%
+#640000
+0!
+03
+0K
+0C
+0L
+#680000
+1!
+13
+1K
+1C
+1L
+0]
+0\
+1[
+1M
+1S
+1V
+0X
+0I
+1G
+1D
+06
+18
+1;
+1)
+1&
+0$
+#720000
+0!
+03
+0K
+0C
+0L
+#760000
+1!
+13
+1K
+1C
+1L
+1]
+0M
+1P
+0S
+1T
+0V
+0G
+1E
+0D
+08
+1:
+0;
+0)
+1(
+0&
+#800000
+0!
+03
+0K
+0C
+0L
+#840000
+1!
+13
+1K
+1C
+1L
+0]
+1\
+1M
+0W
+0H
+07
+0%
+#880000
+0!
+03
+0K
+0C
+0L
+#920000
+1!
+13
+1K
+1C
+1L
+1]
+0M
+0P
+0Q
+1R
+0T
+1V
+1W
+1X
+0Y
+1_
+1I
+1H
+1G
+0E
+1J
+16
+17
+18
+0:
+15
+0(
+1&
+1%
+1$
+1#
+#960000
+0!
+03
+0K
+0C
+0L
+#1000000

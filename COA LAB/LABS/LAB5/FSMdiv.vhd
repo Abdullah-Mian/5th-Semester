@@ -18,7 +18,7 @@ architecture behav of FSMdiv is
 
     constant initial : std_logic_vector(2 downto 0) := "001";
     constant compute : std_logic_vector(2 downto 0) := "010";
-    constant done : std_logic_vector(2 downto 0) := "100";
+    constant done : std_logic_vector(2 downto 0)    := "100";
 
     -- State Memory
     signal mystate : std_logic_vector(2 downto 0) := initial;

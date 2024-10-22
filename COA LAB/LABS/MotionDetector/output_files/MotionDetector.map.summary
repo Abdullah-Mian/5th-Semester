@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Oct 22 11:18:51 2024
+Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+Revision Name : MotionDetector
+Top-level Entity Name : MotionDetector
+Family : Cyclone IV E
+Total logic elements : 34
+    Total combinational functions : 34
+    Dedicated logic registers : 10
+Total registers : 10
+Total pins : 5
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

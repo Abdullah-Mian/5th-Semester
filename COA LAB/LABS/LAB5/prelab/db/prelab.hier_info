@@ -1,0 +1,18 @@
+|counter_4bit
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => counter[3].CLK
+reset => counter[0].ACLR
+reset => counter[1].ACLR
+reset => counter[2].ACLR
+reset => counter[3].ACLR
+segment[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+segment[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+segment[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+segment[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+segment[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+segment[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+segment[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+

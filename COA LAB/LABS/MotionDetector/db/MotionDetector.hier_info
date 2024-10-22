@@ -1,0 +1,25 @@
+|MotionDetector
+clk => exitt.CLK
+clk => enter.CLK
+clk => prevState[0].CLK
+clk => prevState[1].CLK
+clk => prevState[2].CLK
+clk => prevState[3].CLK
+clk => prevState[4].CLK
+clk => logicState[0].CLK
+clk => logicState[1].CLK
+clk => logicState[2].CLK
+clk => logicState[3].CLK
+clk => logicState[4].CLK
+sensor[0] => Equal0.IN3
+sensor[0] => Equal1.IN3
+sensor[0] => Equal2.IN3
+sensor[0] => Equal3.IN3
+sensor[1] => Equal0.IN2
+sensor[1] => Equal1.IN2
+sensor[1] => Equal2.IN2
+sensor[1] => Equal3.IN2
+entered <= enter.DB_MAX_OUTPUT_PORT_TYPE
+exited <= exitt.DB_MAX_OUTPUT_PORT_TYPE
+
+

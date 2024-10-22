@@ -1,0 +1,29 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "entered",
+					"strict" : false
+				},
+				{
+					"name" : "exited",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "sensor[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sensor[1]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
