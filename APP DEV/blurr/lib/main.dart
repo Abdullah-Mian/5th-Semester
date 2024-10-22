@@ -112,7 +112,8 @@ class ListViewBuilderExample extends StatelessWidget {
           onTap: () {
             ScaffoldMessenger.of(context)
                 .showSnackBar(SnackBar(content: Text('Tapped ${items[index]}')));
-          },
+            },
+            trailing: const Icon(Icons.check_circle_outline),
         );
       },
     );

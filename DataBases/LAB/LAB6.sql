@@ -2,10 +2,16 @@ CREATE DATABASE LAB6;
 GO
 USE LAB6;
 
+--- to drop databsae
+--use master;
+--GO
+--drop database LAB6;
+
 CREATE TABLE GROUPS (
 	GROUP_ID INT PRIMARY KEY,
 	NAME VARCHAR(100) NOT NULL
 	);
+
 
 GO
 INSERT INTO Groups (group_id, name) VALUES
@@ -14,6 +20,8 @@ INSERT INTO Groups (group_id, name) VALUES
 (3, 'BEE-E'),
 (4, 'BEE-T');
 
+---- to drop tabale 
+--drop table GROUPS;
 
 CREATE TABLE SUBJECTS (
     SUBJECT_ID INT PRIMARY KEY,

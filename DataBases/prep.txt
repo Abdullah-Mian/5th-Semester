@@ -1,0 +1,127 @@
+Look for OUTER JOIN
+Theta Join .etc
+
+INNER JOIN
+Equijoin "="
+Anti-Join "!="
+
+How To Drop A Database?
+
+USE MASTER;
+DROP DATABASE LAB6;
+
+
+
+-- Identifying primary key constraint set by system 
+SELECT name
+FROM sys.key_constraints
+WHERE parent_object_id = OBJECT_ID('GROUPS') AND type = 'PK';
+
+-- Identifying associated foreign keys
+SELECT name
+FROM sys.foreign_keys
+WHERE parent_object_id = OBJECT_ID('SUBJECT_TEACHER') AND referenced_object_id = OBJECT_ID('GROUPS');
+
+SELECT name 
+FROM sys.foreign_keys
+WHERE parent_object_id = OBJECT_ID('STUDENTS') AND referenced_object_id = OBJECT_ID('GROUPS');
+
+
+ALTER TABLE STUDENTS
+DROP CONSTRAINT FK_GROUP_ID;
+
+ALTER TABLE SUBJECT_TEACHER
+DROP CONSTRAINT FK_SUBJECT_TGROUP_45F365D3;
+
+--- now droping primary key
+ALTER TABLE GROUPS
+DROP CONSTRAINT PK_GROUPS_3EFEA3DEC587DE43;
+
+
+
+
+
+ALTER TABLE GROUPS ADD NAME varchar(100);
+ALTER table GROUPS drop column NAME;
+
+FOREIGN KEY:
+
+CONSTRAINT CAN'T BE USED FOR PRIMARY KEYS
+WE'LL REFERENCE DIRECTLY IN THIS CASE.
+
+
+
+CREATE TABLE SUBJECT_TEACHER (
+    SUBJECT_ID INT,
+    TEACHER_ID INT,
+    GROUP_ID INT,
+    --CONSTRAINT PK_SUBJECT_ID PRIMARY KEY (SUBJECT_ID, TEACHER_ID, GROUP_ID),
+    --CONSTRAINT FK_SUBJECT_ID FOREIGN KEY (SUBJECT_ID) REFERENCES SUBJECTS(SUBJECT_ID),
+    --CONSTRAINT FK_TEACHER_ID FOREIGN KEY (TEACHER_ID) REFERENCES TEACHERS(TEACHER_ID),
+    --CONSTRAINT FK_GROUP_ID FOREIGN KEY (GROUP_ID) REFERENCES GROUPS(GROUP_ID),
+	PRIMARY KEY (SUBJECT_ID, TEACHER_ID, GROUP_ID),
+	FOREIGN KEY (SUBJECT_ID) REFERENCES SUBJECTS(SUBJECT_ID),
+    FOREIGN KEY (TEACHER_ID) REFERENCES TEACHERS(TEACHER_ID),
+    FOREIGN KEY (GROUP_ID) REFERENCES GROUPS(GROUP_ID)
+);
+
+
+
+CHANGING THE DATATYPE
+ALTER TABLE table_name
+ALTER COLUMN column_name new_data_type;
+
+
+RENAMING COLUMN OF A TABLE
+ALTER TABLE table_name
+RENAME COLUMN old_column_name TO new_column_name;
+
+
+
+
+SQL DIVISION:
+
+
+
+In SQL, performing a division operation between tables typically means you want to find records in one table that relate to all records in another table. This is often referred to as a "division query." In SQL Server, there isn't a direct division operator, but you can achieve this using a combination of `GROUP BY`, `HAVING`, and joins.
+
+### Example Scenario
+
+Assume you have two tables:
+
+1. **STUDENTS**
+   - `STUDENT_ID`
+   - `NAME`
+
+2. **COURSES**
+   - `COURSE_ID`
+   - `COURSE_NAME`
+
+3. **ENROLLMENTS** (to link students to courses)
+   - `STUDENT_ID`
+   - `COURSE_ID`
+
+You want to find students who are enrolled in all available courses.
+
+### SQL Query for Division
+
+Here’s how you can write a query to perform this division:
+
+```sql
+SELECT s.STUDENT_ID, s.NAME
+FROM STUDENTS s
+JOIN ENROLLMENTS e ON s.STUDENT_ID = e.STUDENT_ID
+GROUP BY s.STUDENT_ID, s.NAME
+HAVING COUNT(DISTINCT e.COURSE_ID) = (SELECT COUNT(*) FROM COURSES);
+```
+
+### Explanation
+
+1. **JOIN**: The `JOIN` clause combines `STUDENTS` and `ENROLLMENTS` to get all enrolled students.
+2. **GROUP BY**: This groups the results by `STUDENT_ID` and `NAME`.
+3. **HAVING**: This filters the grouped results to only include students whose count of distinct `COURSE_ID` matches the total number of courses in the `COURSES` table.
+
+### Considerations
+
+- Ensure that the inner query `(SELECT COUNT(*) FROM COURSES)` accurately reflects the total number of courses.
+- This approach assumes that a student can enroll in multiple courses, and you want those who are in every course listed in the `COURSES` table.
