@@ -1,0 +1,15 @@
+CPU consumptions I/O wait ect
+what is kernel
+
+
+Chapter #2
+process scheduling
+FCFS SJF RR non-preemptive
+SRTF preemptive
+
+Pipes
+threading /multiprogramming / multiprocessing 
+Context Switch
+Process Control Block
+IPC Systems - POSIX/Mach/Windows
+
