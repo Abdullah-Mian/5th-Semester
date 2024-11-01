@@ -1,13 +1,25 @@
-CPU consumptions I/O wait ect
-what is kernel
+CPU consumptions I/O wait -- CPU utilization = (1 - P^n)
+
+What is Kernel
+-core part of an operating system
+-bridge between applications and the physical hardware
+-handling system resources like CPU, memory, and device management
+-Prevents unauthorized access
 
 
-Chapter #2
-process scheduling
-FCFS SJF RR non-preemptive
-SRTF preemptive
+Process Scheduling
+-FCFS SJF non-preemptive
+-SRTF RR preemptive
+
+Response time = Start time -  Arrival time
+T.A.T = Completion - arrival time 
+Wait time =  T.A.T - Burst Time 
+
 
 Pipes
+-UnNamed Pipes for parent child communication
+-Named Pipes for communication of random processes
+
 threading /multiprogramming / multiprocessing 
 Context Switch
 Process Control Block
