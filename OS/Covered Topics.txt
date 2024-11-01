@@ -6,24 +6,43 @@ What is Kernel
 -handling system resources like CPU, memory, and device management
 -Prevents unauthorized access
 
+Zombie Process 
+-Process that completed the execution but still have entry in the memory
 
 Process Scheduling
 -FCFS SJF non-preemptive
 -SRTF RR preemptive
-
 Response time = Start time -  Arrival time
 T.A.T = Completion - arrival time 
 Wait time =  T.A.T - Burst Time 
 
 
-Pipes
+PIPES
 -UnNamed Pipes for parent child communication
 -Named Pipes for communication of random processes
 
-threading /multiprogramming / multiprocessing 
-Context Switch
-Process Control Block
-IPC Systems - POSIX/Mach/Windows
+THREADS
+-Threads Multiprogramming by context switching (not true parallelism)
+-Threads use the same memory as of their calling processes
+-Multiprocessing different processes in different cores simultaneously (true parallelism) 
+-Context Switch process switching following scheduling algorithms
 
-Thread synchronization 
-binary Semaphores
+
+THREAD Synchronization 
+
+Binary Semaphores
+-Thread synchronization tool
+-Used to control access to a shared resource
+-Allowing only one at a time
+-Commonly used for mutual exclusion 
+
+Mutex
+-Synchronization primitive similar to a binary semaphore but is more restrictive
+-Allowing only one thread to hold the "lock" on a resource at any time
+-Prevents other threads from locking it until the first thread is done.
+
+Process Control Block 
+-It is a data structure managed by OS containing process information e.g.
+-process state, process id, scheduling info etc
+
+-Pages
