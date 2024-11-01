@@ -52,6 +52,7 @@ class ProductList extends StatelessWidget {
                 title: Text(product['title']),
                 subtitle: Text('\$${product['price']}'),
                 leading: Image.network(product['image'], width: 50),
+                trailing: Text('${product['category']}'),
               );
             },
           );

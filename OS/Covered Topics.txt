@@ -13,3 +13,5 @@ Context Switch
 Process Control Block
 IPC Systems - POSIX/Mach/Windows
 
+Thread synchronization 
+binary Semaphores
