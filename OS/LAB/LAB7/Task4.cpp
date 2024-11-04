@@ -53,9 +53,13 @@ int main()
         // Print file size
         cout << setw(8) << fileStat.st_size << " ";
 
-        // Get last modified time
+        // Get last access time
+        struct tm *accessTime = localtime(&fileStat.st_atime);
+        cout << put_time(accessTime, "%b %d %H:%M") << "  ";
+
+        // Get last modification time
         struct tm *modTime = localtime(&fileStat.st_mtime);
-        cout << put_time(modTime, "%b %d %H:%M") << " ";
+        cout << put_time(modTime, "%b %d %H:%M") << "  ";
 
         // Print file name
         cout << entry->d_name << endl;
