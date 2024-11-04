@@ -45,4 +45,6 @@ Process Control Block
 -It is a data structure managed by OS containing process information e.g.
 -process state, process id, scheduling info etc
 
+Replicated ls | ls -l | LAB7
+
 -Pages
