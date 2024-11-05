@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Tue Nov  5 01:10:25 2024
+Analysis & Synthesis Status : Failed - Tue Nov  5 11:43:28 2024
 Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 Revision Name : fetch
-Top-level Entity Name : fetch
+Top-level Entity Name : fetch_wrapper
 Family : Cyclone IV E
-Total logic elements : 185
-    Total combinational functions : 138
-    Dedicated logic registers : 91
-Total registers : 91
-Total pins : 132
-Total virtual pins : 0
-Total memory bits : 0
-Embedded Multiplier 9-bit elements : 0
-Total PLLs : 0
+Total logic elements : N/A until Partition Merge
+    Total combinational functions : N/A until Partition Merge
+    Dedicated logic registers : N/A until Partition Merge
+Total registers : N/A until Partition Merge
+Total pins : N/A until Partition Merge
+Total virtual pins : N/A until Partition Merge
+Total memory bits : N/A until Partition Merge
+Embedded Multiplier 9-bit elements : N/A until Partition Merge
+Total PLLs : N/A until Partition Merge

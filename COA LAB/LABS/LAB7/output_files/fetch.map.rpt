@@ -1,5 +1,5 @@
 Analysis & Synthesis report for fetch
-Tue Nov  5 01:10:25 2024
+Tue Nov  5 11:43:28 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -10,15 +10,7 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
 
 
 
@@ -45,20 +37,20 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Nov  5 01:10:25 2024          ;
+; Analysis & Synthesis Status        ; Failed - Tue Nov  5 11:43:28 2024              ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; fetch                                          ;
-; Top-level Entity Name              ; fetch                                          ;
+; Top-level Entity Name              ; fetch_wrapper                                  ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 185                                            ;
-;     Total combinational functions  ; 138                                            ;
-;     Dedicated logic registers      ; 91                                             ;
-; Total registers                    ; 91                                             ;
-; Total pins                         ; 132                                            ;
-; Total virtual pins                 ; 0                                              ;
-; Total memory bits                  ; 0                                              ;
-; Embedded Multiplier 9-bit elements ; 0                                              ;
-; Total PLLs                         ; 0                                              ;
+; Total logic elements               ; N/A until Partition Merge                      ;
+;     Total combinational functions  ; N/A until Partition Merge                      ;
+;     Dedicated logic registers      ; N/A until Partition Merge                      ;
+; Total registers                    ; N/A until Partition Merge                      ;
+; Total pins                         ; N/A until Partition Merge                      ;
+; Total virtual pins                 ; N/A until Partition Merge                      ;
+; Total memory bits                  ; N/A until Partition Merge                      ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                      ;
+; Total PLLs                         ; N/A until Partition Merge                      ;
 +------------------------------------+------------------------------------------------+
 
 
@@ -68,7 +60,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                            ; fetch              ; fetch              ;
+; Top-level entity name                                            ; fetch_wrapper      ; fetch              ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -157,135 +149,11 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 8           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 8           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-8         ;   0.0%      ;
 +----------------------------+-------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                       ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------+---------+
-; fetch.vhd                        ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB7/fetch.vhd ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------+---------+
-
-
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 185         ;
-;                                             ;             ;
-; Total combinational functions               ; 138         ;
-; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 44          ;
-;     -- 3 input functions                    ; 32          ;
-;     -- <=2 input functions                  ; 62          ;
-;                                             ;             ;
-; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 109         ;
-;     -- arithmetic mode                      ; 29          ;
-;                                             ;             ;
-; Total registers                             ; 91          ;
-;     -- Dedicated logic registers            ; 91          ;
-;     -- I/O registers                        ; 0           ;
-;                                             ;             ;
-; I/O pins                                    ; 132         ;
-;                                             ;             ;
-; Embedded Multiplier 9-bit elements          ; 0           ;
-;                                             ;             ;
-; Maximum fan-out node                        ; clock~input ;
-; Maximum fan-out                             ; 91          ;
-; Total fan-out                               ; 775         ;
-; Average fan-out                             ; 1.57        ;
-+---------------------------------------------+-------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |fetch                     ; 138 (138)           ; 91 (91)                   ; 0           ; 0            ; 0       ; 0         ; 132  ; 0            ; |fetch              ; fetch       ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; instruction[19]~reg0                  ; Stuck at GND due to stuck port data_in ;
-; instruction[20]~reg0                  ; Stuck at GND due to stuck port data_in ;
-; instruction[24]~reg0                  ; Stuck at GND due to stuck port data_in ;
-; instruction[25]~reg0                  ; Stuck at GND due to stuck port data_in ;
-; instruction[30]~reg0                  ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 5 ;                                        ;
-+---------------------------------------+----------------------------------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 91    ;
-; Number of registers using Synchronous Clear  ; 7     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 3:1                ; 30 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |fetch|pc                  ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |fetch|pc                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; boundary_port         ; 132                         ;
-; cycloneiii_ff         ; 91                          ;
-;     SCLR              ; 7                           ;
-;     plain             ; 84                          ;
-; cycloneiii_lcell_comb ; 139                         ;
-;     arith             ; 29                          ;
-;         2 data inputs ; 29                          ;
-;     normal            ; 110                         ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 32                          ;
-;         3 data inputs ; 32                          ;
-;         4 data inputs ; 44                          ;
-;                       ;                             ;
-; Max LUT depth         ; 6.90                        ;
-; Average LUT depth     ; 4.27                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
 
 
 +-------------------------------+
@@ -294,33 +162,26 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Tue Nov  5 01:10:17 2024
+    Info: Processing started: Tue Nov  5 11:43:23 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off fetch -c fetch
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file fetch.vhd
-    Info (12022): Found design unit 1: fetch-bhv File: D:/5th-Semester/COA LAB/LABS/LAB7/fetch.vhd Line: 17
-    Info (12023): Found entity 1: fetch File: D:/5th-Semester/COA LAB/LABS/LAB7/fetch.vhd Line: 7
-Info (12127): Elaborating entity "fetch" for the top level hierarchy
-Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276004): RAM logic "mem" is uninferred due to inappropriate RAM size File: D:/5th-Semester/COA LAB/LABS/LAB7/fetch.vhd Line: 27
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "instruction[19]" is stuck at GND File: D:/5th-Semester/COA LAB/LABS/LAB7/fetch.vhd Line: 24
-    Warning (13410): Pin "instruction[20]" is stuck at GND File: D:/5th-Semester/COA LAB/LABS/LAB7/fetch.vhd Line: 24
-    Warning (13410): Pin "instruction[24]" is stuck at GND File: D:/5th-Semester/COA LAB/LABS/LAB7/fetch.vhd Line: 24
-    Warning (13410): Pin "instruction[25]" is stuck at GND File: D:/5th-Semester/COA LAB/LABS/LAB7/fetch.vhd Line: 24
-    Warning (13410): Pin "instruction[30]" is stuck at GND File: D:/5th-Semester/COA LAB/LABS/LAB7/fetch.vhd Line: 24
-Info (286030): Timing-Driven Synthesis is running
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 355 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 68 input pins
-    Info (21059): Implemented 64 output pins
-    Info (21061): Implemented 223 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 4865 megabytes
-    Info: Processing ended: Tue Nov  5 01:10:25 2024
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:05
+    Info (12022): Found design unit 1: fetch-bhv File: D:/5th-Semester/COA LAB/LABS/LAB7/fetch.vhd Line: 19
+    Info (12023): Found entity 1: fetch File: D:/5th-Semester/COA LAB/LABS/LAB7/fetch.vhd Line: 9
+Info (12021): Found 2 design units, including 1 entities, in source file sevensegement.vhd
+    Info (12022): Found design unit 1: sevenSegement-Behavioural File: D:/5th-Semester/COA LAB/LABS/LAB7/sevenSegement.vhd Line: 11
+    Info (12023): Found entity 1: sevenSegement File: D:/5th-Semester/COA LAB/LABS/LAB7/sevenSegement.vhd Line: 4
+Info (12021): Found 1 design units, including 0 entities, in source file mypackage.vhd
+    Info (12022): Found design unit 1: MyPackage File: D:/5th-Semester/COA LAB/LABS/LAB7/MyPackage.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file fetch_wrapper.vhd
+    Info (12022): Found design unit 1: fetch_wrapper-bhv File: D:/5th-Semester/COA LAB/LABS/LAB7/fetch_wrapper.vhd Line: 15
+    Info (12023): Found entity 1: fetch_wrapper File: D:/5th-Semester/COA LAB/LABS/LAB7/fetch_wrapper.vhd Line: 9
+Error (10482): VHDL error at fetch_wrapper.vhd(18): object "fetch" is used but not declared File: D:/5th-Semester/COA LAB/LABS/LAB7/fetch_wrapper.vhd Line: 18
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 1 warning
+    Error: Peak virtual memory: 4785 megabytes
+    Error: Processing ended: Tue Nov  5 11:43:28 2024
+    Error: Elapsed time: 00:00:05
+    Error: Total CPU time (on all processors): 00:00:04
 
 

@@ -2,6 +2,8 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;  -- Single library for arithmetic and conversion
+use work.MyPackage.all;
+--use ieee.std_logic_unsigned.all;
 
 -- Entity Declaration
 entity fetch is
@@ -15,8 +17,9 @@ end fetch;
 
 -- Architecture Definition
 architecture bhv of fetch is
-    -- Define instruction memory array type
+	 -- Define instruction memory array type
     type mem_array is array(0 to 15) of std_logic_vector(31 downto 0);
+
 begin
     -- Process for handling the fetch operation
     process
@@ -25,7 +28,10 @@ begin
         variable index : integer range 0 to 15 := 0;
         -- Initialize the instruction memory with machine code
         variable mem : mem_array := (
-            X"8c220000", -- lw $2, 0($1)     -- Load word
+            X"00000000",
+				X"11111111",
+				X"22222222",
+				X"8c220000", -- lw $2, 0($1)     -- Load word
             X"8c640001", -- lw $4, 1($3)     -- Load word
             X"00822022", -- sub $4, $4, $3   -- Subtract
             X"ac400000", -- sw $4, 0($3)     -- Store word
@@ -52,17 +58,24 @@ begin
                 end if;
                 
                 -- Calculate memory index from PC (using word alignment)
-                index := to_integer(unsigned(pc(5 downto 2)));
+                index := to_integer(unsigned(pc(3 downto 0)));
                 
                 -- Fetch instruction from memory
                 instruction <= mem(index);
-                
+					                
                 -- Increment PC by 4 (after fetching)
-                pc := std_logic_vector(unsigned(pc) + 4);
-            end if;
+                --pc := std_logic_vector(unsigned(pc) + 4);
+						pc:= std_logic_vector(unsigned(pc) + 1);
+						PC_out <= pc;
+				end if;
             
             -- Update PC output
-            PC_out <= pc;
+            
        -- end if;
     end process;
+	 
+	
+	 
+	
+	 
 end bhv;
