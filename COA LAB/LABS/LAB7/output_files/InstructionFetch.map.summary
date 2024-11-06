@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Nov  6 23:31:13 2024
+Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+Revision Name : InstructionFetch
+Top-level Entity Name : InstructionFetch
+Family : Cyclone IV E
+Total logic elements : 93
+    Total combinational functions : 93
+    Dedicated logic registers : 26
+Total registers : 26
+Total pins : 64
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

@@ -1,68 +1,78 @@
--- Entity Declaration: Defines the interface of the fetch module
+-- Library declarations
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;  -- Single library for arithmetic and conversion
+use work.MyPackage.all;
+--use ieee.std_logic_unsigned.all;
+
+-- Entity Declaration
 entity fetch is
     port (
-        PC_out             : out STD_LOGIC_VECTOR (31 downto 0);  -- Output for the current program counter value
-        instruction        : out STD_LOGIC_VECTOR (31 downto 0);  -- Output for the fetched instruction
-        branch_addr, jump_addr : in STD_LOGIC_VECTOR (31 downto 0); -- Input addresses for branch and jump
-        branch_decision, jump_decision, reset, clock : in std_logic -- Control signals for branch, jump, reset, and clock
+        PC_out         : out STD_LOGIC_VECTOR (31 downto 0);
+        instruction    : out STD_LOGIC_VECTOR (31 downto 0);
+        branch_addr, 
+        jump_addr      : in STD_LOGIC_VECTOR (31 downto 0);
+        branch_decision, 
+        jump_decision, 
+        reset, 
+        clock          : in std_logic
     );
 end fetch;
 
--- Architecture Definition: Describes the internal working of the fetch module
+-- Architecture Definition
 architecture bhv of fetch is
-
-    -- Define an array of 32-bit instructions to simulate instruction memory (16 locations)
+    -- Define instruction memory array type
     type mem_array is array(0 to 15) of std_logic_vector(31 downto 0);
-    
-    -- Initialize the instruction memory with some example machine code instructions
-    variable mem : mem_array := (
-        X"8c220000", -- lw $2, 0($1)     -- Load word: loads data into register $2 from address 0 + $1
-        X"8c640001", -- lw $4, 1($3)     -- Load word: loads data into register $4 from address 1 + $3
-        X"00822022", -- sub $4, $4, $3   -- Subtract: $4 = $4 - $3
-        X"ac400000", -- sw $4, 0($3)     -- Store word: stores data from $4 into address 0 + $3
-        X"1022fffa", -- beq $1, $2, L    -- Branch if equal: branches if $1 equals $2
-        X"00612024", -- and $4, $3, $1   -- AND operation: $4 = $3 AND $1
-        X"08000000", -- j L              -- Jump to label L
-        X"00000000"  -- NOP              -- No operation (empty instruction)
-    );
-    
-    -- Define the program counter (PC) and an index variable for fetching from memory
-    variable pc : std_logic_vector(31 downto 0);  -- The program counter, holds the current address
-    variable index : integer := 0;                -- Used to access memory array based on PC
-    
+
 begin
-
-    -- Process for handling the fetch operation on each clock cycle
+    -- Process for handling the fetch operation
     process
+        -- Define variables inside the process
+        variable pc     : std_logic_vector(31 downto 0) := (others => '0');
+        variable index  : integer range 0 to 15 := 0;
+        
+        -- Initialize the instruction memory with machine code
+        variable mem    : mem_array := (
+            X"00000000",
+            X"11111111",
+            X"22222222",
+            X"8c220000", -- lw $2, 0($1)     -- Load word
+            X"8c640001", -- lw $4, 1($3)     -- Load word
+            X"00822022", -- sub $4, $4, $3   -- Subtract
+            X"ac400000", -- sw $4, 0($3)     -- Store word
+            X"1022fffa", -- beq $1, $2, L    -- Branch if equal
+            X"00612024", -- and $4, $3, $1   -- AND operation
+            X"08000000", -- j L              -- Jump
+            X"00000000", -- NOP              -- No operation
+            others => X"00000000"  -- Initialize remaining locations
+        );
     begin
-        -- Wait for a clock event (positive edge) to start the fetch process
-        wait until (clock'event and clock = '1');
+        -- Wait until the rising edge of the clock
+        wait until rising_edge(clock);
 
-        -- Reset Condition: Reset PC and instruction if reset signal is high
+        -- Check if reset signal is active
         if reset = '1' then
-            pc := X"00000000";             -- Set PC to zero on reset
-            instruction <= X"00000000";     -- Clear instruction to zero on reset
+            pc := (others => '0');
+            instruction <= (others => '0');
         else
-            -- Branch Decision: Set PC to branch address if branch decision is high
-            if (branch_decision = '1') then
+            -- Handle branch and jump
+            if branch_decision = '1' then
                 pc := branch_addr;
-            end if;
-
-            -- Jump Decision: Set PC to jump address if jump decision is high
-            if (jump_decision = '1') then
+            elsif jump_decision = '1' then
                 pc := jump_addr;
             end if;
+            
+            -- Calculate memory index from PC (using word alignment)
+            index := to_integer(unsigned(pc(3 downto 0)));
 
-            -- Convert the lower 4 bits of PC to integer to use as index for memory access
-            index := to_integer(pc(3 downto 0));
+            -- Fetch instruction from memory
+            instruction <= mem(index);
 
-            -- Increment the PC by 4 to move to the next instruction
-            pc := pc + X"4";
+            -- Increment PC by 4 (after fetching)
+            -- pc := std_logic_vector(unsigned(pc) + 4);
+            pc := std_logic_vector(unsigned(pc) + 1);
+            PC_out <= pc;
         end if;
-
-        -- Output the current PC and fetch the instruction from memory based on index
-        PC_out <= pc;                      -- Output the current PC value
-        instruction <= mem(index);          -- Fetch instruction from memory using index
     end process;
 
 end bhv;
