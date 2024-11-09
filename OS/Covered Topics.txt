@@ -48,3 +48,7 @@ Process Control Block
 Replicated ls | ls -l | LAB7
 
 -Pages
+one partition in main memory => Frame
+one partition in secondary memory => Page
+
+SizeOfPage = SizeOfFrame
