@@ -1,5 +1,5 @@
 Analysis & Synthesis report for InstructionFetch
-Wed Nov  6 23:31:13 2024
+Tue Nov 12 10:47:01 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -47,7 +47,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Nov  6 23:31:13 2024          ;
+; Analysis & Synthesis Status        ; Successful - Tue Nov 12 10:47:01 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; InstructionFetch                               ;
 ; Top-level Entity Name              ; InstructionFetch                               ;
@@ -337,7 +337,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Wed Nov  6 23:31:05 2024
+    Info: Processing started: Tue Nov 12 10:46:54 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off InstructionFetch -c InstructionFetch
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -366,9 +366,9 @@ Info (21057): Implemented 161 device resources after synthesis - the final resou
     Info (21059): Implemented 60 output pins
     Info (21061): Implemented 97 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4844 megabytes
-    Info: Processing ended: Wed Nov  6 23:31:13 2024
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Peak virtual memory: 4856 megabytes
+    Info: Processing ended: Tue Nov 12 10:47:01 2024
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:04
 
 

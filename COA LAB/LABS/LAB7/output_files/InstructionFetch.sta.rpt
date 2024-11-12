@@ -1,5 +1,5 @@
 Timing Analyzer report for InstructionFetch
-Wed Nov  6 23:31:29 2024
+Tue Nov 12 10:47:14 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -99,12 +99,12 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 8           ;
 ;                            ;             ;
-; Average used               ; 1.03        ;
+; Average used               ; 1.04        ;
 ; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-8         ;   0.4%      ;
+;     Processors 2-8         ;   0.5%      ;
 +----------------------------+-------------+
 
 
@@ -122,7 +122,7 @@ https://fpgasoftware.intel.com/eula.
 +------------+-----------------+------------+---------------------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
 +------------+-----------------+------------+---------------------------------------------------------------+
-; 370.92 MHz ; 250.0 MHz       ; clk        ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 377.79 MHz ; 250.0 MHz       ; clk        ; limit due to minimum period restriction (max I/O toggle rate) ;
 +------------+-----------------+------------+---------------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -138,7 +138,7 @@ HTML report is unavailable in plain text report export.
 +-------+--------+--------------------+
 ; Clock ; Slack  ; End Point TNS      ;
 +-------+--------+--------------------+
-; clk   ; -1.696 ; -27.253            ;
+; clk   ; -1.647 ; -22.041            ;
 +-------+--------+--------------------+
 
 
@@ -147,7 +147,7 @@ HTML report is unavailable in plain text report export.
 +-------+-------+--------------------+
 ; Clock ; Slack ; End Point TNS      ;
 +-------+-------+--------------------+
-; clk   ; 0.640 ; 0.000              ;
+; clk   ; 0.483 ; 0.000              ;
 +-------+-------+--------------------+
 
 
@@ -177,97 +177,97 @@ No paths to report.
 +--------+----------------+--------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node      ; To Node                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+----------------+--------------------------+--------------+-------------+--------------+------------+------------+
-; -1.696 ; fetch:f1|pc[1] ; fetch:f1|pc[2]           ; clk          ; clk         ; 1.000        ; -0.080     ; 2.614      ;
-; -1.523 ; fetch:f1|pc[1] ; fetch:f1|pc[3]           ; clk          ; clk         ; 1.000        ; -0.080     ; 2.441      ;
-; -1.368 ; fetch:f1|pc[1] ; fetch:f1|instruction[22] ; clk          ; clk         ; 1.000        ; -0.092     ; 2.274      ;
-; -1.311 ; fetch:f1|pc[2] ; fetch:f1|instruction[20] ; clk          ; clk         ; 1.000        ; -0.092     ; 2.217      ;
-; -1.274 ; fetch:f1|pc[0] ; fetch:f1|pc[2]           ; clk          ; clk         ; 1.000        ; -0.080     ; 2.192      ;
-; -1.246 ; fetch:f1|pc[2] ; fetch:f1|instruction[22] ; clk          ; clk         ; 1.000        ; -0.092     ; 2.152      ;
-; -1.239 ; fetch:f1|pc[1] ; fetch:f1|instruction[23] ; clk          ; clk         ; 1.000        ; -0.092     ; 2.145      ;
-; -1.236 ; fetch:f1|pc[2] ; fetch:f1|pc[3]           ; clk          ; clk         ; 1.000        ; -0.080     ; 2.154      ;
-; -1.214 ; fetch:f1|pc[0] ; fetch:f1|pc[3]           ; clk          ; clk         ; 1.000        ; -0.080     ; 2.132      ;
-; -1.189 ; fetch:f1|pc[1] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 1.000        ; -0.080     ; 2.107      ;
-; -1.170 ; fetch:f1|pc[1] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 1.000        ; -0.080     ; 2.088      ;
-; -1.149 ; fetch:f1|pc[1] ; fetch:f1|instruction[20] ; clk          ; clk         ; 1.000        ; -0.092     ; 2.055      ;
-; -1.141 ; fetch:f1|pc[3] ; fetch:f1|instruction[22] ; clk          ; clk         ; 1.000        ; -0.092     ; 2.047      ;
-; -1.139 ; fetch:f1|pc[0] ; fetch:f1|instruction[16] ; clk          ; clk         ; 1.000        ; -0.080     ; 2.057      ;
-; -1.131 ; fetch:f1|pc[1] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 1.000        ; -0.092     ; 2.037      ;
-; -1.124 ; fetch:f1|pc[1] ; fetch:f1|instruction[17] ; clk          ; clk         ; 1.000        ; -0.092     ; 2.030      ;
-; -1.122 ; fetch:f1|pc[0] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 1.000        ; -0.080     ; 2.040      ;
-; -1.121 ; fetch:f1|pc[0] ; fetch:f1|instruction[12] ; clk          ; clk         ; 1.000        ; -0.080     ; 2.039      ;
-; -1.113 ; fetch:f1|pc[0] ; fetch:f1|instruction[18] ; clk          ; clk         ; 1.000        ; -0.092     ; 2.019      ;
-; -1.092 ; fetch:f1|pc[0] ; fetch:f1|instruction[13] ; clk          ; clk         ; 1.000        ; -0.095     ; 1.995      ;
-; -1.092 ; fetch:f1|pc[0] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 1.000        ; -0.080     ; 2.010      ;
-; -1.084 ; fetch:f1|pc[0] ; fetch:f1|pc[1]           ; clk          ; clk         ; 1.000        ; -0.080     ; 2.002      ;
-; -1.082 ; fetch:f1|pc[2] ; fetch:f1|instruction[23] ; clk          ; clk         ; 1.000        ; -0.092     ; 1.988      ;
-; -1.075 ; fetch:f1|pc[0] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 1.000        ; -0.095     ; 1.978      ;
-; -1.072 ; fetch:f1|pc[1] ; fetch:f1|instruction[13] ; clk          ; clk         ; 1.000        ; -0.095     ; 1.975      ;
-; -1.066 ; fetch:f1|pc[3] ; fetch:f1|instruction[20] ; clk          ; clk         ; 1.000        ; -0.092     ; 1.972      ;
-; -0.997 ; fetch:f1|pc[1] ; fetch:f1|instruction[10] ; clk          ; clk         ; 1.000        ; -0.095     ; 1.900      ;
-; -0.960 ; fetch:f1|pc[3] ; fetch:f1|instruction[23] ; clk          ; clk         ; 1.000        ; -0.092     ; 1.866      ;
-; -0.951 ; fetch:f1|pc[1] ; fetch:f1|instruction[26] ; clk          ; clk         ; 1.000        ; -0.080     ; 1.869      ;
-; -0.925 ; fetch:f1|pc[3] ; fetch:f1|instruction[13] ; clk          ; clk         ; 1.000        ; -0.095     ; 1.828      ;
-; -0.922 ; fetch:f1|pc[2] ; fetch:f1|instruction[17] ; clk          ; clk         ; 1.000        ; -0.092     ; 1.828      ;
-; -0.914 ; fetch:f1|pc[1] ; fetch:f1|instruction[18] ; clk          ; clk         ; 1.000        ; -0.092     ; 1.820      ;
-; -0.913 ; fetch:f1|pc[1] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 1.000        ; -0.095     ; 1.816      ;
-; -0.908 ; fetch:f1|pc[1] ; fetch:f1|pc[1]           ; clk          ; clk         ; 1.000        ; -0.080     ; 1.826      ;
-; -0.895 ; fetch:f1|pc[3] ; fetch:f1|instruction[10] ; clk          ; clk         ; 1.000        ; -0.095     ; 1.798      ;
-; -0.888 ; fetch:f1|pc[2] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 1.000        ; -0.092     ; 1.794      ;
-; -0.876 ; fetch:f1|pc[2] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 1.000        ; -0.080     ; 1.794      ;
-; -0.875 ; fetch:f1|pc[2] ; fetch:f1|pc[2]           ; clk          ; clk         ; 1.000        ; -0.080     ; 1.793      ;
-; -0.854 ; fetch:f1|pc[0] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 1.000        ; -0.080     ; 1.772      ;
-; -0.831 ; fetch:f1|pc[3] ; fetch:f1|instruction[18] ; clk          ; clk         ; 1.000        ; -0.092     ; 1.737      ;
-; -0.805 ; fetch:f1|pc[1] ; fetch:f1|instruction[21] ; clk          ; clk         ; 1.000        ; -0.080     ; 1.723      ;
-; -0.804 ; fetch:f1|pc[2] ; fetch:f1|instruction[13] ; clk          ; clk         ; 1.000        ; -0.095     ; 1.707      ;
-; -0.804 ; fetch:f1|pc[2] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 1.000        ; -0.095     ; 1.707      ;
-; -0.792 ; fetch:f1|pc[3] ; fetch:f1|instruction[25] ; clk          ; clk         ; 1.000        ; -0.080     ; 1.710      ;
-; -0.791 ; fetch:f1|pc[2] ; fetch:f1|instruction[10] ; clk          ; clk         ; 1.000        ; -0.095     ; 1.694      ;
-; -0.791 ; fetch:f1|pc[3] ; fetch:f1|instruction[21] ; clk          ; clk         ; 1.000        ; -0.080     ; 1.709      ;
-; -0.788 ; fetch:f1|pc[1] ; fetch:f1|instruction[29] ; clk          ; clk         ; 1.000        ; -0.080     ; 1.706      ;
-; -0.788 ; fetch:f1|pc[1] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 1.000        ; -0.080     ; 1.706      ;
-; -0.786 ; fetch:f1|pc[1] ; fetch:f1|instruction[12] ; clk          ; clk         ; 1.000        ; -0.080     ; 1.704      ;
-; -0.785 ; fetch:f1|pc[0] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 1.000        ; -0.092     ; 1.691      ;
-; -0.782 ; fetch:f1|pc[1] ; fetch:f1|instruction[27] ; clk          ; clk         ; 1.000        ; -0.080     ; 1.700      ;
-; -0.782 ; fetch:f1|pc[0] ; fetch:f1|instruction[26] ; clk          ; clk         ; 1.000        ; -0.080     ; 1.700      ;
-; -0.774 ; fetch:f1|pc[3] ; fetch:f1|instruction[27] ; clk          ; clk         ; 1.000        ; -0.080     ; 1.692      ;
-; -0.770 ; fetch:f1|pc[0] ; fetch:f1|instruction[17] ; clk          ; clk         ; 1.000        ; -0.092     ; 1.676      ;
-; -0.767 ; fetch:f1|pc[0] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 1.000        ; -0.080     ; 1.685      ;
-; -0.754 ; fetch:f1|pc[1] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 1.000        ; -0.080     ; 1.672      ;
-; -0.744 ; fetch:f1|pc[1] ; fetch:f1|instruction[16] ; clk          ; clk         ; 1.000        ; -0.080     ; 1.662      ;
-; -0.722 ; fetch:f1|pc[0] ; fetch:f1|PC_out[1]       ; clk          ; clk         ; 1.000        ; -0.080     ; 1.640      ;
-; -0.714 ; fetch:f1|pc[3] ; fetch:f1|instruction[17] ; clk          ; clk         ; 1.000        ; -0.092     ; 1.620      ;
-; -0.712 ; fetch:f1|pc[3] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 1.000        ; -0.092     ; 1.618      ;
-; -0.684 ; fetch:f1|pc[3] ; fetch:f1|pc[3]           ; clk          ; clk         ; 1.000        ; -0.080     ; 1.602      ;
-; -0.668 ; fetch:f1|pc[3] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 1.000        ; -0.095     ; 1.571      ;
-; -0.654 ; fetch:f1|pc[3] ; fetch:f1|instruction[16] ; clk          ; clk         ; 1.000        ; -0.080     ; 1.572      ;
-; -0.650 ; fetch:f1|pc[2] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 1.000        ; -0.080     ; 1.568      ;
-; -0.650 ; fetch:f1|pc[3] ; fetch:f1|instruction[12] ; clk          ; clk         ; 1.000        ; -0.080     ; 1.568      ;
-; -0.648 ; fetch:f1|pc[2] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 1.000        ; -0.080     ; 1.566      ;
-; -0.648 ; fetch:f1|pc[0] ; fetch:f1|instruction[10] ; clk          ; clk         ; 1.000        ; -0.095     ; 1.551      ;
-; -0.647 ; fetch:f1|pc[3] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 1.000        ; -0.080     ; 1.565      ;
-; -0.647 ; fetch:f1|pc[2] ; fetch:f1|instruction[12] ; clk          ; clk         ; 1.000        ; -0.080     ; 1.565      ;
-; -0.643 ; fetch:f1|pc[2] ; fetch:f1|instruction[16] ; clk          ; clk         ; 1.000        ; -0.080     ; 1.561      ;
-; -0.621 ; fetch:f1|pc[0] ; fetch:f1|instruction[21] ; clk          ; clk         ; 1.000        ; -0.080     ; 1.539      ;
-; -0.614 ; fetch:f1|pc[0] ; fetch:f1|instruction[27] ; clk          ; clk         ; 1.000        ; -0.080     ; 1.532      ;
-; -0.611 ; fetch:f1|pc[3] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 1.000        ; -0.080     ; 1.529      ;
-; -0.600 ; fetch:f1|pc[2] ; fetch:f1|instruction[26] ; clk          ; clk         ; 1.000        ; -0.080     ; 1.518      ;
-; -0.591 ; fetch:f1|pc[0] ; fetch:f1|pc[0]           ; clk          ; clk         ; 1.000        ; -0.080     ; 1.509      ;
-; -0.589 ; fetch:f1|pc[0] ; fetch:f1|instruction[25] ; clk          ; clk         ; 1.000        ; -0.080     ; 1.507      ;
-; -0.561 ; fetch:f1|pc[2] ; fetch:f1|instruction[18] ; clk          ; clk         ; 1.000        ; -0.092     ; 1.467      ;
-; -0.546 ; fetch:f1|pc[1] ; fetch:f1|PC_out[1]       ; clk          ; clk         ; 1.000        ; -0.080     ; 1.464      ;
-; -0.458 ; fetch:f1|pc[2] ; fetch:f1|instruction[27] ; clk          ; clk         ; 1.000        ; -0.080     ; 1.376      ;
-; -0.455 ; fetch:f1|pc[2] ; fetch:f1|instruction[25] ; clk          ; clk         ; 1.000        ; -0.080     ; 1.373      ;
-; -0.454 ; fetch:f1|pc[2] ; fetch:f1|instruction[21] ; clk          ; clk         ; 1.000        ; -0.080     ; 1.372      ;
-; -0.426 ; fetch:f1|pc[0] ; fetch:f1|instruction[22] ; clk          ; clk         ; 1.000        ; -0.092     ; 1.332      ;
-; -0.415 ; fetch:f1|pc[0] ; fetch:f1|instruction[20] ; clk          ; clk         ; 1.000        ; -0.092     ; 1.321      ;
-; -0.413 ; fetch:f1|pc[0] ; fetch:f1|instruction[23] ; clk          ; clk         ; 1.000        ; -0.092     ; 1.319      ;
-; -0.361 ; fetch:f1|pc[2] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 1.000        ; -0.080     ; 1.279      ;
-; -0.360 ; fetch:f1|pc[1] ; fetch:f1|instruction[25] ; clk          ; clk         ; 1.000        ; -0.080     ; 1.278      ;
-; -0.324 ; fetch:f1|pc[3] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 1.000        ; -0.080     ; 1.242      ;
-; -0.320 ; fetch:f1|pc[3] ; fetch:f1|instruction[29] ; clk          ; clk         ; 1.000        ; -0.080     ; 1.238      ;
-; -0.236 ; fetch:f1|pc[0] ; fetch:f1|PC_out[0]       ; clk          ; clk         ; 1.000        ; -0.080     ; 1.154      ;
-; -0.208 ; fetch:f1|pc[0] ; fetch:f1|instruction[29] ; clk          ; clk         ; 1.000        ; -0.080     ; 1.126      ;
-; -0.101 ; fetch:f1|pc[3] ; fetch:f1|instruction[26] ; clk          ; clk         ; 1.000        ; -0.080     ; 1.019      ;
+; -1.647 ; fetch:f1|pc[1] ; fetch:f1|pc[2]           ; clk          ; clk         ; 1.000        ; -0.049     ; 2.616      ;
+; -1.475 ; fetch:f1|pc[1] ; fetch:f1|pc[3]           ; clk          ; clk         ; 1.000        ; -0.049     ; 2.444      ;
+; -1.246 ; fetch:f1|pc[1] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 1.000        ; -0.049     ; 2.215      ;
+; -1.226 ; fetch:f1|pc[0] ; fetch:f1|pc[2]           ; clk          ; clk         ; 1.000        ; -0.049     ; 2.195      ;
+; -1.166 ; fetch:f1|pc[0] ; fetch:f1|pc[3]           ; clk          ; clk         ; 1.000        ; -0.049     ; 2.135      ;
+; -1.034 ; fetch:f1|pc[0] ; fetch:f1|pc[1]           ; clk          ; clk         ; 1.000        ; -0.049     ; 2.003      ;
+; -1.027 ; fetch:f1|pc[2] ; fetch:f1|pc[3]           ; clk          ; clk         ; 1.000        ; -0.049     ; 1.996      ;
+; -1.003 ; fetch:f1|pc[0] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 1.000        ; -0.049     ; 1.972      ;
+; -0.976 ; fetch:f1|pc[1] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 1.000        ; -0.049     ; 1.945      ;
+; -0.972 ; fetch:f1|pc[2] ; fetch:f1|instruction[13] ; clk          ; clk         ; 1.000        ; -0.049     ; 1.941      ;
+; -0.962 ; fetch:f1|pc[1] ; fetch:f1|instruction[13] ; clk          ; clk         ; 1.000        ; -0.049     ; 1.931      ;
+; -0.944 ; fetch:f1|pc[2] ; fetch:f1|instruction[16] ; clk          ; clk         ; 1.000        ; -0.049     ; 1.913      ;
+; -0.938 ; fetch:f1|pc[1] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 1.000        ; 0.150      ; 2.106      ;
+; -0.934 ; fetch:f1|pc[0] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 1.000        ; -0.049     ; 1.903      ;
+; -0.928 ; fetch:f1|pc[0] ; fetch:f1|instruction[16] ; clk          ; clk         ; 1.000        ; -0.049     ; 1.897      ;
+; -0.919 ; fetch:f1|pc[1] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 1.000        ; 0.150      ; 2.087      ;
+; -0.879 ; fetch:f1|pc[2] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 1.000        ; -0.049     ; 1.848      ;
+; -0.868 ; fetch:f1|pc[2] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 1.000        ; -0.049     ; 1.837      ;
+; -0.860 ; fetch:f1|pc[1] ; fetch:f1|instruction[10] ; clk          ; clk         ; 1.000        ; 0.195      ; 2.073      ;
+; -0.857 ; fetch:f1|pc[1] ; fetch:f1|pc[1]           ; clk          ; clk         ; 1.000        ; -0.049     ; 1.826      ;
+; -0.834 ; fetch:f1|pc[2] ; fetch:f1|instruction[10] ; clk          ; clk         ; 1.000        ; 0.195      ; 2.047      ;
+; -0.827 ; fetch:f1|pc[1] ; fetch:f1|instruction[16] ; clk          ; clk         ; 1.000        ; -0.049     ; 1.796      ;
+; -0.818 ; fetch:f1|pc[1] ; fetch:f1|instruction[29] ; clk          ; clk         ; 1.000        ; -0.049     ; 1.787      ;
+; -0.817 ; fetch:f1|pc[1] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 1.000        ; -0.049     ; 1.786      ;
+; -0.773 ; fetch:f1|pc[2] ; fetch:f1|instruction[23] ; clk          ; clk         ; 1.000        ; 0.197      ; 1.988      ;
+; -0.768 ; fetch:f1|pc[2] ; fetch:f1|instruction[22] ; clk          ; clk         ; 1.000        ; 0.197      ; 1.983      ;
+; -0.767 ; fetch:f1|pc[0] ; fetch:f1|instruction[13] ; clk          ; clk         ; 1.000        ; -0.049     ; 1.736      ;
+; -0.764 ; fetch:f1|pc[2] ; fetch:f1|instruction[21] ; clk          ; clk         ; 1.000        ; 0.197      ; 1.979      ;
+; -0.764 ; fetch:f1|pc[0] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 1.000        ; -0.049     ; 1.733      ;
+; -0.760 ; fetch:f1|pc[2] ; fetch:f1|instruction[25] ; clk          ; clk         ; 1.000        ; 0.197      ; 1.975      ;
+; -0.760 ; fetch:f1|pc[1] ; fetch:f1|instruction[18] ; clk          ; clk         ; 1.000        ; 0.197      ; 1.975      ;
+; -0.759 ; fetch:f1|pc[1] ; fetch:f1|instruction[21] ; clk          ; clk         ; 1.000        ; 0.197      ; 1.974      ;
+; -0.754 ; fetch:f1|pc[1] ; fetch:f1|instruction[17] ; clk          ; clk         ; 1.000        ; 0.197      ; 1.969      ;
+; -0.736 ; fetch:f1|pc[2] ; fetch:f1|instruction[20] ; clk          ; clk         ; 1.000        ; 0.197      ; 1.951      ;
+; -0.712 ; fetch:f1|pc[0] ; fetch:f1|instruction[12] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.925      ;
+; -0.711 ; fetch:f1|pc[0] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 1.000        ; 0.195      ; 1.924      ;
+; -0.702 ; fetch:f1|pc[0] ; fetch:f1|pc[0]           ; clk          ; clk         ; 1.000        ; -0.049     ; 1.671      ;
+; -0.698 ; fetch:f1|pc[0] ; fetch:f1|instruction[27] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.911      ;
+; -0.691 ; fetch:f1|pc[2] ; fetch:f1|pc[2]           ; clk          ; clk         ; 1.000        ; -0.049     ; 1.660      ;
+; -0.668 ; fetch:f1|pc[0] ; fetch:f1|instruction[26] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.881      ;
+; -0.656 ; fetch:f1|pc[3] ; fetch:f1|pc[3]           ; clk          ; clk         ; 1.000        ; -0.049     ; 1.625      ;
+; -0.635 ; fetch:f1|pc[2] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 1.000        ; -0.049     ; 1.604      ;
+; -0.607 ; fetch:f1|pc[3] ; fetch:f1|instruction[16] ; clk          ; clk         ; 1.000        ; -0.049     ; 1.576      ;
+; -0.606 ; fetch:f1|pc[3] ; fetch:f1|instruction[13] ; clk          ; clk         ; 1.000        ; -0.049     ; 1.575      ;
+; -0.604 ; fetch:f1|pc[0] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 1.000        ; 0.150      ; 1.772      ;
+; -0.590 ; fetch:f1|pc[0] ; fetch:f1|instruction[17] ; clk          ; clk         ; 1.000        ; 0.197      ; 1.805      ;
+; -0.590 ; fetch:f1|pc[0] ; fetch:f1|instruction[21] ; clk          ; clk         ; 1.000        ; 0.197      ; 1.805      ;
+; -0.571 ; fetch:f1|pc[3] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 1.000        ; -0.049     ; 1.540      ;
+; -0.565 ; fetch:f1|pc[0] ; fetch:f1|instruction[25] ; clk          ; clk         ; 1.000        ; 0.197      ; 1.780      ;
+; -0.561 ; fetch:f1|pc[0] ; fetch:f1|instruction[18] ; clk          ; clk         ; 1.000        ; 0.197      ; 1.776      ;
+; -0.555 ; fetch:f1|pc[1] ; fetch:f1|instruction[26] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.768      ;
+; -0.547 ; fetch:f1|pc[1] ; fetch:f1|instruction[23] ; clk          ; clk         ; 1.000        ; 0.197      ; 1.762      ;
+; -0.539 ; fetch:f1|pc[1] ; fetch:f1|instruction[22] ; clk          ; clk         ; 1.000        ; 0.197      ; 1.754      ;
+; -0.536 ; fetch:f1|pc[3] ; fetch:f1|instruction[29] ; clk          ; clk         ; 1.000        ; -0.049     ; 1.505      ;
+; -0.536 ; fetch:f1|pc[1] ; fetch:f1|instruction[20] ; clk          ; clk         ; 1.000        ; 0.197      ; 1.751      ;
+; -0.522 ; fetch:f1|pc[2] ; fetch:f1|instruction[27] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.735      ;
+; -0.517 ; fetch:f1|pc[0] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 1.000        ; 0.150      ; 1.685      ;
+; -0.506 ; fetch:f1|pc[3] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 1.000        ; 0.195      ; 1.719      ;
+; -0.505 ; fetch:f1|pc[3] ; fetch:f1|instruction[12] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.718      ;
+; -0.472 ; fetch:f1|pc[0] ; fetch:f1|PC_out[1]       ; clk          ; clk         ; 1.000        ; 0.150      ; 1.640      ;
+; -0.465 ; fetch:f1|pc[2] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 1.000        ; 0.150      ; 1.633      ;
+; -0.447 ; fetch:f1|pc[3] ; fetch:f1|instruction[10] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.660      ;
+; -0.432 ; fetch:f1|pc[2] ; fetch:f1|instruction[17] ; clk          ; clk         ; 1.000        ; 0.197      ; 1.647      ;
+; -0.426 ; fetch:f1|pc[1] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 1.000        ; 0.195      ; 1.639      ;
+; -0.426 ; fetch:f1|pc[1] ; fetch:f1|instruction[12] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.639      ;
+; -0.425 ; fetch:f1|pc[3] ; fetch:f1|instruction[23] ; clk          ; clk         ; 1.000        ; 0.197      ; 1.640      ;
+; -0.422 ; fetch:f1|pc[3] ; fetch:f1|instruction[18] ; clk          ; clk         ; 1.000        ; 0.197      ; 1.637      ;
+; -0.421 ; fetch:f1|pc[3] ; fetch:f1|instruction[21] ; clk          ; clk         ; 1.000        ; 0.197      ; 1.636      ;
+; -0.420 ; fetch:f1|pc[3] ; fetch:f1|instruction[22] ; clk          ; clk         ; 1.000        ; 0.197      ; 1.635      ;
+; -0.419 ; fetch:f1|pc[3] ; fetch:f1|instruction[25] ; clk          ; clk         ; 1.000        ; 0.197      ; 1.634      ;
+; -0.418 ; fetch:f1|pc[3] ; fetch:f1|instruction[20] ; clk          ; clk         ; 1.000        ; 0.197      ; 1.633      ;
+; -0.387 ; fetch:f1|pc[1] ; fetch:f1|instruction[27] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.600      ;
+; -0.382 ; fetch:f1|pc[2] ; fetch:f1|instruction[12] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.595      ;
+; -0.380 ; fetch:f1|pc[2] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 1.000        ; 0.195      ; 1.593      ;
+; -0.358 ; fetch:f1|pc[2] ; fetch:f1|instruction[26] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.571      ;
+; -0.338 ; fetch:f1|pc[0] ; fetch:f1|instruction[20] ; clk          ; clk         ; 1.000        ; 0.197      ; 1.553      ;
+; -0.337 ; fetch:f1|pc[0] ; fetch:f1|instruction[23] ; clk          ; clk         ; 1.000        ; 0.197      ; 1.552      ;
+; -0.334 ; fetch:f1|pc[0] ; fetch:f1|instruction[22] ; clk          ; clk         ; 1.000        ; 0.197      ; 1.549      ;
+; -0.321 ; fetch:f1|pc[2] ; fetch:f1|instruction[18] ; clk          ; clk         ; 1.000        ; 0.197      ; 1.536      ;
+; -0.318 ; fetch:f1|pc[3] ; fetch:f1|instruction[17] ; clk          ; clk         ; 1.000        ; 0.197      ; 1.533      ;
+; -0.295 ; fetch:f1|pc[1] ; fetch:f1|PC_out[1]       ; clk          ; clk         ; 1.000        ; 0.150      ; 1.463      ;
+; -0.222 ; fetch:f1|pc[1] ; fetch:f1|instruction[25] ; clk          ; clk         ; 1.000        ; 0.197      ; 1.437      ;
+; -0.212 ; fetch:f1|pc[3] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 1.000        ; -0.049     ; 1.181      ;
+; -0.170 ; fetch:f1|pc[3] ; fetch:f1|instruction[27] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.383      ;
+; -0.120 ; fetch:f1|pc[3] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 1.000        ; -0.049     ; 1.089      ;
+; -0.116 ; fetch:f1|pc[0] ; fetch:f1|instruction[29] ; clk          ; clk         ; 1.000        ; -0.049     ; 1.085      ;
+; -0.094 ; fetch:f1|pc[3] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 1.000        ; 0.150      ; 1.262      ;
+; -0.092 ; fetch:f1|pc[3] ; fetch:f1|instruction[26] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.305      ;
+; 0.003  ; fetch:f1|pc[0] ; fetch:f1|instruction[10] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.210      ;
+; 0.014  ; fetch:f1|pc[0] ; fetch:f1|PC_out[0]       ; clk          ; clk         ; 1.000        ; 0.150      ; 1.154      ;
+; 0.025  ; fetch:f1|pc[2] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 1.000        ; 0.150      ; 1.143      ;
 +--------+----------------+--------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -276,97 +276,97 @@ No paths to report.
 +-------+----------------+--------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node      ; To Node                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+----------------+--------------------------+--------------+-------------+--------------+------------+------------+
-; 0.640 ; fetch:f1|pc[3] ; fetch:f1|instruction[26] ; clk          ; clk         ; 0.000        ; 0.081      ; 0.907      ;
-; 0.686 ; fetch:f1|pc[0] ; fetch:f1|PC_out[0]       ; clk          ; clk         ; 0.000        ; 0.080      ; 0.952      ;
-; 0.729 ; fetch:f1|pc[0] ; fetch:f1|instruction[29] ; clk          ; clk         ; 0.000        ; 0.080      ; 0.995      ;
-; 0.827 ; fetch:f1|pc[3] ; fetch:f1|instruction[29] ; clk          ; clk         ; 0.000        ; 0.080      ; 1.093      ;
-; 0.830 ; fetch:f1|pc[3] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 0.000        ; 0.080      ; 1.096      ;
-; 0.833 ; fetch:f1|pc[2] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 0.000        ; 0.080      ; 1.099      ;
-; 0.883 ; fetch:f1|pc[1] ; fetch:f1|instruction[25] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.150      ;
-; 0.962 ; fetch:f1|pc[0] ; fetch:f1|instruction[22] ; clk          ; clk         ; 0.000        ; 0.067      ; 1.215      ;
-; 0.967 ; fetch:f1|pc[0] ; fetch:f1|instruction[23] ; clk          ; clk         ; 0.000        ; 0.067      ; 1.220      ;
-; 0.969 ; fetch:f1|pc[0] ; fetch:f1|instruction[20] ; clk          ; clk         ; 0.000        ; 0.067      ; 1.222      ;
-; 0.970 ; fetch:f1|pc[2] ; fetch:f1|instruction[21] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.237      ;
-; 0.972 ; fetch:f1|pc[2] ; fetch:f1|instruction[25] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.239      ;
-; 0.974 ; fetch:f1|pc[2] ; fetch:f1|instruction[27] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.241      ;
-; 0.994 ; fetch:f1|pc[0] ; fetch:f1|PC_out[1]       ; clk          ; clk         ; 0.000        ; 0.080      ; 1.260      ;
-; 0.999 ; fetch:f1|pc[0] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 0.000        ; 0.080      ; 1.265      ;
-; 1.022 ; fetch:f1|pc[1] ; fetch:f1|PC_out[1]       ; clk          ; clk         ; 0.000        ; 0.080      ; 1.288      ;
-; 1.027 ; fetch:f1|pc[0] ; fetch:f1|pc[0]           ; clk          ; clk         ; 0.000        ; 0.080      ; 1.293      ;
-; 1.072 ; fetch:f1|pc[3] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 0.000        ; 0.080      ; 1.338      ;
-; 1.078 ; fetch:f1|pc[2] ; fetch:f1|instruction[18] ; clk          ; clk         ; 0.000        ; 0.067      ; 1.331      ;
-; 1.094 ; fetch:f1|pc[3] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 0.000        ; 0.080      ; 1.360      ;
-; 1.095 ; fetch:f1|pc[3] ; fetch:f1|instruction[12] ; clk          ; clk         ; 0.000        ; 0.080      ; 1.361      ;
-; 1.111 ; fetch:f1|pc[2] ; fetch:f1|instruction[26] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.378      ;
-; 1.111 ; fetch:f1|pc[0] ; fetch:f1|instruction[27] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.378      ;
-; 1.112 ; fetch:f1|pc[0] ; fetch:f1|instruction[21] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.379      ;
-; 1.112 ; fetch:f1|pc[0] ; fetch:f1|instruction[25] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.379      ;
-; 1.120 ; fetch:f1|pc[0] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 0.000        ; 0.080      ; 1.386      ;
-; 1.124 ; fetch:f1|pc[3] ; fetch:f1|instruction[16] ; clk          ; clk         ; 0.000        ; 0.080      ; 1.390      ;
-; 1.142 ; fetch:f1|pc[2] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 0.000        ; 0.080      ; 1.408      ;
-; 1.169 ; fetch:f1|pc[3] ; fetch:f1|pc[3]           ; clk          ; clk         ; 0.000        ; 0.080      ; 1.435      ;
-; 1.175 ; fetch:f1|pc[0] ; fetch:f1|instruction[10] ; clk          ; clk         ; 0.000        ; 0.065      ; 1.426      ;
-; 1.179 ; fetch:f1|pc[2] ; fetch:f1|instruction[16] ; clk          ; clk         ; 0.000        ; 0.080      ; 1.445      ;
-; 1.182 ; fetch:f1|pc[2] ; fetch:f1|instruction[12] ; clk          ; clk         ; 0.000        ; 0.080      ; 1.448      ;
-; 1.183 ; fetch:f1|pc[2] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 0.000        ; 0.080      ; 1.449      ;
-; 1.185 ; fetch:f1|pc[2] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 0.000        ; 0.080      ; 1.451      ;
-; 1.220 ; fetch:f1|pc[3] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 0.000        ; 0.065      ; 1.471      ;
-; 1.225 ; fetch:f1|pc[3] ; fetch:f1|instruction[21] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.492      ;
-; 1.226 ; fetch:f1|pc[3] ; fetch:f1|instruction[27] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.493      ;
-; 1.234 ; fetch:f1|pc[1] ; fetch:f1|instruction[21] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.501      ;
-; 1.248 ; fetch:f1|pc[1] ; fetch:f1|instruction[16] ; clk          ; clk         ; 0.000        ; 0.080      ; 1.514      ;
-; 1.253 ; fetch:f1|pc[1] ; fetch:f1|instruction[12] ; clk          ; clk         ; 0.000        ; 0.080      ; 1.519      ;
-; 1.257 ; fetch:f1|pc[1] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 0.000        ; 0.080      ; 1.523      ;
-; 1.257 ; fetch:f1|pc[0] ; fetch:f1|instruction[26] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.524      ;
-; 1.259 ; fetch:f1|pc[3] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 0.000        ; 0.067      ; 1.512      ;
-; 1.264 ; fetch:f1|pc[1] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 0.000        ; 0.080      ; 1.530      ;
-; 1.267 ; fetch:f1|pc[1] ; fetch:f1|instruction[29] ; clk          ; clk         ; 0.000        ; 0.080      ; 1.533      ;
-; 1.269 ; fetch:f1|pc[1] ; fetch:f1|instruction[27] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.536      ;
-; 1.270 ; fetch:f1|pc[3] ; fetch:f1|instruction[17] ; clk          ; clk         ; 0.000        ; 0.067      ; 1.523      ;
-; 1.292 ; fetch:f1|pc[3] ; fetch:f1|instruction[25] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.559      ;
-; 1.301 ; fetch:f1|pc[0] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 0.000        ; 0.067      ; 1.554      ;
-; 1.304 ; fetch:f1|pc[2] ; fetch:f1|pc[2]           ; clk          ; clk         ; 0.000        ; 0.080      ; 1.570      ;
-; 1.316 ; fetch:f1|pc[0] ; fetch:f1|instruction[17] ; clk          ; clk         ; 0.000        ; 0.067      ; 1.569      ;
-; 1.320 ; fetch:f1|pc[2] ; fetch:f1|instruction[13] ; clk          ; clk         ; 0.000        ; 0.065      ; 1.571      ;
-; 1.321 ; fetch:f1|pc[1] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 0.000        ; 0.080      ; 1.587      ;
-; 1.321 ; fetch:f1|pc[2] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 0.000        ; 0.065      ; 1.572      ;
-; 1.335 ; fetch:f1|pc[0] ; fetch:f1|pc[1]           ; clk          ; clk         ; 0.000        ; 0.080      ; 1.601      ;
-; 1.337 ; fetch:f1|pc[2] ; fetch:f1|instruction[10] ; clk          ; clk         ; 0.000        ; 0.065      ; 1.588      ;
-; 1.346 ; fetch:f1|pc[3] ; fetch:f1|instruction[18] ; clk          ; clk         ; 0.000        ; 0.067      ; 1.599      ;
-; 1.365 ; fetch:f1|pc[1] ; fetch:f1|pc[1]           ; clk          ; clk         ; 0.000        ; 0.080      ; 1.631      ;
-; 1.385 ; fetch:f1|pc[1] ; fetch:f1|instruction[26] ; clk          ; clk         ; 0.000        ; 0.081      ; 1.652      ;
-; 1.411 ; fetch:f1|pc[2] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 0.000        ; 0.067      ; 1.664      ;
-; 1.414 ; fetch:f1|pc[2] ; fetch:f1|instruction[17] ; clk          ; clk         ; 0.000        ; 0.067      ; 1.667      ;
-; 1.435 ; fetch:f1|pc[3] ; fetch:f1|instruction[13] ; clk          ; clk         ; 0.000        ; 0.065      ; 1.686      ;
-; 1.437 ; fetch:f1|pc[1] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 0.000        ; 0.065      ; 1.688      ;
-; 1.437 ; fetch:f1|pc[1] ; fetch:f1|instruction[18] ; clk          ; clk         ; 0.000        ; 0.067      ; 1.690      ;
-; 1.438 ; fetch:f1|pc[3] ; fetch:f1|instruction[10] ; clk          ; clk         ; 0.000        ; 0.065      ; 1.689      ;
-; 1.442 ; fetch:f1|pc[1] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 0.000        ; 0.080      ; 1.708      ;
-; 1.459 ; fetch:f1|pc[0] ; fetch:f1|pc[3]           ; clk          ; clk         ; 0.000        ; 0.080      ; 1.725      ;
-; 1.470 ; fetch:f1|pc[0] ; fetch:f1|pc[2]           ; clk          ; clk         ; 0.000        ; 0.080      ; 1.736      ;
-; 1.481 ; fetch:f1|pc[2] ; fetch:f1|pc[3]           ; clk          ; clk         ; 0.000        ; 0.080      ; 1.747      ;
-; 1.503 ; fetch:f1|pc[3] ; fetch:f1|instruction[23] ; clk          ; clk         ; 0.000        ; 0.067      ; 1.756      ;
-; 1.503 ; fetch:f1|pc[0] ; fetch:f1|instruction[13] ; clk          ; clk         ; 0.000        ; 0.065      ; 1.754      ;
-; 1.505 ; fetch:f1|pc[0] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 0.000        ; 0.065      ; 1.756      ;
-; 1.537 ; fetch:f1|pc[1] ; fetch:f1|instruction[10] ; clk          ; clk         ; 0.000        ; 0.065      ; 1.788      ;
-; 1.542 ; fetch:f1|pc[0] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 0.000        ; 0.080      ; 1.808      ;
-; 1.542 ; fetch:f1|pc[0] ; fetch:f1|instruction[12] ; clk          ; clk         ; 0.000        ; 0.080      ; 1.808      ;
-; 1.542 ; fetch:f1|pc[1] ; fetch:f1|instruction[17] ; clk          ; clk         ; 0.000        ; 0.067      ; 1.795      ;
-; 1.553 ; fetch:f1|pc[0] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 0.000        ; 0.080      ; 1.819      ;
-; 1.554 ; fetch:f1|pc[2] ; fetch:f1|instruction[23] ; clk          ; clk         ; 0.000        ; 0.067      ; 1.807      ;
-; 1.586 ; fetch:f1|pc[3] ; fetch:f1|instruction[20] ; clk          ; clk         ; 0.000        ; 0.067      ; 1.839      ;
-; 1.586 ; fetch:f1|pc[1] ; fetch:f1|instruction[13] ; clk          ; clk         ; 0.000        ; 0.065      ; 1.837      ;
-; 1.594 ; fetch:f1|pc[0] ; fetch:f1|instruction[16] ; clk          ; clk         ; 0.000        ; 0.080      ; 1.860      ;
-; 1.612 ; fetch:f1|pc[0] ; fetch:f1|instruction[18] ; clk          ; clk         ; 0.000        ; 0.067      ; 1.865      ;
-; 1.630 ; fetch:f1|pc[1] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 0.000        ; 0.067      ; 1.883      ;
-; 1.645 ; fetch:f1|pc[3] ; fetch:f1|instruction[22] ; clk          ; clk         ; 0.000        ; 0.067      ; 1.898      ;
-; 1.677 ; fetch:f1|pc[1] ; fetch:f1|instruction[20] ; clk          ; clk         ; 0.000        ; 0.067      ; 1.930      ;
-; 1.716 ; fetch:f1|pc[2] ; fetch:f1|instruction[22] ; clk          ; clk         ; 0.000        ; 0.067      ; 1.969      ;
-; 1.762 ; fetch:f1|pc[1] ; fetch:f1|instruction[23] ; clk          ; clk         ; 0.000        ; 0.067      ; 2.015      ;
-; 1.781 ; fetch:f1|pc[1] ; fetch:f1|pc[3]           ; clk          ; clk         ; 0.000        ; 0.080      ; 2.047      ;
-; 1.792 ; fetch:f1|pc[1] ; fetch:f1|pc[2]           ; clk          ; clk         ; 0.000        ; 0.080      ; 2.058      ;
-; 1.840 ; fetch:f1|pc[2] ; fetch:f1|instruction[20] ; clk          ; clk         ; 0.000        ; 0.067      ; 2.093      ;
-; 1.871 ; fetch:f1|pc[1] ; fetch:f1|instruction[22] ; clk          ; clk         ; 0.000        ; 0.067      ; 2.124      ;
+; 0.483 ; fetch:f1|pc[2] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 0.000        ; 0.276      ; 0.945      ;
+; 0.490 ; fetch:f1|pc[0] ; fetch:f1|PC_out[0]       ; clk          ; clk         ; 0.000        ; 0.276      ; 0.952      ;
+; 0.573 ; fetch:f1|pc[0] ; fetch:f1|instruction[10] ; clk          ; clk         ; 0.000        ; 0.323      ; 1.082      ;
+; 0.654 ; fetch:f1|pc[3] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 0.000        ; 0.276      ; 1.116      ;
+; 0.678 ; fetch:f1|pc[3] ; fetch:f1|instruction[26] ; clk          ; clk         ; 0.000        ; 0.323      ; 1.187      ;
+; 0.727 ; fetch:f1|pc[0] ; fetch:f1|instruction[29] ; clk          ; clk         ; 0.000        ; 0.049      ; 0.962      ;
+; 0.738 ; fetch:f1|pc[3] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 0.000        ; 0.049      ; 0.973      ;
+; 0.745 ; fetch:f1|pc[3] ; fetch:f1|instruction[27] ; clk          ; clk         ; 0.000        ; 0.323      ; 1.254      ;
+; 0.759 ; fetch:f1|pc[1] ; fetch:f1|instruction[25] ; clk          ; clk         ; 0.000        ; 0.355      ; 1.300      ;
+; 0.767 ; fetch:f1|pc[3] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 0.000        ; 0.049      ; 1.002      ;
+; 0.792 ; fetch:f1|pc[2] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 0.000        ; 0.276      ; 1.254      ;
+; 0.798 ; fetch:f1|pc[0] ; fetch:f1|PC_out[1]       ; clk          ; clk         ; 0.000        ; 0.276      ; 1.260      ;
+; 0.803 ; fetch:f1|pc[0] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 0.000        ; 0.276      ; 1.265      ;
+; 0.825 ; fetch:f1|pc[1] ; fetch:f1|PC_out[1]       ; clk          ; clk         ; 0.000        ; 0.276      ; 1.287      ;
+; 0.886 ; fetch:f1|pc[2] ; fetch:f1|instruction[18] ; clk          ; clk         ; 0.000        ; 0.355      ; 1.427      ;
+; 0.888 ; fetch:f1|pc[0] ; fetch:f1|instruction[23] ; clk          ; clk         ; 0.000        ; 0.355      ; 1.429      ;
+; 0.889 ; fetch:f1|pc[0] ; fetch:f1|instruction[20] ; clk          ; clk         ; 0.000        ; 0.355      ; 1.430      ;
+; 0.889 ; fetch:f1|pc[3] ; fetch:f1|instruction[17] ; clk          ; clk         ; 0.000        ; 0.355      ; 1.430      ;
+; 0.895 ; fetch:f1|pc[0] ; fetch:f1|instruction[22] ; clk          ; clk         ; 0.000        ; 0.355      ; 1.436      ;
+; 0.914 ; fetch:f1|pc[2] ; fetch:f1|instruction[26] ; clk          ; clk         ; 0.000        ; 0.323      ; 1.423      ;
+; 0.923 ; fetch:f1|pc[2] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 0.000        ; 0.323      ; 1.432      ;
+; 0.924 ; fetch:f1|pc[2] ; fetch:f1|instruction[12] ; clk          ; clk         ; 0.000        ; 0.323      ; 1.433      ;
+; 0.924 ; fetch:f1|pc[0] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 0.000        ; 0.276      ; 1.386      ;
+; 0.925 ; fetch:f1|pc[1] ; fetch:f1|instruction[27] ; clk          ; clk         ; 0.000        ; 0.323      ; 1.434      ;
+; 0.953 ; fetch:f1|pc[3] ; fetch:f1|instruction[20] ; clk          ; clk         ; 0.000        ; 0.355      ; 1.494      ;
+; 0.955 ; fetch:f1|pc[1] ; fetch:f1|instruction[12] ; clk          ; clk         ; 0.000        ; 0.323      ; 1.464      ;
+; 0.956 ; fetch:f1|pc[3] ; fetch:f1|instruction[25] ; clk          ; clk         ; 0.000        ; 0.355      ; 1.497      ;
+; 0.956 ; fetch:f1|pc[1] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 0.000        ; 0.323      ; 1.465      ;
+; 0.958 ; fetch:f1|pc[3] ; fetch:f1|instruction[21] ; clk          ; clk         ; 0.000        ; 0.355      ; 1.499      ;
+; 0.958 ; fetch:f1|pc[3] ; fetch:f1|instruction[22] ; clk          ; clk         ; 0.000        ; 0.355      ; 1.499      ;
+; 0.959 ; fetch:f1|pc[3] ; fetch:f1|instruction[18] ; clk          ; clk         ; 0.000        ; 0.355      ; 1.500      ;
+; 0.961 ; fetch:f1|pc[3] ; fetch:f1|instruction[23] ; clk          ; clk         ; 0.000        ; 0.355      ; 1.502      ;
+; 0.971 ; fetch:f1|pc[2] ; fetch:f1|instruction[17] ; clk          ; clk         ; 0.000        ; 0.355      ; 1.512      ;
+; 1.022 ; fetch:f1|pc[3] ; fetch:f1|instruction[12] ; clk          ; clk         ; 0.000        ; 0.323      ; 1.531      ;
+; 1.026 ; fetch:f1|pc[3] ; fetch:f1|instruction[10] ; clk          ; clk         ; 0.000        ; 0.323      ; 1.535      ;
+; 1.026 ; fetch:f1|pc[2] ; fetch:f1|instruction[27] ; clk          ; clk         ; 0.000        ; 0.323      ; 1.535      ;
+; 1.036 ; fetch:f1|pc[3] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 0.000        ; 0.323      ; 1.545      ;
+; 1.070 ; fetch:f1|pc[1] ; fetch:f1|instruction[26] ; clk          ; clk         ; 0.000        ; 0.323      ; 1.579      ;
+; 1.080 ; fetch:f1|pc[1] ; fetch:f1|instruction[20] ; clk          ; clk         ; 0.000        ; 0.355      ; 1.621      ;
+; 1.088 ; fetch:f1|pc[1] ; fetch:f1|instruction[22] ; clk          ; clk         ; 0.000        ; 0.355      ; 1.629      ;
+; 1.090 ; fetch:f1|pc[1] ; fetch:f1|instruction[23] ; clk          ; clk         ; 0.000        ; 0.355      ; 1.631      ;
+; 1.110 ; fetch:f1|pc[0] ; fetch:f1|instruction[21] ; clk          ; clk         ; 0.000        ; 0.355      ; 1.651      ;
+; 1.110 ; fetch:f1|pc[0] ; fetch:f1|instruction[18] ; clk          ; clk         ; 0.000        ; 0.355      ; 1.651      ;
+; 1.115 ; fetch:f1|pc[0] ; fetch:f1|instruction[25] ; clk          ; clk         ; 0.000        ; 0.355      ; 1.656      ;
+; 1.124 ; fetch:f1|pc[1] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 0.000        ; 0.276      ; 1.586      ;
+; 1.126 ; fetch:f1|pc[0] ; fetch:f1|instruction[17] ; clk          ; clk         ; 0.000        ; 0.355      ; 1.667      ;
+; 1.130 ; fetch:f1|pc[3] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 0.000        ; 0.049      ; 1.365      ;
+; 1.131 ; fetch:f1|pc[3] ; fetch:f1|instruction[29] ; clk          ; clk         ; 0.000        ; 0.049      ; 1.366      ;
+; 1.174 ; fetch:f1|pc[3] ; fetch:f1|instruction[16] ; clk          ; clk         ; 0.000        ; 0.049      ; 1.409      ;
+; 1.182 ; fetch:f1|pc[3] ; fetch:f1|instruction[13] ; clk          ; clk         ; 0.000        ; 0.049      ; 1.417      ;
+; 1.183 ; fetch:f1|pc[2] ; fetch:f1|pc[2]           ; clk          ; clk         ; 0.000        ; 0.049      ; 1.418      ;
+; 1.186 ; fetch:f1|pc[0] ; fetch:f1|instruction[26] ; clk          ; clk         ; 0.000        ; 0.323      ; 1.695      ;
+; 1.201 ; fetch:f1|pc[2] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 0.000        ; 0.049      ; 1.436      ;
+; 1.206 ; fetch:f1|pc[0] ; fetch:f1|instruction[27] ; clk          ; clk         ; 0.000        ; 0.323      ; 1.715      ;
+; 1.213 ; fetch:f1|pc[0] ; fetch:f1|pc[0]           ; clk          ; clk         ; 0.000        ; 0.049      ; 1.448      ;
+; 1.222 ; fetch:f1|pc[1] ; fetch:f1|instruction[21] ; clk          ; clk         ; 0.000        ; 0.355      ; 1.763      ;
+; 1.223 ; fetch:f1|pc[3] ; fetch:f1|pc[3]           ; clk          ; clk         ; 0.000        ; 0.049      ; 1.458      ;
+; 1.237 ; fetch:f1|pc[2] ; fetch:f1|instruction[21] ; clk          ; clk         ; 0.000        ; 0.355      ; 1.778      ;
+; 1.237 ; fetch:f1|pc[2] ; fetch:f1|instruction[22] ; clk          ; clk         ; 0.000        ; 0.355      ; 1.778      ;
+; 1.241 ; fetch:f1|pc[0] ; fetch:f1|instruction[12] ; clk          ; clk         ; 0.000        ; 0.323      ; 1.750      ;
+; 1.245 ; fetch:f1|pc[1] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 0.000        ; 0.276      ; 1.707      ;
+; 1.245 ; fetch:f1|pc[1] ; fetch:f1|instruction[17] ; clk          ; clk         ; 0.000        ; 0.355      ; 1.786      ;
+; 1.274 ; fetch:f1|pc[2] ; fetch:f1|instruction[23] ; clk          ; clk         ; 0.000        ; 0.355      ; 1.815      ;
+; 1.287 ; fetch:f1|pc[1] ; fetch:f1|instruction[18] ; clk          ; clk         ; 0.000        ; 0.355      ; 1.828      ;
+; 1.291 ; fetch:f1|pc[0] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 0.000        ; 0.323      ; 1.800      ;
+; 1.298 ; fetch:f1|pc[2] ; fetch:f1|instruction[20] ; clk          ; clk         ; 0.000        ; 0.355      ; 1.839      ;
+; 1.300 ; fetch:f1|pc[2] ; fetch:f1|instruction[25] ; clk          ; clk         ; 0.000        ; 0.355      ; 1.841      ;
+; 1.314 ; fetch:f1|pc[2] ; fetch:f1|instruction[10] ; clk          ; clk         ; 0.000        ; 0.323      ; 1.823      ;
+; 1.335 ; fetch:f1|pc[0] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 0.000        ; 0.049      ; 1.570      ;
+; 1.339 ; fetch:f1|pc[0] ; fetch:f1|instruction[13] ; clk          ; clk         ; 0.000        ; 0.049      ; 1.574      ;
+; 1.357 ; fetch:f1|pc[1] ; fetch:f1|instruction[10] ; clk          ; clk         ; 0.000        ; 0.323      ; 1.866      ;
+; 1.361 ; fetch:f1|pc[2] ; fetch:f1|pc[3]           ; clk          ; clk         ; 0.000        ; 0.049      ; 1.596      ;
+; 1.367 ; fetch:f1|pc[0] ; fetch:f1|pc[1]           ; clk          ; clk         ; 0.000        ; 0.049      ; 1.602      ;
+; 1.396 ; fetch:f1|pc[1] ; fetch:f1|pc[1]           ; clk          ; clk         ; 0.000        ; 0.049      ; 1.631      ;
+; 1.398 ; fetch:f1|pc[1] ; fetch:f1|instruction[16] ; clk          ; clk         ; 0.000        ; 0.049      ; 1.633      ;
+; 1.406 ; fetch:f1|pc[1] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 0.000        ; 0.049      ; 1.641      ;
+; 1.407 ; fetch:f1|pc[1] ; fetch:f1|instruction[29] ; clk          ; clk         ; 0.000        ; 0.049      ; 1.642      ;
+; 1.452 ; fetch:f1|pc[2] ; fetch:f1|instruction[13] ; clk          ; clk         ; 0.000        ; 0.049      ; 1.687      ;
+; 1.472 ; fetch:f1|pc[2] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 0.000        ; 0.049      ; 1.707      ;
+; 1.493 ; fetch:f1|pc[0] ; fetch:f1|pc[3]           ; clk          ; clk         ; 0.000        ; 0.049      ; 1.728      ;
+; 1.495 ; fetch:f1|pc[1] ; fetch:f1|instruction[13] ; clk          ; clk         ; 0.000        ; 0.049      ; 1.730      ;
+; 1.503 ; fetch:f1|pc[0] ; fetch:f1|pc[2]           ; clk          ; clk         ; 0.000        ; 0.049      ; 1.738      ;
+; 1.509 ; fetch:f1|pc[2] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 0.000        ; 0.049      ; 1.744      ;
+; 1.511 ; fetch:f1|pc[2] ; fetch:f1|instruction[16] ; clk          ; clk         ; 0.000        ; 0.049      ; 1.746      ;
+; 1.544 ; fetch:f1|pc[1] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 0.000        ; 0.049      ; 1.779      ;
+; 1.547 ; fetch:f1|pc[0] ; fetch:f1|instruction[16] ; clk          ; clk         ; 0.000        ; 0.049      ; 1.782      ;
+; 1.551 ; fetch:f1|pc[0] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 0.000        ; 0.049      ; 1.786      ;
+; 1.644 ; fetch:f1|pc[0] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 0.000        ; 0.049      ; 1.879      ;
+; 1.814 ; fetch:f1|pc[1] ; fetch:f1|pc[3]           ; clk          ; clk         ; 0.000        ; 0.049      ; 2.049      ;
+; 1.824 ; fetch:f1|pc[1] ; fetch:f1|pc[2]           ; clk          ; clk         ; 0.000        ; 0.049      ; 2.059      ;
+; 1.853 ; fetch:f1|pc[1] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 0.000        ; 0.049      ; 2.088      ;
 +-------+----------------+--------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -381,7 +381,7 @@ No synchronizer chains to report.
 +------------+-----------------+------------+---------------------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
 +------------+-----------------+------------+---------------------------------------------------------------+
-; 414.25 MHz ; 250.0 MHz       ; clk        ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 422.65 MHz ; 250.0 MHz       ; clk        ; limit due to minimum period restriction (max I/O toggle rate) ;
 +------------+-----------------+------------+---------------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -391,7 +391,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+--------+-------------------+
 ; Clock ; Slack  ; End Point TNS     ;
 +-------+--------+-------------------+
-; clk   ; -1.414 ; -21.935           ;
+; clk   ; -1.366 ; -17.098           ;
 +-------+--------+-------------------+
 
 
@@ -400,7 +400,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+-------+-------------------+
 ; Clock ; Slack ; End Point TNS     ;
 +-------+-------+-------------------+
-; clk   ; 0.590 ; 0.000             ;
+; clk   ; 0.437 ; 0.000             ;
 +-------+-------+-------------------+
 
 
@@ -430,97 +430,97 @@ No paths to report.
 +--------+----------------+--------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node      ; To Node                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+----------------+--------------------------+--------------+-------------+--------------+------------+------------+
-; -1.414 ; fetch:f1|pc[1] ; fetch:f1|pc[2]           ; clk          ; clk         ; 1.000        ; -0.072     ; 2.341      ;
-; -1.252 ; fetch:f1|pc[1] ; fetch:f1|pc[3]           ; clk          ; clk         ; 1.000        ; -0.072     ; 2.179      ;
-; -1.139 ; fetch:f1|pc[1] ; fetch:f1|instruction[22] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.052      ;
-; -1.090 ; fetch:f1|pc[2] ; fetch:f1|instruction[20] ; clk          ; clk         ; 1.000        ; -0.086     ; 2.003      ;
-; -1.046 ; fetch:f1|pc[1] ; fetch:f1|instruction[23] ; clk          ; clk         ; 1.000        ; -0.086     ; 1.959      ;
-; -1.041 ; fetch:f1|pc[2] ; fetch:f1|pc[3]           ; clk          ; clk         ; 1.000        ; -0.072     ; 1.968      ;
-; -1.039 ; fetch:f1|pc[0] ; fetch:f1|pc[2]           ; clk          ; clk         ; 1.000        ; -0.072     ; 1.966      ;
-; -1.017 ; fetch:f1|pc[2] ; fetch:f1|instruction[22] ; clk          ; clk         ; 1.000        ; -0.086     ; 1.930      ;
-; -1.005 ; fetch:f1|pc[0] ; fetch:f1|pc[3]           ; clk          ; clk         ; 1.000        ; -0.072     ; 1.932      ;
-; -0.963 ; fetch:f1|pc[1] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 1.000        ; -0.072     ; 1.890      ;
-; -0.955 ; fetch:f1|pc[1] ; fetch:f1|instruction[20] ; clk          ; clk         ; 1.000        ; -0.086     ; 1.868      ;
-; -0.934 ; fetch:f1|pc[1] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 1.000        ; -0.072     ; 1.861      ;
-; -0.929 ; fetch:f1|pc[3] ; fetch:f1|instruction[22] ; clk          ; clk         ; 1.000        ; -0.086     ; 1.842      ;
-; -0.924 ; fetch:f1|pc[1] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 1.000        ; -0.086     ; 1.837      ;
-; -0.911 ; fetch:f1|pc[0] ; fetch:f1|instruction[16] ; clk          ; clk         ; 1.000        ; -0.072     ; 1.838      ;
-; -0.908 ; fetch:f1|pc[0] ; fetch:f1|instruction[18] ; clk          ; clk         ; 1.000        ; -0.086     ; 1.821      ;
-; -0.905 ; fetch:f1|pc[1] ; fetch:f1|instruction[17] ; clk          ; clk         ; 1.000        ; -0.086     ; 1.818      ;
-; -0.895 ; fetch:f1|pc[0] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 1.000        ; -0.072     ; 1.822      ;
-; -0.893 ; fetch:f1|pc[0] ; fetch:f1|instruction[12] ; clk          ; clk         ; 1.000        ; -0.072     ; 1.820      ;
-; -0.891 ; fetch:f1|pc[0] ; fetch:f1|pc[1]           ; clk          ; clk         ; 1.000        ; -0.072     ; 1.818      ;
-; -0.890 ; fetch:f1|pc[0] ; fetch:f1|instruction[13] ; clk          ; clk         ; 1.000        ; -0.088     ; 1.801      ;
-; -0.882 ; fetch:f1|pc[0] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 1.000        ; -0.072     ; 1.809      ;
-; -0.879 ; fetch:f1|pc[0] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 1.000        ; -0.088     ; 1.790      ;
-; -0.873 ; fetch:f1|pc[3] ; fetch:f1|instruction[20] ; clk          ; clk         ; 1.000        ; -0.086     ; 1.786      ;
-; -0.872 ; fetch:f1|pc[2] ; fetch:f1|instruction[23] ; clk          ; clk         ; 1.000        ; -0.086     ; 1.785      ;
-; -0.872 ; fetch:f1|pc[1] ; fetch:f1|instruction[13] ; clk          ; clk         ; 1.000        ; -0.088     ; 1.783      ;
-; -0.817 ; fetch:f1|pc[1] ; fetch:f1|instruction[10] ; clk          ; clk         ; 1.000        ; -0.088     ; 1.728      ;
-; -0.776 ; fetch:f1|pc[3] ; fetch:f1|instruction[23] ; clk          ; clk         ; 1.000        ; -0.086     ; 1.689      ;
-; -0.750 ; fetch:f1|pc[1] ; fetch:f1|instruction[26] ; clk          ; clk         ; 1.000        ; -0.071     ; 1.678      ;
-; -0.739 ; fetch:f1|pc[1] ; fetch:f1|instruction[18] ; clk          ; clk         ; 1.000        ; -0.086     ; 1.652      ;
-; -0.738 ; fetch:f1|pc[3] ; fetch:f1|instruction[13] ; clk          ; clk         ; 1.000        ; -0.088     ; 1.649      ;
-; -0.729 ; fetch:f1|pc[1] ; fetch:f1|pc[1]           ; clk          ; clk         ; 1.000        ; -0.072     ; 1.656      ;
-; -0.727 ; fetch:f1|pc[2] ; fetch:f1|instruction[17] ; clk          ; clk         ; 1.000        ; -0.086     ; 1.640      ;
-; -0.723 ; fetch:f1|pc[1] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 1.000        ; -0.088     ; 1.634      ;
-; -0.723 ; fetch:f1|pc[3] ; fetch:f1|instruction[10] ; clk          ; clk         ; 1.000        ; -0.088     ; 1.634      ;
-; -0.715 ; fetch:f1|pc[2] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 1.000        ; -0.086     ; 1.628      ;
-; -0.708 ; fetch:f1|pc[2] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 1.000        ; -0.072     ; 1.635      ;
-; -0.680 ; fetch:f1|pc[2] ; fetch:f1|pc[2]           ; clk          ; clk         ; 1.000        ; -0.072     ; 1.607      ;
-; -0.672 ; fetch:f1|pc[0] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 1.000        ; -0.072     ; 1.599      ;
-; -0.659 ; fetch:f1|pc[3] ; fetch:f1|instruction[18] ; clk          ; clk         ; 1.000        ; -0.086     ; 1.572      ;
-; -0.634 ; fetch:f1|pc[2] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 1.000        ; -0.088     ; 1.545      ;
-; -0.633 ; fetch:f1|pc[2] ; fetch:f1|instruction[13] ; clk          ; clk         ; 1.000        ; -0.088     ; 1.544      ;
-; -0.630 ; fetch:f1|pc[1] ; fetch:f1|instruction[21] ; clk          ; clk         ; 1.000        ; -0.071     ; 1.558      ;
-; -0.629 ; fetch:f1|pc[2] ; fetch:f1|instruction[10] ; clk          ; clk         ; 1.000        ; -0.088     ; 1.540      ;
-; -0.620 ; fetch:f1|pc[0] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 1.000        ; -0.086     ; 1.533      ;
-; -0.612 ; fetch:f1|pc[3] ; fetch:f1|instruction[25] ; clk          ; clk         ; 1.000        ; -0.071     ; 1.540      ;
-; -0.612 ; fetch:f1|pc[3] ; fetch:f1|instruction[21] ; clk          ; clk         ; 1.000        ; -0.071     ; 1.540      ;
-; -0.611 ; fetch:f1|pc[0] ; fetch:f1|instruction[17] ; clk          ; clk         ; 1.000        ; -0.086     ; 1.524      ;
-; -0.610 ; fetch:f1|pc[1] ; fetch:f1|instruction[27] ; clk          ; clk         ; 1.000        ; -0.071     ; 1.538      ;
-; -0.604 ; fetch:f1|pc[1] ; fetch:f1|instruction[29] ; clk          ; clk         ; 1.000        ; -0.072     ; 1.531      ;
-; -0.604 ; fetch:f1|pc[1] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 1.000        ; -0.072     ; 1.531      ;
-; -0.603 ; fetch:f1|pc[1] ; fetch:f1|instruction[12] ; clk          ; clk         ; 1.000        ; -0.072     ; 1.530      ;
-; -0.599 ; fetch:f1|pc[3] ; fetch:f1|instruction[27] ; clk          ; clk         ; 1.000        ; -0.071     ; 1.527      ;
-; -0.597 ; fetch:f1|pc[0] ; fetch:f1|instruction[26] ; clk          ; clk         ; 1.000        ; -0.071     ; 1.525      ;
-; -0.588 ; fetch:f1|pc[0] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 1.000        ; -0.072     ; 1.515      ;
-; -0.583 ; fetch:f1|pc[1] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 1.000        ; -0.072     ; 1.510      ;
-; -0.573 ; fetch:f1|pc[1] ; fetch:f1|instruction[16] ; clk          ; clk         ; 1.000        ; -0.072     ; 1.500      ;
-; -0.561 ; fetch:f1|pc[3] ; fetch:f1|instruction[17] ; clk          ; clk         ; 1.000        ; -0.086     ; 1.474      ;
-; -0.556 ; fetch:f1|pc[0] ; fetch:f1|PC_out[1]       ; clk          ; clk         ; 1.000        ; -0.072     ; 1.483      ;
-; -0.548 ; fetch:f1|pc[3] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 1.000        ; -0.086     ; 1.461      ;
-; -0.534 ; fetch:f1|pc[3] ; fetch:f1|pc[3]           ; clk          ; clk         ; 1.000        ; -0.072     ; 1.461      ;
-; -0.515 ; fetch:f1|pc[3] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 1.000        ; -0.088     ; 1.426      ;
-; -0.499 ; fetch:f1|pc[2] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 1.000        ; -0.072     ; 1.426      ;
-; -0.497 ; fetch:f1|pc[2] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 1.000        ; -0.072     ; 1.424      ;
-; -0.496 ; fetch:f1|pc[2] ; fetch:f1|instruction[12] ; clk          ; clk         ; 1.000        ; -0.072     ; 1.423      ;
-; -0.492 ; fetch:f1|pc[3] ; fetch:f1|instruction[16] ; clk          ; clk         ; 1.000        ; -0.072     ; 1.419      ;
-; -0.488 ; fetch:f1|pc[3] ; fetch:f1|instruction[12] ; clk          ; clk         ; 1.000        ; -0.072     ; 1.415      ;
-; -0.485 ; fetch:f1|pc[3] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 1.000        ; -0.072     ; 1.412      ;
-; -0.484 ; fetch:f1|pc[2] ; fetch:f1|instruction[16] ; clk          ; clk         ; 1.000        ; -0.072     ; 1.411      ;
-; -0.475 ; fetch:f1|pc[0] ; fetch:f1|instruction[10] ; clk          ; clk         ; 1.000        ; -0.088     ; 1.386      ;
-; -0.454 ; fetch:f1|pc[3] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 1.000        ; -0.072     ; 1.381      ;
-; -0.448 ; fetch:f1|pc[0] ; fetch:f1|instruction[21] ; clk          ; clk         ; 1.000        ; -0.071     ; 1.376      ;
-; -0.443 ; fetch:f1|pc[0] ; fetch:f1|instruction[27] ; clk          ; clk         ; 1.000        ; -0.071     ; 1.371      ;
-; -0.439 ; fetch:f1|pc[0] ; fetch:f1|instruction[25] ; clk          ; clk         ; 1.000        ; -0.071     ; 1.367      ;
-; -0.432 ; fetch:f1|pc[2] ; fetch:f1|instruction[26] ; clk          ; clk         ; 1.000        ; -0.071     ; 1.360      ;
-; -0.430 ; fetch:f1|pc[0] ; fetch:f1|pc[0]           ; clk          ; clk         ; 1.000        ; -0.072     ; 1.357      ;
-; -0.402 ; fetch:f1|pc[2] ; fetch:f1|instruction[18] ; clk          ; clk         ; 1.000        ; -0.086     ; 1.315      ;
-; -0.394 ; fetch:f1|pc[1] ; fetch:f1|PC_out[1]       ; clk          ; clk         ; 1.000        ; -0.072     ; 1.321      ;
-; -0.317 ; fetch:f1|pc[2] ; fetch:f1|instruction[27] ; clk          ; clk         ; 1.000        ; -0.071     ; 1.245      ;
-; -0.314 ; fetch:f1|pc[2] ; fetch:f1|instruction[21] ; clk          ; clk         ; 1.000        ; -0.071     ; 1.242      ;
-; -0.314 ; fetch:f1|pc[2] ; fetch:f1|instruction[25] ; clk          ; clk         ; 1.000        ; -0.071     ; 1.242      ;
-; -0.288 ; fetch:f1|pc[0] ; fetch:f1|instruction[22] ; clk          ; clk         ; 1.000        ; -0.086     ; 1.201      ;
-; -0.277 ; fetch:f1|pc[0] ; fetch:f1|instruction[20] ; clk          ; clk         ; 1.000        ; -0.086     ; 1.190      ;
-; -0.276 ; fetch:f1|pc[0] ; fetch:f1|instruction[23] ; clk          ; clk         ; 1.000        ; -0.086     ; 1.189      ;
-; -0.215 ; fetch:f1|pc[2] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 1.000        ; -0.072     ; 1.142      ;
-; -0.212 ; fetch:f1|pc[1] ; fetch:f1|instruction[25] ; clk          ; clk         ; 1.000        ; -0.071     ; 1.140      ;
-; -0.201 ; fetch:f1|pc[3] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 1.000        ; -0.072     ; 1.128      ;
-; -0.196 ; fetch:f1|pc[3] ; fetch:f1|instruction[29] ; clk          ; clk         ; 1.000        ; -0.072     ; 1.123      ;
-; -0.110 ; fetch:f1|pc[0] ; fetch:f1|PC_out[0]       ; clk          ; clk         ; 1.000        ; -0.072     ; 1.037      ;
-; -0.090 ; fetch:f1|pc[0] ; fetch:f1|instruction[29] ; clk          ; clk         ; 1.000        ; -0.072     ; 1.017      ;
-; 0.013  ; fetch:f1|pc[3] ; fetch:f1|instruction[26] ; clk          ; clk         ; 1.000        ; -0.071     ; 0.915      ;
+; -1.366 ; fetch:f1|pc[1] ; fetch:f1|pc[2]           ; clk          ; clk         ; 1.000        ; -0.043     ; 2.342      ;
+; -1.205 ; fetch:f1|pc[1] ; fetch:f1|pc[3]           ; clk          ; clk         ; 1.000        ; -0.043     ; 2.181      ;
+; -1.028 ; fetch:f1|pc[1] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 1.000        ; -0.043     ; 2.004      ;
+; -0.992 ; fetch:f1|pc[0] ; fetch:f1|pc[2]           ; clk          ; clk         ; 1.000        ; -0.043     ; 1.968      ;
+; -0.959 ; fetch:f1|pc[0] ; fetch:f1|pc[3]           ; clk          ; clk         ; 1.000        ; -0.043     ; 1.935      ;
+; -0.843 ; fetch:f1|pc[0] ; fetch:f1|pc[1]           ; clk          ; clk         ; 1.000        ; -0.043     ; 1.819      ;
+; -0.836 ; fetch:f1|pc[2] ; fetch:f1|pc[3]           ; clk          ; clk         ; 1.000        ; -0.043     ; 1.812      ;
+; -0.820 ; fetch:f1|pc[0] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 1.000        ; -0.043     ; 1.796      ;
+; -0.788 ; fetch:f1|pc[2] ; fetch:f1|instruction[13] ; clk          ; clk         ; 1.000        ; -0.043     ; 1.764      ;
+; -0.776 ; fetch:f1|pc[0] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 1.000        ; -0.043     ; 1.752      ;
+; -0.773 ; fetch:f1|pc[0] ; fetch:f1|instruction[16] ; clk          ; clk         ; 1.000        ; -0.043     ; 1.749      ;
+; -0.770 ; fetch:f1|pc[1] ; fetch:f1|instruction[13] ; clk          ; clk         ; 1.000        ; -0.043     ; 1.746      ;
+; -0.763 ; fetch:f1|pc[1] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 1.000        ; -0.043     ; 1.739      ;
+; -0.759 ; fetch:f1|pc[2] ; fetch:f1|instruction[16] ; clk          ; clk         ; 1.000        ; -0.043     ; 1.735      ;
+; -0.726 ; fetch:f1|pc[1] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 1.000        ; 0.144      ; 1.889      ;
+; -0.709 ; fetch:f1|pc[2] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 1.000        ; -0.043     ; 1.685      ;
+; -0.698 ; fetch:f1|pc[2] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 1.000        ; -0.043     ; 1.674      ;
+; -0.697 ; fetch:f1|pc[1] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 1.000        ; 0.144      ; 1.860      ;
+; -0.680 ; fetch:f1|pc[1] ; fetch:f1|pc[1]           ; clk          ; clk         ; 1.000        ; -0.043     ; 1.656      ;
+; -0.642 ; fetch:f1|pc[1] ; fetch:f1|instruction[10] ; clk          ; clk         ; 1.000        ; 0.190      ; 1.851      ;
+; -0.634 ; fetch:f1|pc[1] ; fetch:f1|instruction[16] ; clk          ; clk         ; 1.000        ; -0.043     ; 1.610      ;
+; -0.622 ; fetch:f1|pc[1] ; fetch:f1|instruction[29] ; clk          ; clk         ; 1.000        ; -0.043     ; 1.598      ;
+; -0.621 ; fetch:f1|pc[1] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 1.000        ; -0.043     ; 1.597      ;
+; -0.621 ; fetch:f1|pc[2] ; fetch:f1|instruction[10] ; clk          ; clk         ; 1.000        ; 0.190      ; 1.830      ;
+; -0.603 ; fetch:f1|pc[0] ; fetch:f1|instruction[13] ; clk          ; clk         ; 1.000        ; -0.043     ; 1.579      ;
+; -0.599 ; fetch:f1|pc[0] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 1.000        ; -0.043     ; 1.575      ;
+; -0.576 ; fetch:f1|pc[2] ; fetch:f1|instruction[21] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.790      ;
+; -0.572 ; fetch:f1|pc[2] ; fetch:f1|instruction[25] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.786      ;
+; -0.569 ; fetch:f1|pc[2] ; fetch:f1|instruction[23] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.783      ;
+; -0.568 ; fetch:f1|pc[2] ; fetch:f1|instruction[20] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.782      ;
+; -0.565 ; fetch:f1|pc[2] ; fetch:f1|instruction[22] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.779      ;
+; -0.560 ; fetch:f1|pc[1] ; fetch:f1|instruction[18] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.774      ;
+; -0.559 ; fetch:f1|pc[1] ; fetch:f1|instruction[21] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.773      ;
+; -0.546 ; fetch:f1|pc[1] ; fetch:f1|instruction[17] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.760      ;
+; -0.538 ; fetch:f1|pc[0] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 1.000        ; 0.190      ; 1.747      ;
+; -0.536 ; fetch:f1|pc[0] ; fetch:f1|instruction[12] ; clk          ; clk         ; 1.000        ; 0.190      ; 1.745      ;
+; -0.528 ; fetch:f1|pc[0] ; fetch:f1|pc[0]           ; clk          ; clk         ; 1.000        ; -0.043     ; 1.504      ;
+; -0.518 ; fetch:f1|pc[0] ; fetch:f1|instruction[27] ; clk          ; clk         ; 1.000        ; 0.190      ; 1.727      ;
+; -0.517 ; fetch:f1|pc[2] ; fetch:f1|pc[2]           ; clk          ; clk         ; 1.000        ; -0.043     ; 1.493      ;
+; -0.500 ; fetch:f1|pc[3] ; fetch:f1|pc[3]           ; clk          ; clk         ; 1.000        ; -0.043     ; 1.476      ;
+; -0.490 ; fetch:f1|pc[2] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 1.000        ; -0.043     ; 1.466      ;
+; -0.473 ; fetch:f1|pc[0] ; fetch:f1|instruction[26] ; clk          ; clk         ; 1.000        ; 0.190      ; 1.682      ;
+; -0.464 ; fetch:f1|pc[3] ; fetch:f1|instruction[13] ; clk          ; clk         ; 1.000        ; -0.043     ; 1.440      ;
+; -0.440 ; fetch:f1|pc[3] ; fetch:f1|instruction[16] ; clk          ; clk         ; 1.000        ; -0.043     ; 1.416      ;
+; -0.436 ; fetch:f1|pc[0] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 1.000        ; 0.144      ; 1.599      ;
+; -0.414 ; fetch:f1|pc[0] ; fetch:f1|instruction[21] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.628      ;
+; -0.410 ; fetch:f1|pc[3] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 1.000        ; -0.043     ; 1.386      ;
+; -0.410 ; fetch:f1|pc[0] ; fetch:f1|instruction[17] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.624      ;
+; -0.400 ; fetch:f1|pc[0] ; fetch:f1|instruction[25] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.614      ;
+; -0.395 ; fetch:f1|pc[0] ; fetch:f1|instruction[18] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.609      ;
+; -0.380 ; fetch:f1|pc[3] ; fetch:f1|instruction[29] ; clk          ; clk         ; 1.000        ; -0.043     ; 1.356      ;
+; -0.379 ; fetch:f1|pc[1] ; fetch:f1|instruction[23] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.593      ;
+; -0.377 ; fetch:f1|pc[1] ; fetch:f1|instruction[26] ; clk          ; clk         ; 1.000        ; 0.190      ; 1.586      ;
+; -0.371 ; fetch:f1|pc[1] ; fetch:f1|instruction[22] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.585      ;
+; -0.369 ; fetch:f1|pc[1] ; fetch:f1|instruction[20] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.583      ;
+; -0.356 ; fetch:f1|pc[2] ; fetch:f1|instruction[27] ; clk          ; clk         ; 1.000        ; 0.190      ; 1.565      ;
+; -0.352 ; fetch:f1|pc[0] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 1.000        ; 0.144      ; 1.515      ;
+; -0.333 ; fetch:f1|pc[3] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 1.000        ; 0.190      ; 1.542      ;
+; -0.332 ; fetch:f1|pc[3] ; fetch:f1|instruction[12] ; clk          ; clk         ; 1.000        ; 0.190      ; 1.541      ;
+; -0.320 ; fetch:f1|pc[0] ; fetch:f1|PC_out[1]       ; clk          ; clk         ; 1.000        ; 0.144      ; 1.483      ;
+; -0.313 ; fetch:f1|pc[2] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 1.000        ; 0.144      ; 1.476      ;
+; -0.299 ; fetch:f1|pc[3] ; fetch:f1|instruction[10] ; clk          ; clk         ; 1.000        ; 0.190      ; 1.508      ;
+; -0.276 ; fetch:f1|pc[2] ; fetch:f1|instruction[17] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.490      ;
+; -0.267 ; fetch:f1|pc[3] ; fetch:f1|instruction[21] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.481      ;
+; -0.266 ; fetch:f1|pc[3] ; fetch:f1|instruction[23] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.480      ;
+; -0.266 ; fetch:f1|pc[3] ; fetch:f1|instruction[22] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.480      ;
+; -0.265 ; fetch:f1|pc[1] ; fetch:f1|instruction[12] ; clk          ; clk         ; 1.000        ; 0.190      ; 1.474      ;
+; -0.265 ; fetch:f1|pc[1] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 1.000        ; 0.190      ; 1.474      ;
+; -0.264 ; fetch:f1|pc[3] ; fetch:f1|instruction[18] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.478      ;
+; -0.259 ; fetch:f1|pc[3] ; fetch:f1|instruction[25] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.473      ;
+; -0.258 ; fetch:f1|pc[3] ; fetch:f1|instruction[20] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.472      ;
+; -0.223 ; fetch:f1|pc[1] ; fetch:f1|instruction[27] ; clk          ; clk         ; 1.000        ; 0.190      ; 1.432      ;
+; -0.222 ; fetch:f1|pc[2] ; fetch:f1|instruction[12] ; clk          ; clk         ; 1.000        ; 0.190      ; 1.431      ;
+; -0.220 ; fetch:f1|pc[2] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 1.000        ; 0.190      ; 1.429      ;
+; -0.201 ; fetch:f1|pc[2] ; fetch:f1|instruction[26] ; clk          ; clk         ; 1.000        ; 0.190      ; 1.410      ;
+; -0.189 ; fetch:f1|pc[0] ; fetch:f1|instruction[22] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.403      ;
+; -0.188 ; fetch:f1|pc[3] ; fetch:f1|instruction[17] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.402      ;
+; -0.181 ; fetch:f1|pc[0] ; fetch:f1|instruction[23] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.395      ;
+; -0.181 ; fetch:f1|pc[0] ; fetch:f1|instruction[20] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.395      ;
+; -0.179 ; fetch:f1|pc[2] ; fetch:f1|instruction[18] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.393      ;
+; -0.157 ; fetch:f1|pc[1] ; fetch:f1|PC_out[1]       ; clk          ; clk         ; 1.000        ; 0.144      ; 1.320      ;
+; -0.084 ; fetch:f1|pc[3] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 1.000        ; -0.043     ; 1.060      ;
+; -0.069 ; fetch:f1|pc[1] ; fetch:f1|instruction[25] ; clk          ; clk         ; 1.000        ; 0.195      ; 1.283      ;
+; -0.045 ; fetch:f1|pc[3] ; fetch:f1|instruction[27] ; clk          ; clk         ; 1.000        ; 0.190      ; 1.254      ;
+; -0.006 ; fetch:f1|pc[3] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 1.000        ; -0.043     ; 0.982      ;
+; -0.003 ; fetch:f1|pc[0] ; fetch:f1|instruction[29] ; clk          ; clk         ; 1.000        ; -0.043     ; 0.979      ;
+; 0.023  ; fetch:f1|pc[3] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 1.000        ; 0.144      ; 1.140      ;
+; 0.040  ; fetch:f1|pc[3] ; fetch:f1|instruction[26] ; clk          ; clk         ; 1.000        ; 0.190      ; 1.169      ;
+; 0.126  ; fetch:f1|pc[0] ; fetch:f1|PC_out[0]       ; clk          ; clk         ; 1.000        ; 0.144      ; 1.037      ;
+; 0.127  ; fetch:f1|pc[0] ; fetch:f1|instruction[10] ; clk          ; clk         ; 1.000        ; 0.190      ; 1.082      ;
+; 0.137  ; fetch:f1|pc[2] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 1.000        ; 0.144      ; 1.026      ;
 +--------+----------------+--------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -529,97 +529,97 @@ No paths to report.
 +-------+----------------+--------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node      ; To Node                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+----------------+--------------------------+--------------+-------------+--------------+------------+------------+
-; 0.590 ; fetch:f1|pc[3] ; fetch:f1|instruction[26] ; clk          ; clk         ; 0.000        ; 0.073      ; 0.834      ;
-; 0.628 ; fetch:f1|pc[0] ; fetch:f1|PC_out[0]       ; clk          ; clk         ; 0.000        ; 0.072      ; 0.871      ;
-; 0.669 ; fetch:f1|pc[0] ; fetch:f1|instruction[29] ; clk          ; clk         ; 0.000        ; 0.072      ; 0.912      ;
-; 0.758 ; fetch:f1|pc[3] ; fetch:f1|instruction[29] ; clk          ; clk         ; 0.000        ; 0.072      ; 1.001      ;
-; 0.762 ; fetch:f1|pc[3] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 0.000        ; 0.072      ; 1.005      ;
-; 0.770 ; fetch:f1|pc[2] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 0.000        ; 0.072      ; 1.013      ;
-; 0.822 ; fetch:f1|pc[1] ; fetch:f1|instruction[25] ; clk          ; clk         ; 0.000        ; 0.073      ; 1.066      ;
-; 0.889 ; fetch:f1|pc[2] ; fetch:f1|instruction[21] ; clk          ; clk         ; 0.000        ; 0.073      ; 1.133      ;
-; 0.889 ; fetch:f1|pc[2] ; fetch:f1|instruction[25] ; clk          ; clk         ; 0.000        ; 0.073      ; 1.133      ;
-; 0.891 ; fetch:f1|pc[2] ; fetch:f1|instruction[27] ; clk          ; clk         ; 0.000        ; 0.073      ; 1.135      ;
-; 0.893 ; fetch:f1|pc[0] ; fetch:f1|instruction[23] ; clk          ; clk         ; 0.000        ; 0.058      ; 1.122      ;
-; 0.894 ; fetch:f1|pc[0] ; fetch:f1|instruction[20] ; clk          ; clk         ; 0.000        ; 0.058      ; 1.123      ;
-; 0.894 ; fetch:f1|pc[0] ; fetch:f1|instruction[22] ; clk          ; clk         ; 0.000        ; 0.058      ; 1.123      ;
-; 0.897 ; fetch:f1|pc[0] ; fetch:f1|PC_out[1]       ; clk          ; clk         ; 0.000        ; 0.072      ; 1.140      ;
-; 0.908 ; fetch:f1|pc[0] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 0.000        ; 0.072      ; 1.151      ;
-; 0.934 ; fetch:f1|pc[0] ; fetch:f1|pc[0]           ; clk          ; clk         ; 0.000        ; 0.072      ; 1.177      ;
-; 0.939 ; fetch:f1|pc[1] ; fetch:f1|PC_out[1]       ; clk          ; clk         ; 0.000        ; 0.072      ; 1.182      ;
-; 0.983 ; fetch:f1|pc[3] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 0.000        ; 0.072      ; 1.226      ;
-; 0.999 ; fetch:f1|pc[3] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 0.000        ; 0.072      ; 1.242      ;
-; 1.000 ; fetch:f1|pc[3] ; fetch:f1|instruction[12] ; clk          ; clk         ; 0.000        ; 0.072      ; 1.243      ;
-; 1.001 ; fetch:f1|pc[2] ; fetch:f1|instruction[18] ; clk          ; clk         ; 0.000        ; 0.058      ; 1.230      ;
-; 1.007 ; fetch:f1|pc[0] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 0.000        ; 0.072      ; 1.250      ;
-; 1.015 ; fetch:f1|pc[0] ; fetch:f1|instruction[27] ; clk          ; clk         ; 0.000        ; 0.073      ; 1.259      ;
-; 1.017 ; fetch:f1|pc[0] ; fetch:f1|instruction[25] ; clk          ; clk         ; 0.000        ; 0.073      ; 1.261      ;
-; 1.018 ; fetch:f1|pc[0] ; fetch:f1|instruction[21] ; clk          ; clk         ; 0.000        ; 0.073      ; 1.262      ;
-; 1.030 ; fetch:f1|pc[2] ; fetch:f1|instruction[26] ; clk          ; clk         ; 0.000        ; 0.073      ; 1.274      ;
-; 1.035 ; fetch:f1|pc[3] ; fetch:f1|instruction[16] ; clk          ; clk         ; 0.000        ; 0.072      ; 1.278      ;
-; 1.041 ; fetch:f1|pc[2] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 0.000        ; 0.072      ; 1.284      ;
-; 1.067 ; fetch:f1|pc[3] ; fetch:f1|pc[3]           ; clk          ; clk         ; 0.000        ; 0.072      ; 1.310      ;
-; 1.075 ; fetch:f1|pc[2] ; fetch:f1|instruction[12] ; clk          ; clk         ; 0.000        ; 0.072      ; 1.318      ;
-; 1.076 ; fetch:f1|pc[2] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 0.000        ; 0.072      ; 1.319      ;
-; 1.077 ; fetch:f1|pc[2] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 0.000        ; 0.072      ; 1.320      ;
-; 1.092 ; fetch:f1|pc[0] ; fetch:f1|instruction[10] ; clk          ; clk         ; 0.000        ; 0.056      ; 1.319      ;
-; 1.092 ; fetch:f1|pc[2] ; fetch:f1|instruction[16] ; clk          ; clk         ; 0.000        ; 0.072      ; 1.335      ;
-; 1.120 ; fetch:f1|pc[3] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 0.000        ; 0.056      ; 1.347      ;
-; 1.121 ; fetch:f1|pc[3] ; fetch:f1|instruction[21] ; clk          ; clk         ; 0.000        ; 0.073      ; 1.365      ;
-; 1.121 ; fetch:f1|pc[3] ; fetch:f1|instruction[27] ; clk          ; clk         ; 0.000        ; 0.073      ; 1.365      ;
-; 1.136 ; fetch:f1|pc[1] ; fetch:f1|instruction[21] ; clk          ; clk         ; 0.000        ; 0.073      ; 1.380      ;
-; 1.146 ; fetch:f1|pc[3] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 0.000        ; 0.058      ; 1.375      ;
-; 1.147 ; fetch:f1|pc[1] ; fetch:f1|instruction[16] ; clk          ; clk         ; 0.000        ; 0.072      ; 1.390      ;
-; 1.152 ; fetch:f1|pc[1] ; fetch:f1|instruction[12] ; clk          ; clk         ; 0.000        ; 0.072      ; 1.395      ;
-; 1.156 ; fetch:f1|pc[1] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 0.000        ; 0.072      ; 1.399      ;
-; 1.160 ; fetch:f1|pc[3] ; fetch:f1|instruction[17] ; clk          ; clk         ; 0.000        ; 0.058      ; 1.389      ;
-; 1.163 ; fetch:f1|pc[0] ; fetch:f1|instruction[26] ; clk          ; clk         ; 0.000        ; 0.073      ; 1.407      ;
-; 1.169 ; fetch:f1|pc[1] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 0.000        ; 0.072      ; 1.412      ;
-; 1.171 ; fetch:f1|pc[1] ; fetch:f1|instruction[29] ; clk          ; clk         ; 0.000        ; 0.072      ; 1.414      ;
-; 1.176 ; fetch:f1|pc[1] ; fetch:f1|instruction[27] ; clk          ; clk         ; 0.000        ; 0.073      ; 1.420      ;
-; 1.183 ; fetch:f1|pc[3] ; fetch:f1|instruction[25] ; clk          ; clk         ; 0.000        ; 0.073      ; 1.427      ;
-; 1.198 ; fetch:f1|pc[0] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 0.000        ; 0.058      ; 1.427      ;
-; 1.201 ; fetch:f1|pc[0] ; fetch:f1|instruction[17] ; clk          ; clk         ; 0.000        ; 0.058      ; 1.430      ;
-; 1.204 ; fetch:f1|pc[0] ; fetch:f1|pc[1]           ; clk          ; clk         ; 0.000        ; 0.072      ; 1.447      ;
-; 1.205 ; fetch:f1|pc[1] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 0.000        ; 0.072      ; 1.448      ;
-; 1.209 ; fetch:f1|pc[2] ; fetch:f1|pc[2]           ; clk          ; clk         ; 0.000        ; 0.072      ; 1.452      ;
-; 1.214 ; fetch:f1|pc[2] ; fetch:f1|instruction[13] ; clk          ; clk         ; 0.000        ; 0.056      ; 1.441      ;
-; 1.214 ; fetch:f1|pc[2] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 0.000        ; 0.056      ; 1.441      ;
-; 1.216 ; fetch:f1|pc[2] ; fetch:f1|instruction[10] ; clk          ; clk         ; 0.000        ; 0.056      ; 1.443      ;
-; 1.234 ; fetch:f1|pc[3] ; fetch:f1|instruction[18] ; clk          ; clk         ; 0.000        ; 0.058      ; 1.463      ;
-; 1.246 ; fetch:f1|pc[1] ; fetch:f1|pc[1]           ; clk          ; clk         ; 0.000        ; 0.072      ; 1.489      ;
-; 1.280 ; fetch:f1|pc[1] ; fetch:f1|instruction[26] ; clk          ; clk         ; 0.000        ; 0.073      ; 1.524      ;
-; 1.294 ; fetch:f1|pc[2] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 0.000        ; 0.058      ; 1.523      ;
-; 1.298 ; fetch:f1|pc[2] ; fetch:f1|instruction[17] ; clk          ; clk         ; 0.000        ; 0.058      ; 1.527      ;
-; 1.300 ; fetch:f1|pc[1] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 0.000        ; 0.072      ; 1.543      ;
-; 1.312 ; fetch:f1|pc[0] ; fetch:f1|pc[3]           ; clk          ; clk         ; 0.000        ; 0.072      ; 1.555      ;
-; 1.318 ; fetch:f1|pc[3] ; fetch:f1|instruction[13] ; clk          ; clk         ; 0.000        ; 0.056      ; 1.545      ;
-; 1.318 ; fetch:f1|pc[1] ; fetch:f1|instruction[18] ; clk          ; clk         ; 0.000        ; 0.058      ; 1.547      ;
-; 1.321 ; fetch:f1|pc[3] ; fetch:f1|instruction[10] ; clk          ; clk         ; 0.000        ; 0.056      ; 1.548      ;
-; 1.327 ; fetch:f1|pc[1] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 0.000        ; 0.056      ; 1.554      ;
-; 1.341 ; fetch:f1|pc[0] ; fetch:f1|pc[2]           ; clk          ; clk         ; 0.000        ; 0.072      ; 1.584      ;
-; 1.348 ; fetch:f1|pc[2] ; fetch:f1|pc[3]           ; clk          ; clk         ; 0.000        ; 0.072      ; 1.591      ;
-; 1.377 ; fetch:f1|pc[3] ; fetch:f1|instruction[23] ; clk          ; clk         ; 0.000        ; 0.058      ; 1.606      ;
-; 1.393 ; fetch:f1|pc[1] ; fetch:f1|instruction[10] ; clk          ; clk         ; 0.000        ; 0.056      ; 1.620      ;
-; 1.394 ; fetch:f1|pc[0] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 0.000        ; 0.056      ; 1.621      ;
-; 1.399 ; fetch:f1|pc[0] ; fetch:f1|instruction[13] ; clk          ; clk         ; 0.000        ; 0.056      ; 1.626      ;
-; 1.420 ; fetch:f1|pc[0] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 0.000        ; 0.072      ; 1.663      ;
-; 1.420 ; fetch:f1|pc[0] ; fetch:f1|instruction[12] ; clk          ; clk         ; 0.000        ; 0.072      ; 1.663      ;
-; 1.422 ; fetch:f1|pc[1] ; fetch:f1|instruction[17] ; clk          ; clk         ; 0.000        ; 0.058      ; 1.651      ;
-; 1.438 ; fetch:f1|pc[0] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 0.000        ; 0.072      ; 1.681      ;
-; 1.439 ; fetch:f1|pc[2] ; fetch:f1|instruction[23] ; clk          ; clk         ; 0.000        ; 0.058      ; 1.668      ;
-; 1.446 ; fetch:f1|pc[3] ; fetch:f1|instruction[20] ; clk          ; clk         ; 0.000        ; 0.058      ; 1.675      ;
-; 1.460 ; fetch:f1|pc[1] ; fetch:f1|instruction[13] ; clk          ; clk         ; 0.000        ; 0.056      ; 1.687      ;
-; 1.480 ; fetch:f1|pc[0] ; fetch:f1|instruction[16] ; clk          ; clk         ; 0.000        ; 0.072      ; 1.723      ;
-; 1.485 ; fetch:f1|pc[0] ; fetch:f1|instruction[18] ; clk          ; clk         ; 0.000        ; 0.058      ; 1.714      ;
-; 1.496 ; fetch:f1|pc[1] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 0.000        ; 0.058      ; 1.725      ;
-; 1.514 ; fetch:f1|pc[3] ; fetch:f1|instruction[22] ; clk          ; clk         ; 0.000        ; 0.058      ; 1.743      ;
-; 1.531 ; fetch:f1|pc[1] ; fetch:f1|instruction[20] ; clk          ; clk         ; 0.000        ; 0.058      ; 1.760      ;
-; 1.579 ; fetch:f1|pc[2] ; fetch:f1|instruction[22] ; clk          ; clk         ; 0.000        ; 0.058      ; 1.808      ;
-; 1.600 ; fetch:f1|pc[1] ; fetch:f1|instruction[23] ; clk          ; clk         ; 0.000        ; 0.058      ; 1.829      ;
-; 1.609 ; fetch:f1|pc[1] ; fetch:f1|pc[3]           ; clk          ; clk         ; 0.000        ; 0.072      ; 1.852      ;
-; 1.638 ; fetch:f1|pc[1] ; fetch:f1|pc[2]           ; clk          ; clk         ; 0.000        ; 0.072      ; 1.881      ;
-; 1.683 ; fetch:f1|pc[2] ; fetch:f1|instruction[20] ; clk          ; clk         ; 0.000        ; 0.058      ; 1.912      ;
-; 1.703 ; fetch:f1|pc[1] ; fetch:f1|instruction[22] ; clk          ; clk         ; 0.000        ; 0.058      ; 1.932      ;
+; 0.437 ; fetch:f1|pc[2] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 0.000        ; 0.259      ; 0.867      ;
+; 0.441 ; fetch:f1|pc[0] ; fetch:f1|PC_out[0]       ; clk          ; clk         ; 0.000        ; 0.259      ; 0.871      ;
+; 0.523 ; fetch:f1|pc[0] ; fetch:f1|instruction[10] ; clk          ; clk         ; 0.000        ; 0.307      ; 1.001      ;
+; 0.588 ; fetch:f1|pc[3] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 0.000        ; 0.259      ; 1.018      ;
+; 0.617 ; fetch:f1|pc[3] ; fetch:f1|instruction[26] ; clk          ; clk         ; 0.000        ; 0.307      ; 1.095      ;
+; 0.664 ; fetch:f1|pc[0] ; fetch:f1|instruction[29] ; clk          ; clk         ; 0.000        ; 0.043      ; 0.878      ;
+; 0.669 ; fetch:f1|pc[3] ; fetch:f1|instruction[27] ; clk          ; clk         ; 0.000        ; 0.307      ; 1.147      ;
+; 0.671 ; fetch:f1|pc[3] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 0.000        ; 0.043      ; 0.885      ;
+; 0.700 ; fetch:f1|pc[3] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 0.000        ; 0.043      ; 0.914      ;
+; 0.702 ; fetch:f1|pc[1] ; fetch:f1|instruction[25] ; clk          ; clk         ; 0.000        ; 0.339      ; 1.212      ;
+; 0.704 ; fetch:f1|pc[2] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 0.000        ; 0.259      ; 1.134      ;
+; 0.710 ; fetch:f1|pc[0] ; fetch:f1|PC_out[1]       ; clk          ; clk         ; 0.000        ; 0.259      ; 1.140      ;
+; 0.721 ; fetch:f1|pc[0] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 0.000        ; 0.259      ; 1.151      ;
+; 0.753 ; fetch:f1|pc[1] ; fetch:f1|PC_out[1]       ; clk          ; clk         ; 0.000        ; 0.259      ; 1.183      ;
+; 0.788 ; fetch:f1|pc[2] ; fetch:f1|instruction[18] ; clk          ; clk         ; 0.000        ; 0.339      ; 1.298      ;
+; 0.800 ; fetch:f1|pc[3] ; fetch:f1|instruction[17] ; clk          ; clk         ; 0.000        ; 0.339      ; 1.310      ;
+; 0.801 ; fetch:f1|pc[0] ; fetch:f1|instruction[23] ; clk          ; clk         ; 0.000        ; 0.339      ; 1.311      ;
+; 0.802 ; fetch:f1|pc[0] ; fetch:f1|instruction[20] ; clk          ; clk         ; 0.000        ; 0.339      ; 1.312      ;
+; 0.810 ; fetch:f1|pc[0] ; fetch:f1|instruction[22] ; clk          ; clk         ; 0.000        ; 0.339      ; 1.320      ;
+; 0.820 ; fetch:f1|pc[0] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 0.000        ; 0.259      ; 1.250      ;
+; 0.832 ; fetch:f1|pc[1] ; fetch:f1|instruction[27] ; clk          ; clk         ; 0.000        ; 0.307      ; 1.310      ;
+; 0.841 ; fetch:f1|pc[2] ; fetch:f1|instruction[26] ; clk          ; clk         ; 0.000        ; 0.307      ; 1.319      ;
+; 0.842 ; fetch:f1|pc[2] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 0.000        ; 0.307      ; 1.320      ;
+; 0.843 ; fetch:f1|pc[2] ; fetch:f1|instruction[12] ; clk          ; clk         ; 0.000        ; 0.307      ; 1.321      ;
+; 0.865 ; fetch:f1|pc[3] ; fetch:f1|instruction[22] ; clk          ; clk         ; 0.000        ; 0.339      ; 1.375      ;
+; 0.866 ; fetch:f1|pc[3] ; fetch:f1|instruction[21] ; clk          ; clk         ; 0.000        ; 0.339      ; 1.376      ;
+; 0.868 ; fetch:f1|pc[1] ; fetch:f1|instruction[12] ; clk          ; clk         ; 0.000        ; 0.307      ; 1.346      ;
+; 0.869 ; fetch:f1|pc[1] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 0.000        ; 0.307      ; 1.347      ;
+; 0.871 ; fetch:f1|pc[3] ; fetch:f1|instruction[20] ; clk          ; clk         ; 0.000        ; 0.339      ; 1.381      ;
+; 0.872 ; fetch:f1|pc[3] ; fetch:f1|instruction[25] ; clk          ; clk         ; 0.000        ; 0.339      ; 1.382      ;
+; 0.874 ; fetch:f1|pc[2] ; fetch:f1|instruction[17] ; clk          ; clk         ; 0.000        ; 0.339      ; 1.384      ;
+; 0.876 ; fetch:f1|pc[3] ; fetch:f1|instruction[18] ; clk          ; clk         ; 0.000        ; 0.339      ; 1.386      ;
+; 0.878 ; fetch:f1|pc[3] ; fetch:f1|instruction[23] ; clk          ; clk         ; 0.000        ; 0.339      ; 1.388      ;
+; 0.921 ; fetch:f1|pc[3] ; fetch:f1|instruction[10] ; clk          ; clk         ; 0.000        ; 0.307      ; 1.399      ;
+; 0.924 ; fetch:f1|pc[2] ; fetch:f1|instruction[27] ; clk          ; clk         ; 0.000        ; 0.307      ; 1.402      ;
+; 0.932 ; fetch:f1|pc[3] ; fetch:f1|instruction[12] ; clk          ; clk         ; 0.000        ; 0.307      ; 1.410      ;
+; 0.951 ; fetch:f1|pc[3] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 0.000        ; 0.307      ; 1.429      ;
+; 0.980 ; fetch:f1|pc[1] ; fetch:f1|instruction[26] ; clk          ; clk         ; 0.000        ; 0.307      ; 1.458      ;
+; 0.984 ; fetch:f1|pc[1] ; fetch:f1|instruction[20] ; clk          ; clk         ; 0.000        ; 0.339      ; 1.494      ;
+; 0.990 ; fetch:f1|pc[1] ; fetch:f1|instruction[22] ; clk          ; clk         ; 0.000        ; 0.339      ; 1.500      ;
+; 0.993 ; fetch:f1|pc[1] ; fetch:f1|instruction[23] ; clk          ; clk         ; 0.000        ; 0.339      ; 1.503      ;
+; 1.013 ; fetch:f1|pc[0] ; fetch:f1|instruction[21] ; clk          ; clk         ; 0.000        ; 0.339      ; 1.523      ;
+; 1.014 ; fetch:f1|pc[0] ; fetch:f1|instruction[18] ; clk          ; clk         ; 0.000        ; 0.339      ; 1.524      ;
+; 1.018 ; fetch:f1|pc[0] ; fetch:f1|instruction[25] ; clk          ; clk         ; 0.000        ; 0.339      ; 1.528      ;
+; 1.019 ; fetch:f1|pc[1] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 0.000        ; 0.259      ; 1.449      ;
+; 1.029 ; fetch:f1|pc[0] ; fetch:f1|instruction[17] ; clk          ; clk         ; 0.000        ; 0.339      ; 1.539      ;
+; 1.032 ; fetch:f1|pc[3] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 0.000        ; 0.043      ; 1.246      ;
+; 1.034 ; fetch:f1|pc[3] ; fetch:f1|instruction[29] ; clk          ; clk         ; 0.000        ; 0.043      ; 1.248      ;
+; 1.059 ; fetch:f1|pc[0] ; fetch:f1|instruction[27] ; clk          ; clk         ; 0.000        ; 0.307      ; 1.537      ;
+; 1.070 ; fetch:f1|pc[0] ; fetch:f1|instruction[26] ; clk          ; clk         ; 0.000        ; 0.307      ; 1.548      ;
+; 1.076 ; fetch:f1|pc[3] ; fetch:f1|instruction[13] ; clk          ; clk         ; 0.000        ; 0.043      ; 1.290      ;
+; 1.076 ; fetch:f1|pc[3] ; fetch:f1|instruction[16] ; clk          ; clk         ; 0.000        ; 0.043      ; 1.290      ;
+; 1.088 ; fetch:f1|pc[2] ; fetch:f1|pc[2]           ; clk          ; clk         ; 0.000        ; 0.043      ; 1.302      ;
+; 1.089 ; fetch:f1|pc[0] ; fetch:f1|instruction[12] ; clk          ; clk         ; 0.000        ; 0.307      ; 1.567      ;
+; 1.095 ; fetch:f1|pc[2] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 0.000        ; 0.043      ; 1.309      ;
+; 1.105 ; fetch:f1|pc[0] ; fetch:f1|pc[0]           ; clk          ; clk         ; 0.000        ; 0.043      ; 1.319      ;
+; 1.109 ; fetch:f1|pc[1] ; fetch:f1|instruction[21] ; clk          ; clk         ; 0.000        ; 0.339      ; 1.619      ;
+; 1.111 ; fetch:f1|pc[3] ; fetch:f1|pc[3]           ; clk          ; clk         ; 0.000        ; 0.043      ; 1.325      ;
+; 1.114 ; fetch:f1|pc[1] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 0.000        ; 0.259      ; 1.544      ;
+; 1.115 ; fetch:f1|pc[1] ; fetch:f1|instruction[17] ; clk          ; clk         ; 0.000        ; 0.339      ; 1.625      ;
+; 1.121 ; fetch:f1|pc[2] ; fetch:f1|instruction[22] ; clk          ; clk         ; 0.000        ; 0.339      ; 1.631      ;
+; 1.123 ; fetch:f1|pc[2] ; fetch:f1|instruction[21] ; clk          ; clk         ; 0.000        ; 0.339      ; 1.633      ;
+; 1.146 ; fetch:f1|pc[0] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 0.000        ; 0.307      ; 1.624      ;
+; 1.157 ; fetch:f1|pc[1] ; fetch:f1|instruction[18] ; clk          ; clk         ; 0.000        ; 0.339      ; 1.667      ;
+; 1.161 ; fetch:f1|pc[2] ; fetch:f1|instruction[23] ; clk          ; clk         ; 0.000        ; 0.339      ; 1.671      ;
+; 1.166 ; fetch:f1|pc[2] ; fetch:f1|instruction[20] ; clk          ; clk         ; 0.000        ; 0.339      ; 1.676      ;
+; 1.166 ; fetch:f1|pc[2] ; fetch:f1|instruction[25] ; clk          ; clk         ; 0.000        ; 0.339      ; 1.676      ;
+; 1.202 ; fetch:f1|pc[2] ; fetch:f1|instruction[10] ; clk          ; clk         ; 0.000        ; 0.307      ; 1.680      ;
+; 1.215 ; fetch:f1|pc[0] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 0.000        ; 0.043      ; 1.429      ;
+; 1.218 ; fetch:f1|pc[0] ; fetch:f1|instruction[13] ; clk          ; clk         ; 0.000        ; 0.043      ; 1.432      ;
+; 1.227 ; fetch:f1|pc[2] ; fetch:f1|pc[3]           ; clk          ; clk         ; 0.000        ; 0.043      ; 1.441      ;
+; 1.234 ; fetch:f1|pc[0] ; fetch:f1|pc[1]           ; clk          ; clk         ; 0.000        ; 0.043      ; 1.448      ;
+; 1.239 ; fetch:f1|pc[1] ; fetch:f1|instruction[10] ; clk          ; clk         ; 0.000        ; 0.307      ; 1.717      ;
+; 1.277 ; fetch:f1|pc[1] ; fetch:f1|pc[1]           ; clk          ; clk         ; 0.000        ; 0.043      ; 1.491      ;
+; 1.297 ; fetch:f1|pc[1] ; fetch:f1|instruction[16] ; clk          ; clk         ; 0.000        ; 0.043      ; 1.511      ;
+; 1.303 ; fetch:f1|pc[1] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 0.000        ; 0.043      ; 1.517      ;
+; 1.304 ; fetch:f1|pc[1] ; fetch:f1|instruction[29] ; clk          ; clk         ; 0.000        ; 0.043      ; 1.518      ;
+; 1.327 ; fetch:f1|pc[2] ; fetch:f1|instruction[13] ; clk          ; clk         ; 0.000        ; 0.043      ; 1.541      ;
+; 1.339 ; fetch:f1|pc[2] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 0.000        ; 0.043      ; 1.553      ;
+; 1.343 ; fetch:f1|pc[0] ; fetch:f1|pc[3]           ; clk          ; clk         ; 0.000        ; 0.043      ; 1.557      ;
+; 1.361 ; fetch:f1|pc[1] ; fetch:f1|instruction[13] ; clk          ; clk         ; 0.000        ; 0.043      ; 1.575      ;
+; 1.368 ; fetch:f1|pc[2] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 0.000        ; 0.043      ; 1.582      ;
+; 1.372 ; fetch:f1|pc[0] ; fetch:f1|pc[2]           ; clk          ; clk         ; 0.000        ; 0.043      ; 1.586      ;
+; 1.381 ; fetch:f1|pc[0] ; fetch:f1|instruction[16] ; clk          ; clk         ; 0.000        ; 0.043      ; 1.595      ;
+; 1.385 ; fetch:f1|pc[0] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 0.000        ; 0.043      ; 1.599      ;
+; 1.393 ; fetch:f1|pc[2] ; fetch:f1|instruction[16] ; clk          ; clk         ; 0.000        ; 0.043      ; 1.607      ;
+; 1.419 ; fetch:f1|pc[1] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 0.000        ; 0.043      ; 1.633      ;
+; 1.489 ; fetch:f1|pc[0] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 0.000        ; 0.043      ; 1.703      ;
+; 1.641 ; fetch:f1|pc[1] ; fetch:f1|pc[3]           ; clk          ; clk         ; 0.000        ; 0.043      ; 1.855      ;
+; 1.670 ; fetch:f1|pc[1] ; fetch:f1|pc[2]           ; clk          ; clk         ; 0.000        ; 0.043      ; 1.884      ;
+; 1.674 ; fetch:f1|pc[1] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 0.000        ; 0.043      ; 1.888      ;
 +-------+----------------+--------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -634,7 +634,7 @@ No synchronizer chains to report.
 +-------+--------+-------------------+
 ; Clock ; Slack  ; End Point TNS     ;
 +-------+--------+-------------------+
-; clk   ; -0.303 ; -1.677            ;
+; clk   ; -0.270 ; -0.552            ;
 +-------+--------+-------------------+
 
 
@@ -643,7 +643,7 @@ No synchronizer chains to report.
 +-------+-------+-------------------+
 ; Clock ; Slack ; End Point TNS     ;
 +-------+-------+-------------------+
-; clk   ; 0.289 ; 0.000             ;
+; clk   ; 0.227 ; 0.000             ;
 +-------+-------+-------------------+
 
 
@@ -664,7 +664,7 @@ No paths to report.
 +-------+--------+---------------------------------+
 ; Clock ; Slack  ; End Point TNS                   ;
 +-------+--------+---------------------------------+
-; clk   ; -3.000 ; -30.521                         ;
+; clk   ; -3.000 ; -31.364                         ;
 +-------+--------+---------------------------------+
 
 
@@ -673,97 +673,97 @@ No paths to report.
 +--------+----------------+--------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node      ; To Node                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+----------------+--------------------------+--------------+-------------+--------------+------------+------------+
-; -0.303 ; fetch:f1|pc[1] ; fetch:f1|pc[2]           ; clk          ; clk         ; 1.000        ; -0.041     ; 1.249      ;
-; -0.234 ; fetch:f1|pc[1] ; fetch:f1|pc[3]           ; clk          ; clk         ; 1.000        ; -0.041     ; 1.180      ;
-; -0.185 ; fetch:f1|pc[1] ; fetch:f1|instruction[22] ; clk          ; clk         ; 1.000        ; -0.053     ; 1.119      ;
-; -0.153 ; fetch:f1|pc[2] ; fetch:f1|instruction[20] ; clk          ; clk         ; 1.000        ; -0.053     ; 1.087      ;
-; -0.141 ; fetch:f1|pc[2] ; fetch:f1|instruction[22] ; clk          ; clk         ; 1.000        ; -0.053     ; 1.075      ;
-; -0.126 ; fetch:f1|pc[1] ; fetch:f1|instruction[23] ; clk          ; clk         ; 1.000        ; -0.053     ; 1.060      ;
-; -0.095 ; fetch:f1|pc[3] ; fetch:f1|instruction[22] ; clk          ; clk         ; 1.000        ; -0.053     ; 1.029      ;
-; -0.094 ; fetch:f1|pc[0] ; fetch:f1|pc[2]           ; clk          ; clk         ; 1.000        ; -0.041     ; 1.040      ;
-; -0.087 ; fetch:f1|pc[1] ; fetch:f1|instruction[17] ; clk          ; clk         ; 1.000        ; -0.053     ; 1.021      ;
-; -0.074 ; fetch:f1|pc[1] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 1.000        ; -0.053     ; 1.008      ;
-; -0.066 ; fetch:f1|pc[1] ; fetch:f1|instruction[20] ; clk          ; clk         ; 1.000        ; -0.053     ; 1.000      ;
-; -0.064 ; fetch:f1|pc[0] ; fetch:f1|instruction[16] ; clk          ; clk         ; 1.000        ; -0.041     ; 1.010      ;
-; -0.063 ; fetch:f1|pc[1] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 1.000        ; -0.041     ; 1.009      ;
-; -0.061 ; fetch:f1|pc[0] ; fetch:f1|instruction[18] ; clk          ; clk         ; 1.000        ; -0.053     ; 0.995      ;
-; -0.059 ; fetch:f1|pc[1] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 1.000        ; -0.041     ; 1.005      ;
-; -0.057 ; fetch:f1|pc[1] ; fetch:f1|instruction[13] ; clk          ; clk         ; 1.000        ; -0.055     ; 0.989      ;
-; -0.057 ; fetch:f1|pc[0] ; fetch:f1|pc[3]           ; clk          ; clk         ; 1.000        ; -0.041     ; 1.003      ;
-; -0.055 ; fetch:f1|pc[2] ; fetch:f1|instruction[23] ; clk          ; clk         ; 1.000        ; -0.053     ; 0.989      ;
-; -0.054 ; fetch:f1|pc[0] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 1.000        ; -0.041     ; 1.000      ;
-; -0.053 ; fetch:f1|pc[0] ; fetch:f1|instruction[13] ; clk          ; clk         ; 1.000        ; -0.055     ; 0.985      ;
-; -0.052 ; fetch:f1|pc[0] ; fetch:f1|instruction[12] ; clk          ; clk         ; 1.000        ; -0.041     ; 0.998      ;
-; -0.050 ; fetch:f1|pc[2] ; fetch:f1|pc[3]           ; clk          ; clk         ; 1.000        ; -0.041     ; 0.996      ;
-; -0.046 ; fetch:f1|pc[0] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 1.000        ; -0.055     ; 0.978      ;
-; -0.039 ; fetch:f1|pc[0] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 1.000        ; -0.041     ; 0.985      ;
-; -0.032 ; fetch:f1|pc[3] ; fetch:f1|instruction[20] ; clk          ; clk         ; 1.000        ; -0.053     ; 0.966      ;
-; -0.020 ; fetch:f1|pc[1] ; fetch:f1|instruction[10] ; clk          ; clk         ; 1.000        ; -0.055     ; 0.952      ;
-; 0.009  ; fetch:f1|pc[0] ; fetch:f1|pc[1]           ; clk          ; clk         ; 1.000        ; -0.041     ; 0.937      ;
-; 0.016  ; fetch:f1|pc[2] ; fetch:f1|instruction[17] ; clk          ; clk         ; 1.000        ; -0.053     ; 0.918      ;
-; 0.017  ; fetch:f1|pc[3] ; fetch:f1|instruction[23] ; clk          ; clk         ; 1.000        ; -0.053     ; 0.917      ;
-; 0.020  ; fetch:f1|pc[3] ; fetch:f1|instruction[13] ; clk          ; clk         ; 1.000        ; -0.055     ; 0.912      ;
-; 0.022  ; fetch:f1|pc[1] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 1.000        ; -0.055     ; 0.910      ;
-; 0.035  ; fetch:f1|pc[1] ; fetch:f1|instruction[26] ; clk          ; clk         ; 1.000        ; -0.040     ; 0.912      ;
-; 0.045  ; fetch:f1|pc[1] ; fetch:f1|instruction[18] ; clk          ; clk         ; 1.000        ; -0.053     ; 0.889      ;
-; 0.058  ; fetch:f1|pc[3] ; fetch:f1|instruction[10] ; clk          ; clk         ; 1.000        ; -0.055     ; 0.874      ;
-; 0.058  ; fetch:f1|pc[2] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 1.000        ; -0.053     ; 0.876      ;
-; 0.076  ; fetch:f1|pc[2] ; fetch:f1|instruction[10] ; clk          ; clk         ; 1.000        ; -0.055     ; 0.856      ;
-; 0.077  ; fetch:f1|pc[2] ; fetch:f1|instruction[13] ; clk          ; clk         ; 1.000        ; -0.055     ; 0.855      ;
-; 0.077  ; fetch:f1|pc[2] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 1.000        ; -0.055     ; 0.855      ;
-; 0.079  ; fetch:f1|pc[3] ; fetch:f1|instruction[18] ; clk          ; clk         ; 1.000        ; -0.053     ; 0.855      ;
-; 0.083  ; fetch:f1|pc[2] ; fetch:f1|pc[2]           ; clk          ; clk         ; 1.000        ; -0.041     ; 0.863      ;
-; 0.086  ; fetch:f1|pc[1] ; fetch:f1|pc[1]           ; clk          ; clk         ; 1.000        ; -0.041     ; 0.860      ;
-; 0.089  ; fetch:f1|pc[0] ; fetch:f1|instruction[17] ; clk          ; clk         ; 1.000        ; -0.053     ; 0.845      ;
-; 0.106  ; fetch:f1|pc[0] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 1.000        ; -0.053     ; 0.828      ;
-; 0.113  ; fetch:f1|pc[1] ; fetch:f1|instruction[21] ; clk          ; clk         ; 1.000        ; -0.040     ; 0.834      ;
-; 0.114  ; fetch:f1|pc[3] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 1.000        ; -0.053     ; 0.820      ;
-; 0.114  ; fetch:f1|pc[0] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 1.000        ; -0.041     ; 0.832      ;
-; 0.117  ; fetch:f1|pc[3] ; fetch:f1|instruction[17] ; clk          ; clk         ; 1.000        ; -0.053     ; 0.817      ;
-; 0.121  ; fetch:f1|pc[1] ; fetch:f1|instruction[29] ; clk          ; clk         ; 1.000        ; -0.041     ; 0.825      ;
-; 0.121  ; fetch:f1|pc[2] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 1.000        ; -0.041     ; 0.825      ;
-; 0.122  ; fetch:f1|pc[1] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 1.000        ; -0.041     ; 0.824      ;
-; 0.123  ; fetch:f1|pc[0] ; fetch:f1|instruction[26] ; clk          ; clk         ; 1.000        ; -0.040     ; 0.824      ;
-; 0.124  ; fetch:f1|pc[1] ; fetch:f1|instruction[12] ; clk          ; clk         ; 1.000        ; -0.041     ; 0.822      ;
-; 0.129  ; fetch:f1|pc[3] ; fetch:f1|instruction[25] ; clk          ; clk         ; 1.000        ; -0.040     ; 0.818      ;
-; 0.130  ; fetch:f1|pc[3] ; fetch:f1|instruction[21] ; clk          ; clk         ; 1.000        ; -0.040     ; 0.817      ;
-; 0.132  ; fetch:f1|pc[1] ; fetch:f1|instruction[27] ; clk          ; clk         ; 1.000        ; -0.040     ; 0.815      ;
-; 0.137  ; fetch:f1|pc[3] ; fetch:f1|instruction[27] ; clk          ; clk         ; 1.000        ; -0.040     ; 0.810      ;
-; 0.142  ; fetch:f1|pc[3] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 1.000        ; -0.055     ; 0.790      ;
-; 0.146  ; fetch:f1|pc[1] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 1.000        ; -0.041     ; 0.800      ;
-; 0.150  ; fetch:f1|pc[0] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 1.000        ; -0.041     ; 0.796      ;
-; 0.150  ; fetch:f1|pc[0] ; fetch:f1|instruction[10] ; clk          ; clk         ; 1.000        ; -0.055     ; 0.782      ;
-; 0.156  ; fetch:f1|pc[1] ; fetch:f1|instruction[16] ; clk          ; clk         ; 1.000        ; -0.041     ; 0.790      ;
-; 0.171  ; fetch:f1|pc[2] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 1.000        ; -0.041     ; 0.775      ;
-; 0.173  ; fetch:f1|pc[2] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 1.000        ; -0.041     ; 0.773      ;
-; 0.174  ; fetch:f1|pc[2] ; fetch:f1|instruction[12] ; clk          ; clk         ; 1.000        ; -0.041     ; 0.772      ;
-; 0.179  ; fetch:f1|pc[3] ; fetch:f1|pc[3]           ; clk          ; clk         ; 1.000        ; -0.041     ; 0.767      ;
-; 0.182  ; fetch:f1|pc[0] ; fetch:f1|PC_out[1]       ; clk          ; clk         ; 1.000        ; -0.041     ; 0.764      ;
-; 0.182  ; fetch:f1|pc[2] ; fetch:f1|instruction[16] ; clk          ; clk         ; 1.000        ; -0.041     ; 0.764      ;
-; 0.187  ; fetch:f1|pc[3] ; fetch:f1|instruction[16] ; clk          ; clk         ; 1.000        ; -0.041     ; 0.759      ;
-; 0.190  ; fetch:f1|pc[3] ; fetch:f1|instruction[12] ; clk          ; clk         ; 1.000        ; -0.041     ; 0.756      ;
-; 0.193  ; fetch:f1|pc[3] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 1.000        ; -0.041     ; 0.753      ;
-; 0.196  ; fetch:f1|pc[2] ; fetch:f1|instruction[18] ; clk          ; clk         ; 1.000        ; -0.053     ; 0.738      ;
-; 0.200  ; fetch:f1|pc[0] ; fetch:f1|instruction[21] ; clk          ; clk         ; 1.000        ; -0.040     ; 0.747      ;
-; 0.206  ; fetch:f1|pc[0] ; fetch:f1|instruction[27] ; clk          ; clk         ; 1.000        ; -0.040     ; 0.741      ;
-; 0.211  ; fetch:f1|pc[2] ; fetch:f1|instruction[26] ; clk          ; clk         ; 1.000        ; -0.040     ; 0.736      ;
-; 0.213  ; fetch:f1|pc[3] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 1.000        ; -0.041     ; 0.733      ;
-; 0.224  ; fetch:f1|pc[0] ; fetch:f1|pc[0]           ; clk          ; clk         ; 1.000        ; -0.041     ; 0.722      ;
-; 0.239  ; fetch:f1|pc[0] ; fetch:f1|instruction[25] ; clk          ; clk         ; 1.000        ; -0.040     ; 0.708      ;
-; 0.246  ; fetch:f1|pc[1] ; fetch:f1|PC_out[1]       ; clk          ; clk         ; 1.000        ; -0.041     ; 0.700      ;
-; 0.263  ; fetch:f1|pc[0] ; fetch:f1|instruction[20] ; clk          ; clk         ; 1.000        ; -0.053     ; 0.671      ;
-; 0.264  ; fetch:f1|pc[0] ; fetch:f1|instruction[22] ; clk          ; clk         ; 1.000        ; -0.053     ; 0.670      ;
-; 0.264  ; fetch:f1|pc[0] ; fetch:f1|instruction[23] ; clk          ; clk         ; 1.000        ; -0.053     ; 0.670      ;
-; 0.281  ; fetch:f1|pc[2] ; fetch:f1|instruction[27] ; clk          ; clk         ; 1.000        ; -0.040     ; 0.666      ;
-; 0.285  ; fetch:f1|pc[2] ; fetch:f1|instruction[21] ; clk          ; clk         ; 1.000        ; -0.040     ; 0.662      ;
-; 0.301  ; fetch:f1|pc[2] ; fetch:f1|instruction[25] ; clk          ; clk         ; 1.000        ; -0.040     ; 0.646      ;
-; 0.324  ; fetch:f1|pc[1] ; fetch:f1|instruction[25] ; clk          ; clk         ; 1.000        ; -0.040     ; 0.623      ;
-; 0.327  ; fetch:f1|pc[2] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 1.000        ; -0.041     ; 0.619      ;
-; 0.350  ; fetch:f1|pc[3] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 1.000        ; -0.041     ; 0.596      ;
-; 0.359  ; fetch:f1|pc[3] ; fetch:f1|instruction[29] ; clk          ; clk         ; 1.000        ; -0.041     ; 0.587      ;
-; 0.396  ; fetch:f1|pc[0] ; fetch:f1|PC_out[0]       ; clk          ; clk         ; 1.000        ; -0.041     ; 0.550      ;
-; 0.411  ; fetch:f1|pc[0] ; fetch:f1|instruction[29] ; clk          ; clk         ; 1.000        ; -0.041     ; 0.535      ;
-; 0.459  ; fetch:f1|pc[3] ; fetch:f1|instruction[26] ; clk          ; clk         ; 1.000        ; -0.040     ; 0.488      ;
+; -0.270 ; fetch:f1|pc[1] ; fetch:f1|pc[2]           ; clk          ; clk         ; 1.000        ; -0.024     ; 1.253      ;
+; -0.202 ; fetch:f1|pc[1] ; fetch:f1|pc[3]           ; clk          ; clk         ; 1.000        ; -0.024     ; 1.185      ;
+; -0.080 ; fetch:f1|pc[1] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 1.000        ; -0.024     ; 1.063      ;
+; -0.060 ; fetch:f1|pc[0] ; fetch:f1|pc[2]           ; clk          ; clk         ; 1.000        ; -0.024     ; 1.043      ;
+; -0.024 ; fetch:f1|pc[0] ; fetch:f1|pc[3]           ; clk          ; clk         ; 1.000        ; -0.024     ; 1.007      ;
+; 0.014  ; fetch:f1|pc[1] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 1.000        ; -0.024     ; 0.969      ;
+; 0.022  ; fetch:f1|pc[1] ; fetch:f1|instruction[13] ; clk          ; clk         ; 1.000        ; -0.024     ; 0.961      ;
+; 0.039  ; fetch:f1|pc[2] ; fetch:f1|instruction[16] ; clk          ; clk         ; 1.000        ; -0.024     ; 0.944      ;
+; 0.041  ; fetch:f1|pc[0] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 1.000        ; -0.024     ; 0.942      ;
+; 0.044  ; fetch:f1|pc[2] ; fetch:f1|instruction[13] ; clk          ; clk         ; 1.000        ; -0.024     ; 0.939      ;
+; 0.045  ; fetch:f1|pc[0] ; fetch:f1|pc[1]           ; clk          ; clk         ; 1.000        ; -0.024     ; 0.938      ;
+; 0.046  ; fetch:f1|pc[0] ; fetch:f1|instruction[16] ; clk          ; clk         ; 1.000        ; -0.024     ; 0.937      ;
+; 0.047  ; fetch:f1|pc[0] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 1.000        ; -0.024     ; 0.936      ;
+; 0.048  ; fetch:f1|pc[2] ; fetch:f1|pc[3]           ; clk          ; clk         ; 1.000        ; -0.024     ; 0.935      ;
+; 0.060  ; fetch:f1|pc[1] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 1.000        ; 0.063      ; 1.010      ;
+; 0.064  ; fetch:f1|pc[1] ; fetch:f1|instruction[10] ; clk          ; clk         ; 1.000        ; 0.082      ; 1.025      ;
+; 0.064  ; fetch:f1|pc[1] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 1.000        ; 0.063      ; 1.006      ;
+; 0.078  ; fetch:f1|pc[2] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 1.000        ; -0.024     ; 0.905      ;
+; 0.088  ; fetch:f1|pc[2] ; fetch:f1|instruction[10] ; clk          ; clk         ; 1.000        ; 0.082      ; 1.001      ;
+; 0.098  ; fetch:f1|pc[1] ; fetch:f1|instruction[29] ; clk          ; clk         ; 1.000        ; -0.024     ; 0.885      ;
+; 0.099  ; fetch:f1|pc[2] ; fetch:f1|instruction[23] ; clk          ; clk         ; 1.000        ; 0.078      ; 0.986      ;
+; 0.100  ; fetch:f1|pc[1] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 1.000        ; -0.024     ; 0.883      ;
+; 0.102  ; fetch:f1|pc[1] ; fetch:f1|instruction[16] ; clk          ; clk         ; 1.000        ; -0.024     ; 0.881      ;
+; 0.104  ; fetch:f1|pc[2] ; fetch:f1|instruction[22] ; clk          ; clk         ; 1.000        ; 0.078      ; 0.981      ;
+; 0.104  ; fetch:f1|pc[1] ; fetch:f1|instruction[17] ; clk          ; clk         ; 1.000        ; 0.078      ; 0.981      ;
+; 0.108  ; fetch:f1|pc[2] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 1.000        ; -0.024     ; 0.875      ;
+; 0.114  ; fetch:f1|pc[2] ; fetch:f1|instruction[21] ; clk          ; clk         ; 1.000        ; 0.078      ; 0.971      ;
+; 0.118  ; fetch:f1|pc[1] ; fetch:f1|instruction[18] ; clk          ; clk         ; 1.000        ; 0.078      ; 0.967      ;
+; 0.119  ; fetch:f1|pc[1] ; fetch:f1|instruction[21] ; clk          ; clk         ; 1.000        ; 0.078      ; 0.966      ;
+; 0.121  ; fetch:f1|pc[1] ; fetch:f1|pc[1]           ; clk          ; clk         ; 1.000        ; -0.024     ; 0.862      ;
+; 0.124  ; fetch:f1|pc[2] ; fetch:f1|instruction[25] ; clk          ; clk         ; 1.000        ; 0.078      ; 0.961      ;
+; 0.125  ; fetch:f1|pc[0] ; fetch:f1|instruction[13] ; clk          ; clk         ; 1.000        ; -0.024     ; 0.858      ;
+; 0.129  ; fetch:f1|pc[0] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 1.000        ; -0.024     ; 0.854      ;
+; 0.140  ; fetch:f1|pc[2] ; fetch:f1|instruction[20] ; clk          ; clk         ; 1.000        ; 0.078      ; 0.945      ;
+; 0.142  ; fetch:f1|pc[0] ; fetch:f1|instruction[12] ; clk          ; clk         ; 1.000        ; 0.082      ; 0.947      ;
+; 0.143  ; fetch:f1|pc[0] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 1.000        ; 0.082      ; 0.946      ;
+; 0.164  ; fetch:f1|pc[0] ; fetch:f1|instruction[27] ; clk          ; clk         ; 1.000        ; 0.082      ; 0.925      ;
+; 0.165  ; fetch:f1|pc[0] ; fetch:f1|instruction[26] ; clk          ; clk         ; 1.000        ; 0.082      ; 0.924      ;
+; 0.187  ; fetch:f1|pc[0] ; fetch:f1|pc[0]           ; clk          ; clk         ; 1.000        ; -0.024     ; 0.796      ;
+; 0.191  ; fetch:f1|pc[2] ; fetch:f1|pc[2]           ; clk          ; clk         ; 1.000        ; -0.024     ; 0.792      ;
+; 0.194  ; fetch:f1|pc[0] ; fetch:f1|instruction[21] ; clk          ; clk         ; 1.000        ; 0.078      ; 0.891      ;
+; 0.196  ; fetch:f1|pc[0] ; fetch:f1|instruction[17] ; clk          ; clk         ; 1.000        ; 0.078      ; 0.889      ;
+; 0.203  ; fetch:f1|pc[3] ; fetch:f1|pc[3]           ; clk          ; clk         ; 1.000        ; -0.024     ; 0.780      ;
+; 0.206  ; fetch:f1|pc[2] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 1.000        ; -0.024     ; 0.777      ;
+; 0.222  ; fetch:f1|pc[3] ; fetch:f1|instruction[13] ; clk          ; clk         ; 1.000        ; -0.024     ; 0.761      ;
+; 0.222  ; fetch:f1|pc[3] ; fetch:f1|instruction[16] ; clk          ; clk         ; 1.000        ; -0.024     ; 0.761      ;
+; 0.223  ; fetch:f1|pc[1] ; fetch:f1|instruction[26] ; clk          ; clk         ; 1.000        ; 0.082      ; 0.866      ;
+; 0.228  ; fetch:f1|pc[0] ; fetch:f1|instruction[25] ; clk          ; clk         ; 1.000        ; 0.078      ; 0.857      ;
+; 0.233  ; fetch:f1|pc[0] ; fetch:f1|instruction[18] ; clk          ; clk         ; 1.000        ; 0.078      ; 0.852      ;
+; 0.235  ; fetch:f1|pc[1] ; fetch:f1|instruction[23] ; clk          ; clk         ; 1.000        ; 0.078      ; 0.850      ;
+; 0.238  ; fetch:f1|pc[0] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 1.000        ; 0.063      ; 0.832      ;
+; 0.239  ; fetch:f1|pc[3] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 1.000        ; -0.024     ; 0.744      ;
+; 0.243  ; fetch:f1|pc[1] ; fetch:f1|instruction[22] ; clk          ; clk         ; 1.000        ; 0.078      ; 0.842      ;
+; 0.243  ; fetch:f1|pc[2] ; fetch:f1|instruction[27] ; clk          ; clk         ; 1.000        ; 0.082      ; 0.846      ;
+; 0.246  ; fetch:f1|pc[1] ; fetch:f1|instruction[20] ; clk          ; clk         ; 1.000        ; 0.078      ; 0.839      ;
+; 0.249  ; fetch:f1|pc[3] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 1.000        ; 0.082      ; 0.840      ;
+; 0.250  ; fetch:f1|pc[3] ; fetch:f1|instruction[12] ; clk          ; clk         ; 1.000        ; 0.082      ; 0.839      ;
+; 0.261  ; fetch:f1|pc[3] ; fetch:f1|instruction[29] ; clk          ; clk         ; 1.000        ; -0.024     ; 0.722      ;
+; 0.274  ; fetch:f1|pc[0] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 1.000        ; 0.063      ; 0.796      ;
+; 0.275  ; fetch:f1|pc[2] ; fetch:f1|instruction[17] ; clk          ; clk         ; 1.000        ; 0.078      ; 0.810      ;
+; 0.280  ; fetch:f1|pc[3] ; fetch:f1|instruction[21] ; clk          ; clk         ; 1.000        ; 0.078      ; 0.805      ;
+; 0.281  ; fetch:f1|pc[3] ; fetch:f1|instruction[22] ; clk          ; clk         ; 1.000        ; 0.078      ; 0.804      ;
+; 0.290  ; fetch:f1|pc[1] ; fetch:f1|instruction[12] ; clk          ; clk         ; 1.000        ; 0.082      ; 0.799      ;
+; 0.294  ; fetch:f1|pc[1] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 1.000        ; 0.082      ; 0.795      ;
+; 0.294  ; fetch:f1|pc[3] ; fetch:f1|instruction[23] ; clk          ; clk         ; 1.000        ; 0.078      ; 0.791      ;
+; 0.296  ; fetch:f1|pc[3] ; fetch:f1|instruction[18] ; clk          ; clk         ; 1.000        ; 0.078      ; 0.789      ;
+; 0.300  ; fetch:f1|pc[3] ; fetch:f1|instruction[25] ; clk          ; clk         ; 1.000        ; 0.078      ; 0.785      ;
+; 0.302  ; fetch:f1|pc[3] ; fetch:f1|instruction[20] ; clk          ; clk         ; 1.000        ; 0.078      ; 0.783      ;
+; 0.303  ; fetch:f1|pc[1] ; fetch:f1|instruction[27] ; clk          ; clk         ; 1.000        ; 0.082      ; 0.786      ;
+; 0.305  ; fetch:f1|pc[3] ; fetch:f1|instruction[10] ; clk          ; clk         ; 1.000        ; 0.082      ; 0.784      ;
+; 0.306  ; fetch:f1|pc[0] ; fetch:f1|PC_out[1]       ; clk          ; clk         ; 1.000        ; 0.063      ; 0.764      ;
+; 0.310  ; fetch:f1|pc[2] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 1.000        ; 0.063      ; 0.760      ;
+; 0.313  ; fetch:f1|pc[0] ; fetch:f1|instruction[23] ; clk          ; clk         ; 1.000        ; 0.078      ; 0.772      ;
+; 0.313  ; fetch:f1|pc[2] ; fetch:f1|instruction[12] ; clk          ; clk         ; 1.000        ; 0.082      ; 0.776      ;
+; 0.313  ; fetch:f1|pc[0] ; fetch:f1|instruction[20] ; clk          ; clk         ; 1.000        ; 0.078      ; 0.772      ;
+; 0.314  ; fetch:f1|pc[2] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 1.000        ; 0.082      ; 0.775      ;
+; 0.319  ; fetch:f1|pc[0] ; fetch:f1|instruction[22] ; clk          ; clk         ; 1.000        ; 0.078      ; 0.766      ;
+; 0.322  ; fetch:f1|pc[2] ; fetch:f1|instruction[26] ; clk          ; clk         ; 1.000        ; 0.082      ; 0.767      ;
+; 0.322  ; fetch:f1|pc[2] ; fetch:f1|instruction[18] ; clk          ; clk         ; 1.000        ; 0.078      ; 0.763      ;
+; 0.322  ; fetch:f1|pc[3] ; fetch:f1|instruction[17] ; clk          ; clk         ; 1.000        ; 0.078      ; 0.763      ;
+; 0.369  ; fetch:f1|pc[1] ; fetch:f1|PC_out[1]       ; clk          ; clk         ; 1.000        ; 0.063      ; 0.701      ;
+; 0.370  ; fetch:f1|pc[1] ; fetch:f1|instruction[25] ; clk          ; clk         ; 1.000        ; 0.078      ; 0.715      ;
+; 0.414  ; fetch:f1|pc[3] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 1.000        ; -0.024     ; 0.569      ;
+; 0.420  ; fetch:f1|pc[3] ; fetch:f1|instruction[27] ; clk          ; clk         ; 1.000        ; 0.082      ; 0.669      ;
+; 0.458  ; fetch:f1|pc[3] ; fetch:f1|instruction[26] ; clk          ; clk         ; 1.000        ; 0.082      ; 0.631      ;
+; 0.465  ; fetch:f1|pc[3] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 1.000        ; 0.063      ; 0.605      ;
+; 0.466  ; fetch:f1|pc[3] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 1.000        ; -0.024     ; 0.517      ;
+; 0.469  ; fetch:f1|pc[0] ; fetch:f1|instruction[29] ; clk          ; clk         ; 1.000        ; -0.024     ; 0.514      ;
+; 0.498  ; fetch:f1|pc[0] ; fetch:f1|instruction[10] ; clk          ; clk         ; 1.000        ; 0.082      ; 0.591      ;
+; 0.520  ; fetch:f1|pc[0] ; fetch:f1|PC_out[0]       ; clk          ; clk         ; 1.000        ; 0.063      ; 0.550      ;
+; 0.525  ; fetch:f1|pc[2] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 1.000        ; 0.063      ; 0.545      ;
 +--------+----------------+--------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -772,97 +772,97 @@ No paths to report.
 +-------+----------------+--------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node      ; To Node                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+----------------+--------------------------+--------------+-------------+--------------+------------+------------+
-; 0.289 ; fetch:f1|pc[3] ; fetch:f1|instruction[26] ; clk          ; clk         ; 0.000        ; 0.043      ; 0.416      ;
-; 0.316 ; fetch:f1|pc[0] ; fetch:f1|PC_out[0]       ; clk          ; clk         ; 0.000        ; 0.041      ; 0.441      ;
-; 0.335 ; fetch:f1|pc[0] ; fetch:f1|instruction[29] ; clk          ; clk         ; 0.000        ; 0.041      ; 0.460      ;
-; 0.372 ; fetch:f1|pc[2] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 0.000        ; 0.041      ; 0.497      ;
-; 0.379 ; fetch:f1|pc[3] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 0.000        ; 0.041      ; 0.504      ;
-; 0.379 ; fetch:f1|pc[3] ; fetch:f1|instruction[29] ; clk          ; clk         ; 0.000        ; 0.041      ; 0.504      ;
-; 0.398 ; fetch:f1|pc[1] ; fetch:f1|instruction[25] ; clk          ; clk         ; 0.000        ; 0.043      ; 0.525      ;
-; 0.433 ; fetch:f1|pc[2] ; fetch:f1|instruction[21] ; clk          ; clk         ; 0.000        ; 0.043      ; 0.560      ;
-; 0.436 ; fetch:f1|pc[2] ; fetch:f1|instruction[27] ; clk          ; clk         ; 0.000        ; 0.043      ; 0.563      ;
-; 0.450 ; fetch:f1|pc[2] ; fetch:f1|instruction[25] ; clk          ; clk         ; 0.000        ; 0.043      ; 0.577      ;
-; 0.453 ; fetch:f1|pc[0] ; fetch:f1|instruction[23] ; clk          ; clk         ; 0.000        ; 0.029      ; 0.566      ;
-; 0.454 ; fetch:f1|pc[0] ; fetch:f1|instruction[20] ; clk          ; clk         ; 0.000        ; 0.029      ; 0.567      ;
-; 0.459 ; fetch:f1|pc[1] ; fetch:f1|PC_out[1]       ; clk          ; clk         ; 0.000        ; 0.041      ; 0.584      ;
-; 0.461 ; fetch:f1|pc[0] ; fetch:f1|instruction[22] ; clk          ; clk         ; 0.000        ; 0.029      ; 0.574      ;
-; 0.465 ; fetch:f1|pc[0] ; fetch:f1|PC_out[1]       ; clk          ; clk         ; 0.000        ; 0.041      ; 0.590      ;
-; 0.468 ; fetch:f1|pc[0] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 0.000        ; 0.041      ; 0.593      ;
-; 0.482 ; fetch:f1|pc[0] ; fetch:f1|pc[0]           ; clk          ; clk         ; 0.000        ; 0.041      ; 0.607      ;
-; 0.486 ; fetch:f1|pc[3] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 0.000        ; 0.041      ; 0.611      ;
-; 0.491 ; fetch:f1|pc[2] ; fetch:f1|instruction[26] ; clk          ; clk         ; 0.000        ; 0.043      ; 0.618      ;
-; 0.500 ; fetch:f1|pc[0] ; fetch:f1|instruction[27] ; clk          ; clk         ; 0.000        ; 0.043      ; 0.627      ;
-; 0.502 ; fetch:f1|pc[3] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 0.000        ; 0.041      ; 0.627      ;
-; 0.503 ; fetch:f1|pc[3] ; fetch:f1|instruction[12] ; clk          ; clk         ; 0.000        ; 0.041      ; 0.628      ;
-; 0.504 ; fetch:f1|pc[0] ; fetch:f1|instruction[21] ; clk          ; clk         ; 0.000        ; 0.043      ; 0.631      ;
-; 0.506 ; fetch:f1|pc[2] ; fetch:f1|instruction[18] ; clk          ; clk         ; 0.000        ; 0.029      ; 0.619      ;
-; 0.515 ; fetch:f1|pc[0] ; fetch:f1|instruction[25] ; clk          ; clk         ; 0.000        ; 0.043      ; 0.642      ;
-; 0.516 ; fetch:f1|pc[3] ; fetch:f1|instruction[16] ; clk          ; clk         ; 0.000        ; 0.041      ; 0.641      ;
-; 0.523 ; fetch:f1|pc[2] ; fetch:f1|instruction[12] ; clk          ; clk         ; 0.000        ; 0.041      ; 0.648      ;
-; 0.523 ; fetch:f1|pc[2] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 0.000        ; 0.041      ; 0.648      ;
-; 0.524 ; fetch:f1|pc[2] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 0.000        ; 0.041      ; 0.649      ;
-; 0.524 ; fetch:f1|pc[2] ; fetch:f1|instruction[16] ; clk          ; clk         ; 0.000        ; 0.041      ; 0.649      ;
-; 0.526 ; fetch:f1|pc[2] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 0.000        ; 0.041      ; 0.651      ;
-; 0.531 ; fetch:f1|pc[3] ; fetch:f1|pc[3]           ; clk          ; clk         ; 0.000        ; 0.041      ; 0.656      ;
-; 0.531 ; fetch:f1|pc[0] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 0.000        ; 0.041      ; 0.656      ;
-; 0.554 ; fetch:f1|pc[0] ; fetch:f1|instruction[10] ; clk          ; clk         ; 0.000        ; 0.027      ; 0.665      ;
-; 0.556 ; fetch:f1|pc[1] ; fetch:f1|instruction[21] ; clk          ; clk         ; 0.000        ; 0.043      ; 0.683      ;
-; 0.563 ; fetch:f1|pc[1] ; fetch:f1|instruction[16] ; clk          ; clk         ; 0.000        ; 0.041      ; 0.688      ;
-; 0.564 ; fetch:f1|pc[0] ; fetch:f1|instruction[26] ; clk          ; clk         ; 0.000        ; 0.043      ; 0.691      ;
-; 0.565 ; fetch:f1|pc[3] ; fetch:f1|instruction[21] ; clk          ; clk         ; 0.000        ; 0.043      ; 0.692      ;
-; 0.566 ; fetch:f1|pc[3] ; fetch:f1|instruction[27] ; clk          ; clk         ; 0.000        ; 0.043      ; 0.693      ;
-; 0.568 ; fetch:f1|pc[1] ; fetch:f1|instruction[12] ; clk          ; clk         ; 0.000        ; 0.041      ; 0.693      ;
-; 0.570 ; fetch:f1|pc[1] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 0.000        ; 0.041      ; 0.695      ;
-; 0.571 ; fetch:f1|pc[1] ; fetch:f1|instruction[29] ; clk          ; clk         ; 0.000        ; 0.041      ; 0.696      ;
-; 0.571 ; fetch:f1|pc[1] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 0.000        ; 0.041      ; 0.696      ;
-; 0.572 ; fetch:f1|pc[1] ; fetch:f1|instruction[27] ; clk          ; clk         ; 0.000        ; 0.043      ; 0.699      ;
-; 0.573 ; fetch:f1|pc[3] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 0.000        ; 0.027      ; 0.684      ;
-; 0.583 ; fetch:f1|pc[2] ; fetch:f1|pc[2]           ; clk          ; clk         ; 0.000        ; 0.041      ; 0.708      ;
-; 0.588 ; fetch:f1|pc[3] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 0.000        ; 0.029      ; 0.701      ;
-; 0.594 ; fetch:f1|pc[3] ; fetch:f1|instruction[17] ; clk          ; clk         ; 0.000        ; 0.029      ; 0.707      ;
-; 0.594 ; fetch:f1|pc[3] ; fetch:f1|instruction[25] ; clk          ; clk         ; 0.000        ; 0.043      ; 0.721      ;
-; 0.601 ; fetch:f1|pc[1] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 0.000        ; 0.041      ; 0.726      ;
-; 0.608 ; fetch:f1|pc[0] ; fetch:f1|instruction[17] ; clk          ; clk         ; 0.000        ; 0.029      ; 0.721      ;
-; 0.611 ; fetch:f1|pc[2] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 0.000        ; 0.027      ; 0.722      ;
-; 0.612 ; fetch:f1|pc[2] ; fetch:f1|instruction[13] ; clk          ; clk         ; 0.000        ; 0.027      ; 0.723      ;
-; 0.612 ; fetch:f1|pc[2] ; fetch:f1|instruction[10] ; clk          ; clk         ; 0.000        ; 0.027      ; 0.723      ;
-; 0.613 ; fetch:f1|pc[1] ; fetch:f1|pc[1]           ; clk          ; clk         ; 0.000        ; 0.041      ; 0.738      ;
-; 0.619 ; fetch:f1|pc[0] ; fetch:f1|pc[1]           ; clk          ; clk         ; 0.000        ; 0.041      ; 0.744      ;
-; 0.625 ; fetch:f1|pc[0] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 0.000        ; 0.029      ; 0.738      ;
-; 0.632 ; fetch:f1|pc[1] ; fetch:f1|instruction[26] ; clk          ; clk         ; 0.000        ; 0.043      ; 0.759      ;
-; 0.643 ; fetch:f1|pc[3] ; fetch:f1|instruction[18] ; clk          ; clk         ; 0.000        ; 0.029      ; 0.756      ;
-; 0.664 ; fetch:f1|pc[1] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 0.000        ; 0.041      ; 0.789      ;
-; 0.666 ; fetch:f1|pc[2] ; fetch:f1|instruction[17] ; clk          ; clk         ; 0.000        ; 0.029      ; 0.779      ;
-; 0.667 ; fetch:f1|pc[1] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 0.000        ; 0.027      ; 0.778      ;
-; 0.671 ; fetch:f1|pc[3] ; fetch:f1|instruction[13] ; clk          ; clk         ; 0.000        ; 0.027      ; 0.782      ;
-; 0.674 ; fetch:f1|pc[2] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 0.000        ; 0.029      ; 0.787      ;
-; 0.675 ; fetch:f1|pc[2] ; fetch:f1|pc[3]           ; clk          ; clk         ; 0.000        ; 0.041      ; 0.800      ;
-; 0.679 ; fetch:f1|pc[0] ; fetch:f1|pc[2]           ; clk          ; clk         ; 0.000        ; 0.041      ; 0.804      ;
-; 0.683 ; fetch:f1|pc[0] ; fetch:f1|pc[3]           ; clk          ; clk         ; 0.000        ; 0.041      ; 0.808      ;
-; 0.684 ; fetch:f1|pc[3] ; fetch:f1|instruction[10] ; clk          ; clk         ; 0.000        ; 0.027      ; 0.795      ;
-; 0.687 ; fetch:f1|pc[1] ; fetch:f1|instruction[18] ; clk          ; clk         ; 0.000        ; 0.029      ; 0.800      ;
-; 0.696 ; fetch:f1|pc[0] ; fetch:f1|instruction[12] ; clk          ; clk         ; 0.000        ; 0.041      ; 0.821      ;
-; 0.697 ; fetch:f1|pc[0] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 0.000        ; 0.041      ; 0.822      ;
-; 0.702 ; fetch:f1|pc[0] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 0.000        ; 0.041      ; 0.827      ;
-; 0.703 ; fetch:f1|pc[0] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 0.000        ; 0.027      ; 0.814      ;
-; 0.703 ; fetch:f1|pc[0] ; fetch:f1|instruction[13] ; clk          ; clk         ; 0.000        ; 0.027      ; 0.814      ;
-; 0.713 ; fetch:f1|pc[1] ; fetch:f1|instruction[10] ; clk          ; clk         ; 0.000        ; 0.027      ; 0.824      ;
-; 0.714 ; fetch:f1|pc[3] ; fetch:f1|instruction[23] ; clk          ; clk         ; 0.000        ; 0.029      ; 0.827      ;
-; 0.720 ; fetch:f1|pc[1] ; fetch:f1|instruction[17] ; clk          ; clk         ; 0.000        ; 0.029      ; 0.833      ;
-; 0.722 ; fetch:f1|pc[0] ; fetch:f1|instruction[16] ; clk          ; clk         ; 0.000        ; 0.041      ; 0.847      ;
-; 0.723 ; fetch:f1|pc[2] ; fetch:f1|instruction[23] ; clk          ; clk         ; 0.000        ; 0.029      ; 0.836      ;
-; 0.745 ; fetch:f1|pc[1] ; fetch:f1|instruction[13] ; clk          ; clk         ; 0.000        ; 0.027      ; 0.856      ;
-; 0.758 ; fetch:f1|pc[3] ; fetch:f1|instruction[20] ; clk          ; clk         ; 0.000        ; 0.029      ; 0.871      ;
-; 0.764 ; fetch:f1|pc[0] ; fetch:f1|instruction[18] ; clk          ; clk         ; 0.000        ; 0.029      ; 0.877      ;
-; 0.767 ; fetch:f1|pc[3] ; fetch:f1|instruction[22] ; clk          ; clk         ; 0.000        ; 0.029      ; 0.880      ;
-; 0.774 ; fetch:f1|pc[1] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 0.000        ; 0.029      ; 0.887      ;
-; 0.803 ; fetch:f1|pc[1] ; fetch:f1|instruction[20] ; clk          ; clk         ; 0.000        ; 0.029      ; 0.916      ;
-; 0.805 ; fetch:f1|pc[2] ; fetch:f1|instruction[22] ; clk          ; clk         ; 0.000        ; 0.029      ; 0.918      ;
-; 0.812 ; fetch:f1|pc[1] ; fetch:f1|pc[2]           ; clk          ; clk         ; 0.000        ; 0.041      ; 0.937      ;
-; 0.816 ; fetch:f1|pc[1] ; fetch:f1|pc[3]           ; clk          ; clk         ; 0.000        ; 0.041      ; 0.941      ;
-; 0.834 ; fetch:f1|pc[1] ; fetch:f1|instruction[23] ; clk          ; clk         ; 0.000        ; 0.029      ; 0.947      ;
-; 0.874 ; fetch:f1|pc[2] ; fetch:f1|instruction[20] ; clk          ; clk         ; 0.000        ; 0.029      ; 0.987      ;
-; 0.890 ; fetch:f1|pc[1] ; fetch:f1|instruction[22] ; clk          ; clk         ; 0.000        ; 0.029      ; 1.003      ;
+; 0.227 ; fetch:f1|pc[2] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 0.000        ; 0.124      ; 0.435      ;
+; 0.233 ; fetch:f1|pc[0] ; fetch:f1|PC_out[0]       ; clk          ; clk         ; 0.000        ; 0.124      ; 0.441      ;
+; 0.262 ; fetch:f1|pc[0] ; fetch:f1|instruction[10] ; clk          ; clk         ; 0.000        ; 0.144      ; 0.490      ;
+; 0.305 ; fetch:f1|pc[3] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 0.000        ; 0.124      ; 0.513      ;
+; 0.313 ; fetch:f1|pc[3] ; fetch:f1|instruction[26] ; clk          ; clk         ; 0.000        ; 0.144      ; 0.541      ;
+; 0.334 ; fetch:f1|pc[0] ; fetch:f1|instruction[29] ; clk          ; clk         ; 0.000        ; 0.024      ; 0.442      ;
+; 0.341 ; fetch:f1|pc[3] ; fetch:f1|instruction[27] ; clk          ; clk         ; 0.000        ; 0.144      ; 0.569      ;
+; 0.342 ; fetch:f1|pc[3] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 0.000        ; 0.024      ; 0.450      ;
+; 0.355 ; fetch:f1|pc[1] ; fetch:f1|instruction[25] ; clk          ; clk         ; 0.000        ; 0.158      ; 0.597      ;
+; 0.359 ; fetch:f1|pc[3] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 0.000        ; 0.024      ; 0.467      ;
+; 0.377 ; fetch:f1|pc[1] ; fetch:f1|PC_out[1]       ; clk          ; clk         ; 0.000        ; 0.124      ; 0.585      ;
+; 0.378 ; fetch:f1|pc[2] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 0.000        ; 0.124      ; 0.586      ;
+; 0.382 ; fetch:f1|pc[0] ; fetch:f1|PC_out[1]       ; clk          ; clk         ; 0.000        ; 0.124      ; 0.590      ;
+; 0.385 ; fetch:f1|pc[0] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 0.000        ; 0.124      ; 0.593      ;
+; 0.402 ; fetch:f1|pc[2] ; fetch:f1|instruction[18] ; clk          ; clk         ; 0.000        ; 0.158      ; 0.644      ;
+; 0.412 ; fetch:f1|pc[0] ; fetch:f1|instruction[20] ; clk          ; clk         ; 0.000        ; 0.158      ; 0.654      ;
+; 0.412 ; fetch:f1|pc[0] ; fetch:f1|instruction[23] ; clk          ; clk         ; 0.000        ; 0.158      ; 0.654      ;
+; 0.413 ; fetch:f1|pc[0] ; fetch:f1|instruction[22] ; clk          ; clk         ; 0.000        ; 0.158      ; 0.655      ;
+; 0.414 ; fetch:f1|pc[3] ; fetch:f1|instruction[17] ; clk          ; clk         ; 0.000        ; 0.158      ; 0.656      ;
+; 0.420 ; fetch:f1|pc[2] ; fetch:f1|instruction[26] ; clk          ; clk         ; 0.000        ; 0.144      ; 0.648      ;
+; 0.424 ; fetch:f1|pc[2] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 0.000        ; 0.144      ; 0.652      ;
+; 0.426 ; fetch:f1|pc[2] ; fetch:f1|instruction[12] ; clk          ; clk         ; 0.000        ; 0.144      ; 0.654      ;
+; 0.431 ; fetch:f1|pc[1] ; fetch:f1|instruction[27] ; clk          ; clk         ; 0.000        ; 0.144      ; 0.659      ;
+; 0.439 ; fetch:f1|pc[3] ; fetch:f1|instruction[22] ; clk          ; clk         ; 0.000        ; 0.158      ; 0.681      ;
+; 0.439 ; fetch:f1|pc[2] ; fetch:f1|instruction[17] ; clk          ; clk         ; 0.000        ; 0.158      ; 0.681      ;
+; 0.441 ; fetch:f1|pc[3] ; fetch:f1|instruction[21] ; clk          ; clk         ; 0.000        ; 0.158      ; 0.683      ;
+; 0.443 ; fetch:f1|pc[1] ; fetch:f1|instruction[12] ; clk          ; clk         ; 0.000        ; 0.144      ; 0.671      ;
+; 0.447 ; fetch:f1|pc[1] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 0.000        ; 0.144      ; 0.675      ;
+; 0.448 ; fetch:f1|pc[0] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 0.000        ; 0.124      ; 0.656      ;
+; 0.453 ; fetch:f1|pc[3] ; fetch:f1|instruction[20] ; clk          ; clk         ; 0.000        ; 0.158      ; 0.695      ;
+; 0.455 ; fetch:f1|pc[3] ; fetch:f1|instruction[25] ; clk          ; clk         ; 0.000        ; 0.158      ; 0.697      ;
+; 0.458 ; fetch:f1|pc[3] ; fetch:f1|instruction[18] ; clk          ; clk         ; 0.000        ; 0.158      ; 0.700      ;
+; 0.460 ; fetch:f1|pc[3] ; fetch:f1|instruction[23] ; clk          ; clk         ; 0.000        ; 0.158      ; 0.702      ;
+; 0.473 ; fetch:f1|pc[3] ; fetch:f1|instruction[12] ; clk          ; clk         ; 0.000        ; 0.144      ; 0.701      ;
+; 0.478 ; fetch:f1|pc[3] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 0.000        ; 0.144      ; 0.706      ;
+; 0.486 ; fetch:f1|pc[2] ; fetch:f1|instruction[27] ; clk          ; clk         ; 0.000        ; 0.144      ; 0.714      ;
+; 0.496 ; fetch:f1|pc[3] ; fetch:f1|instruction[10] ; clk          ; clk         ; 0.000        ; 0.144      ; 0.724      ;
+; 0.496 ; fetch:f1|pc[1] ; fetch:f1|instruction[26] ; clk          ; clk         ; 0.000        ; 0.144      ; 0.724      ;
+; 0.510 ; fetch:f1|pc[0] ; fetch:f1|instruction[17] ; clk          ; clk         ; 0.000        ; 0.158      ; 0.752      ;
+; 0.512 ; fetch:f1|pc[0] ; fetch:f1|instruction[21] ; clk          ; clk         ; 0.000        ; 0.158      ; 0.754      ;
+; 0.512 ; fetch:f1|pc[1] ; fetch:f1|instruction[20] ; clk          ; clk         ; 0.000        ; 0.158      ; 0.754      ;
+; 0.516 ; fetch:f1|pc[1] ; fetch:f1|instruction[22] ; clk          ; clk         ; 0.000        ; 0.158      ; 0.758      ;
+; 0.519 ; fetch:f1|pc[3] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 0.000        ; 0.024      ; 0.627      ;
+; 0.519 ; fetch:f1|pc[1] ; fetch:f1|PC_out[2]       ; clk          ; clk         ; 0.000        ; 0.124      ; 0.727      ;
+; 0.520 ; fetch:f1|pc[3] ; fetch:f1|instruction[29] ; clk          ; clk         ; 0.000        ; 0.024      ; 0.628      ;
+; 0.522 ; fetch:f1|pc[1] ; fetch:f1|instruction[23] ; clk          ; clk         ; 0.000        ; 0.158      ; 0.764      ;
+; 0.524 ; fetch:f1|pc[0] ; fetch:f1|instruction[18] ; clk          ; clk         ; 0.000        ; 0.158      ; 0.766      ;
+; 0.529 ; fetch:f1|pc[0] ; fetch:f1|instruction[25] ; clk          ; clk         ; 0.000        ; 0.158      ; 0.771      ;
+; 0.538 ; fetch:f1|pc[3] ; fetch:f1|instruction[13] ; clk          ; clk         ; 0.000        ; 0.024      ; 0.646      ;
+; 0.540 ; fetch:f1|pc[2] ; fetch:f1|pc[2]           ; clk          ; clk         ; 0.000        ; 0.024      ; 0.648      ;
+; 0.540 ; fetch:f1|pc[0] ; fetch:f1|instruction[27] ; clk          ; clk         ; 0.000        ; 0.144      ; 0.768      ;
+; 0.541 ; fetch:f1|pc[3] ; fetch:f1|instruction[16] ; clk          ; clk         ; 0.000        ; 0.024      ; 0.649      ;
+; 0.549 ; fetch:f1|pc[2] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 0.000        ; 0.024      ; 0.657      ;
+; 0.549 ; fetch:f1|pc[0] ; fetch:f1|instruction[26] ; clk          ; clk         ; 0.000        ; 0.144      ; 0.777      ;
+; 0.560 ; fetch:f1|pc[3] ; fetch:f1|pc[3]           ; clk          ; clk         ; 0.000        ; 0.024      ; 0.668      ;
+; 0.560 ; fetch:f1|pc[0] ; fetch:f1|instruction[12] ; clk          ; clk         ; 0.000        ; 0.144      ; 0.788      ;
+; 0.564 ; fetch:f1|pc[0] ; fetch:f1|pc[0]           ; clk          ; clk         ; 0.000        ; 0.024      ; 0.672      ;
+; 0.570 ; fetch:f1|pc[2] ; fetch:f1|instruction[22] ; clk          ; clk         ; 0.000        ; 0.158      ; 0.812      ;
+; 0.573 ; fetch:f1|pc[2] ; fetch:f1|instruction[21] ; clk          ; clk         ; 0.000        ; 0.158      ; 0.815      ;
+; 0.574 ; fetch:f1|pc[1] ; fetch:f1|instruction[21] ; clk          ; clk         ; 0.000        ; 0.158      ; 0.816      ;
+; 0.575 ; fetch:f1|pc[1] ; fetch:f1|instruction[17] ; clk          ; clk         ; 0.000        ; 0.158      ; 0.817      ;
+; 0.581 ; fetch:f1|pc[2] ; fetch:f1|instruction[23] ; clk          ; clk         ; 0.000        ; 0.158      ; 0.823      ;
+; 0.582 ; fetch:f1|pc[1] ; fetch:f1|PC_out[3]       ; clk          ; clk         ; 0.000        ; 0.124      ; 0.790      ;
+; 0.584 ; fetch:f1|pc[0] ; fetch:f1|instruction[0]  ; clk          ; clk         ; 0.000        ; 0.144      ; 0.812      ;
+; 0.600 ; fetch:f1|pc[2] ; fetch:f1|instruction[20] ; clk          ; clk         ; 0.000        ; 0.158      ; 0.842      ;
+; 0.602 ; fetch:f1|pc[2] ; fetch:f1|instruction[25] ; clk          ; clk         ; 0.000        ; 0.158      ; 0.844      ;
+; 0.608 ; fetch:f1|pc[1] ; fetch:f1|instruction[18] ; clk          ; clk         ; 0.000        ; 0.158      ; 0.850      ;
+; 0.611 ; fetch:f1|pc[0] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 0.000        ; 0.024      ; 0.719      ;
+; 0.614 ; fetch:f1|pc[0] ; fetch:f1|instruction[13] ; clk          ; clk         ; 0.000        ; 0.024      ; 0.722      ;
+; 0.615 ; fetch:f1|pc[2] ; fetch:f1|instruction[10] ; clk          ; clk         ; 0.000        ; 0.144      ; 0.843      ;
+; 0.632 ; fetch:f1|pc[1] ; fetch:f1|pc[1]           ; clk          ; clk         ; 0.000        ; 0.024      ; 0.740      ;
+; 0.633 ; fetch:f1|pc[2] ; fetch:f1|pc[3]           ; clk          ; clk         ; 0.000        ; 0.024      ; 0.741      ;
+; 0.635 ; fetch:f1|pc[1] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 0.000        ; 0.024      ; 0.743      ;
+; 0.636 ; fetch:f1|pc[1] ; fetch:f1|instruction[29] ; clk          ; clk         ; 0.000        ; 0.024      ; 0.744      ;
+; 0.636 ; fetch:f1|pc[1] ; fetch:f1|instruction[10] ; clk          ; clk         ; 0.000        ; 0.144      ; 0.864      ;
+; 0.637 ; fetch:f1|pc[0] ; fetch:f1|pc[1]           ; clk          ; clk         ; 0.000        ; 0.024      ; 0.745      ;
+; 0.640 ; fetch:f1|pc[1] ; fetch:f1|instruction[16] ; clk          ; clk         ; 0.000        ; 0.024      ; 0.748      ;
+; 0.666 ; fetch:f1|pc[2] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 0.000        ; 0.024      ; 0.774      ;
+; 0.677 ; fetch:f1|pc[2] ; fetch:f1|instruction[13] ; clk          ; clk         ; 0.000        ; 0.024      ; 0.785      ;
+; 0.685 ; fetch:f1|pc[2] ; fetch:f1|instruction[16] ; clk          ; clk         ; 0.000        ; 0.024      ; 0.793      ;
+; 0.691 ; fetch:f1|pc[0] ; fetch:f1|instruction[16] ; clk          ; clk         ; 0.000        ; 0.024      ; 0.799      ;
+; 0.696 ; fetch:f1|pc[0] ; fetch:f1|instruction[9]  ; clk          ; clk         ; 0.000        ; 0.024      ; 0.804      ;
+; 0.698 ; fetch:f1|pc[0] ; fetch:f1|pc[2]           ; clk          ; clk         ; 0.000        ; 0.024      ; 0.806      ;
+; 0.700 ; fetch:f1|pc[1] ; fetch:f1|instruction[1]  ; clk          ; clk         ; 0.000        ; 0.024      ; 0.808      ;
+; 0.703 ; fetch:f1|pc[0] ; fetch:f1|pc[3]           ; clk          ; clk         ; 0.000        ; 0.024      ; 0.811      ;
+; 0.712 ; fetch:f1|pc[1] ; fetch:f1|instruction[13] ; clk          ; clk         ; 0.000        ; 0.024      ; 0.820      ;
+; 0.723 ; fetch:f1|pc[2] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 0.000        ; 0.024      ; 0.831      ;
+; 0.782 ; fetch:f1|pc[0] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 0.000        ; 0.024      ; 0.890      ;
+; 0.832 ; fetch:f1|pc[1] ; fetch:f1|pc[2]           ; clk          ; clk         ; 0.000        ; 0.024      ; 0.940      ;
+; 0.837 ; fetch:f1|pc[1] ; fetch:f1|pc[3]           ; clk          ; clk         ; 0.000        ; 0.024      ; 0.945      ;
+; 0.881 ; fetch:f1|pc[1] ; fetch:f1|instruction[2]  ; clk          ; clk         ; 0.000        ; 0.024      ; 0.989      ;
 +-------+----------------+--------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -877,10 +877,10 @@ No synchronizer chains to report.
 +------------------+---------+-------+----------+---------+---------------------+
 ; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------+---------+-------+----------+---------+---------------------+
-; Worst-case Slack ; -1.696  ; 0.289 ; N/A      ; N/A     ; -3.000              ;
-;  clk             ; -1.696  ; 0.289 ; N/A      ; N/A     ; -3.000              ;
-; Design-wide TNS  ; -27.253 ; 0.0   ; 0.0      ; 0.0     ; -36.41              ;
-;  clk             ; -27.253 ; 0.000 ; N/A      ; N/A     ; -36.410             ;
+; Worst-case Slack ; -1.647  ; 0.227 ; N/A      ; N/A     ; -3.000              ;
+;  clk             ; -1.647  ; 0.227 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -22.041 ; 0.0   ; 0.0      ; 0.0     ; -36.41              ;
+;  clk             ; -22.041 ; 0.000 ; N/A      ; N/A     ; -36.410             ;
 +------------------+---------+-------+----------+---------+---------------------+
 
 
@@ -1030,10 +1030,10 @@ No synchronizer chains to report.
 ; SevenSegement7[4] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
 ; SevenSegement7[5] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
 ; SevenSegement7[6] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
-; leds[0]           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
-; leds[1]           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
-; leds[2]           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
-; leds[3]           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; leds[0]           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-09 V                   ; 2.37 V              ; -0.00994 V          ; 0.186 V                              ; 0.028 V                              ; 4.98e-10 s                  ; 4.96e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.07e-09 V                  ; 2.37 V             ; -0.00994 V         ; 0.186 V                             ; 0.028 V                             ; 4.98e-10 s                 ; 4.96e-10 s                 ; Yes                       ; Yes                       ;
+; leds[1]           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-09 V                   ; 2.33 V              ; -0.00496 V          ; 0.223 V                              ; 0.086 V                              ; 2.9e-09 s                   ; 2.73e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.07e-09 V                  ; 2.33 V             ; -0.00496 V         ; 0.223 V                             ; 0.086 V                             ; 2.9e-09 s                  ; 2.73e-09 s                 ; Yes                       ; Yes                       ;
+; leds[2]           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-09 V                   ; 2.37 V              ; -0.00994 V          ; 0.186 V                              ; 0.028 V                              ; 4.98e-10 s                  ; 4.96e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.07e-09 V                  ; 2.37 V             ; -0.00994 V         ; 0.186 V                             ; 0.028 V                             ; 4.98e-10 s                 ; 4.96e-10 s                 ; Yes                       ; Yes                       ;
+; leds[3]           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-09 V                   ; 2.37 V              ; -0.00994 V          ; 0.186 V                              ; 0.028 V                              ; 4.98e-10 s                  ; 4.96e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.07e-09 V                  ; 2.37 V             ; -0.00994 V         ; 0.186 V                             ; 0.028 V                             ; 4.98e-10 s                 ; 4.96e-10 s                 ; Yes                       ; Yes                       ;
 ; ~ALTERA_DCLK~     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.67e-09 V                   ; 2.38 V              ; -0.0485 V           ; 0.167 V                              ; 0.096 V                              ; 2.95e-10 s                  ; 2.73e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.67e-09 V                  ; 2.38 V             ; -0.0485 V          ; 0.167 V                             ; 0.096 V                             ; 2.95e-10 s                 ; 2.73e-10 s                 ; Yes                       ; Yes                       ;
 ; ~ALTERA_nCEO~     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.18e-09 V                   ; 2.38 V              ; -0.00483 V          ; 0.152 V                              ; 0.012 V                              ; 4.81e-10 s                  ; 6.29e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.18e-09 V                  ; 2.38 V             ; -0.00483 V         ; 0.152 V                             ; 0.012 V                             ; 4.81e-10 s                 ; 6.29e-10 s                 ; Yes                       ; Yes                       ;
 +-------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
@@ -1100,10 +1100,10 @@ No synchronizer chains to report.
 ; SevenSegement7[4] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
 ; SevenSegement7[5] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
 ; SevenSegement7[6] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
-; leds[0]           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
-; leds[1]           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
-; leds[2]           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
-; leds[3]           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; leds[0]           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.35 V              ; -0.00942 V          ; 0.116 V                              ; 0.033 V                              ; 6.66e-10 s                  ; 6.27e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.35 V             ; -0.00942 V         ; 0.116 V                             ; 0.033 V                             ; 6.66e-10 s                 ; 6.27e-10 s                 ; Yes                       ; Yes                       ;
+; leds[1]           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.33 V              ; -0.00269 V          ; 0.13 V                               ; 0.055 V                              ; 3.54e-09 s                  ; 3.29e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.33 V             ; -0.00269 V         ; 0.13 V                              ; 0.055 V                             ; 3.54e-09 s                 ; 3.29e-09 s                 ; Yes                       ; Yes                       ;
+; leds[2]           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.35 V              ; -0.00942 V          ; 0.116 V                              ; 0.033 V                              ; 6.66e-10 s                  ; 6.27e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.35 V             ; -0.00942 V         ; 0.116 V                             ; 0.033 V                             ; 6.66e-10 s                 ; 6.27e-10 s                 ; Yes                       ; Yes                       ;
+; leds[3]           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.35 V              ; -0.00942 V          ; 0.116 V                              ; 0.033 V                              ; 6.66e-10 s                  ; 6.27e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.35 V             ; -0.00942 V         ; 0.116 V                             ; 0.033 V                             ; 6.66e-10 s                 ; 6.27e-10 s                 ; Yes                       ; Yes                       ;
 ; ~ALTERA_DCLK~     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.75e-07 V                   ; 2.35 V              ; -0.0109 V           ; 0.084 V                              ; 0.027 V                              ; 4.31e-10 s                  ; 3.61e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.75e-07 V                  ; 2.35 V             ; -0.0109 V          ; 0.084 V                             ; 0.027 V                             ; 4.31e-10 s                 ; 3.61e-10 s                 ; Yes                       ; Yes                       ;
 ; ~ALTERA_nCEO~     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.15e-07 V                   ; 2.35 V              ; -0.00712 V          ; 0.093 V                              ; 0.02 V                               ; 6.21e-10 s                  ; 7.9e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 6.15e-07 V                  ; 2.35 V             ; -0.00712 V         ; 0.093 V                             ; 0.02 V                              ; 6.21e-10 s                 ; 7.9e-10 s                  ; Yes                       ; Yes                       ;
 +-------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
@@ -1170,10 +1170,10 @@ No synchronizer chains to report.
 ; SevenSegement7[4] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
 ; SevenSegement7[5] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
 ; SevenSegement7[6] ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
-; leds[0]           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
-; leds[1]           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
-; leds[2]           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
-; leds[3]           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; leds[0]           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.71 V              ; -0.0317 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.15e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.71 V             ; -0.0317 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.15e-10 s                 ; No                        ; Yes                       ;
+; leds[1]           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.64 V              ; -0.0117 V           ; 0.202 V                              ; 0.176 V                              ; 2.38e-09 s                  ; 2.22e-09 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.64 V             ; -0.0117 V          ; 0.202 V                             ; 0.176 V                             ; 2.38e-09 s                 ; 2.22e-09 s                 ; No                        ; Yes                       ;
+; leds[2]           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.71 V              ; -0.0317 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.15e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.71 V             ; -0.0317 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.15e-10 s                 ; No                        ; Yes                       ;
+; leds[3]           ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.71 V              ; -0.0317 V           ; 0.148 V                              ; 0.064 V                              ; 4.51e-10 s                  ; 4.15e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.71 V             ; -0.0317 V          ; 0.148 V                             ; 0.064 V                             ; 4.51e-10 s                 ; 4.15e-10 s                 ; No                        ; Yes                       ;
 ; ~ALTERA_DCLK~     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.22e-08 V                   ; 2.74 V              ; -0.06 V             ; 0.158 V                              ; 0.08 V                               ; 2.68e-10 s                  ; 2.19e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.22e-08 V                  ; 2.74 V             ; -0.06 V            ; 0.158 V                             ; 0.08 V                              ; 2.68e-10 s                 ; 2.19e-10 s                 ; Yes                       ; Yes                       ;
 ; ~ALTERA_nCEO~     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.54e-08 V                   ; 2.7 V               ; -0.00943 V          ; 0.276 V                              ; 0.035 V                              ; 3.19e-10 s                  ; 4.99e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.54e-08 V                  ; 2.7 V              ; -0.00943 V         ; 0.276 V                             ; 0.035 V                             ; 3.19e-10 s                 ; 4.99e-10 s                 ; No                        ; Yes                       ;
 +-------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
@@ -1398,7 +1398,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Wed Nov  6 23:31:28 2024
+    Info: Processing started: Tue Nov 12 10:47:13 2024
 Info: Command: quartus_sta InstructionFetch -c InstructionFetch
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -1410,19 +1410,19 @@ Info (332142): No user constrained base clocks found in the design. Calling "der
 Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name clk clk
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
-Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -1.696
+Info (332146): Worst-case setup slack is -1.647
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.696             -27.253 clk 
-Info (332146): Worst-case hold slack is 0.640
+    Info (332119):    -1.647             -22.041 clk 
+Info (332146): Worst-case hold slack is 0.483
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.640               0.000 clk 
+    Info (332119):     0.483               0.000 clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
@@ -1432,17 +1432,17 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -1.414
+Info (332146): Worst-case setup slack is -1.366
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.414             -21.935 clk 
-Info (332146): Worst-case hold slack is 0.590
+    Info (332119):    -1.366             -17.098 clk 
+Info (332146): Worst-case hold slack is 0.437
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.590               0.000 clk 
+    Info (332119):     0.437               0.000 clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
@@ -1450,28 +1450,28 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119): ========= =================== =====================
     Info (332119):    -3.000             -36.410 clk 
 Info: Analyzing Fast 1200mV 0C Model
-Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -0.303
+Info (332146): Worst-case setup slack is -0.270
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.303              -1.677 clk 
-Info (332146): Worst-case hold slack is 0.289
+    Info (332119):    -0.270              -0.552 clk 
+Info (332146): Worst-case hold slack is 0.227
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.289               0.000 clk 
+    Info (332119):     0.227               0.000 clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000             -30.521 clk 
+    Info (332119):    -3.000             -31.364 clk 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
     Info: Peak virtual memory: 4887 megabytes
-    Info: Processing ended: Wed Nov  6 23:31:29 2024
+    Info: Processing ended: Tue Nov 12 10:47:14 2024
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
