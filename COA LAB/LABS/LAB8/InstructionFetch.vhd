@@ -15,7 +15,7 @@ entity InstructionFetch is
 end InstructionFetch;
 
 architecture bhv of InstructionFetch is
-    signal SevenSegementWire, top_pcout : std_LOGIC_VECTOR(31 downto 0);
+    signal  top_pcout : std_LOGIC_VECTOR(31 downto 0);
 
 begin
 

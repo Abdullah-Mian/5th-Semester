@@ -42,7 +42,13 @@ begin
 		  clock 			  =>  clock
 	 );
 	 
-	 
+	 with diplayDecison select 
+	sevenSegementWire <= rsWire when "000",
+	rtWire when "001",
+	rdWire when "010",
+	immediateWire when "011",
+	jump_addrWire when "100",
+	(others => '0') when others;
 	
     -- Instantiate seven-segment displays for each nibble of the instruction
     u7: sevenSegement port map (
