@@ -43,12 +43,18 @@ Mutex
 
 Process Control Block 
 -It is a data structure managed by OS containing process information e.g.
--process state, process id, scheduling info etc
+-process state, process id, scheduling info ect
 
 Replicated ls | ls -l | LAB7
 
 -Pages
 one partition in main memory => Frame
-one partition in secondary memory => Page
-
+same partition in secondary memory => Page
 SizeOfPage = SizeOfFrame
+virtual address to physical address
+bit to represent page/frame offset/size, frame no, page no
+
+-Page Replacement strategies 
+FIFO
+LRU
+OPTIMAL the best but can't implement

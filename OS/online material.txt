@@ -1,0 +1,11 @@
+--Scheduling Algorithms
+https://youtu.be/D4nhaszNW4o
+https://youtu.be/n7Owxwfr6Ko?si=nG8r2fH1FQ4BcNiV
+
+--Page replacement Stratgies
+https://www.youtube.com/watch?v=6c-mOFZwP_8&list=PLxCzCOWd7aiGz9donHRrE9I3Mwn6XdP8p&index=54
+
+https://www.youtube.com/watch?v=30P73tWmU0s&list=PLxCzCOWd7aiGz9donHRrE9I3Mwn6XdP8p&index=55
+
+--OS BOOK SLIDES
+https://www.os-book.com/OS10/slide-dir/index.html
