@@ -32,12 +32,16 @@ begin
 	 
 	 d1 : InstructionDecode port map (
 		  instruction    => instructionWire,
+		  alu_result 	  => X"00000000",
+		  memory_data 	  => X"00000000",
 		  rs				  =>  rsWire,
 		  rt				  =>  rtWire,
 		  rd				  => 	rdWire,
         immediate      =>	immediateWire,
         jump_addr		  =>	jump_addrWire,
-		  --RegDst, RegWrite, MemToReg : in std_logic;
+		  RegDst 		  => '0',
+		  RegWrite		  => '0',
+		  MemToReg		  => '0',
         reset 			  =>	reset,		
 		  clock 			  =>  clock
 	 );

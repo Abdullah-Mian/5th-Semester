@@ -240,11 +240,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "jump_decision",
+					"name" : "branch_decision",
 					"strict" : false
 				},
 				{
-					"name" : "branch_decision",
+					"name" : "jump_decision",
 					"strict" : false
 				},
 				{

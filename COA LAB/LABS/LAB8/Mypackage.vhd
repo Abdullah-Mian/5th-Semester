@@ -33,14 +33,15 @@ package MyPackage is
 	component InstructionDecode is
     port (
         instruction    : in STD_LOGIC_VECTOR  (31 downto 0);
+		  alu_result     : in STD_LOGIC_VECTOR  (31 downto 0);
+		  memory_data    : in STD_LOGIC_VECTOR  (31 downto 0);
 		  rs				  : out STD_LOGIC_VECTOR (31 downto 0);
 		  rt				  : out STD_LOGIC_VECTOR (31 downto 0);
 		  rd				  : out STD_LOGIC_VECTOR (31 downto 0);
         immediate      : out STD_LOGIC_VECTOR (31 downto 0);
         jump_addr		  : out STD_LOGIC_VECTOR (31 downto 0);
-		  --RegDst, RegWrite, MemToReg : in std_logic;
+		  RegDst, RegWrite, MemToReg : in std_logic;
         reset, clock          : in std_logic
-		  
     );
 	end component;
 
