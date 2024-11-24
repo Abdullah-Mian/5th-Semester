@@ -59,8 +59,8 @@ begin
         variable add_rs, add_rt, add_rd : std_logic_vector(4 downto 0);
         variable imm : std_logic_vector(15 downto 0);
     begin
-        add_rt := instruction(25 downto 21);
-        add_rs := instruction(20 downto 16);
+        add_rs := instruction(25 downto 21);
+        add_rt := instruction(20 downto 16);
         add_rd := instruction(15 downto 11);
         
         rs <= reg_File(to_integer(unsigned(add_rs)));
@@ -89,8 +89,8 @@ begin
                 reset_registers;
             end if;
 				
-            addrd := instruction(20 downto 16);
-            addrt := instruction(15 downto 11);
+            addrt := instruction(20 downto 16);
+            addrd := instruction(15 downto 11);
 
             if MemToReg = '1' then
                 write_value := memory_data;

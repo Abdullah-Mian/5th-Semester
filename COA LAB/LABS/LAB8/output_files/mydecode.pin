@@ -277,7 +277,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AG11      :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG12      :        :                   :         : 3         :                
 GND                          : AG13      : gnd    :                   :         :           :                
 GND+                         : AG14      :        :                   :         : 3         :                
-GND+                         : AG15      :        :                   :         : 4         :                
+RegisterWrite                : AG15      : input  : 2.5 V             :         : 4         : N              
 GND                          : AG16      : gnd    :                   :         :           :                
 SevenSegement7[2]            : AG17      : output : 2.5 V             :         : 4         : Y              
 SevenSegement7[5]            : AG18      : output : 2.5 V             :         : 4         : Y              

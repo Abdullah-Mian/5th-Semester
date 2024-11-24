@@ -254,6 +254,10 @@
 				{
 					"name" : "clock",
 					"strict" : false
+				},
+				{
+					"name" : "RegisterWrite",
+					"strict" : false
 				}
 			]
 		}

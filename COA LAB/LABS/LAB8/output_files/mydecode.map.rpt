@@ -1,5 +1,5 @@
 Analysis & Synthesis report for mydecode
-Wed Nov 20 20:47:01 2024
+Sun Nov 24 23:14:56 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -14,13 +14,15 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Port Connectivity Checks: "InstructionDecode:d1"
- 12. Port Connectivity Checks: "InstructionFetch:f1|fetch:f1"
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Port Connectivity Checks: "InstructionDecode:d1"
+ 14. Port Connectivity Checks: "InstructionFetch:f1|fetch:f1"
+ 15. Post-Synthesis Netlist Statistics for Top Partition
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
 
 
 
@@ -47,16 +49,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Nov 20 20:47:01 2024          ;
+; Analysis & Synthesis Status        ; Successful - Sun Nov 24 23:14:56 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; mydecode                                       ;
 ; Top-level Entity Name              ; mydecode                                       ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 130                                            ;
-;     Total combinational functions  ; 130                                            ;
-;     Dedicated logic registers      ; 19                                             ;
-; Total registers                    ; 19                                             ;
-; Total pins                         ; 63                                             ;
+; Total logic elements               ; 171                                            ;
+;     Total combinational functions  ; 171                                            ;
+;     Dedicated logic registers      ; 28                                             ;
+; Total registers                    ; 28                                             ;
+; Total pins                         ; 64                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
@@ -186,50 +188,51 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+---------+
 ; Resource                                    ; Usage   ;
 +---------------------------------------------+---------+
-; Estimated Total logic elements              ; 130     ;
+; Estimated Total logic elements              ; 171     ;
 ;                                             ;         ;
-; Total combinational functions               ; 130     ;
+; Total combinational functions               ; 171     ;
 ; Logic element usage by number of LUT inputs ;         ;
-;     -- 4 input functions                    ; 85      ;
-;     -- 3 input functions                    ; 42      ;
-;     -- <=2 input functions                  ; 3       ;
+;     -- 4 input functions                    ; 123     ;
+;     -- 3 input functions                    ; 43      ;
+;     -- <=2 input functions                  ; 5       ;
 ;                                             ;         ;
 ; Logic elements by mode                      ;         ;
-;     -- normal mode                          ; 127     ;
+;     -- normal mode                          ; 168     ;
 ;     -- arithmetic mode                      ; 3       ;
 ;                                             ;         ;
-; Total registers                             ; 19      ;
-;     -- Dedicated logic registers            ; 19      ;
+; Total registers                             ; 28      ;
+;     -- Dedicated logic registers            ; 28      ;
 ;     -- I/O registers                        ; 0       ;
 ;                                             ;         ;
-; I/O pins                                    ; 63      ;
+; I/O pins                                    ; 64      ;
 ;                                             ;         ;
 ; Embedded Multiplier 9-bit elements          ; 0       ;
 ;                                             ;         ;
 ; Maximum fan-out node                        ; Mux28~0 ;
-; Maximum fan-out                             ; 27      ;
-; Total fan-out                               ; 645     ;
-; Average fan-out                             ; 2.35    ;
+; Maximum fan-out                             ; 29      ;
+; Total fan-out                               ; 822     ;
+; Average fan-out                             ; 2.51    ;
 +---------------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                              ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------+------------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                    ; Entity Name      ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------+------------------+--------------+
-; |mydecode                  ; 130 (31)            ; 19 (0)                    ; 0           ; 0            ; 0       ; 0         ; 63   ; 0            ; |mydecode                              ; mydecode         ; work         ;
-;    |InstructionFetch:f1|   ; 36 (0)              ; 19 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mydecode|InstructionFetch:f1          ; InstructionFetch ; work         ;
-;       |fetch:f1|           ; 36 (36)             ; 19 (19)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mydecode|InstructionFetch:f1|fetch:f1 ; fetch            ; work         ;
-;    |sevenSegement:u0|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mydecode|sevenSegement:u0             ; sevenSegement    ; work         ;
-;    |sevenSegement:u1|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mydecode|sevenSegement:u1             ; sevenSegement    ; work         ;
-;    |sevenSegement:u2|      ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mydecode|sevenSegement:u2             ; sevenSegement    ; work         ;
-;    |sevenSegement:u3|      ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mydecode|sevenSegement:u3             ; sevenSegement    ; work         ;
-;    |sevenSegement:u4|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mydecode|sevenSegement:u4             ; sevenSegement    ; work         ;
-;    |sevenSegement:u5|      ; 11 (11)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mydecode|sevenSegement:u5             ; sevenSegement    ; work         ;
-;    |sevenSegement:u6|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mydecode|sevenSegement:u6             ; sevenSegement    ; work         ;
-;    |sevenSegement:u7|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mydecode|sevenSegement:u7             ; sevenSegement    ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------+------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                               ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                    ; Entity Name       ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------+-------------------+--------------+
+; |mydecode                  ; 171 (48)            ; 28 (0)                    ; 0           ; 0            ; 0       ; 0         ; 64   ; 0            ; |mydecode                              ; mydecode          ; work         ;
+;    |InstructionDecode:d1|  ; 27 (27)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mydecode|InstructionDecode:d1         ; InstructionDecode ; work         ;
+;    |InstructionFetch:f1|   ; 35 (0)              ; 18 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mydecode|InstructionFetch:f1          ; InstructionFetch  ; work         ;
+;       |fetch:f1|           ; 35 (35)             ; 18 (18)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mydecode|InstructionFetch:f1|fetch:f1 ; fetch             ; work         ;
+;    |sevenSegement:u0|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mydecode|sevenSegement:u0             ; sevenSegement     ; work         ;
+;    |sevenSegement:u1|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mydecode|sevenSegement:u1             ; sevenSegement     ; work         ;
+;    |sevenSegement:u2|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mydecode|sevenSegement:u2             ; sevenSegement     ; work         ;
+;    |sevenSegement:u3|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mydecode|sevenSegement:u3             ; sevenSegement     ; work         ;
+;    |sevenSegement:u4|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mydecode|sevenSegement:u4             ; sevenSegement     ; work         ;
+;    |sevenSegement:u5|      ; 11 (11)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mydecode|sevenSegement:u5             ; sevenSegement     ; work         ;
+;    |sevenSegement:u6|      ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mydecode|sevenSegement:u6             ; sevenSegement     ; work         ;
+;    |sevenSegement:u7|      ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mydecode|sevenSegement:u7             ; sevenSegement     ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -238,270 +241,271 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------+----------------------------------------------------------+
 ; Register name                                            ; Reason for Removal                                       ;
 +----------------------------------------------------------+----------------------------------------------------------+
-; InstructionDecode:d1|reg_File[7][7]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[7][6]                      ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[7][5]                      ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[7][4]                      ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[7][3]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[7][2]                      ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[7][1]                      ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[7][0]                      ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[7][8]                      ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[7][9]                      ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[7][10]                     ; Stuck at VCC due to stuck port data_in                   ;
+; InstructionDecode:d1|reg_File[0][11]                     ; Merged with InstructionDecode:d1|reg_File[0][0]          ;
+; InstructionDecode:d1|reg_File[0][12]                     ; Merged with InstructionDecode:d1|reg_File[0][0]          ;
+; InstructionDecode:d1|reg_File[0][13]                     ; Merged with InstructionDecode:d1|reg_File[0][0]          ;
+; InstructionDecode:d1|reg_File[0][15]                     ; Merged with InstructionDecode:d1|reg_File[0][0]          ;
+; InstructionDecode:d1|reg_File[0][16]                     ; Merged with InstructionDecode:d1|reg_File[0][0]          ;
+; InstructionDecode:d1|reg_File[0][17]                     ; Merged with InstructionDecode:d1|reg_File[0][0]          ;
+; InstructionDecode:d1|reg_File[0][19]                     ; Merged with InstructionDecode:d1|reg_File[0][0]          ;
+; InstructionDecode:d1|reg_File[0][1]                      ; Merged with InstructionDecode:d1|reg_File[0][0]          ;
+; InstructionDecode:d1|reg_File[0][20]                     ; Merged with InstructionDecode:d1|reg_File[0][0]          ;
+; InstructionDecode:d1|reg_File[0][21]                     ; Merged with InstructionDecode:d1|reg_File[0][0]          ;
+; InstructionDecode:d1|reg_File[0][23]                     ; Merged with InstructionDecode:d1|reg_File[0][0]          ;
+; InstructionDecode:d1|reg_File[0][24]                     ; Merged with InstructionDecode:d1|reg_File[0][0]          ;
+; InstructionDecode:d1|reg_File[0][25]                     ; Merged with InstructionDecode:d1|reg_File[0][0]          ;
+; InstructionDecode:d1|reg_File[0][27]                     ; Merged with InstructionDecode:d1|reg_File[0][0]          ;
+; InstructionDecode:d1|reg_File[0][28]                     ; Merged with InstructionDecode:d1|reg_File[0][0]          ;
+; InstructionDecode:d1|reg_File[0][29]                     ; Merged with InstructionDecode:d1|reg_File[0][0]          ;
+; InstructionDecode:d1|reg_File[0][31]                     ; Merged with InstructionDecode:d1|reg_File[0][0]          ;
+; InstructionDecode:d1|reg_File[0][3]                      ; Merged with InstructionDecode:d1|reg_File[0][0]          ;
+; InstructionDecode:d1|reg_File[0][4]                      ; Merged with InstructionDecode:d1|reg_File[0][0]          ;
+; InstructionDecode:d1|reg_File[0][5]                      ; Merged with InstructionDecode:d1|reg_File[0][0]          ;
+; InstructionDecode:d1|reg_File[0][7]                      ; Merged with InstructionDecode:d1|reg_File[0][0]          ;
+; InstructionDecode:d1|reg_File[0][8]                      ; Merged with InstructionDecode:d1|reg_File[0][0]          ;
+; InstructionDecode:d1|reg_File[0][9]                      ; Merged with InstructionDecode:d1|reg_File[0][0]          ;
+; InstructionDecode:d1|reg_File[1][13]                     ; Merged with InstructionDecode:d1|reg_File[1][11]         ;
+; InstructionDecode:d1|reg_File[1][15]                     ; Merged with InstructionDecode:d1|reg_File[1][11]         ;
+; InstructionDecode:d1|reg_File[1][17]                     ; Merged with InstructionDecode:d1|reg_File[1][11]         ;
+; InstructionDecode:d1|reg_File[1][19]                     ; Merged with InstructionDecode:d1|reg_File[1][11]         ;
+; InstructionDecode:d1|reg_File[1][1]                      ; Merged with InstructionDecode:d1|reg_File[1][11]         ;
+; InstructionDecode:d1|reg_File[1][21]                     ; Merged with InstructionDecode:d1|reg_File[1][11]         ;
+; InstructionDecode:d1|reg_File[1][23]                     ; Merged with InstructionDecode:d1|reg_File[1][11]         ;
+; InstructionDecode:d1|reg_File[1][25]                     ; Merged with InstructionDecode:d1|reg_File[1][11]         ;
+; InstructionDecode:d1|reg_File[1][27]                     ; Merged with InstructionDecode:d1|reg_File[1][11]         ;
+; InstructionDecode:d1|reg_File[1][29]                     ; Merged with InstructionDecode:d1|reg_File[1][11]         ;
+; InstructionDecode:d1|reg_File[1][31]                     ; Merged with InstructionDecode:d1|reg_File[1][11]         ;
+; InstructionDecode:d1|reg_File[1][3]                      ; Merged with InstructionDecode:d1|reg_File[1][11]         ;
+; InstructionDecode:d1|reg_File[1][5]                      ; Merged with InstructionDecode:d1|reg_File[1][11]         ;
+; InstructionDecode:d1|reg_File[1][7]                      ; Merged with InstructionDecode:d1|reg_File[1][11]         ;
+; InstructionDecode:d1|reg_File[1][9]                      ; Merged with InstructionDecode:d1|reg_File[1][11]         ;
+; InstructionDecode:d1|reg_File[2][11]                     ; Merged with InstructionDecode:d1|reg_File[2][0]          ;
+; InstructionDecode:d1|reg_File[2][12]                     ; Merged with InstructionDecode:d1|reg_File[2][0]          ;
+; InstructionDecode:d1|reg_File[2][15]                     ; Merged with InstructionDecode:d1|reg_File[2][0]          ;
+; InstructionDecode:d1|reg_File[2][16]                     ; Merged with InstructionDecode:d1|reg_File[2][0]          ;
+; InstructionDecode:d1|reg_File[2][19]                     ; Merged with InstructionDecode:d1|reg_File[2][0]          ;
+; InstructionDecode:d1|reg_File[2][20]                     ; Merged with InstructionDecode:d1|reg_File[2][0]          ;
+; InstructionDecode:d1|reg_File[2][23]                     ; Merged with InstructionDecode:d1|reg_File[2][0]          ;
+; InstructionDecode:d1|reg_File[2][24]                     ; Merged with InstructionDecode:d1|reg_File[2][0]          ;
+; InstructionDecode:d1|reg_File[2][27]                     ; Merged with InstructionDecode:d1|reg_File[2][0]          ;
+; InstructionDecode:d1|reg_File[2][28]                     ; Merged with InstructionDecode:d1|reg_File[2][0]          ;
+; InstructionDecode:d1|reg_File[2][31]                     ; Merged with InstructionDecode:d1|reg_File[2][0]          ;
+; InstructionDecode:d1|reg_File[2][3]                      ; Merged with InstructionDecode:d1|reg_File[2][0]          ;
+; InstructionDecode:d1|reg_File[2][4]                      ; Merged with InstructionDecode:d1|reg_File[2][0]          ;
+; InstructionDecode:d1|reg_File[2][7]                      ; Merged with InstructionDecode:d1|reg_File[2][0]          ;
+; InstructionDecode:d1|reg_File[2][8]                      ; Merged with InstructionDecode:d1|reg_File[2][0]          ;
+; InstructionDecode:d1|reg_File[3][15]                     ; Merged with InstructionDecode:d1|reg_File[3][11]         ;
+; InstructionDecode:d1|reg_File[3][19]                     ; Merged with InstructionDecode:d1|reg_File[3][11]         ;
+; InstructionDecode:d1|reg_File[3][23]                     ; Merged with InstructionDecode:d1|reg_File[3][11]         ;
+; InstructionDecode:d1|reg_File[3][27]                     ; Merged with InstructionDecode:d1|reg_File[3][11]         ;
+; InstructionDecode:d1|reg_File[3][31]                     ; Merged with InstructionDecode:d1|reg_File[3][11]         ;
+; InstructionDecode:d1|reg_File[3][3]                      ; Merged with InstructionDecode:d1|reg_File[3][11]         ;
+; InstructionDecode:d1|reg_File[3][7]                      ; Merged with InstructionDecode:d1|reg_File[3][11]         ;
+; InstructionDecode:d1|reg_File[4][11]                     ; Merged with InstructionDecode:d1|reg_File[4][0]          ;
+; InstructionDecode:d1|reg_File[4][12]                     ; Merged with InstructionDecode:d1|reg_File[4][0]          ;
+; InstructionDecode:d1|reg_File[4][13]                     ; Merged with InstructionDecode:d1|reg_File[4][0]          ;
+; InstructionDecode:d1|reg_File[4][15]                     ; Merged with InstructionDecode:d1|reg_File[4][0]          ;
+; InstructionDecode:d1|reg_File[4][16]                     ; Merged with InstructionDecode:d1|reg_File[4][0]          ;
+; InstructionDecode:d1|reg_File[4][17]                     ; Merged with InstructionDecode:d1|reg_File[4][0]          ;
+; InstructionDecode:d1|reg_File[4][19]                     ; Merged with InstructionDecode:d1|reg_File[4][0]          ;
+; InstructionDecode:d1|reg_File[4][1]                      ; Merged with InstructionDecode:d1|reg_File[4][0]          ;
+; InstructionDecode:d1|reg_File[4][20]                     ; Merged with InstructionDecode:d1|reg_File[4][0]          ;
+; InstructionDecode:d1|reg_File[4][21]                     ; Merged with InstructionDecode:d1|reg_File[4][0]          ;
+; InstructionDecode:d1|reg_File[4][23]                     ; Merged with InstructionDecode:d1|reg_File[4][0]          ;
+; InstructionDecode:d1|reg_File[4][24]                     ; Merged with InstructionDecode:d1|reg_File[4][0]          ;
+; InstructionDecode:d1|reg_File[4][25]                     ; Merged with InstructionDecode:d1|reg_File[4][0]          ;
+; InstructionDecode:d1|reg_File[4][27]                     ; Merged with InstructionDecode:d1|reg_File[4][0]          ;
+; InstructionDecode:d1|reg_File[4][28]                     ; Merged with InstructionDecode:d1|reg_File[4][0]          ;
+; InstructionDecode:d1|reg_File[4][29]                     ; Merged with InstructionDecode:d1|reg_File[4][0]          ;
+; InstructionDecode:d1|reg_File[4][31]                     ; Merged with InstructionDecode:d1|reg_File[4][0]          ;
+; InstructionDecode:d1|reg_File[4][3]                      ; Merged with InstructionDecode:d1|reg_File[4][0]          ;
+; InstructionDecode:d1|reg_File[4][4]                      ; Merged with InstructionDecode:d1|reg_File[4][0]          ;
+; InstructionDecode:d1|reg_File[4][5]                      ; Merged with InstructionDecode:d1|reg_File[4][0]          ;
+; InstructionDecode:d1|reg_File[4][7]                      ; Merged with InstructionDecode:d1|reg_File[4][0]          ;
+; InstructionDecode:d1|reg_File[4][8]                      ; Merged with InstructionDecode:d1|reg_File[4][0]          ;
+; InstructionDecode:d1|reg_File[4][9]                      ; Merged with InstructionDecode:d1|reg_File[4][0]          ;
+; InstructionDecode:d1|reg_File[5][13]                     ; Merged with InstructionDecode:d1|reg_File[5][11]         ;
+; InstructionDecode:d1|reg_File[5][15]                     ; Merged with InstructionDecode:d1|reg_File[5][11]         ;
+; InstructionDecode:d1|reg_File[5][17]                     ; Merged with InstructionDecode:d1|reg_File[5][11]         ;
+; InstructionDecode:d1|reg_File[5][19]                     ; Merged with InstructionDecode:d1|reg_File[5][11]         ;
+; InstructionDecode:d1|reg_File[5][1]                      ; Merged with InstructionDecode:d1|reg_File[5][11]         ;
+; InstructionDecode:d1|reg_File[5][21]                     ; Merged with InstructionDecode:d1|reg_File[5][11]         ;
+; InstructionDecode:d1|reg_File[5][23]                     ; Merged with InstructionDecode:d1|reg_File[5][11]         ;
+; InstructionDecode:d1|reg_File[5][25]                     ; Merged with InstructionDecode:d1|reg_File[5][11]         ;
+; InstructionDecode:d1|reg_File[5][27]                     ; Merged with InstructionDecode:d1|reg_File[5][11]         ;
+; InstructionDecode:d1|reg_File[5][29]                     ; Merged with InstructionDecode:d1|reg_File[5][11]         ;
+; InstructionDecode:d1|reg_File[5][31]                     ; Merged with InstructionDecode:d1|reg_File[5][11]         ;
+; InstructionDecode:d1|reg_File[5][3]                      ; Merged with InstructionDecode:d1|reg_File[5][11]         ;
+; InstructionDecode:d1|reg_File[5][5]                      ; Merged with InstructionDecode:d1|reg_File[5][11]         ;
+; InstructionDecode:d1|reg_File[5][7]                      ; Merged with InstructionDecode:d1|reg_File[5][11]         ;
+; InstructionDecode:d1|reg_File[5][9]                      ; Merged with InstructionDecode:d1|reg_File[5][11]         ;
+; InstructionDecode:d1|reg_File[6][11]                     ; Merged with InstructionDecode:d1|reg_File[6][0]          ;
+; InstructionDecode:d1|reg_File[6][12]                     ; Merged with InstructionDecode:d1|reg_File[6][0]          ;
+; InstructionDecode:d1|reg_File[6][15]                     ; Merged with InstructionDecode:d1|reg_File[6][0]          ;
+; InstructionDecode:d1|reg_File[6][16]                     ; Merged with InstructionDecode:d1|reg_File[6][0]          ;
+; InstructionDecode:d1|reg_File[6][19]                     ; Merged with InstructionDecode:d1|reg_File[6][0]          ;
+; InstructionDecode:d1|reg_File[6][20]                     ; Merged with InstructionDecode:d1|reg_File[6][0]          ;
+; InstructionDecode:d1|reg_File[6][23]                     ; Merged with InstructionDecode:d1|reg_File[6][0]          ;
+; InstructionDecode:d1|reg_File[6][24]                     ; Merged with InstructionDecode:d1|reg_File[6][0]          ;
+; InstructionDecode:d1|reg_File[6][27]                     ; Merged with InstructionDecode:d1|reg_File[6][0]          ;
+; InstructionDecode:d1|reg_File[6][28]                     ; Merged with InstructionDecode:d1|reg_File[6][0]          ;
+; InstructionDecode:d1|reg_File[6][31]                     ; Merged with InstructionDecode:d1|reg_File[6][0]          ;
+; InstructionDecode:d1|reg_File[6][3]                      ; Merged with InstructionDecode:d1|reg_File[6][0]          ;
+; InstructionDecode:d1|reg_File[6][4]                      ; Merged with InstructionDecode:d1|reg_File[6][0]          ;
+; InstructionDecode:d1|reg_File[6][7]                      ; Merged with InstructionDecode:d1|reg_File[6][0]          ;
+; InstructionDecode:d1|reg_File[6][8]                      ; Merged with InstructionDecode:d1|reg_File[6][0]          ;
+; InstructionDecode:d1|reg_File[7][15]                     ; Merged with InstructionDecode:d1|reg_File[7][11]         ;
+; InstructionDecode:d1|reg_File[7][19]                     ; Merged with InstructionDecode:d1|reg_File[7][11]         ;
+; InstructionDecode:d1|reg_File[7][23]                     ; Merged with InstructionDecode:d1|reg_File[7][11]         ;
+; InstructionDecode:d1|reg_File[7][27]                     ; Merged with InstructionDecode:d1|reg_File[7][11]         ;
+; InstructionDecode:d1|reg_File[7][31]                     ; Merged with InstructionDecode:d1|reg_File[7][11]         ;
+; InstructionDecode:d1|reg_File[7][3]                      ; Merged with InstructionDecode:d1|reg_File[7][11]         ;
+; InstructionDecode:d1|reg_File[7][7]                      ; Merged with InstructionDecode:d1|reg_File[7][11]         ;
+; InstructionDecode:d1|reg_File[0][14]                     ; Merged with InstructionDecode:d1|reg_File[0][10]         ;
+; InstructionDecode:d1|reg_File[0][18]                     ; Merged with InstructionDecode:d1|reg_File[0][10]         ;
+; InstructionDecode:d1|reg_File[0][22]                     ; Merged with InstructionDecode:d1|reg_File[0][10]         ;
+; InstructionDecode:d1|reg_File[0][26]                     ; Merged with InstructionDecode:d1|reg_File[0][10]         ;
+; InstructionDecode:d1|reg_File[0][2]                      ; Merged with InstructionDecode:d1|reg_File[0][10]         ;
+; InstructionDecode:d1|reg_File[0][30]                     ; Merged with InstructionDecode:d1|reg_File[0][10]         ;
+; InstructionDecode:d1|reg_File[0][6]                      ; Merged with InstructionDecode:d1|reg_File[0][10]         ;
+; InstructionDecode:d1|reg_File[1][14]                     ; Merged with InstructionDecode:d1|reg_File[1][10]         ;
+; InstructionDecode:d1|reg_File[1][18]                     ; Merged with InstructionDecode:d1|reg_File[1][10]         ;
+; InstructionDecode:d1|reg_File[1][22]                     ; Merged with InstructionDecode:d1|reg_File[1][10]         ;
+; InstructionDecode:d1|reg_File[1][26]                     ; Merged with InstructionDecode:d1|reg_File[1][10]         ;
+; InstructionDecode:d1|reg_File[1][2]                      ; Merged with InstructionDecode:d1|reg_File[1][10]         ;
+; InstructionDecode:d1|reg_File[1][30]                     ; Merged with InstructionDecode:d1|reg_File[1][10]         ;
+; InstructionDecode:d1|reg_File[1][6]                      ; Merged with InstructionDecode:d1|reg_File[1][10]         ;
+; InstructionDecode:d1|reg_File[2][14]                     ; Merged with InstructionDecode:d1|reg_File[2][10]         ;
+; InstructionDecode:d1|reg_File[2][18]                     ; Merged with InstructionDecode:d1|reg_File[2][10]         ;
+; InstructionDecode:d1|reg_File[2][22]                     ; Merged with InstructionDecode:d1|reg_File[2][10]         ;
+; InstructionDecode:d1|reg_File[2][26]                     ; Merged with InstructionDecode:d1|reg_File[2][10]         ;
+; InstructionDecode:d1|reg_File[2][2]                      ; Merged with InstructionDecode:d1|reg_File[2][10]         ;
+; InstructionDecode:d1|reg_File[2][30]                     ; Merged with InstructionDecode:d1|reg_File[2][10]         ;
+; InstructionDecode:d1|reg_File[2][6]                      ; Merged with InstructionDecode:d1|reg_File[2][10]         ;
+; InstructionDecode:d1|reg_File[3][14]                     ; Merged with InstructionDecode:d1|reg_File[3][10]         ;
+; InstructionDecode:d1|reg_File[3][18]                     ; Merged with InstructionDecode:d1|reg_File[3][10]         ;
+; InstructionDecode:d1|reg_File[3][22]                     ; Merged with InstructionDecode:d1|reg_File[3][10]         ;
+; InstructionDecode:d1|reg_File[3][26]                     ; Merged with InstructionDecode:d1|reg_File[3][10]         ;
+; InstructionDecode:d1|reg_File[3][2]                      ; Merged with InstructionDecode:d1|reg_File[3][10]         ;
+; InstructionDecode:d1|reg_File[3][30]                     ; Merged with InstructionDecode:d1|reg_File[3][10]         ;
+; InstructionDecode:d1|reg_File[3][6]                      ; Merged with InstructionDecode:d1|reg_File[3][10]         ;
+; InstructionDecode:d1|reg_File[4][14]                     ; Merged with InstructionDecode:d1|reg_File[4][10]         ;
+; InstructionDecode:d1|reg_File[4][18]                     ; Merged with InstructionDecode:d1|reg_File[4][10]         ;
+; InstructionDecode:d1|reg_File[4][22]                     ; Merged with InstructionDecode:d1|reg_File[4][10]         ;
+; InstructionDecode:d1|reg_File[4][26]                     ; Merged with InstructionDecode:d1|reg_File[4][10]         ;
+; InstructionDecode:d1|reg_File[4][2]                      ; Merged with InstructionDecode:d1|reg_File[4][10]         ;
+; InstructionDecode:d1|reg_File[4][30]                     ; Merged with InstructionDecode:d1|reg_File[4][10]         ;
+; InstructionDecode:d1|reg_File[4][6]                      ; Merged with InstructionDecode:d1|reg_File[4][10]         ;
+; InstructionDecode:d1|reg_File[5][14]                     ; Merged with InstructionDecode:d1|reg_File[5][10]         ;
+; InstructionDecode:d1|reg_File[5][18]                     ; Merged with InstructionDecode:d1|reg_File[5][10]         ;
+; InstructionDecode:d1|reg_File[5][22]                     ; Merged with InstructionDecode:d1|reg_File[5][10]         ;
+; InstructionDecode:d1|reg_File[5][26]                     ; Merged with InstructionDecode:d1|reg_File[5][10]         ;
+; InstructionDecode:d1|reg_File[5][2]                      ; Merged with InstructionDecode:d1|reg_File[5][10]         ;
+; InstructionDecode:d1|reg_File[5][30]                     ; Merged with InstructionDecode:d1|reg_File[5][10]         ;
+; InstructionDecode:d1|reg_File[5][6]                      ; Merged with InstructionDecode:d1|reg_File[5][10]         ;
+; InstructionDecode:d1|reg_File[6][14]                     ; Merged with InstructionDecode:d1|reg_File[6][10]         ;
+; InstructionDecode:d1|reg_File[6][18]                     ; Merged with InstructionDecode:d1|reg_File[6][10]         ;
+; InstructionDecode:d1|reg_File[6][22]                     ; Merged with InstructionDecode:d1|reg_File[6][10]         ;
+; InstructionDecode:d1|reg_File[6][26]                     ; Merged with InstructionDecode:d1|reg_File[6][10]         ;
+; InstructionDecode:d1|reg_File[6][2]                      ; Merged with InstructionDecode:d1|reg_File[6][10]         ;
+; InstructionDecode:d1|reg_File[6][30]                     ; Merged with InstructionDecode:d1|reg_File[6][10]         ;
+; InstructionDecode:d1|reg_File[6][6]                      ; Merged with InstructionDecode:d1|reg_File[6][10]         ;
+; InstructionDecode:d1|reg_File[7][14]                     ; Merged with InstructionDecode:d1|reg_File[7][10]         ;
+; InstructionDecode:d1|reg_File[7][18]                     ; Merged with InstructionDecode:d1|reg_File[7][10]         ;
+; InstructionDecode:d1|reg_File[7][22]                     ; Merged with InstructionDecode:d1|reg_File[7][10]         ;
+; InstructionDecode:d1|reg_File[7][26]                     ; Merged with InstructionDecode:d1|reg_File[7][10]         ;
+; InstructionDecode:d1|reg_File[7][2]                      ; Merged with InstructionDecode:d1|reg_File[7][10]         ;
+; InstructionDecode:d1|reg_File[7][30]                     ; Merged with InstructionDecode:d1|reg_File[7][10]         ;
+; InstructionDecode:d1|reg_File[7][6]                      ; Merged with InstructionDecode:d1|reg_File[7][10]         ;
+; InstructionDecode:d1|reg_File[2][17]                     ; Merged with InstructionDecode:d1|reg_File[2][13]         ;
+; InstructionDecode:d1|reg_File[2][1]                      ; Merged with InstructionDecode:d1|reg_File[2][13]         ;
+; InstructionDecode:d1|reg_File[2][21]                     ; Merged with InstructionDecode:d1|reg_File[2][13]         ;
+; InstructionDecode:d1|reg_File[2][25]                     ; Merged with InstructionDecode:d1|reg_File[2][13]         ;
+; InstructionDecode:d1|reg_File[2][29]                     ; Merged with InstructionDecode:d1|reg_File[2][13]         ;
+; InstructionDecode:d1|reg_File[2][5]                      ; Merged with InstructionDecode:d1|reg_File[2][13]         ;
+; InstructionDecode:d1|reg_File[2][9]                      ; Merged with InstructionDecode:d1|reg_File[2][13]         ;
+; InstructionDecode:d1|reg_File[3][12]                     ; Merged with InstructionDecode:d1|reg_File[3][0]          ;
+; InstructionDecode:d1|reg_File[3][13]                     ; Merged with InstructionDecode:d1|reg_File[3][0]          ;
+; InstructionDecode:d1|reg_File[3][16]                     ; Merged with InstructionDecode:d1|reg_File[3][0]          ;
+; InstructionDecode:d1|reg_File[3][17]                     ; Merged with InstructionDecode:d1|reg_File[3][0]          ;
+; InstructionDecode:d1|reg_File[3][1]                      ; Merged with InstructionDecode:d1|reg_File[3][0]          ;
+; InstructionDecode:d1|reg_File[3][20]                     ; Merged with InstructionDecode:d1|reg_File[3][0]          ;
+; InstructionDecode:d1|reg_File[3][21]                     ; Merged with InstructionDecode:d1|reg_File[3][0]          ;
+; InstructionDecode:d1|reg_File[3][24]                     ; Merged with InstructionDecode:d1|reg_File[3][0]          ;
+; InstructionDecode:d1|reg_File[3][25]                     ; Merged with InstructionDecode:d1|reg_File[3][0]          ;
+; InstructionDecode:d1|reg_File[3][28]                     ; Merged with InstructionDecode:d1|reg_File[3][0]          ;
+; InstructionDecode:d1|reg_File[3][29]                     ; Merged with InstructionDecode:d1|reg_File[3][0]          ;
+; InstructionDecode:d1|reg_File[3][4]                      ; Merged with InstructionDecode:d1|reg_File[3][0]          ;
+; InstructionDecode:d1|reg_File[3][5]                      ; Merged with InstructionDecode:d1|reg_File[3][0]          ;
+; InstructionDecode:d1|reg_File[3][8]                      ; Merged with InstructionDecode:d1|reg_File[3][0]          ;
+; InstructionDecode:d1|reg_File[3][9]                      ; Merged with InstructionDecode:d1|reg_File[3][0]          ;
+; InstructionDecode:d1|reg_File[6][17]                     ; Merged with InstructionDecode:d1|reg_File[6][13]         ;
+; InstructionDecode:d1|reg_File[6][1]                      ; Merged with InstructionDecode:d1|reg_File[6][13]         ;
+; InstructionDecode:d1|reg_File[6][21]                     ; Merged with InstructionDecode:d1|reg_File[6][13]         ;
+; InstructionDecode:d1|reg_File[6][25]                     ; Merged with InstructionDecode:d1|reg_File[6][13]         ;
+; InstructionDecode:d1|reg_File[6][29]                     ; Merged with InstructionDecode:d1|reg_File[6][13]         ;
+; InstructionDecode:d1|reg_File[6][5]                      ; Merged with InstructionDecode:d1|reg_File[6][13]         ;
+; InstructionDecode:d1|reg_File[6][9]                      ; Merged with InstructionDecode:d1|reg_File[6][13]         ;
+; InstructionDecode:d1|reg_File[7][12]                     ; Merged with InstructionDecode:d1|reg_File[7][0]          ;
+; InstructionDecode:d1|reg_File[7][13]                     ; Merged with InstructionDecode:d1|reg_File[7][0]          ;
+; InstructionDecode:d1|reg_File[7][16]                     ; Merged with InstructionDecode:d1|reg_File[7][0]          ;
+; InstructionDecode:d1|reg_File[7][17]                     ; Merged with InstructionDecode:d1|reg_File[7][0]          ;
+; InstructionDecode:d1|reg_File[7][1]                      ; Merged with InstructionDecode:d1|reg_File[7][0]          ;
+; InstructionDecode:d1|reg_File[7][20]                     ; Merged with InstructionDecode:d1|reg_File[7][0]          ;
+; InstructionDecode:d1|reg_File[7][21]                     ; Merged with InstructionDecode:d1|reg_File[7][0]          ;
+; InstructionDecode:d1|reg_File[7][24]                     ; Merged with InstructionDecode:d1|reg_File[7][0]          ;
+; InstructionDecode:d1|reg_File[7][25]                     ; Merged with InstructionDecode:d1|reg_File[7][0]          ;
+; InstructionDecode:d1|reg_File[7][28]                     ; Merged with InstructionDecode:d1|reg_File[7][0]          ;
+; InstructionDecode:d1|reg_File[7][29]                     ; Merged with InstructionDecode:d1|reg_File[7][0]          ;
+; InstructionDecode:d1|reg_File[7][4]                      ; Merged with InstructionDecode:d1|reg_File[7][0]          ;
+; InstructionDecode:d1|reg_File[7][5]                      ; Merged with InstructionDecode:d1|reg_File[7][0]          ;
+; InstructionDecode:d1|reg_File[7][8]                      ; Merged with InstructionDecode:d1|reg_File[7][0]          ;
+; InstructionDecode:d1|reg_File[7][9]                      ; Merged with InstructionDecode:d1|reg_File[7][0]          ;
+; InstructionDecode:d1|reg_File[1][12]                     ; Merged with InstructionDecode:d1|reg_File[1][0]          ;
+; InstructionDecode:d1|reg_File[1][16]                     ; Merged with InstructionDecode:d1|reg_File[1][0]          ;
+; InstructionDecode:d1|reg_File[1][20]                     ; Merged with InstructionDecode:d1|reg_File[1][0]          ;
+; InstructionDecode:d1|reg_File[1][24]                     ; Merged with InstructionDecode:d1|reg_File[1][0]          ;
+; InstructionDecode:d1|reg_File[1][28]                     ; Merged with InstructionDecode:d1|reg_File[1][0]          ;
+; InstructionDecode:d1|reg_File[1][4]                      ; Merged with InstructionDecode:d1|reg_File[1][0]          ;
+; InstructionDecode:d1|reg_File[1][8]                      ; Merged with InstructionDecode:d1|reg_File[1][0]          ;
+; InstructionDecode:d1|reg_File[5][12]                     ; Merged with InstructionDecode:d1|reg_File[5][0]          ;
+; InstructionDecode:d1|reg_File[5][16]                     ; Merged with InstructionDecode:d1|reg_File[5][0]          ;
+; InstructionDecode:d1|reg_File[5][20]                     ; Merged with InstructionDecode:d1|reg_File[5][0]          ;
+; InstructionDecode:d1|reg_File[5][24]                     ; Merged with InstructionDecode:d1|reg_File[5][0]          ;
+; InstructionDecode:d1|reg_File[5][28]                     ; Merged with InstructionDecode:d1|reg_File[5][0]          ;
+; InstructionDecode:d1|reg_File[5][4]                      ; Merged with InstructionDecode:d1|reg_File[5][0]          ;
+; InstructionDecode:d1|reg_File[5][8]                      ; Merged with InstructionDecode:d1|reg_File[5][0]          ;
 ; InstructionDecode:d1|reg_File[7][11]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[7][12]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[7][13]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[7][14]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[7][15]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[7][16]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[7][17]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[7][18]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[7][19]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[7][20]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[7][21]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[7][22]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[7][23]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[7][24]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[7][25]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[7][26]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[7][27]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[7][28]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[7][29]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[7][30]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[7][31]                     ; Stuck at GND due to stuck port data_in                   ;
 ; InstructionDecode:d1|reg_File[6][0]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[6][1]                      ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[6][2]                      ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[6][3]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[6][4]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[6][5]                      ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[6][6]                      ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[6][7]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[6][8]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[6][9]                      ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[6][10]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[6][11]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[6][12]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[6][13]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[6][14]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[6][15]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[6][16]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[6][17]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[6][18]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[6][19]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[6][20]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[6][21]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[6][22]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[6][23]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[6][24]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[6][25]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[6][26]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[6][27]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[6][28]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[6][29]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[6][30]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[6][31]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[5][0]                      ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[5][1]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[5][2]                      ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[5][3]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[5][4]                      ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[5][5]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[5][6]                      ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[5][7]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[5][8]                      ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[5][9]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[5][10]                     ; Stuck at VCC due to stuck port data_in                   ;
 ; InstructionDecode:d1|reg_File[5][11]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[5][12]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[5][13]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[5][14]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[5][15]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[5][16]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[5][17]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[5][18]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[5][19]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[5][20]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[5][21]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[5][22]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[5][23]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[5][24]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[5][25]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[5][26]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[5][27]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[5][28]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[5][29]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[5][30]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[5][31]                     ; Stuck at GND due to stuck port data_in                   ;
 ; InstructionDecode:d1|reg_File[4][0]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[4][1]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[4][2]                      ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[4][3]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[4][4]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[4][5]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[4][6]                      ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[4][7]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[4][8]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[4][9]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[4][10]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[4][11]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[4][12]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[4][13]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[4][14]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[4][15]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[4][16]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[4][17]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[4][18]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[4][19]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[4][20]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[4][21]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[4][22]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[4][23]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[4][24]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[4][25]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[4][26]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[4][27]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[4][28]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[4][29]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[4][30]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[4][31]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[3][0]                      ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[3][1]                      ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[3][2]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[3][3]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[3][4]                      ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[3][5]                      ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[3][6]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[3][7]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[3][8]                      ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[3][9]                      ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[3][10]                     ; Stuck at GND due to stuck port data_in                   ;
 ; InstructionDecode:d1|reg_File[3][11]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[3][12]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[3][13]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[3][14]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[3][15]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[3][16]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[3][17]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[3][18]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[3][19]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[3][20]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[3][21]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[3][22]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[3][23]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[3][24]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[3][25]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[3][26]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[3][27]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[3][28]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[3][29]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[3][30]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[3][31]                     ; Stuck at GND due to stuck port data_in                   ;
 ; InstructionDecode:d1|reg_File[2][0]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[2][1]                      ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[2][2]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[2][3]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[2][4]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[2][5]                      ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[2][6]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[2][7]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[2][8]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[2][9]                      ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[2][10]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[2][11]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[2][12]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[2][13]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[2][14]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[2][15]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[2][16]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[2][17]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[2][18]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[2][19]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[2][20]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[2][21]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[2][22]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[2][23]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[2][24]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[2][25]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[2][26]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[2][27]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[2][28]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[2][29]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[2][30]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[2][31]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[1][0]                      ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[1][1]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[1][2]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[1][3]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[1][4]                      ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[1][5]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[1][6]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[1][7]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[1][8]                      ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[1][9]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[1][10]                     ; Stuck at GND due to stuck port data_in                   ;
 ; InstructionDecode:d1|reg_File[1][11]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[1][12]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[1][13]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[1][14]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[1][15]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[1][16]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[1][17]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[1][18]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[1][19]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[1][20]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[1][21]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[1][22]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[1][23]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[1][24]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[1][25]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[1][26]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[1][27]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[1][28]                     ; Stuck at VCC due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[1][29]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[1][30]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[1][31]                     ; Stuck at GND due to stuck port data_in                   ;
 ; InstructionDecode:d1|reg_File[0][0]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[0][1]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[0][2]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[0][3]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[0][4]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[0][5]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[0][6]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[0][7]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[0][8]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[0][9]                      ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[0][10]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[0][11]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[0][12]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[0][13]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[0][14]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[0][15]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[0][16]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[0][17]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[0][18]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[0][19]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[0][20]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[0][21]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[0][22]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[0][23]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[0][24]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[0][25]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[0][26]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[0][27]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[0][28]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[0][29]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[0][30]                     ; Stuck at GND due to stuck port data_in                   ;
-; InstructionDecode:d1|reg_File[0][31]                     ; Stuck at GND due to stuck port data_in                   ;
 ; InstructionFetch:f1|fetch:f1|instruction[19]             ; Stuck at GND due to stuck port data_in                   ;
+; InstructionDecode:d1|reg_File[5][10]                     ; Stuck at VCC due to stuck port data_in                   ;
+; InstructionDecode:d1|reg_File[6][10]                     ; Stuck at VCC due to stuck port data_in                   ;
+; InstructionDecode:d1|reg_File[7][10]                     ; Stuck at VCC due to stuck port data_in                   ;
+; InstructionDecode:d1|reg_File[4][10]                     ; Stuck at VCC due to stuck port data_in                   ;
 ; InstructionFetch:f1|fetch:f1|instruction[5]              ; Merged with InstructionFetch:f1|fetch:f1|instruction[13] ;
-; InstructionFetch:f1|fetch:f1|instruction[3,6,7,11,14,15] ; Merged with InstructionFetch:f1|fetch:f1|instruction[10] ;
 ; InstructionFetch:f1|fetch:f1|instruction[4,8]            ; Merged with InstructionFetch:f1|fetch:f1|instruction[12] ;
+; InstructionFetch:f1|fetch:f1|instruction[3,6,7,11,14,15] ; Merged with InstructionFetch:f1|fetch:f1|instruction[10] ;
+; InstructionFetch:f1|fetch:f1|instruction[1]              ; Merged with InstructionFetch:f1|fetch:f1|instruction[17] ;
 ; InstructionFetch:f1|fetch:f1|instruction[24]             ; Merged with InstructionFetch:f1|fetch:f1|instruction[20] ;
 ; InstructionFetch:f1|fetch:f1|pc[4..31]                   ; Lost fanout                                              ;
-; Total Number of Removed Registers = 295                  ;                                                          ;
+; Total Number of Removed Registers = 286                  ;                                                          ;
 +----------------------------------------------------------+----------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                            ;
++----------------------------------------------+---------------------------+-----------------------------------------------------------------------------+
+; Register name                                ; Reason for Removal        ; Registers Removed due to This Register                                      ;
++----------------------------------------------+---------------------------+-----------------------------------------------------------------------------+
+; InstructionFetch:f1|fetch:f1|instruction[19] ; Stuck at GND              ; InstructionDecode:d1|reg_File[5][10], InstructionDecode:d1|reg_File[6][10], ;
+;                                              ; due to stuck port data_in ; InstructionDecode:d1|reg_File[4][10]                                        ;
++----------------------------------------------+---------------------------+-----------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -509,8 +513,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 19    ;
-; Number of registers using Synchronous Clear  ; 17    ;
+; Total registers                              ; 28    ;
+; Number of registers using Synchronous Clear  ; 16    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -519,30 +523,63 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |mydecode|Mux31                           ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |mydecode|InstructionFetch:f1|fetch:f1|pc ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |mydecode|Mux16                           ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 2 LEs                ; 8 LEs                  ; No         ; |mydecode|Mux28                           ;
-; 6:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; No         ; |mydecode|Mux21                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------+
-
-
 +--------------------------------------------------+
-; Port Connectivity Checks: "InstructionDecode:d1" ;
-+-------------+-------+----------+-----------------+
-; Port        ; Type  ; Severity ; Details         ;
-+-------------+-------+----------+-----------------+
-; alu_result  ; Input ; Info     ; Stuck at GND    ;
-; memory_data ; Input ; Info     ; Stuck at GND    ;
-; regdst      ; Input ; Info     ; Stuck at GND    ;
-; regwrite    ; Input ; Info     ; Stuck at GND    ;
-; memtoreg    ; Input ; Info     ; Stuck at GND    ;
-+-------------+-------+----------+-----------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; InstructionDecode:d1|reg_File[5][0]    ; 4       ;
+; InstructionDecode:d1|reg_File[7][0]    ; 6       ;
+; InstructionDecode:d1|reg_File[1][0]    ; 4       ;
+; InstructionDecode:d1|reg_File[3][0]    ; 6       ;
+; InstructionDecode:d1|reg_File[6][13]   ; 4       ;
+; InstructionDecode:d1|reg_File[2][13]   ; 4       ;
+; Total number of inverted registers = 6 ;         ;
++----------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |mydecode|InstructionDecode:d1|reg_File[6][10] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |mydecode|InstructionDecode:d1|reg_File[5][0]  ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |mydecode|InstructionDecode:d1|reg_File[7][0]  ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |mydecode|Mux13                                ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |mydecode|InstructionFetch:f1|fetch:f1|pc      ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |mydecode|Mux6                                 ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 3 LEs                ; 12 LEs                 ; No         ; |mydecode|Mux20                                ;
+; 6:1                ; 12 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; No         ; |mydecode|Mux18                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+
+
++------------------------------------------------------+
+; Port Connectivity Checks: "InstructionDecode:d1"     ;
++--------------------+-------+----------+--------------+
+; Port               ; Type  ; Severity ; Details      ;
++--------------------+-------+----------+--------------+
+; alu_result[29..27] ; Input ; Info     ; Stuck at GND ;
+; alu_result[25..23] ; Input ; Info     ; Stuck at GND ;
+; alu_result[21..19] ; Input ; Info     ; Stuck at GND ;
+; alu_result[17..15] ; Input ; Info     ; Stuck at GND ;
+; alu_result[13..11] ; Input ; Info     ; Stuck at GND ;
+; alu_result[9..7]   ; Input ; Info     ; Stuck at GND ;
+; alu_result[5..3]   ; Input ; Info     ; Stuck at GND ;
+; alu_result[1..0]   ; Input ; Info     ; Stuck at GND ;
+; alu_result[31]     ; Input ; Info     ; Stuck at GND ;
+; alu_result[30]     ; Input ; Info     ; Stuck at VCC ;
+; alu_result[26]     ; Input ; Info     ; Stuck at VCC ;
+; alu_result[22]     ; Input ; Info     ; Stuck at VCC ;
+; alu_result[18]     ; Input ; Info     ; Stuck at VCC ;
+; alu_result[14]     ; Input ; Info     ; Stuck at VCC ;
+; alu_result[10]     ; Input ; Info     ; Stuck at VCC ;
+; alu_result[6]      ; Input ; Info     ; Stuck at VCC ;
+; alu_result[2]      ; Input ; Info     ; Stuck at VCC ;
+; memory_data        ; Input ; Info     ; Stuck at GND ;
+; regdst             ; Input ; Info     ; Stuck at GND ;
+; memtoreg           ; Input ; Info     ; Stuck at GND ;
++--------------------+-------+----------+--------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------+
@@ -565,21 +602,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 63                          ;
-; cycloneiii_ff         ; 19                          ;
-;     SCLR              ; 17                          ;
-;     plain             ; 2                           ;
-; cycloneiii_lcell_comb ; 134                         ;
+; boundary_port         ; 64                          ;
+; cycloneiii_ff         ; 28                          ;
+;     SCLR              ; 16                          ;
+;     plain             ; 12                          ;
+; cycloneiii_lcell_comb ; 176                         ;
 ;     arith             ; 3                           ;
 ;         3 data inputs ; 3                           ;
-;     normal            ; 131                         ;
-;         1 data inputs ; 5                           ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 39                          ;
-;         4 data inputs ; 85                          ;
+;     normal            ; 173                         ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 40                          ;
+;         4 data inputs ; 123                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 3.58                        ;
+; Max LUT depth         ; 8.00                        ;
+; Average LUT depth     ; 5.10                        ;
 +-----------------------+-----------------------------+
 
 
@@ -598,7 +635,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Wed Nov 20 20:46:55 2024
+    Info: Processing started: Sun Nov 24 23:14:49 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mydecode -c mydecode
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -631,14 +668,14 @@ Info (286030): Timing-Driven Synthesis is running
 Info (17049): 28 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 193 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 7 input pins
+Info (21057): Implemented 235 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
     Info (21059): Implemented 56 output pins
-    Info (21061): Implemented 130 logic cells
+    Info (21061): Implemented 171 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4860 megabytes
-    Info: Processing ended: Wed Nov 20 20:47:01 2024
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Peak virtual memory: 4844 megabytes
+    Info: Processing ended: Sun Nov 24 23:14:56 2024
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:06
 
 

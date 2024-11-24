@@ -11,7 +11,7 @@ entity mydecode is
         SevenSegement0, SevenSegement1, SevenSegement2, SevenSegement3, 
         SevenSegement4, SevenSegement5, SevenSegement6, SevenSegement7 : out STD_LOGIC_VECTOR (6 downto 0);
 
-        clock, reset, branch_decision, jump_decision : in std_logic;
+        clock, reset, branch_decision, jump_decision, RegisterWrite : in std_logic;
 		  diplayDecison :in std_LOGIC_VECTOR(2 downto 0)
     );
 end mydecode;
@@ -32,7 +32,7 @@ begin
 	 
 	 d1 : InstructionDecode port map (
 		  instruction    => instructionWire,
-		  alu_result 	  => X"00000000",
+		  alu_result 	  => X"44444444",
 		  memory_data 	  => X"00000000",
 		  rs				  =>  rsWire,
 		  rt				  =>  rtWire,
@@ -40,7 +40,7 @@ begin
         immediate      =>	immediateWire,
         jump_addr		  =>	jump_addrWire,
 		  RegDst 		  => '0',
-		  RegWrite		  => '0',
+		  RegWrite		  => RegisterWrite,
 		  MemToReg		  => '0',
         reset 			  =>	reset,		
 		  clock 			  =>  clock
