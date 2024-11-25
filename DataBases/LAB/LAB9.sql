@@ -25,7 +25,7 @@ FROM
 JOIN 
     publisher p ON s.publisher_id = p.id
 LEFT JOIN 
-	gender g ON s.id = g.id
+	gender g ON s.gender_id = g.id
 LEFT JOIN 
 	colour c1 ON s.eye_colour_id  = c1.id
 LEFT JOIN 
@@ -44,10 +44,10 @@ GRANT SELECT ON vw_MarvelSuperheroes TO MarvelSuperheroManager;
 
 SELECT * FROM vw_MarvelSuperheroes;
 
-
 -- Grant permission to add superheroes in the superhero table
 GRANT INSERT ON superhero TO MarvelSuperheroManager;
-
+grant INSERT ON vw_MarvelSuperheroes TO MarvelSuperheroManager;
+revoke INSERT ON vw_MarvelSuperheroes TO MarvelSuperheroManager;
 -- Insert a new Marvel superhero
 INSERT INTO superhero (
 	id,
@@ -107,12 +107,12 @@ WHERE
 GO
 -- Grant DELETE permission on the DC superheroes view to the role
 GRANT DELETE ON vw_DCSuperheroes TO MarvelSuperheroManager;
---GRANT DELETE ON superhero TO MarvelSuperheroManager;
+GRANT DELETE ON superhero TO MarvelSuperheroManager;
 
---DELETE s
---FROM superhero s
---JOIN publisher p ON s.publisher_id = p.id
---WHERE s.id = 5000 AND p.publisher_name LIKE '%DC%';
+DELETE s
+FROM superhero s
+JOIN publisher p ON s.publisher_id = p.id
+WHERE s.id = 5000 AND p.publisher_name LIKE '%DC%';
 
 -- Delete a DC superhero
 DELETE FROM vw_DCSuperheroes

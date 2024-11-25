@@ -58,3 +58,11 @@ bit to represent page/frame offset/size, frame no, page no
 FIFO
 LRU
 OPTIMAL the best but can't implement
+
+-DeadLock Identifcation
+
+-Synchronization 
+Producer Consumer LAB using Semaphores and mutex
+Disable interrupts during semaphore operations
+Signal Blocking (SIGVTALARM)
+Signal masking
