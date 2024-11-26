@@ -123,9 +123,10 @@ set_location_assignment PIN_AC17 -to SevenSegement6[6]
 set_location_assignment PIN_AA14 -to SevenSegement7[6]
 set_location_assignment PIN_AC28 -to branch_decision
 set_location_assignment PIN_M23 -to clock
-set_location_assignment PIN_AD27 -to diplayDecison[0]
+set_location_assignment PIN_AC8 -to diplayDecison[0]
 set_location_assignment PIN_AB27 -to diplayDecison[1]
 set_location_assignment PIN_AC26 -to diplayDecison[2]
 set_location_assignment PIN_AC27 -to jump_decision
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
+set_location_assignment PIN_AD26 -to RegisterWrite
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

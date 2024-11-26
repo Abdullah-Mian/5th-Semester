@@ -1,0 +1,89 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL; 
+use work.MyPackage.all;
+
+-- Entity Declaration
+entity CU is
+    port (
+       instruction       : in STD_LOGIC_VECTOR (31 downto 0);
+		 reset,
+		 RegDst,
+		 RegWrite,
+		 MemToReg,
+		 AluSrc,
+		 MemRead,
+		 MemWrite,
+		 Jump,
+		 beq_control : out std_logic;
+		 AluOp 		 : out std_LOGIC_VECTOR(1 downto 0)
+    );
+end CU;
+
+architecture bhv of CU is
+		Signal RegDstWire, RegWriteWire, MemToRegWire,AluSrcWire, MemReadWire, MemWriteWire, JumpWire, beq_controlWire : std_logic;
+
+begin
+
+	 ControlUnit : process(instruction)
+			variable opcode : std_logic_vector(5 downto 0);
+		begin 
+			
+			opcode <= instruction(31 downto 26);
+			
+			with opcode select 
+				RegDstWire 	    <= '1',
+				RegWriteWire    <= '1',
+				MemToRegWire    <= '0',
+				AluSrcWire      <= '0',
+				MemReadWire	    <= '0',
+				MemWriteWire    <= '0',
+				JumpWire        <= '0',
+				beq_controlWire <= '0',
+			when "000000",
+				RegDstWire 	    <= '1',
+				RegWriteWire    <= '1',
+				MemToRegWire    <= '0',
+				AluSrcWire      <= '0',
+				MemReadWire	    <= '1',
+				MemWriteWire    <= '0',
+				JumpWire        <= '1',
+				beq_controlWire <= '0',
+			when "111111",
+			(others => '0') when others;
+	
+    -- Instantiate seven-segment displays for each nibble of the instruction
+--    u7: sevenSegement port map (
+--        bininput => SevenSegementWire(31 downto 28),
+--        cathodes => SevenSegement7
+--    );
+--    u6: sevenSegement port map (
+--        bininput => SevenSegementWire(27 downto 24),
+--        cathodes => SevenSegement6
+--    );
+--    u5: sevenSegement port map (
+--        bininput => SevenSegementWire(23 downto 20),
+--        cathodes => SevenSegement5
+--    );
+--    u4: sevenSegement port map (
+--        bininput => SevenSegementWire(19 downto 16),
+--        cathodes => SevenSegement4
+--    );
+--    u3: sevenSegement port map (
+--        bininput => SevenSegementWire(15 downto 12),
+--        cathodes => SevenSegement3
+--    );
+--    u2: sevenSegement port map (
+--        bininput => SevenSegementWire(11 downto 8),
+--        cathodes => SevenSegement2
+--    );
+--    u1: sevenSegement port map (
+--        bininput => SevenSegementWire(7 downto 4),
+--        cathodes => SevenSegement1
+--    );
+--    u0: sevenSegement port map (
+--        bininput => SevenSegementWire(3 downto 0),
+--        cathodes => SevenSegement0
+--    );
+
+end bhv;

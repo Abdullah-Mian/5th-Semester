@@ -10,14 +10,14 @@ z2
 cModel Technology
 Z0 dD:/5th-Semester/COA LAB/LABS/LAB8/simulation/qsim
 Ehard_block
-Z1 w1732473436
+Z1 w1732593824
 Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
 Z3 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 WOh:M[al;oVzG5c`<He>D0
 Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
 Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z6 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 Z7 DPx10 cycloneive 21 cycloneive_components 0 22 zGMDhP>8e@2k@f0e<PY]k2
-!i122 12
+!i122 14
 R0
 Z8 8mydecode.vho
 Z9 Fmydecode.vho
@@ -27,9 +27,9 @@ VB]0;STalBkCB1_B4BXQDW2
 !s100 >mXi5[`cD`bFC`UBKA<om3
 Z10 OV;C;2020.1;71
 32
-Z11 !s110 1732473436
+Z11 !s110 1732593826
 !i10b 1
-Z12 !s108 1732473436.000000
+Z12 !s108 1732593826.000000
 Z13 !s90 -work|work|mydecode.vho|
 Z14 !s107 mydecode.vho|
 !i113 1
@@ -43,7 +43,7 @@ R5
 R6
 R7
 DEx4 work 10 hard_block 0 22 B]0;STalBkCB1_B4BXQDW2
-!i122 12
+!i122 14
 l65
 L51 20
 Via>5o7W??azG@W@@eFOTF0
@@ -68,7 +68,7 @@ R4
 R5
 R6
 Z18 DPx6 altera 28 altera_primitives_components 0 22 ca:ehlQAg4;_gVV:^8MAg3
-!i122 12
+!i122 14
 R0
 R8
 R9
@@ -96,11 +96,11 @@ R5
 R6
 R18
 DEx4 work 8 mydecode 0 22 @U>lWDKVeJgh8gI6CJg:b3
-!i122 12
+!i122 14
 l453
 L166 4460
-VCQhiT5jB1VZAczRM2a58=1
-!s100 KY4e4j:;Nm^T<?D[:Biz`2
+VCmWGBZ_5b>[jhK2QZ5kdW0
+!s100 9HX1ezgmQLZEYeWjXQdhh3
 R10
 32
 R11
@@ -112,13 +112,13 @@ R14
 R15
 R16
 Emydecode_vhd_vec_tst
-Z19 w1732473435
+R1
 R5
 R6
-!i122 13
+!i122 15
 R0
-Z20 8Waveform.vwf.vht
-Z21 FWaveform.vwf.vht
+Z19 8Waveform.vwf.vht
+Z20 FWaveform.vwf.vht
 l0
 L32 1
 VFK=X?JBG@YnGmC>S7lZ`I1
@@ -128,27 +128,27 @@ R10
 R11
 !i10b 1
 R12
-Z22 !s90 -work|work|Waveform.vwf.vht|
-Z23 !s107 Waveform.vwf.vht|
+Z21 !s90 -work|work|Waveform.vwf.vht|
+Z22 !s107 Waveform.vwf.vht|
 !i113 1
 R15
 R16
 Amydecode_arch
 R5
 R6
-Z24 DEx4 work 20 mydecode_vhd_vec_tst 0 22 FK=X?JBG@YnGmC>S7lZ`I1
-!i122 13
+Z23 DEx4 work 20 mydecode_vhd_vec_tst 0 22 FK=X?JBG@YnGmC>S7lZ`I1
+!i122 15
 l69
-L34 136
-VKS1jMm6FUfP]o3U_foB@m3
-!s100 F6b5ih9XT2:1hYB06U4ZS1
+Z24 L34 136
+Z25 VKS1jMm6FUfP]o3U_foB@m3
+Z26 !s100 F6b5ih9XT2:1hYB06U4ZS1
 R10
 32
 R11
 !i10b 1
 R12
+R21
 R22
-R23
 !i113 1
 R15
 R16

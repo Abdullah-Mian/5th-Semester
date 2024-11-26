@@ -1,0 +1,67 @@
+--library IEEE;
+--use IEEE.STD_LOGIC_1164.ALL;
+--use IEEE.NUMERIC_STD.ALL; 
+--use work.MyPackage.all;
+--
+--entity CU is
+--    port (
+--       resett : in std_logic;
+--		 RegDstt, RegWritee, MemToRegg, AluSrcc,
+--       MemReadd, MemWritee, Jumpp, beq_controll : out std_logic;
+--       AluOpp      : out std_logic_vector(1 downto 0)
+--    );
+--end CU;
+--
+--architecture bhv of CU is
+--  
+--	 
+--
+--begin
+--
+--    c1: controlUnit port map (
+--       instruction <= X"00000000",
+--       reset       <= resett,
+--       RegDst		 <= RegDstt,
+--		 RegWrite  	 <= RegWritee,
+--		 MemToReg	 <= MemToRegg,
+--		 AluSrc		 <= AluSrcc
+--    );
+--	 
+--	
+--	
+--	
+--    -- Instantiate seven-segment displays for each nibble of the instruction
+----    u7: sevenSegement port map (
+----        bininput => SevenSegementWire(31 downto 28),
+----        cathodes => SevenSegement7
+----    );
+----    u6: sevenSegement port map (
+----        bininput => SevenSegementWire(27 downto 24),
+----        cathodes => SevenSegement6
+----    );
+----    u5: sevenSegement port map (
+----        bininput => SevenSegementWire(23 downto 20),
+----        cathodes => SevenSegement5
+----    );
+----    u4: sevenSegement port map (
+----        bininput => SevenSegementWire(19 downto 16),
+----        cathodes => SevenSegement4
+----    );
+----    u3: sevenSegement port map (
+----        bininput => SevenSegementWire(15 downto 12),
+----        cathodes => SevenSegement3
+----    );
+----    u2: sevenSegement port map (
+----        bininput => SevenSegementWire(11 downto 8),
+----        cathodes => SevenSegement2
+----    );
+----    u1: sevenSegement port map (
+----        bininput => SevenSegementWire(7 downto 4),
+----        cathodes => SevenSegement1
+----    );
+----    u0: sevenSegement port map (
+----        bininput => SevenSegementWire(3 downto 0),
+----        cathodes => SevenSegement0
+----    );
+--
+--end bhv;
