@@ -32,7 +32,7 @@ GO
 CREATE TABLE Incentives
 (
     Employee_Ref_ID INT,
-    Incentive_Date VARCHAR(100),
+    Incentive_Date DATETIME,
     Incentive_Amount INT
 );
 
@@ -40,11 +40,11 @@ GO
 INSERT INTO Incentives
     (Employee_Ref_ID, Incentive_Date, Incentive_Amount)
 VALUES
-    (1, '01-FEB-16', 5000),
-    (2, '01-FEB-16', 3000),
-    (3, '01-FEB-16', 4000),
-    (1, '01-FEB-16', 4500),
-    (2, '01-JAN-16', 3500);
+    (1, '01-FEB-16 00:00:00', 5000),
+    (2, '01-FEB-16 00:00:00', 3000),
+    (3, '01-FEB-16 00:00:00', 4000),
+    (1, '01-FEB-16 00:00:00', 4500),
+    (2, '01-JAN-16 00:00:00', 3500);
 
 
 -- Task 1: Get all employee details from the employee table
@@ -313,7 +313,7 @@ FROM Employees
 ORDER BY SALARY DESC;
 
 -- Task 54: Select TOP N salary from employee table (Replace 'N' with desired value)
-DECLARE @N INT = 3;
+DECLARE @N INT = 90;
 -- Example: N = 3
 SELECT TOP (@N)
     SALARY
