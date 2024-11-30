@@ -422,3 +422,4 @@ CREATE TABLE Incentives
     Incentive_Date VARCHAR(100),
     Incentive_Amount INT
 );
+
