@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CU
-Tue Nov 26 11:34:27 2024
+Tue Dec  3 01:05:29 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -43,7 +43,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Nov 26 11:34:27 2024          ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec  3 01:05:29 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; CU                                             ;
 ; Top-level Entity Name              ; controlUnit                                    ;
@@ -260,11 +260,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Tue Nov 26 11:34:21 2024
+    Info: Processing started: Tue Dec  3 01:05:23 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CU -c CU
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
-Info (12021): Found 0 design units, including 0 entities, in source file cu.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file cu.vhd
+    Info (12022): Found design unit 1: CU-bhv File: D:/5th-Semester/COA LAB/LABS/LAB10/CU.vhd Line: 19
+    Info (12023): Found entity 1: CU File: D:/5th-Semester/COA LAB/LABS/LAB10/CU.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file memory.vhd
     Info (12022): Found design unit 1: memory-Behavioral File: D:/5th-Semester/COA LAB/LABS/LAB10/memory.vhd Line: 14
     Info (12023): Found entity 1: memory File: D:/5th-Semester/COA LAB/LABS/LAB10/memory.vhd Line: 4
@@ -310,8 +312,8 @@ Info (21057): Implemented 53 device resources after synthesis - the final resour
     Info (21061): Implemented 10 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 28 warnings
     Info: Peak virtual memory: 4845 megabytes
-    Info: Processing ended: Tue Nov 26 11:34:27 2024
+    Info: Processing ended: Tue Dec  3 01:05:29 2024
     Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Total CPU time (on all processors): 00:00:05
 
 
