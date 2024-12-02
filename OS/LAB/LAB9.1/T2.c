@@ -4,8 +4,8 @@
 // Define a structure to represent processes
 typedef struct
 {
-    int request[2];    // Resources requested
-    int allocation[2]; // Resources allocated
+    int request[4];    // Resources requested
+    int allocation[4]; // Resources allocated
 } Process;
 
 // Check for a cycle using a visited array
@@ -69,18 +69,13 @@ void detectDeadlock(Process processes[], int numProcesses, int numResources)
 
 int main()
 {
-    // Example data for processes
-    Process processes[2] = {
-        {{0, 1}, {1, 0}}, // Process 0 requests R1 and has R0 allocated
-        {{1, 0}, {0, 1}}  // Process 1 requests R0 and has R1 allocated
+    // Example data for 4 processes and 4 resources
+    Process processes[4] = {
+        {{0, 1, 0, 0}, {1, 0, 0, 0}}, // Process 0
+        {{0, 0, 1, 0}, {0, 1, 0, 0}}, // Process 1
+        {{0, 0, 0, 1}, {0, 0, 1, 0}}, // Process 2
+        {{1, 0, 0, 0}, {0, 0, 0, 1}}  // Process 3
     };
-
-    // another example with no deadlock
-    Process processes1[2] = {
-        {{0, 1}, {1, 0}}, // Process 0 requests R1 and has R0 allocated
-        {{0, 1}, {1, 0}}  // Process 1 requests R0 and has R1 allocated
-    };
-    detectDeadlock(processes1, 2, 2);
-    detectDeadlock(processes, 2, 2);
+    detectDeadlock(processes, 4, 4);
     return 0;
 }

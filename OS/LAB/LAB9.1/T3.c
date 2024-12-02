@@ -69,18 +69,12 @@ void detectDeadlock(Process processes[], int numProcesses, int numResources)
 
 int main()
 {
-    // Example data for processes
+    // Example data for processes (No deadlock scenario)
     Process processes[2] = {
         {{0, 1}, {1, 0}}, // Process 0 requests R1 and has R0 allocated
-        {{1, 0}, {0, 1}}  // Process 1 requests R0 and has R1 allocated
+        {{0, 0}, {0, 1}}  // Process 1 requests nothing and has R1 allocated
     };
 
-    // another example with no deadlock
-    Process processes1[2] = {
-        {{0, 1}, {1, 0}}, // Process 0 requests R1 and has R0 allocated
-        {{0, 1}, {1, 0}}  // Process 1 requests R0 and has R1 allocated
-    };
-    detectDeadlock(processes1, 2, 2);
     detectDeadlock(processes, 2, 2);
     return 0;
 }
