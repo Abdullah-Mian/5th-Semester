@@ -45,10 +45,15 @@ GRANT SELECT ON vw_MarvelSuperheroes TO MarvelSuperheroManager;
 SELECT * FROM vw_MarvelSuperheroes;
 
 -- Grant permission to add superheroes in the superhero table
-GRANT INSERT ON superhero TO MarvelSuperheroManager;
+CREATE OR ALTER VIEW vw_InsertMarvelSuperHeros AS 
+SELECT * FROM superhero
+where publisher_id = 13
+WITH CHECK OPTION;
 
+GRANT INSERT ON vw_InsertMarvelSuperHeros TO MarvelSuperheroManager;
+select *  from vw_MarvelSuperheroes
 -- Insert a new Marvel superhero
-INSERT INTO superhero (
+INSERT INTO vw_InsertMarvelSuperHeros(
 	id,
     superhero_name, 
     full_name, 
@@ -65,24 +70,13 @@ VALUES (
     74.8                  -- weight_kg
 );
 
-DELETE FROM superhero
-WHERE id = 5000;
 
+DELETE FROM vw_InsertMarvelSuperHeros
+WHERE  id = 1;
 
 -- Grant DELETE permission on the Marvel superheroes view to the role
-GRANT DELETE ON vw_DCSuperheroes TO MarvelSuperheroManager;
-revoke DELETE ON vw_DCSuperheroes TO MarvelSuperheroManager;
 
-GRANT DELETE ON superhero TO MarvelSuperheroManager;
-
-DELETE s
-FROM superhero s
-JOIN publisher p ON s.publisher_id = p.id
-WHERE s.id = 5000 AND p.publisher_name LIKE '%DC%';
-
--- Delete a DC superhero
-DELETE FROM vw_DCSuperheroes
-WHERE superhero_id =5000
+GRANT DELETE ON vw_InsertMarvelSuperHeros TO MarvelSuperheroManager;
 
 
 -- Grant the role the ability to delegate read privileges
@@ -99,13 +93,74 @@ GO
 CREATE ROLE DCComicsManager;
 
 -- Create a view to look at all the features/characteristics of Marvel superheroes
-GRANT SELECT ON vw_MarvelSuperheroes TO DCComicsManager;
+
+CREATE OR ALTER VIEW vw_DcSuperheroes AS
+SELECT 
+    s.id AS Superhero_id,    
+    s.superhero_name,
+	s.full_name,    
+	g.gender AS SuperHero_Gender,
+	c1.colour AS Eye_colour,
+	c2.colour AS Hair_colour,
+	c3.colour AS Skin_colour,
+	r.race AS SuperHero_Race,
+	p.publisher_name,
+	a.alignment AS SuperHero_alignment,
+	s.height_cm,
+	s.weight_kg
+FROM 
+    superhero s
+JOIN 
+    publisher p ON s.publisher_id = p.id
+LEFT JOIN 
+	gender g ON s.gender_id = g.id
+LEFT JOIN 
+	colour c1 ON s.eye_colour_id  = c1.id
+LEFT JOIN 
+	colour c2 ON s.hair_colour_id  = c2.id
+LEFT JOIN 
+	colour c3 ON s.skin_colour_id  = c3.id
+LEFT JOIN 
+	race r ON s.race_id = r.id
+LEFT JOIN 
+	alignment a ON s.alignment_id = a.id
+WHERE 
+    p.publisher_name LIKE 'DC%';
+
+GRANT SELECT ON vw_DcSuperheroes TO DCComicsManager;
+
 
 -- Grant INSERT permission on the superhero table to the role
-GRANT INSERT ON superhero TO DCComicsManager;
+CREATE OR ALTER VIEW vw_InsertDcSuperHeros AS 
+SELECT * FROM superhero
+where publisher_id = 4
+WITH CHECK OPTION;
+
+GRANT INSERT ON vw_InsertDcSuperHeros TO DCComicsManager;
 
 -- Use the existing view for DC superheroes 
-GRANT DELETE ON superhero TO DCComicsManager;
+GRANT DELETE ON vw_InsertDcSuperHeros TO DCComicsManager;
+
+INSERT INTO vw_InsertDcSuperHeros(
+	id,
+    superhero_name, 
+    full_name, 
+    publisher_id, 
+    height_cm, 
+    weight_kg
+)
+VALUES (
+	5001,
+    'DcSpidere-Man',         -- superhero_name
+    'Peterr Parker',       -- full_name
+    4,                    -- publisher_id 
+    178.0,                -- height_cm
+    74.8                  -- weight_kg
+);
+
+
+DELETE FROM vw_InsertDcSuperHeros
+WHERE  id = 5001;
 
 -- Add RajnikanthPyarelal to the DCComicsManager role
 ALTER ROLE DCComicsManager ADD MEMBER RajnikanthPyarelal;
