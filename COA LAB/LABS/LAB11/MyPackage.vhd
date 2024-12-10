@@ -45,24 +45,45 @@ package MyPackage is
     );
 	end component;
 	
-	component executeModule is
-    port (
-        register_rs, register_rt: in std_logic_vector(31 downto 0);
-        PC4, immediate: in std_logic_vector(31 downto 0);
-        ALUOp: in std_logic_vector(1 downto 0);
-        ALUSrc: in std_logic;
-        beq_control, clock: in std_logic;
-        alu_result, branch_addr: out std_logic_vector(31 downto 0);
-        branch_decision: out std_logic
-    );
-	end component;
-	
 	component mydecode is
     port (
         DecodeModuleOut : out STD_LOGIC_VECTOR (31 downto 0);
 
         clock, reset, branch_decision, jump_decision, RegisterWrite : in std_logic;
 		  diplayDecison :in std_LOGIC_VECTOR(2 downto 0)
+    );
+	end component;
+	
+	component controlUnit is
+    port (
+       instruction : in std_logic_vector(31 downto 0);
+       reset       : in std_logic;
+       RegDst, RegWrite, MemToReg, AluSrc,
+       MemRead, MemWrite, Jump, beq_control : out std_logic;
+       AluOp      : out std_logic_vector(1 downto 0)
+    );
+	end component;
+	 
+	 
+	component memory is
+    generic (module_delay: time := 10 ns);
+    Port (
+        address    : in STD_LOGIC_VECTOR (31 downto 0);
+        write_data : in STD_LOGIC_VECTOR (31 downto 0);
+        MemWrite, MemRead : in std_logic;
+        read_data  : out STD_LOGIC_VECTOR (31 downto 0)
+    );
+	end component;
+	
+	component executeModule is
+    port (
+        register_rs, register_rt: in std_logic_vector(31 downto 0);
+        PC4, immediate: in std_logic_vector(31 downto 0);
+        ALUOp: in std_logic_vector(1 downto 0);
+        ALUSrc: in std_logic;
+        beq_control: in std_logic;
+        alu_result, branch_addr: out std_logic_vector(31 downto 0);
+        branch_decision, zero_flag: out std_logic
     );
 	end component;
 

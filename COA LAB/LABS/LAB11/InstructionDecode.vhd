@@ -84,7 +84,7 @@ begin
         variable write_value : std_logic_vector(31 downto 0);
         variable addrt, addrd : std_logic_vector(4 downto 0);
     begin
-        if rising_edge(clock) then
+        if falling_edge(clock) then
             if reset = '1' then
                 reset_registers;
             end if;

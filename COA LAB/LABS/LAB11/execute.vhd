@@ -7,67 +7,97 @@ entity execute is
     port (
         clock            : in  std_logic;
         reset            : in  std_logic;
-        PC4              : in  std_logic_vector(31 downto 0);
-        alu_op           : in  std_logic_vector(1 downto 0);
-        alu_src          : in  std_logic;
-        beq_control      : in  std_logic;
-        register_rs      : out std_logic_vector(31 downto 0);
-        register_rt      : out std_logic_vector(31 downto 0);
-        alu_result       : out std_logic_vector(31 downto 0);
-        branch_addr      : out std_logic_vector(31 downto 0);
-        branch_decision  : out std_logic
+        DisplayDecision  : in  std_logic_vector(3 downto 0);
+        Output           : out std_logic_vector(6 downto 0)
     );
 end execute;
 
 architecture Behavioral of execute is
-    -- Internal signals to connect `mydecode` to `executeModule`
-    signal decode_output        : std_logic_vector(31 downto 0);
-    signal immediateWire        : std_logic_vector(31 downto 0);
-    signal branchDecisionWire,ClockWire   : std_logic;
-    signal register_rsWire      : std_logic_vector(31 downto 0);
-    signal register_rtWire      : std_logic_vector(31 downto 0);
-    signal alu_resultWire       : std_logic_vector(31 downto 0);
-    signal branch_addrWire      : std_logic_vector(31 downto 0);
-
+    signal PC_outWire, instructionWire, branch_addrWire, jump_addrWire, rsWire, rtWire, rdWire, immediateWire, alu_resultWire, memory_dataWire : std_logic_vector(31 downto 0);
+    signal branch_decisionWire, jump_decisionWire, resetWire, ClockWire, RegDstWire, RegWriteWire, MemToRegWire, ALUSrcWire, MemReadWire, MemWriteWire, Jump, beq_controlWire : std_logic;
+    signal ALUOpWire : std_logic_vector(1 downto 0);
+    signal zero_flagWire : std_logic;
 begin
-    -- Instantiate the `mydecode` component
-    mydecode_inst : mydecode
+    -- Fetch
+    fetch_unit : fetch
         port map (
-            DecodeModuleOut => decode_output,
-            clock           => clock,
-            reset           => reset,
-            branch_decision => branchDecisionWire,
-            jump_decision   => beq_control,  -- Assuming jump decision is related to branch control
-            RegisterWrite   => '1',          -- Example: Write enable signal
-            diplayDecison   => "000"         -- Example: Decision signal (can be adjusted)
+            PC_out           => PC_outWire,
+            instruction      => instructionWire,
+            branch_addr      => branch_addrWire,
+            jump_addr        => jump_addrWire,
+            branch_decision  => branch_decisionWire,
+            jump_decision    => jump_decisionWire,
+            reset            => resetWire,
+            clock            => ClockWire
         );
 
-    -- Extract `register_rsWire`, `register_rtWire`, and `immediateWire` from decode output
-    register_rsWire <= decode_output(31 downto 16);
-    register_rtWire <= decode_output(15 downto 0);
-    immediateWire   <= decode_output(15 downto 0); -- Adjust if immediate data differs
-
-    -- Map outputs of executeModule to component's outputs
-    branch_decision <= branchDecisionWire;
-    register_rs     <= register_rsWire;
-    register_rt     <= register_rtWire;
-    alu_result      <= alu_resultWire;
-    branch_addr     <= branch_addrWire;
-	 ClockWire		  <= clock;
-
-    -- Instantiate the `executeModule` component
-    execute_module_inst : executeModule
+    -- Instruction Decode
+    decode_unit : InstructionDecode
         port map (
-            register_rs     => register_rsWire,
-            register_rt     => register_rtWire,
-            PC4             => PC4,
-            immediate       => immediateWire,
-            ALUOp           => alu_op,
-            ALUSrc          => alu_src,
-            beq_control     => beq_control,
-				clock				 => clockWire,
-            alu_result      => alu_resultWire,
-            branch_addr     => branch_addrWire,
-            branch_decision => branchDecisionWire
+            instruction    => instructionWire,
+            alu_result     => alu_resultWire,
+            memory_data    => memory_dataWire,
+            rs             => rsWire,
+            rt             => rtWire,
+            rd             => rdWire,
+            immediate      => immediateWire,
+            jump_addr      => jump_addrWire,
+            RegDst         => RegDstWire,
+            RegWrite       => RegWriteWire,
+            MemToReg       => MemToRegWire,
+            reset          => resetWire,
+            clock          => ClockWire
         );
+
+    -- Control Unit
+    control_unit : controlUnit
+        port map (
+            instruction => instructionWire,
+            reset       => resetWire,
+            RegDst      => RegDstWire,
+            RegWrite    => RegWriteWire,
+            MemToReg    => MemToRegWire,
+            ALUSrc      => ALUSrcWire,
+            MemRead     => MemReadWire,
+            MemWrite    => MemWriteWire,
+            Jump        => jump_decisionWire,
+            beq_control => beq_controlWire,
+            ALUOp       => ALUOpWire
+        );
+
+    -- Execute Module
+    execute_unit : executeModule
+        port map (
+            register_rs   => rsWire,
+            register_rt   => rtWire,
+            PC4           => PC_outWire,
+            immediate     => immediateWire,
+            ALUOp         => ALUOpWire,
+            ALUSrc        => ALUSrcWire,
+            beq_control   => beq_controlWire,
+            alu_result    => alu_resultWire,
+            branch_addr   => branch_addrWire,
+            branch_decision => branch_decisionWire,
+            zero_flag     => zero_flagWire
+        );
+
+    -- Memory
+    memory_unit : memory
+        port map (
+            address     => alu_resultWire,
+            write_data  => rtWire,
+            MemWrite    => MemWriteWire,
+            MemRead     => MemReadWire,
+            read_data   => memory_dataWire
+        );
+
+    -- 7-Segment Display
+    display_unit : sevenSegement
+        port map (
+            bininput => DisplayDecision,
+            cathodes => Output
+        );
+
+    resetWire <= reset;
+    ClockWire <= Clock;
 end Behavioral;

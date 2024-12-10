@@ -1,5 +1,5 @@
 Analysis & Synthesis report for execute
-Tue Dec 10 00:22:42 2024
+Tue Dec 10 14:05:32 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -10,7 +10,16 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: memory:memory_unit
+ 10. Port Connectivity Checks: "executeModule:execute_unit"
+ 11. Port Connectivity Checks: "InstructionDecode:decode_unit"
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -37,20 +46,20 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Tue Dec 10 00:22:41 2024              ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec 10 14:05:32 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; execute                                        ;
 ; Top-level Entity Name              ; execute                                        ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; N/A until Partition Merge                      ;
-;     Total combinational functions  ; N/A until Partition Merge                      ;
-;     Dedicated logic registers      ; N/A until Partition Merge                      ;
-; Total registers                    ; N/A until Partition Merge                      ;
-; Total pins                         ; N/A until Partition Merge                      ;
-; Total virtual pins                 ; N/A until Partition Merge                      ;
-; Total memory bits                  ; N/A until Partition Merge                      ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                      ;
-; Total PLLs                         ; N/A until Partition Merge                      ;
+; Total logic elements               ; 7                                              ;
+;     Total combinational functions  ; 7                                              ;
+;     Dedicated logic registers      ; 0                                              ;
+; Total registers                    ; 0                                              ;
+; Total pins                         ; 13                                             ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0                                              ;
+; Embedded Multiplier 9-bit elements ; 0                                              ;
+; Total PLLs                         ; 0                                              ;
 +------------------------------------+------------------------------------------------+
 
 
@@ -156,18 +165,145 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                    ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                             ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
+; execute.vhd                      ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd           ;         ;
+; fetch.vhd                        ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd             ;         ;
+; InstructionDecode.vhd            ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB11/InstructionDecode.vhd ;         ;
+; MyPackage.vhd                    ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB11/MyPackage.vhd         ;         ;
+; sevenSegement.vhd                ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB11/sevenSegement.vhd     ;         ;
+; executeModule.vhd                ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB11/executeModule.vhd     ;         ;
+; memory.vhd                       ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd            ;         ;
+; controlUnit.vhd                  ; yes             ; User VHDL File  ; D:/5th-Semester/COA LAB/LABS/LAB11/controlUnit.vhd       ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                            ;
++---------------------------------------------+--------------------------+
+; Resource                                    ; Usage                    ;
++---------------------------------------------+--------------------------+
+; Estimated Total logic elements              ; 7                        ;
+;                                             ;                          ;
+; Total combinational functions               ; 7                        ;
+; Logic element usage by number of LUT inputs ;                          ;
+;     -- 4 input functions                    ; 7                        ;
+;     -- 3 input functions                    ; 0                        ;
+;     -- <=2 input functions                  ; 0                        ;
+;                                             ;                          ;
+; Logic elements by mode                      ;                          ;
+;     -- normal mode                          ; 7                        ;
+;     -- arithmetic mode                      ; 0                        ;
+;                                             ;                          ;
+; Total registers                             ; 0                        ;
+;     -- Dedicated logic registers            ; 0                        ;
+;     -- I/O registers                        ; 0                        ;
+;                                             ;                          ;
+; I/O pins                                    ; 13                       ;
+;                                             ;                          ;
+; Embedded Multiplier 9-bit elements          ; 0                        ;
+;                                             ;                          ;
+; Maximum fan-out node                        ; DisplayDecision[2]~input ;
+; Maximum fan-out                             ; 7                        ;
+; Total fan-out                               ; 48                       ;
+; Average fan-out                             ; 1.45                     ;
++---------------------------------------------+--------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                             ;
++---------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+---------------+--------------+
+; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                 ; Entity Name   ; Library Name ;
++---------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+---------------+--------------+
+; |execute                        ; 7 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 13   ; 0            ; |execute                            ; execute       ; work         ;
+;    |sevenSegement:display_unit| ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execute|sevenSegement:display_unit ; sevenSegement ; work         ;
++---------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------+---------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memory:memory_unit ;
++----------------+-------------+----------------------------------+
+; Parameter Name ; Value       ; Type                             ;
++----------------+-------------+----------------------------------+
+; module_delay   ; 10000000 fs ; Physical                         ;
++----------------+-------------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "executeModule:execute_unit"                                                              ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; zero_flag ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "InstructionDecode:decode_unit"                                                      ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; rd   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 13                          ;
+; cycloneiii_lcell_comb ; 8                           ;
+;     normal            ; 8                           ;
+;         1 data inputs ; 1                           ;
+;         4 data inputs ; 7                           ;
+;                       ;                             ;
+; Max LUT depth         ; 2.00                        ;
+; Average LUT depth     ; 1.50                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Tue Dec 10 00:22:36 2024
+    Info: Processing started: Tue Dec 10 14:05:22 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off execute -c execute
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file execute.vhd
-    Info (12022): Found design unit 1: execute-Behavioral File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 22
+    Info (12022): Found design unit 1: execute-Behavioral File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 15
     Info (12023): Found entity 1: execute File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file fetch.vhd
     Info (12022): Found design unit 1: fetch-bhv File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 23
@@ -186,12 +322,87 @@ Info (12021): Found 1 design units, including 0 entities, in source file mypacka
 Info (12021): Found 2 design units, including 1 entities, in source file sevensegement.vhd
     Info (12022): Found design unit 1: sevenSegement-Behavioural File: D:/5th-Semester/COA LAB/LABS/LAB11/sevenSegement.vhd Line: 11
     Info (12023): Found entity 1: sevenSegement File: D:/5th-Semester/COA LAB/LABS/LAB11/sevenSegement.vhd Line: 4
-Error (10500): VHDL syntax error at executeModule.vhd(28) near text ""+"";  expecting ";" File: D:/5th-Semester/COA LAB/LABS/LAB11/executeModule.vhd Line: 28
-Info (12021): Found 0 design units, including 0 entities, in source file executemodule.vhd
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 1 warning
-    Error: Peak virtual memory: 4787 megabytes
-    Error: Processing ended: Tue Dec 10 00:22:42 2024
-    Error: Elapsed time: 00:00:06
-    Error: Total CPU time (on all processors): 00:00:04
+Info (12021): Found 2 design units, including 1 entities, in source file executemodule.vhd
+    Info (12022): Found design unit 1: executeModule-Behavioral File: D:/5th-Semester/COA LAB/LABS/LAB11/executeModule.vhd Line: 17
+    Info (12023): Found entity 1: executeModule File: D:/5th-Semester/COA LAB/LABS/LAB11/executeModule.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file cu.vhd
+    Info (12022): Found design unit 1: CU-bhv File: D:/5th-Semester/COA LAB/LABS/LAB11/CU.vhd Line: 19
+    Info (12023): Found entity 1: CU File: D:/5th-Semester/COA LAB/LABS/LAB11/CU.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file memory.vhd
+    Info (12022): Found design unit 1: memory-Behavioral File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 14
+    Info (12023): Found entity 1: memory File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file controlunit.vhd
+    Info (12022): Found design unit 1: controlUnit-bhv File: D:/5th-Semester/COA LAB/LABS/LAB11/controlUnit.vhd Line: 15
+    Info (12023): Found entity 1: controlUnit File: D:/5th-Semester/COA LAB/LABS/LAB11/controlUnit.vhd Line: 5
+Info (12127): Elaborating entity "execute" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at execute.vhd(16): object "rdWire" assigned a value but never read File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 16
+Warning (10036): Verilog HDL or VHDL warning at execute.vhd(19): object "zero_flagWire" assigned a value but never read File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 19
+Info (12128): Elaborating entity "fetch" for hierarchy "fetch:fetch_unit" File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 22
+Info (12128): Elaborating entity "InstructionDecode" for hierarchy "InstructionDecode:decode_unit" File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 35
+Info (12128): Elaborating entity "controlUnit" for hierarchy "controlUnit:control_unit" File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 53
+Info (12128): Elaborating entity "executeModule" for hierarchy "executeModule:execute_unit" File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 69
+Warning (10492): VHDL Process Statement warning at executeModule.vhd(28): signal "register_rs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/5th-Semester/COA LAB/LABS/LAB11/executeModule.vhd Line: 28
+Warning (10492): VHDL Process Statement warning at executeModule.vhd(28): signal "register_rt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/5th-Semester/COA LAB/LABS/LAB11/executeModule.vhd Line: 28
+Warning (10492): VHDL Process Statement warning at executeModule.vhd(30): signal "register_rs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/5th-Semester/COA LAB/LABS/LAB11/executeModule.vhd Line: 30
+Warning (10492): VHDL Process Statement warning at executeModule.vhd(30): signal "immediate" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/5th-Semester/COA LAB/LABS/LAB11/executeModule.vhd Line: 30
+Warning (10492): VHDL Process Statement warning at executeModule.vhd(33): signal "register_rs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/5th-Semester/COA LAB/LABS/LAB11/executeModule.vhd Line: 33
+Warning (10492): VHDL Process Statement warning at executeModule.vhd(33): signal "register_rt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/5th-Semester/COA LAB/LABS/LAB11/executeModule.vhd Line: 33
+Warning (10492): VHDL Process Statement warning at executeModule.vhd(39): signal "register_rs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/5th-Semester/COA LAB/LABS/LAB11/executeModule.vhd Line: 39
+Warning (10492): VHDL Process Statement warning at executeModule.vhd(39): signal "register_rt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/5th-Semester/COA LAB/LABS/LAB11/executeModule.vhd Line: 39
+Warning (10492): VHDL Process Statement warning at executeModule.vhd(44): signal "immediate" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/5th-Semester/COA LAB/LABS/LAB11/executeModule.vhd Line: 44
+Warning (10492): VHDL Process Statement warning at executeModule.vhd(45): signal "PC4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/5th-Semester/COA LAB/LABS/LAB11/executeModule.vhd Line: 45
+Warning (10631): VHDL Process Statement warning at executeModule.vhd(20): inferring latch(es) for signal or variable "zero", which holds its previous value in one or more paths through the process File: D:/5th-Semester/COA LAB/LABS/LAB11/executeModule.vhd Line: 20
+Info (12128): Elaborating entity "memory" for hierarchy "memory:memory_unit" File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 85
+Warning (10492): VHDL Process Statement warning at memory.vhd(32): signal "MemWrite" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 32
+Warning (10492): VHDL Process Statement warning at memory.vhd(34): signal "MemRead" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 34
+Warning (10631): VHDL Process Statement warning at memory.vhd(17): inferring latch(es) for signal or variable "read_data", which holds its previous value in one or more paths through the process File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (10041): Inferred latch for "read_data[0]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (10041): Inferred latch for "read_data[1]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (10041): Inferred latch for "read_data[2]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (10041): Inferred latch for "read_data[3]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (10041): Inferred latch for "read_data[4]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (10041): Inferred latch for "read_data[5]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (10041): Inferred latch for "read_data[6]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (10041): Inferred latch for "read_data[7]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (10041): Inferred latch for "read_data[8]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (10041): Inferred latch for "read_data[9]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (10041): Inferred latch for "read_data[10]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (10041): Inferred latch for "read_data[11]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (10041): Inferred latch for "read_data[12]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (10041): Inferred latch for "read_data[13]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (10041): Inferred latch for "read_data[14]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (10041): Inferred latch for "read_data[15]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (10041): Inferred latch for "read_data[16]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (10041): Inferred latch for "read_data[17]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (10041): Inferred latch for "read_data[18]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (10041): Inferred latch for "read_data[19]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (10041): Inferred latch for "read_data[20]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (10041): Inferred latch for "read_data[21]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (10041): Inferred latch for "read_data[22]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (10041): Inferred latch for "read_data[23]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (10041): Inferred latch for "read_data[24]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (10041): Inferred latch for "read_data[25]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (10041): Inferred latch for "read_data[26]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (10041): Inferred latch for "read_data[27]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (10041): Inferred latch for "read_data[28]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (10041): Inferred latch for "read_data[29]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (10041): Inferred latch for "read_data[30]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (10041): Inferred latch for "read_data[31]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Info (12128): Elaborating entity "sevenSegement" for hierarchy "sevenSegement:display_unit" File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 95
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clock" File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 8
+    Warning (15610): No output dependent on input pin "reset" File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
+Info (21057): Implemented 20 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 7 output pins
+    Info (21061): Implemented 7 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 20 warnings
+    Info: Peak virtual memory: 4817 megabytes
+    Info: Processing ended: Tue Dec 10 14:05:32 2024
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:11
 
 
