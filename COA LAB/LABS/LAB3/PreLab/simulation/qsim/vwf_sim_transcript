@@ -1,6 +1,6 @@
 Determining the location of the ModelSim executable...
 
-Using: C:\intelFPGA\20.1\modelsim_ase\win32aloem
+Using: D:\Modelsim\modelsim_ase\win32aloem
 
 To specify a ModelSim executable directory, select: Tools -> Options -> EDA Tool Options
 Note: if both Questa Intel FPGA Edition and ModelSim executables are available, Questa Intel FPGA Edition will be used.
@@ -26,7 +26,7 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Wed Oct  2 05:48:26 2024
+    Info: Processing started: Tue Dec 17 02:08:14 2024
 Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off circuit1 -c circuit1 --vector_source="D:/5th-Semester/COA LAB/LABS/LAB3/PreLab/Waveform.vwf" --testbench_file="D:/5th-Semester/COA LAB/LABS/LAB3/PreLab/simulation/qsim/Waveform.vwf.vht"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
@@ -53,13 +53,13 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Wed Oct  2 05:48:27 2024
+    Info: Processing started: Tue Dec 17 02:08:14 2024
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="D:/5th-Semester/COA LAB/LABS/LAB3/PreLab/simulation/qsim/" circuit1 -c circuit1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file circuit1.vho in folder "D:/5th-Semester/COA LAB/LABS/LAB3/PreLab/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4650 megabytes
-    Info: Processing ended: Wed Oct  2 05:48:27 2024
+    Info: Peak virtual memory: 4651 megabytes
+    Info: Processing ended: Tue Dec 17 02:08:14 2024
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
@@ -73,7 +73,7 @@ Completed successfully.
 
 **** Running the ModelSim simulation ****
 
-C:/intelFPGA/20.1/modelsim_ase/win32aloem/vsim -c -do circuit1.do
+D:/Modelsim/modelsim_ase/win32aloem/vsim -c -do circuit1.do
 
 Reading pref.tcl
 
@@ -86,8 +86,7 @@ Reading pref.tcl
 # ** Warning: (vlib-34) Library already exists at "work".
 
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-
-# Start time: 05:48:30 on Oct 02,2024
+# Start time: 02:08:15 on Dec 17,2024
 # vcom -work work circuit1.vho 
 
 # -- Loading package STANDARD
@@ -101,7 +100,6 @@ Reading pref.tcl
 # -- Loading package VITAL_Primitives
 
 # -- Loading package cycloneive_atom_pack
-
 # -- Loading package cycloneive_components
 
 # -- Compiling entity hard_block
@@ -112,13 +110,13 @@ Reading pref.tcl
 
 # -- Compiling architecture structure of circuit1
 
-# End time: 05:48:30 on Oct 02,2024, Elapsed time: 0:00:00
+# End time: 02:08:15 on Dec 17,2024, Elapsed time: 0:00:00
 
 # Errors: 0, Warnings: 0
 
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 
-# Start time: 05:48:30 on Oct 02,2024
+# Start time: 02:08:15 on Dec 17,2024
 # vcom -work work Waveform.vwf.vht 
 
 # -- Loading package STANDARD
@@ -128,15 +126,13 @@ Reading pref.tcl
 # -- Loading package std_logic_1164
 
 # -- Compiling entity circuit1_vhd_vec_tst
-
 # -- Compiling architecture circuit1_arch of circuit1_vhd_vec_tst
 
-# End time: 05:48:30 on Oct 02,2024, Elapsed time: 0:00:00
-
+# End time: 02:08:15 on Dec 17,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 # vsim -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.circuit1_vhd_vec_tst 
-# Start time: 05:48:30 on Oct 02,2024
+# Start time: 02:08:15 on Dec 17,2024
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -154,7 +150,7 @@ Reading pref.tcl
 
 # after#33
 
-# End time: 05:48:31 on Oct 02,2024, Elapsed time: 0:00:01
+# End time: 02:08:16 on Dec 17,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 
 Completed successfully. 
@@ -167,7 +163,7 @@ Reading D:/5th-Semester/COA LAB/LABS/LAB3/PreLab/simulation/qsim/circuit1.msim.v
 
 Processing channel transitions... 
 
-Writing the resulting VWF to D:/5th-Semester/COA LAB/LABS/LAB3/PreLab/simulation/qsim/circuit1_20241002054832.sim.vwf
+Writing the resulting VWF to D:/5th-Semester/COA LAB/LABS/LAB3/PreLab/simulation/qsim/circuit1_20241217020816.sim.vwf
 
 Finished VCD to VWF conversion.
 

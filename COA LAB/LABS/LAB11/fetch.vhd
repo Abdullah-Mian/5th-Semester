@@ -33,17 +33,16 @@ begin
         
         -- Initialize the instruction memory with machine code
         variable mem    : mem_array := (
-            X"00000000",													-- 0 
-            X"11111111",													-- 1 
-            X"22222222",													-- 2 
-            X"33333333", -- lw $2, 0($1)     -- Load word		-- 3
-            X"8c640001", -- lw $4, 1($3)     -- Load word		-- 4
-            X"00822022", -- sub $4, $4, $3   -- Subtract			-- 5
-            X"ac400000", -- sw $4, 0($3)     -- Store word		-- 6
-            X"1022fffa", -- beq $1, $2, L    -- Branch if equal-- 7
-            X"00612024", -- and $4, $3, $1   -- AND operation	-- 8
-            X"08000000", -- j L              -- Jump				-- 9
-            X"00000000", -- NOP              -- No operation	-- 10
+				X"ac640000", -- sw $4, 0($3) ; mem[0+$3] <=$4
+            X"8c640001", -- lw $4, 1($3) ; $4 <= mem[1+$3] 
+            X"00622022", -- sub $4, $3, $2 ; $4 <= $3 - $2
+            X"1022fffb", -- beq $1, $2, L ; if ($1=$2), branch_addr<=L 
+            X"00822022", -- sub $4, $4, $3   -- Subtract			
+            X"ac400000", -- sw $4, 0($3)     -- Store word		
+            X"1022fffb", -- beq $1, $2, L    -- Branch if equal
+				X"8c220000", --L: lw $2, 0($1) ; $2 <= mem[0+$1]
+            X"00612064", -- and $4, $3, $1 ; $4 <= $3 and $4 
+            X"08000000", -- j L ; jump_addr <= L 
             others => X"00000000"  -- Initialize remaining locations
         );
     begin

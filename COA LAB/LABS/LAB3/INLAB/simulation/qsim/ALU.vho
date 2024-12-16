@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition"
 
--- DATE "10/10/2024 16:09:39"
+-- DATE "12/17/2024 02:12:06"
 
 -- 
 -- Device: Altera EP4CE115F29C7 Package FBGA780

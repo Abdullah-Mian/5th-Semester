@@ -26,7 +26,7 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Thu Oct 10 16:09:38 2024
+    Info: Processing started: Tue Dec 17 02:12:05 2024
 Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off ALU -c ALU --vector_source="D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/Waveform.vwf" --testbench_file="D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/simulation/qsim/Waveform.vwf.vht"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
@@ -53,13 +53,13 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Thu Oct 10 16:09:39 2024
+    Info: Processing started: Tue Dec 17 02:12:06 2024
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/simulation/qsim/" ALU -c ALU
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file ALU.vho in folder "D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4651 megabytes
-    Info: Processing ended: Thu Oct 10 16:09:39 2024
+    Info: Processing ended: Tue Dec 17 02:12:06 2024
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
@@ -87,7 +87,7 @@ Reading pref.tcl
 
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 
-# Start time: 16:09:42 on Oct 10,2024
+# Start time: 02:12:07 on Dec 17,2024
 # vcom -work work ALU.vho 
 
 # -- Loading package STANDARD
@@ -111,13 +111,13 @@ Reading pref.tcl
 
 # -- Compiling architecture structure of ALU
 
-# End time: 16:09:42 on Oct 10,2024, Elapsed time: 0:00:00
+# End time: 02:12:07 on Dec 17,2024, Elapsed time: 0:00:00
 
 # Errors: 0, Warnings: 0
 
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 
-# Start time: 16:09:42 on Oct 10,2024
+# Start time: 02:12:07 on Dec 17,2024
 # vcom -work work Waveform.vwf.vht 
 
 # -- Loading package STANDARD
@@ -127,13 +127,15 @@ Reading pref.tcl
 # -- Loading package std_logic_1164
 
 # -- Compiling entity ALU_vhd_vec_tst
+
 # -- Compiling architecture ALU_arch of ALU_vhd_vec_tst
 
-# End time: 16:09:42 on Oct 10,2024, Elapsed time: 0:00:00
+# End time: 02:12:07 on Dec 17,2024, Elapsed time: 0:00:00
+
 # Errors: 0, Warnings: 0
 
 # vsim -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.ALU_vhd_vec_tst 
-# Start time: 16:09:42 on Oct 10,2024
+# Start time: 02:12:07 on Dec 17,2024
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -151,7 +153,7 @@ Reading pref.tcl
 
 # after#33
 
-# End time: 16:09:43 on Oct 10,2024, Elapsed time: 0:00:01
+# End time: 02:12:07 on Dec 17,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 Completed successfully. 
@@ -164,7 +166,7 @@ Reading D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/simulation/qsim/ALU.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/simulation/qsim/ALU_20241010160943.sim.vwf
+Writing the resulting VWF to D:/5th-Semester/COA LAB/LABS/LAB3/INLAB/simulation/qsim/ALU_20241217021208.sim.vwf
 
 Finished VCD to VWF conversion.
 

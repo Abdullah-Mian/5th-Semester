@@ -10,7 +10,7 @@ z2
 cModel Technology
 Z0 dD:/5th-Semester/COA LAB/LABS/LAB5/simulation/qsim
 Efsmdiv
-Z1 w1728566937
+Z1 w1734383062
 Z2 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 WOh:M[al;oVzG5c`<He>D0
 Z3 DPx10 cycloneive 21 cycloneive_components 0 22 zGMDhP>8e@2k@f0e<PY]k2
 Z4 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
@@ -19,7 +19,7 @@ Z6 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
 Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z8 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 Z9 DPx6 altera 28 altera_primitives_components 0 22 ca:ehlQAg4;_gVV:^8MAg3
-!i122 8
+!i122 10
 R0
 Z10 8FSMdiv.vho
 Z11 FFSMdiv.vho
@@ -29,9 +29,9 @@ VLbcDD]Z`Ho<GlkHcSi:2D2
 !s100 ]n9oNHn[K[9dFVYF6ZZz@3
 Z12 OV;C;2020.1;71
 32
-Z13 !s110 1728566938
+Z13 !s110 1734383063
 !i10b 1
-Z14 !s108 1728566938.000000
+Z14 !s108 1734383063.000000
 Z15 !s90 -work|work|FSMdiv.vho|
 Z16 !s107 FSMdiv.vho|
 !i113 1
@@ -47,7 +47,7 @@ R7
 R8
 R9
 DEx4 work 6 fsmdiv 0 22 LbcDD]Z`Ho<GlkHcSi:2D2
-!i122 8
+!i122 10
 l171
 L102 861
 Vd<DOb]KK6l:adGkg0i4GM3
@@ -63,13 +63,13 @@ R16
 R17
 R18
 Efsmdiv_vhd_vec_tst
-R1
+Z19 w1734383061
 R7
 R8
-!i122 9
+!i122 11
 R0
-Z19 8Waveform.vwf.vht
-Z20 FWaveform.vwf.vht
+Z20 8Waveform.vwf.vht
+Z21 FWaveform.vwf.vht
 l0
 L32 1
 V;U:@CaIj5fE=T4ohY>HzF3
@@ -79,27 +79,27 @@ R12
 R13
 !i10b 1
 R14
-Z21 !s90 -work|work|Waveform.vwf.vht|
-Z22 !s107 Waveform.vwf.vht|
+Z22 !s90 -work|work|Waveform.vwf.vht|
+Z23 !s107 Waveform.vwf.vht|
 !i113 1
 R17
 R18
 Afsmdiv_arch
 R7
 R8
-Z23 DEx4 work 18 fsmdiv_vhd_vec_tst 0 22 ;U:@CaIj5fE=T4ohY>HzF3
-!i122 9
+Z24 DEx4 work 18 fsmdiv_vhd_vec_tst 0 22 ;U:@CaIj5fE=T4ohY>HzF3
+!i122 11
 l49
-L34 54
-V:;3iR^KDczR[1e=;hh:5o0
-!s100 hSe@MXNi>R8W1`AO3inOI1
+Z25 L34 54
+Z26 V:;3iR^KDczR[1e=;hh:5o0
+Z27 !s100 hSe@MXNi>R8W1`AO3inOI1
 R12
 32
 R13
 !i10b 1
 R14
-R21
 R22
+R23
 !i113 1
 R17
 R18
@@ -111,7 +111,7 @@ R6
 R7
 R8
 R3
-!i122 8
+!i122 10
 R0
 R10
 R11
@@ -137,7 +137,7 @@ R7
 R8
 R3
 DEx4 work 10 hard_block 0 22 B]0;STalBkCB1_B4BXQDW2
-!i122 8
+!i122 10
 l65
 L51 20
 Via>5o7W??azG@W@@eFOTF0

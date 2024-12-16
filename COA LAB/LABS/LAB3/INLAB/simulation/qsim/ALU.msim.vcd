@@ -3,7 +3,7 @@ $comment
 		vcd file ALU.msim.vcd -direction
 $end
 $date
-	Thu Oct 10 16:09:43 2024
+	Tue Dec 17 02:12:07 2024
 $end
 $version
 	ModelSim Version 2020.1

@@ -72,3 +72,5 @@ Producer Consumer LAB using Semaphores and mutex
 Disable interrupts during semaphore operations
 Signal Blocking (SIGVTALARM)
 Signal masking
+Safe Sequence Dead Lock Avoidance
+Disabling interrupts during Semaphore Operations

@@ -3,7 +3,7 @@ $comment
 		vcd file FSMdiv.msim.vcd -direction
 $end
 $date
-	Thu Oct 10 18:28:58 2024
+	Tue Dec 17 02:04:23 2024
 $end
 $version
 	ModelSim Version 2020.1

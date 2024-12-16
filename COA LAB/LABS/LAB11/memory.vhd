@@ -15,15 +15,7 @@ architecture Behavioral of memory is
     type mem_array is array (0 to 7) of std_logic_vector(31 downto 0);
 begin
     ReadWrite1: process (address, write_data)
-        variable data_mem : mem_array := (
-            X"00000000", -- initialize the data memory to constants to test
-            X"11111111",
-            X"22222222",
-            X"33333333",
-            X"44444444",
-            X"55555555",
-            X"66666666",
-            X"77777777");
+        variable data_mem : mem_array ;
         variable addr : integer;
         variable mem_content : std_logic_vector(31 downto 0);
     begin

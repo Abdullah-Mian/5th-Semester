@@ -4,31 +4,227 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "Output[0]",
+					"name" : "SevenSegement7[0]",
 					"strict" : false
 				},
 				{
-					"name" : "Output[1]",
+					"name" : "SevenSegement7[1]",
 					"strict" : false
 				},
 				{
-					"name" : "Output[2]",
+					"name" : "SevenSegement7[2]",
 					"strict" : false
 				},
 				{
-					"name" : "Output[3]",
+					"name" : "SevenSegement7[3]",
 					"strict" : false
 				},
 				{
-					"name" : "Output[4]",
+					"name" : "SevenSegement7[4]",
 					"strict" : false
 				},
 				{
-					"name" : "Output[5]",
+					"name" : "SevenSegement7[5]",
 					"strict" : false
 				},
 				{
-					"name" : "Output[6]",
+					"name" : "SevenSegement7[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement6[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement6[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement6[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement6[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement6[4]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement6[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement6[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement5[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement5[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement5[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement5[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement5[4]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement5[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement5[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement4[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement4[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement4[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement4[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement4[4]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement4[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement4[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement3[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement0[4]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement0[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SevenSegement0[6]",
 					"strict" : false
 				},
 				{
@@ -36,7 +232,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "DisplayDecision[1]",
+					"name" : "DisplayDecision[3]",
 					"strict" : false
 				},
 				{
@@ -44,7 +240,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "DisplayDecision[3]",
+					"name" : "DisplayDecision[1]",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
 					"strict" : false
 				}
 			]

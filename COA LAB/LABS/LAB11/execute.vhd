@@ -8,7 +8,8 @@ entity execute is
         clock            : in  std_logic;
         reset            : in  std_logic;
         DisplayDecision  : in  std_logic_vector(3 downto 0);
-        Output           : out std_logic_vector(6 downto 0)
+        SevenSegement7,SevenSegement6,SevenSegement5,SevenSegement4,SevenSegement3,SevenSegement2,SevenSegement1,SevenSegement0: out std_logic_vector(6 downto 0)
+		  
     );
 end execute;
 
@@ -17,6 +18,7 @@ architecture Behavioral of execute is
     signal branch_decisionWire, jump_decisionWire, resetWire, ClockWire, RegDstWire, RegWriteWire, MemToRegWire, ALUSrcWire, MemReadWire, MemWriteWire, Jump, beq_controlWire : std_logic;
     signal ALUOpWire : std_logic_vector(1 downto 0);
     signal zero_flagWire : std_logic;
+	 Signal SevenSegementWire : std_logic_vector(31 downto 0);
 begin
     -- Fetch
     fetch_unit : fetch
@@ -91,13 +93,57 @@ begin
             read_data   => memory_dataWire
         );
 
-    -- 7-Segment Display
-    display_unit : sevenSegement
-        port map (
-            bininput => DisplayDecision,
-            cathodes => Output
-        );
 
     resetWire <= reset;
     ClockWire <= Clock;
+	 
+	 
+	 with DisplayDecision select 
+	SevenSegementWire <= rsWire when "0000",
+	rtWire when "0001",
+	rdWire when "0010",
+	immediateWire when "0011",
+	jump_addrWire when "0100",
+	(others => '0') when others;
+	
+	 u7: sevenSegement port map (
+        bininput => SevenSegementWire(31 downto 28),
+        cathodes => SevenSegement7
+    );
+	 
+    u6: sevenSegement port map (
+        bininput => SevenSegementWire(27 downto 24),
+        cathodes => SevenSegement6
+    );
+	 
+    u5: sevenSegement port map (
+        bininput => SevenSegementWire(23 downto 20),
+        cathodes => SevenSegement5
+    );
+	 
+    u4: sevenSegement port map (
+        bininput => SevenSegementWire(19 downto 16),
+        cathodes => SevenSegement4
+    );
+	 
+    u3: sevenSegement port map (
+        bininput => SevenSegementWire(15 downto 12),
+        cathodes => SevenSegement3
+    );
+	 
+    u2: sevenSegement port map (
+        bininput => SevenSegementWire(11 downto 8),
+        cathodes => SevenSegement2
+    );
+	 
+    u1: sevenSegement port map (
+        bininput => SevenSegementWire(7 downto 4),
+        cathodes => SevenSegement1
+    );
+	 
+    u0: sevenSegement port map (
+        bininput => SevenSegementWire(3 downto 0),
+        cathodes => SevenSegement0
+    );
+	
 end Behavioral;

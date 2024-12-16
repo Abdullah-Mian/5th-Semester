@@ -26,7 +26,7 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Fri Oct 18 22:02:30 2024
+    Info: Processing started: Tue Dec 17 02:00:58 2024
 Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off DifferentSpeedLEDs -c DifferentSpeedLEDs --vector_source="D:/5th-Semester/COA LAB/LABS/LAB6/Task1/Waveform.vwf" --testbench_file="D:/5th-Semester/COA LAB/LABS/LAB6/Task1/simulation/qsim/Waveform.vwf.vht"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 
@@ -53,14 +53,14 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Fri Oct 18 22:02:31 2024
+    Info: Processing started: Tue Dec 17 02:00:59 2024
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="D:/5th-Semester/COA LAB/LABS/LAB6/Task1/simulation/qsim/" DifferentSpeedLEDs -c DifferentSpeedLEDs
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file DifferentSpeedLEDs.vho in folder "D:/5th-Semester/COA LAB/LABS/LAB6/Task1/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4651 megabytes
-    Info: Processing ended: Fri Oct 18 22:02:31 2024
-    Info: Elapsed time: 00:00:00
+    Info: Processing ended: Tue Dec 17 02:01:00 2024
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 
 Completed successfully. 
@@ -83,9 +83,10 @@ Reading pref.tcl
 
 # do DifferentSpeedLEDs.do
 
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# ** Warning: (vlib-34) Library already exists at "work".
 
-# Start time: 22:02:32 on Oct 18,2024
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 02:01:00 on Dec 17,2024
 # vcom -work work DifferentSpeedLEDs.vho 
 
 # -- Loading package STANDARD
@@ -97,6 +98,7 @@ Reading pref.tcl
 # -- Loading package VITAL_Timing
 
 # -- Loading package VITAL_Primitives
+
 # -- Loading package cycloneive_atom_pack
 # -- Loading package cycloneive_components
 
@@ -111,13 +113,13 @@ Reading pref.tcl
 
 # -- Compiling architecture structure of DifferentSpeedLEDs
 
-# End time: 22:02:32 on Oct 18,2024, Elapsed time: 0:00:00
+# End time: 02:01:00 on Dec 17,2024, Elapsed time: 0:00:00
 
 # Errors: 0, Warnings: 0
 
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 
-# Start time: 22:02:32 on Oct 18,2024
+# Start time: 02:01:00 on Dec 17,2024
 # vcom -work work Waveform.vwf.vht 
 
 # -- Loading package STANDARD
@@ -127,14 +129,15 @@ Reading pref.tcl
 # -- Loading package std_logic_1164
 
 # -- Compiling entity DifferentSpeedLEDs_vhd_vec_tst
+
 # -- Compiling architecture DifferentSpeedLEDs_arch of DifferentSpeedLEDs_vhd_vec_tst
 
-# End time: 22:02:32 on Oct 18,2024, Elapsed time: 0:00:00
+# End time: 02:01:00 on Dec 17,2024, Elapsed time: 0:00:00
 
 # Errors: 0, Warnings: 0
 
 # vsim -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.DifferentSpeedLEDs_vhd_vec_tst 
-# Start time: 22:02:32 on Oct 18,2024
+# Start time: 02:01:01 on Dec 17,2024
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -155,9 +158,9 @@ Reading pref.tcl
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)
 # Loading altera.dffeas(vital_dffeas)
 
-# after#33
+# after#35
 
-# End time: 22:02:33 on Oct 18,2024, Elapsed time: 0:00:01
+# End time: 02:01:01 on Dec 17,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 Completed successfully. 
@@ -170,7 +173,7 @@ Reading D:/5th-Semester/COA LAB/LABS/LAB6/Task1/simulation/qsim/DifferentSpeedLE
 
 Processing channel transitions... 
 
-Writing the resulting VWF to D:/5th-Semester/COA LAB/LABS/LAB6/Task1/simulation/qsim/DifferentSpeedLEDs_20241018220233.sim.vwf
+Writing the resulting VWF to D:/5th-Semester/COA LAB/LABS/LAB6/Task1/simulation/qsim/DifferentSpeedLEDs_20241217020101.sim.vwf
 
 Finished VCD to VWF conversion.
 

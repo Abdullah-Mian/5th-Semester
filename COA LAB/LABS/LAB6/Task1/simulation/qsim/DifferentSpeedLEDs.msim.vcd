@@ -3,7 +3,7 @@ $comment
 		vcd file DifferentSpeedLEDs.msim.vcd -direction
 $end
 $date
-	Fri Oct 18 22:02:33 2024
+	Tue Dec 17 02:01:01 2024
 $end
 $version
 	ModelSim Version 2020.1

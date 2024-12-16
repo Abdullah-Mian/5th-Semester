@@ -1,7 +1,7 @@
 # do WheelOfFortune.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:48:25 on Oct 18,2024
+# Start time: 02:02:54 on Dec 17,2024
 # vcom -work work WheelOfFortune.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -16,20 +16,20 @@
 # -- Loading package altera_primitives_components
 # -- Compiling entity WheelOfFortune
 # -- Compiling architecture structure of WheelOfFortune
-# End time: 20:48:25 on Oct 18,2024, Elapsed time: 0:00:00
+# End time: 02:02:54 on Dec 17,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:48:25 on Oct 18,2024
+# Start time: 02:02:54 on Dec 17,2024
 # vcom -work work Waveform.vwf.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity WheelOfFortune_vhd_vec_tst
 # -- Compiling architecture WheelOfFortune_arch of WheelOfFortune_vhd_vec_tst
-# End time: 20:48:25 on Oct 18,2024, Elapsed time: 0:00:00
+# End time: 02:02:55 on Dec 17,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vsim -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.WheelOfFortune_vhd_vec_tst 
-# Start time: 20:48:25 on Oct 18,2024
+# Start time: 02:02:55 on Dec 17,2024
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -52,5 +52,5 @@
 # ** Warning: Design size of 18522 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
 # after#35
-# End time: 20:48:25 on Oct 18,2024, Elapsed time: 0:00:00
+# End time: 02:02:55 on Dec 17,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1
