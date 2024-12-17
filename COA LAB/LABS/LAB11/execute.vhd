@@ -8,6 +8,7 @@ entity execute is
         clock            : in  std_logic;
         reset            : in  std_logic;
         DisplayDecision  : in  std_logic_vector(3 downto 0);
+		  outPut				 : out  std_logic_vector(31 downto 0);
         SevenSegement7,SevenSegement6,SevenSegement5,SevenSegement4,SevenSegement3,SevenSegement2,SevenSegement1,SevenSegement0: out std_logic_vector(6 downto 0)
 		  
     );
@@ -104,6 +105,16 @@ begin
 	rdWire when "0010",
 	immediateWire when "0011",
 	jump_addrWire when "0100",
+	alu_resultWire when "0101",
+	(others => '0') when others;
+	
+	with DisplayDecision select 
+	outPut <= rsWire when "0000",
+	rtWire when "0001",
+	rdWire when "0010",
+	immediateWire when "0011",
+	jump_addrWire when "0100",
+	alu_resultWire when "0101",
 	(others => '0') when others;
 	
 	 u7: sevenSegement port map (

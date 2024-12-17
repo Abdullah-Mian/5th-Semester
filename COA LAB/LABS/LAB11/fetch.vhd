@@ -34,8 +34,8 @@ begin
         -- Initialize the instruction memory with machine code
         variable mem    : mem_array := (
 				X"ac640000", -- sw $4, 0($3) ; mem[0+$3] <=$4
+				X"00622022", -- sub $4, $3, $2 ; $4 <= $3 - $2
             X"8c640001", -- lw $4, 1($3) ; $4 <= mem[1+$3] 
-            X"00622022", -- sub $4, $3, $2 ; $4 <= $3 - $2
             X"1022fffb", -- beq $1, $2, L ; if ($1=$2), branch_addr<=L 
             X"00822022", -- sub $4, $4, $3   -- Subtract			
             X"ac400000", -- sw $4, 0($3)     -- Store word		

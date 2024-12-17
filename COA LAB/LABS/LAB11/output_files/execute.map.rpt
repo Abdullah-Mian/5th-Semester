@@ -1,5 +1,5 @@
 Analysis & Synthesis report for execute
-Tue Dec 17 04:13:59 2024
+Tue Dec 17 11:26:25 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -51,16 +51,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Dec 17 04:13:59 2024          ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec 17 11:26:25 2024          ;
 ; Quartus Prime Version              ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                      ; execute                                        ;
 ; Top-level Entity Name              ; execute                                        ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 1,540                                          ;
-;     Total combinational functions  ; 1,540                                          ;
+; Total logic elements               ; 1,543                                          ;
+;     Total combinational functions  ; 1,543                                          ;
 ;     Dedicated logic registers      ; 246                                            ;
 ; Total registers                    ; 246                                            ;
-; Total pins                         ; 62                                             ;
+; Total pins                         ; 94                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
@@ -167,12 +167,13 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.2%      ;
+;     Processor 2            ;   0.1%      ;
 ;     Processor 3            ;   0.1%      ;
 ;     Processor 4            ;   0.1%      ;
 ;     Processor 5            ;   0.1%      ;
 ;     Processor 6            ;   0.1%      ;
-;     Processors 7-8         ;   0.1%      ;
+;     Processor 7            ;   0.1%      ;
+;     Processor 8            ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -197,30 +198,30 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------------------------------+
 ; Resource                                    ; Usage                               ;
 +---------------------------------------------+-------------------------------------+
-; Estimated Total logic elements              ; 1,540                               ;
+; Estimated Total logic elements              ; 1,543                               ;
 ;                                             ;                                     ;
-; Total combinational functions               ; 1540                                ;
+; Total combinational functions               ; 1543                                ;
 ; Logic element usage by number of LUT inputs ;                                     ;
-;     -- 4 input functions                    ; 923                                 ;
-;     -- 3 input functions                    ; 543                                 ;
-;     -- <=2 input functions                  ; 74                                  ;
+;     -- 4 input functions                    ; 933                                 ;
+;     -- 3 input functions                    ; 546                                 ;
+;     -- <=2 input functions                  ; 64                                  ;
 ;                                             ;                                     ;
 ; Logic elements by mode                      ;                                     ;
-;     -- normal mode                          ; 1441                                ;
-;     -- arithmetic mode                      ; 99                                  ;
+;     -- normal mode                          ; 1475                                ;
+;     -- arithmetic mode                      ; 68                                  ;
 ;                                             ;                                     ;
 ; Total registers                             ; 246                                 ;
 ;     -- Dedicated logic registers            ; 246                                 ;
 ;     -- I/O registers                        ; 0                                   ;
 ;                                             ;                                     ;
-; I/O pins                                    ; 62                                  ;
+; I/O pins                                    ; 94                                  ;
 ;                                             ;                                     ;
 ; Embedded Multiplier 9-bit elements          ; 0                                   ;
 ;                                             ;                                     ;
-; Maximum fan-out node                        ; controlUnit:control_unit|MemToReg~0 ;
+; Maximum fan-out node                        ; controlUnit:control_unit|MemToReg~1 ;
 ; Maximum fan-out                             ; 256                                 ;
-; Total fan-out                               ; 6318                                ;
-; Average fan-out                             ; 3.31                                ;
+; Total fan-out                               ; 6411                                ;
+; Average fan-out                             ; 3.24                                ;
 +---------------------------------------------+-------------------------------------+
 
 
@@ -229,20 +230,20 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------+-------------------+--------------+
 ; Compilation Hierarchy Node         ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                    ; Entity Name       ; Library Name ;
 +------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------+-------------------+--------------+
-; |execute                           ; 1540 (188)          ; 246 (0)                   ; 0           ; 0            ; 0       ; 0         ; 62   ; 0            ; |execute                               ; execute           ; work         ;
-;    |InstructionDecode:decode_unit| ; 624 (624)           ; 224 (224)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execute|InstructionDecode:decode_unit ; InstructionDecode ; work         ;
-;    |controlUnit:control_unit|      ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execute|controlUnit:control_unit      ; controlUnit       ; work         ;
-;    |executeModule:execute_unit|    ; 160 (160)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execute|executeModule:execute_unit    ; executeModule     ; work         ;
-;    |fetch:fetch_unit|              ; 24 (24)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execute|fetch:fetch_unit              ; fetch             ; work         ;
+; |execute                           ; 1543 (213)          ; 246 (0)                   ; 0           ; 0            ; 0       ; 0         ; 94   ; 0            ; |execute                               ; execute           ; work         ;
+;    |InstructionDecode:decode_unit| ; 562 (562)           ; 224 (224)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execute|InstructionDecode:decode_unit ; InstructionDecode ; work         ;
+;    |controlUnit:control_unit|      ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execute|controlUnit:control_unit      ; controlUnit       ; work         ;
+;    |executeModule:execute_unit|    ; 187 (187)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execute|executeModule:execute_unit    ; executeModule     ; work         ;
+;    |fetch:fetch_unit|              ; 23 (23)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execute|fetch:fetch_unit              ; fetch             ; work         ;
 ;    |memory:memory_unit|            ; 448 (448)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execute|memory:memory_unit            ; memory            ; work         ;
-;    |sevenSegement:u0|              ; 12 (12)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execute|sevenSegement:u0              ; sevenSegement     ; work         ;
+;    |sevenSegement:u0|              ; 13 (13)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execute|sevenSegement:u0              ; sevenSegement     ; work         ;
 ;    |sevenSegement:u1|              ; 12 (12)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execute|sevenSegement:u1              ; sevenSegement     ; work         ;
-;    |sevenSegement:u2|              ; 12 (12)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execute|sevenSegement:u2              ; sevenSegement     ; work         ;
-;    |sevenSegement:u3|              ; 10 (10)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execute|sevenSegement:u3              ; sevenSegement     ; work         ;
+;    |sevenSegement:u2|              ; 13 (13)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execute|sevenSegement:u2              ; sevenSegement     ; work         ;
+;    |sevenSegement:u3|              ; 11 (11)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execute|sevenSegement:u3              ; sevenSegement     ; work         ;
 ;    |sevenSegement:u4|              ; 11 (11)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execute|sevenSegement:u4              ; sevenSegement     ; work         ;
-;    |sevenSegement:u5|              ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execute|sevenSegement:u5              ; sevenSegement     ; work         ;
-;    |sevenSegement:u6|              ; 12 (12)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execute|sevenSegement:u6              ; sevenSegement     ; work         ;
-;    |sevenSegement:u7|              ; 12 (12)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execute|sevenSegement:u7              ; sevenSegement     ; work         ;
+;    |sevenSegement:u5|              ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execute|sevenSegement:u5              ; sevenSegement     ; work         ;
+;    |sevenSegement:u6|              ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execute|sevenSegement:u6              ; sevenSegement     ; work         ;
+;    |sevenSegement:u7|              ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |execute|sevenSegement:u7              ; sevenSegement     ; work         ;
 +------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -252,106 +253,106 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------+-----------------------------------+------------------------+
 ; Latch Name                                           ; Latch Enable Signal               ; Free of Timing Hazards ;
 +------------------------------------------------------+-----------------------------------+------------------------+
-; memory:memory_unit|read_data[31]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
-; memory:memory_unit|read_data[28]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
-; memory:memory_unit|read_data[29]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
-; memory:memory_unit|read_data[30]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
-; memory:memory_unit|read_data[27]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
-; memory:memory_unit|read_data[24]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
-; memory:memory_unit|read_data[25]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
-; memory:memory_unit|read_data[26]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
+; memory:memory_unit|read_data[0]                      ; controlUnit:control_unit|MemToReg ; yes                    ;
+; memory:memory_unit|read_data[1]                      ; controlUnit:control_unit|MemToReg ; yes                    ;
+; memory:memory_unit|read_data[2]                      ; controlUnit:control_unit|MemToReg ; yes                    ;
+; memory:memory_unit|read_data[3]                      ; controlUnit:control_unit|MemToReg ; yes                    ;
+; memory:memory_unit|read_data[4]                      ; controlUnit:control_unit|MemToReg ; yes                    ;
+; memory:memory_unit|read_data[5]                      ; controlUnit:control_unit|MemToReg ; yes                    ;
+; memory:memory_unit|read_data[6]                      ; controlUnit:control_unit|MemToReg ; yes                    ;
+; memory:memory_unit|read_data[7]                      ; controlUnit:control_unit|MemToReg ; yes                    ;
+; memory:memory_unit|read_data[8]                      ; controlUnit:control_unit|MemToReg ; yes                    ;
+; memory:memory_unit|read_data[9]                      ; controlUnit:control_unit|MemToReg ; yes                    ;
+; memory:memory_unit|read_data[10]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
+; memory:memory_unit|read_data[11]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
+; memory:memory_unit|read_data[12]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
+; memory:memory_unit|read_data[13]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
+; memory:memory_unit|read_data[14]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
+; memory:memory_unit|read_data[15]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
+; memory:memory_unit|read_data[16]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
+; memory:memory_unit|read_data[17]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
+; memory:memory_unit|read_data[18]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
+; memory:memory_unit|read_data[19]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
 ; memory:memory_unit|read_data[20]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
 ; memory:memory_unit|read_data[21]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
 ; memory:memory_unit|read_data[22]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
 ; memory:memory_unit|read_data[23]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
-; memory:memory_unit|read_data[19]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
-; memory:memory_unit|read_data[16]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
-; memory:memory_unit|read_data[17]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
-; memory:memory_unit|read_data[18]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
-; memory:memory_unit|read_data[12]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
-; memory:memory_unit|read_data[15]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
-; memory:memory_unit|read_data[13]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
-; memory:memory_unit|read_data[14]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
-; memory:memory_unit|read_data[11]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
-; memory:memory_unit|read_data[8]                      ; controlUnit:control_unit|MemToReg ; yes                    ;
-; memory:memory_unit|read_data[9]                      ; controlUnit:control_unit|MemToReg ; yes                    ;
-; memory:memory_unit|read_data[10]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
-; memory:memory_unit|read_data[7]                      ; controlUnit:control_unit|MemToReg ; yes                    ;
-; memory:memory_unit|read_data[4]                      ; controlUnit:control_unit|MemToReg ; yes                    ;
-; memory:memory_unit|read_data[5]                      ; controlUnit:control_unit|MemToReg ; yes                    ;
-; memory:memory_unit|read_data[6]                      ; controlUnit:control_unit|MemToReg ; yes                    ;
-; memory:memory_unit|read_data[3]                      ; controlUnit:control_unit|MemToReg ; yes                    ;
-; memory:memory_unit|read_data[0]                      ; controlUnit:control_unit|MemToReg ; yes                    ;
-; memory:memory_unit|read_data[1]                      ; controlUnit:control_unit|MemToReg ; yes                    ;
-; memory:memory_unit|read_data[2]                      ; controlUnit:control_unit|MemToReg ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~95           ; rtl~0                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~63           ; rtl~1                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~31           ; rtl~2                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~127          ; rtl~3                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~191          ; rtl~4                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~223          ; rtl~5                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~159          ; rtl~6                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~255          ; rtl~7                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~92           ; rtl~0                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~60           ; rtl~1                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~28           ; rtl~2                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~124          ; rtl~3                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~188          ; rtl~4                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~220          ; rtl~5                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~156          ; rtl~6                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~252          ; rtl~7                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~93           ; rtl~0                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~61           ; rtl~1                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~29           ; rtl~2                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~125          ; rtl~3                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~189          ; rtl~4                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~221          ; rtl~5                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~157          ; rtl~6                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~253          ; rtl~7                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~94           ; rtl~0                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~62           ; rtl~1                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~30           ; rtl~2                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~126          ; rtl~3                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~190          ; rtl~4                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~222          ; rtl~5                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~158          ; rtl~6                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~254          ; rtl~7                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~91           ; rtl~0                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~59           ; rtl~1                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~27           ; rtl~2                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~123          ; rtl~3                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~187          ; rtl~4                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~219          ; rtl~5                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~155          ; rtl~6                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~251          ; rtl~7                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~88           ; rtl~0                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~56           ; rtl~1                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~24           ; rtl~2                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~120          ; rtl~3                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~184          ; rtl~4                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~216          ; rtl~5                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~152          ; rtl~6                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~248          ; rtl~7                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~89           ; rtl~0                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~57           ; rtl~1                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~25           ; rtl~2                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~121          ; rtl~3                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~185          ; rtl~4                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~217          ; rtl~5                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~153          ; rtl~6                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~249          ; rtl~7                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~90           ; rtl~0                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~58           ; rtl~1                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~26           ; rtl~2                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~122          ; rtl~3                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~186          ; rtl~4                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~218          ; rtl~5                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~154          ; rtl~6                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~250          ; rtl~7                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~84           ; rtl~0                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~52           ; rtl~1                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~20           ; rtl~2                             ; yes                    ;
-; memory:memory_unit|\ReadWrite1:data_mem~116          ; rtl~3                             ; yes                    ;
+; memory:memory_unit|read_data[24]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
+; memory:memory_unit|read_data[25]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
+; memory:memory_unit|read_data[26]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
+; memory:memory_unit|read_data[27]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
+; memory:memory_unit|read_data[28]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
+; memory:memory_unit|read_data[29]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
+; memory:memory_unit|read_data[30]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
+; memory:memory_unit|read_data[31]                     ; controlUnit:control_unit|MemToReg ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~64           ; rtl~0                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~32           ; rtl~1                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~0            ; rtl~2                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~96           ; rtl~3                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~160          ; rtl~4                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~192          ; rtl~5                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~128          ; rtl~6                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~224          ; rtl~7                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~65           ; rtl~0                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~33           ; rtl~1                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~1            ; rtl~2                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~97           ; rtl~3                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~161          ; rtl~4                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~193          ; rtl~5                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~129          ; rtl~6                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~225          ; rtl~7                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~66           ; rtl~0                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~34           ; rtl~1                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~2            ; rtl~2                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~98           ; rtl~3                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~162          ; rtl~4                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~194          ; rtl~5                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~130          ; rtl~6                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~226          ; rtl~7                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~67           ; rtl~0                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~35           ; rtl~1                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~3            ; rtl~2                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~99           ; rtl~3                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~163          ; rtl~4                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~195          ; rtl~5                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~131          ; rtl~6                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~227          ; rtl~7                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~68           ; rtl~0                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~36           ; rtl~1                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~4            ; rtl~2                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~100          ; rtl~3                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~164          ; rtl~4                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~196          ; rtl~5                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~132          ; rtl~6                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~228          ; rtl~7                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~69           ; rtl~0                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~37           ; rtl~1                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~5            ; rtl~2                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~101          ; rtl~3                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~165          ; rtl~4                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~197          ; rtl~5                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~133          ; rtl~6                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~229          ; rtl~7                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~70           ; rtl~0                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~38           ; rtl~1                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~6            ; rtl~2                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~102          ; rtl~3                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~166          ; rtl~4                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~198          ; rtl~5                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~134          ; rtl~6                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~230          ; rtl~7                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~71           ; rtl~0                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~39           ; rtl~1                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~7            ; rtl~2                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~103          ; rtl~3                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~167          ; rtl~4                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~199          ; rtl~5                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~135          ; rtl~6                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~231          ; rtl~7                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~72           ; rtl~0                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~40           ; rtl~1                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~8            ; rtl~2                             ; yes                    ;
+; memory:memory_unit|\ReadWrite1:data_mem~104          ; rtl~3                             ; yes                    ;
 ; Number of user-specified and inferred latches = 288  ;                                   ;                        ;
 +------------------------------------------------------+-----------------------------------+------------------------+
 Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
@@ -375,41 +376,41 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +-------------------------------------------------------+----------------------------------------------+
 ; fetch:fetch_unit|instruction[19,20,24,25,30]          ; Stuck at GND due to stuck port data_in       ;
 ; fetch:fetch_unit|instruction[5]                       ; Merged with fetch:fetch_unit|instruction[13] ;
-; fetch:fetch_unit|instruction[3,4,7..9,11,12,14,15,28] ; Merged with fetch:fetch_unit|instruction[10] ;
 ; fetch:fetch_unit|instruction[2]                       ; Merged with fetch:fetch_unit|instruction[16] ;
+; fetch:fetch_unit|instruction[3,4,7..9,11,12,14,15,28] ; Merged with fetch:fetch_unit|instruction[10] ;
 ; fetch:fetch_unit|instruction[31]                      ; Merged with fetch:fetch_unit|instruction[26] ;
-; InstructionDecode:decode_unit|reg_File[0][29]         ; Stuck at GND due to stuck port data_in       ;
-; InstructionDecode:decode_unit|reg_File[0][30]         ; Stuck at GND due to stuck port data_in       ;
-; InstructionDecode:decode_unit|reg_File[0][31]         ; Stuck at GND due to stuck port data_in       ;
-; InstructionDecode:decode_unit|reg_File[0][28]         ; Stuck at GND due to stuck port data_in       ;
-; InstructionDecode:decode_unit|reg_File[0][25]         ; Stuck at GND due to stuck port data_in       ;
-; InstructionDecode:decode_unit|reg_File[0][26]         ; Stuck at GND due to stuck port data_in       ;
-; InstructionDecode:decode_unit|reg_File[0][27]         ; Stuck at GND due to stuck port data_in       ;
-; InstructionDecode:decode_unit|reg_File[0][24]         ; Stuck at GND due to stuck port data_in       ;
-; InstructionDecode:decode_unit|reg_File[0][21]         ; Stuck at GND due to stuck port data_in       ;
-; InstructionDecode:decode_unit|reg_File[0][22]         ; Stuck at GND due to stuck port data_in       ;
-; InstructionDecode:decode_unit|reg_File[0][23]         ; Stuck at GND due to stuck port data_in       ;
-; InstructionDecode:decode_unit|reg_File[0][20]         ; Stuck at GND due to stuck port data_in       ;
-; InstructionDecode:decode_unit|reg_File[0][17]         ; Stuck at GND due to stuck port data_in       ;
-; InstructionDecode:decode_unit|reg_File[0][18]         ; Stuck at GND due to stuck port data_in       ;
-; InstructionDecode:decode_unit|reg_File[0][19]         ; Stuck at GND due to stuck port data_in       ;
-; InstructionDecode:decode_unit|reg_File[0][16]         ; Stuck at GND due to stuck port data_in       ;
-; InstructionDecode:decode_unit|reg_File[0][13]         ; Stuck at GND due to stuck port data_in       ;
-; InstructionDecode:decode_unit|reg_File[0][14]         ; Stuck at GND due to stuck port data_in       ;
-; InstructionDecode:decode_unit|reg_File[0][15]         ; Stuck at GND due to stuck port data_in       ;
-; InstructionDecode:decode_unit|reg_File[0][12]         ; Stuck at GND due to stuck port data_in       ;
-; InstructionDecode:decode_unit|reg_File[0][9]          ; Stuck at GND due to stuck port data_in       ;
-; InstructionDecode:decode_unit|reg_File[0][10]         ; Stuck at GND due to stuck port data_in       ;
-; InstructionDecode:decode_unit|reg_File[0][11]         ; Stuck at GND due to stuck port data_in       ;
-; InstructionDecode:decode_unit|reg_File[0][8]          ; Stuck at GND due to stuck port data_in       ;
-; InstructionDecode:decode_unit|reg_File[0][5]          ; Stuck at GND due to stuck port data_in       ;
-; InstructionDecode:decode_unit|reg_File[0][6]          ; Stuck at GND due to stuck port data_in       ;
-; InstructionDecode:decode_unit|reg_File[0][7]          ; Stuck at GND due to stuck port data_in       ;
-; InstructionDecode:decode_unit|reg_File[0][4]          ; Stuck at GND due to stuck port data_in       ;
+; InstructionDecode:decode_unit|reg_File[0][0]          ; Stuck at GND due to stuck port data_in       ;
 ; InstructionDecode:decode_unit|reg_File[0][1]          ; Stuck at GND due to stuck port data_in       ;
 ; InstructionDecode:decode_unit|reg_File[0][2]          ; Stuck at GND due to stuck port data_in       ;
 ; InstructionDecode:decode_unit|reg_File[0][3]          ; Stuck at GND due to stuck port data_in       ;
-; InstructionDecode:decode_unit|reg_File[0][0]          ; Stuck at GND due to stuck port data_in       ;
+; InstructionDecode:decode_unit|reg_File[0][4]          ; Stuck at GND due to stuck port data_in       ;
+; InstructionDecode:decode_unit|reg_File[0][5]          ; Stuck at GND due to stuck port data_in       ;
+; InstructionDecode:decode_unit|reg_File[0][6]          ; Stuck at GND due to stuck port data_in       ;
+; InstructionDecode:decode_unit|reg_File[0][7]          ; Stuck at GND due to stuck port data_in       ;
+; InstructionDecode:decode_unit|reg_File[0][8]          ; Stuck at GND due to stuck port data_in       ;
+; InstructionDecode:decode_unit|reg_File[0][9]          ; Stuck at GND due to stuck port data_in       ;
+; InstructionDecode:decode_unit|reg_File[0][10]         ; Stuck at GND due to stuck port data_in       ;
+; InstructionDecode:decode_unit|reg_File[0][11]         ; Stuck at GND due to stuck port data_in       ;
+; InstructionDecode:decode_unit|reg_File[0][12]         ; Stuck at GND due to stuck port data_in       ;
+; InstructionDecode:decode_unit|reg_File[0][13]         ; Stuck at GND due to stuck port data_in       ;
+; InstructionDecode:decode_unit|reg_File[0][14]         ; Stuck at GND due to stuck port data_in       ;
+; InstructionDecode:decode_unit|reg_File[0][15]         ; Stuck at GND due to stuck port data_in       ;
+; InstructionDecode:decode_unit|reg_File[0][16]         ; Stuck at GND due to stuck port data_in       ;
+; InstructionDecode:decode_unit|reg_File[0][17]         ; Stuck at GND due to stuck port data_in       ;
+; InstructionDecode:decode_unit|reg_File[0][18]         ; Stuck at GND due to stuck port data_in       ;
+; InstructionDecode:decode_unit|reg_File[0][19]         ; Stuck at GND due to stuck port data_in       ;
+; InstructionDecode:decode_unit|reg_File[0][20]         ; Stuck at GND due to stuck port data_in       ;
+; InstructionDecode:decode_unit|reg_File[0][21]         ; Stuck at GND due to stuck port data_in       ;
+; InstructionDecode:decode_unit|reg_File[0][22]         ; Stuck at GND due to stuck port data_in       ;
+; InstructionDecode:decode_unit|reg_File[0][23]         ; Stuck at GND due to stuck port data_in       ;
+; InstructionDecode:decode_unit|reg_File[0][24]         ; Stuck at GND due to stuck port data_in       ;
+; InstructionDecode:decode_unit|reg_File[0][25]         ; Stuck at GND due to stuck port data_in       ;
+; InstructionDecode:decode_unit|reg_File[0][26]         ; Stuck at GND due to stuck port data_in       ;
+; InstructionDecode:decode_unit|reg_File[0][27]         ; Stuck at GND due to stuck port data_in       ;
+; InstructionDecode:decode_unit|reg_File[0][28]         ; Stuck at GND due to stuck port data_in       ;
+; InstructionDecode:decode_unit|reg_File[0][29]         ; Stuck at GND due to stuck port data_in       ;
+; InstructionDecode:decode_unit|reg_File[0][30]         ; Stuck at GND due to stuck port data_in       ;
+; InstructionDecode:decode_unit|reg_File[0][31]         ; Stuck at GND due to stuck port data_in       ;
 ; fetch:fetch_unit|PC_out[4..31]                        ; Lost fanout                                  ;
 ; fetch:fetch_unit|pc[4..31]                            ; Lost fanout                                  ;
 ; Total Number of Removed Registers = 106               ;                                              ;
@@ -421,45 +422,47 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------+---------------------------+--------------------------------------------------------------------------------------+
 ; Register name                    ; Reason for Removal        ; Registers Removed due to This Register                                               ;
 +----------------------------------+---------------------------+--------------------------------------------------------------------------------------+
-; fetch:fetch_unit|instruction[30] ; Stuck at GND              ; InstructionDecode:decode_unit|reg_File[0][29],                                       ;
-;                                  ; due to stuck port data_in ; InstructionDecode:decode_unit|reg_File[0][30],                                       ;
-;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][31],                                       ;
-;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][28],                                       ;
-;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][25],                                       ;
-;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][26],                                       ;
-;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][27],                                       ;
-;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][24],                                       ;
-;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][21],                                       ;
-;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][22],                                       ;
-;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][23],                                       ;
-;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][20],                                       ;
-;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][17],                                       ;
-;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][18],                                       ;
-;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][19],                                       ;
-;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][16],                                       ;
-;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][13],                                       ;
-;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][14],                                       ;
-;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][15],                                       ;
-;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][12],                                       ;
-;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][9],                                        ;
-;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][10],                                       ;
-;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][11],                                       ;
-;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][8],                                        ;
+; fetch:fetch_unit|instruction[30] ; Stuck at GND              ; InstructionDecode:decode_unit|reg_File[0][0],                                        ;
+;                                  ; due to stuck port data_in ; InstructionDecode:decode_unit|reg_File[0][1],                                        ;
+;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][2],                                        ;
+;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][3],                                        ;
+;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][4],                                        ;
 ;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][5],                                        ;
 ;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][6],                                        ;
 ;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][7],                                        ;
-;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][4],                                        ;
-;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][1],                                        ;
-;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][2],                                        ;
-;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][3],                                        ;
-;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][0], fetch:fetch_unit|pc[27],               ;
-;                                  ;                           ; fetch:fetch_unit|pc[26], fetch:fetch_unit|pc[23], fetch:fetch_unit|pc[22],           ;
-;                                  ;                           ; fetch:fetch_unit|pc[21], fetch:fetch_unit|pc[18], fetch:fetch_unit|pc[17],           ;
-;                                  ;                           ; fetch:fetch_unit|pc[16], fetch:fetch_unit|pc[15], fetch:fetch_unit|pc[14],           ;
-;                                  ;                           ; fetch:fetch_unit|pc[13], fetch:fetch_unit|pc[12], fetch:fetch_unit|pc[11],           ;
-;                                  ;                           ; fetch:fetch_unit|pc[10], fetch:fetch_unit|pc[9], fetch:fetch_unit|pc[8],             ;
-;                                  ;                           ; fetch:fetch_unit|pc[7], fetch:fetch_unit|pc[6], fetch:fetch_unit|pc[5],              ;
-;                                  ;                           ; fetch:fetch_unit|pc[4]                                                               ;
+;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][8],                                        ;
+;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][9],                                        ;
+;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][10],                                       ;
+;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][11],                                       ;
+;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][12],                                       ;
+;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][13],                                       ;
+;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][14],                                       ;
+;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][15],                                       ;
+;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][16],                                       ;
+;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][17],                                       ;
+;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][18],                                       ;
+;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][19],                                       ;
+;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][20],                                       ;
+;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][21],                                       ;
+;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][22],                                       ;
+;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][23],                                       ;
+;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][24],                                       ;
+;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][25],                                       ;
+;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][26],                                       ;
+;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][27],                                       ;
+;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][28],                                       ;
+;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][29],                                       ;
+;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][30],                                       ;
+;                                  ;                           ; InstructionDecode:decode_unit|reg_File[0][31], fetch:fetch_unit|pc[30],              ;
+;                                  ;                           ; fetch:fetch_unit|pc[29], fetch:fetch_unit|pc[28], fetch:fetch_unit|pc[27],           ;
+;                                  ;                           ; fetch:fetch_unit|pc[26], fetch:fetch_unit|pc[25], fetch:fetch_unit|pc[24],           ;
+;                                  ;                           ; fetch:fetch_unit|pc[23], fetch:fetch_unit|pc[22], fetch:fetch_unit|pc[21],           ;
+;                                  ;                           ; fetch:fetch_unit|pc[20], fetch:fetch_unit|pc[19], fetch:fetch_unit|pc[18],           ;
+;                                  ;                           ; fetch:fetch_unit|pc[17], fetch:fetch_unit|pc[16], fetch:fetch_unit|pc[15],           ;
+;                                  ;                           ; fetch:fetch_unit|pc[14], fetch:fetch_unit|pc[13], fetch:fetch_unit|pc[12],           ;
+;                                  ;                           ; fetch:fetch_unit|pc[11], fetch:fetch_unit|pc[10], fetch:fetch_unit|pc[9],            ;
+;                                  ;                           ; fetch:fetch_unit|pc[8], fetch:fetch_unit|pc[7], fetch:fetch_unit|pc[6],              ;
+;                                  ;                           ; fetch:fetch_unit|pc[5], fetch:fetch_unit|pc[4]                                       ;
 ; fetch:fetch_unit|PC_out[31]      ; Lost Fanouts              ; fetch:fetch_unit|PC_out[30], fetch:fetch_unit|PC_out[29],                            ;
 ;                                  ;                           ; fetch:fetch_unit|PC_out[28], fetch:fetch_unit|PC_out[27],                            ;
 ;                                  ;                           ; fetch:fetch_unit|PC_out[26], fetch:fetch_unit|PC_out[25],                            ;
@@ -472,16 +475,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ;                                  ;                           ; fetch:fetch_unit|PC_out[12], fetch:fetch_unit|PC_out[11],                            ;
 ;                                  ;                           ; fetch:fetch_unit|PC_out[10], fetch:fetch_unit|PC_out[9], fetch:fetch_unit|PC_out[8], ;
 ;                                  ;                           ; fetch:fetch_unit|PC_out[7], fetch:fetch_unit|PC_out[6], fetch:fetch_unit|PC_out[5],  ;
-;                                  ;                           ; fetch:fetch_unit|PC_out[4], fetch:fetch_unit|pc[31], fetch:fetch_unit|pc[30],        ;
-;                                  ;                           ; fetch:fetch_unit|pc[29], fetch:fetch_unit|pc[28]                                     ;
-; fetch:fetch_unit|instruction[24] ; Stuck at GND              ; fetch:fetch_unit|pc[24]                                                              ;
-;                                  ; due to stuck port data_in ;                                                                                      ;
-; fetch:fetch_unit|instruction[25] ; Stuck at GND              ; fetch:fetch_unit|pc[25]                                                              ;
-;                                  ; due to stuck port data_in ;                                                                                      ;
-; fetch:fetch_unit|instruction[20] ; Stuck at GND              ; fetch:fetch_unit|pc[20]                                                              ;
-;                                  ; due to stuck port data_in ;                                                                                      ;
-; fetch:fetch_unit|instruction[19] ; Stuck at GND              ; fetch:fetch_unit|pc[19]                                                              ;
-;                                  ; due to stuck port data_in ;                                                                                      ;
+;                                  ;                           ; fetch:fetch_unit|PC_out[4], fetch:fetch_unit|pc[31]                                  ;
 +----------------------------------+---------------------------+--------------------------------------------------------------------------------------+
 
 
@@ -505,102 +499,102 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +-----------------------------------------------+---------+
 ; Inverted Register                             ; Fan out ;
 +-----------------------------------------------+---------+
-; InstructionDecode:decode_unit|reg_File[5][28] ; 2       ;
-; InstructionDecode:decode_unit|reg_File[7][28] ; 3       ;
-; InstructionDecode:decode_unit|reg_File[1][28] ; 2       ;
-; InstructionDecode:decode_unit|reg_File[3][28] ; 3       ;
-; InstructionDecode:decode_unit|reg_File[6][30] ; 2       ;
-; InstructionDecode:decode_unit|reg_File[5][30] ; 2       ;
-; InstructionDecode:decode_unit|reg_File[4][30] ; 3       ;
-; InstructionDecode:decode_unit|reg_File[7][30] ; 3       ;
-; InstructionDecode:decode_unit|reg_File[6][29] ; 2       ;
-; InstructionDecode:decode_unit|reg_File[7][29] ; 3       ;
-; InstructionDecode:decode_unit|reg_File[2][29] ; 2       ;
-; InstructionDecode:decode_unit|reg_File[3][29] ; 3       ;
-; InstructionDecode:decode_unit|reg_File[5][24] ; 2       ;
-; InstructionDecode:decode_unit|reg_File[7][24] ; 3       ;
-; InstructionDecode:decode_unit|reg_File[1][24] ; 2       ;
-; InstructionDecode:decode_unit|reg_File[3][24] ; 3       ;
-; InstructionDecode:decode_unit|reg_File[5][26] ; 2       ;
-; InstructionDecode:decode_unit|reg_File[6][26] ; 2       ;
-; InstructionDecode:decode_unit|reg_File[4][26] ; 3       ;
-; InstructionDecode:decode_unit|reg_File[7][26] ; 3       ;
-; InstructionDecode:decode_unit|reg_File[6][25] ; 2       ;
-; InstructionDecode:decode_unit|reg_File[7][25] ; 3       ;
-; InstructionDecode:decode_unit|reg_File[2][25] ; 2       ;
-; InstructionDecode:decode_unit|reg_File[3][25] ; 3       ;
-; InstructionDecode:decode_unit|reg_File[7][21] ; 3       ;
-; InstructionDecode:decode_unit|reg_File[6][21] ; 2       ;
-; InstructionDecode:decode_unit|reg_File[2][21] ; 2       ;
-; InstructionDecode:decode_unit|reg_File[3][21] ; 3       ;
-; InstructionDecode:decode_unit|reg_File[5][20] ; 2       ;
-; InstructionDecode:decode_unit|reg_File[7][20] ; 3       ;
-; InstructionDecode:decode_unit|reg_File[1][20] ; 2       ;
-; InstructionDecode:decode_unit|reg_File[3][20] ; 3       ;
-; InstructionDecode:decode_unit|reg_File[5][22] ; 2       ;
-; InstructionDecode:decode_unit|reg_File[6][22] ; 2       ;
-; InstructionDecode:decode_unit|reg_File[4][22] ; 3       ;
-; InstructionDecode:decode_unit|reg_File[7][22] ; 3       ;
-; InstructionDecode:decode_unit|reg_File[5][16] ; 2       ;
-; InstructionDecode:decode_unit|reg_File[7][16] ; 3       ;
-; InstructionDecode:decode_unit|reg_File[1][16] ; 2       ;
-; InstructionDecode:decode_unit|reg_File[3][16] ; 3       ;
-; InstructionDecode:decode_unit|reg_File[7][17] ; 3       ;
-; InstructionDecode:decode_unit|reg_File[6][17] ; 2       ;
-; InstructionDecode:decode_unit|reg_File[2][17] ; 2       ;
-; InstructionDecode:decode_unit|reg_File[3][17] ; 3       ;
-; InstructionDecode:decode_unit|reg_File[5][18] ; 2       ;
-; InstructionDecode:decode_unit|reg_File[6][18] ; 2       ;
-; InstructionDecode:decode_unit|reg_File[4][18] ; 3       ;
-; InstructionDecode:decode_unit|reg_File[7][18] ; 3       ;
-; InstructionDecode:decode_unit|reg_File[5][12] ; 2       ;
-; InstructionDecode:decode_unit|reg_File[7][12] ; 3       ;
-; InstructionDecode:decode_unit|reg_File[1][12] ; 2       ;
-; InstructionDecode:decode_unit|reg_File[3][12] ; 3       ;
-; InstructionDecode:decode_unit|reg_File[5][14] ; 2       ;
-; InstructionDecode:decode_unit|reg_File[6][14] ; 2       ;
-; InstructionDecode:decode_unit|reg_File[4][14] ; 3       ;
-; InstructionDecode:decode_unit|reg_File[7][14] ; 3       ;
-; InstructionDecode:decode_unit|reg_File[6][13] ; 2       ;
-; InstructionDecode:decode_unit|reg_File[7][13] ; 3       ;
-; InstructionDecode:decode_unit|reg_File[2][13] ; 2       ;
-; InstructionDecode:decode_unit|reg_File[3][13] ; 3       ;
-; InstructionDecode:decode_unit|reg_File[5][8]  ; 2       ;
-; InstructionDecode:decode_unit|reg_File[7][8]  ; 3       ;
-; InstructionDecode:decode_unit|reg_File[1][8]  ; 2       ;
-; InstructionDecode:decode_unit|reg_File[3][8]  ; 3       ;
-; InstructionDecode:decode_unit|reg_File[5][10] ; 2       ;
-; InstructionDecode:decode_unit|reg_File[6][10] ; 2       ;
-; InstructionDecode:decode_unit|reg_File[4][10] ; 3       ;
-; InstructionDecode:decode_unit|reg_File[7][10] ; 3       ;
-; InstructionDecode:decode_unit|reg_File[6][9]  ; 2       ;
-; InstructionDecode:decode_unit|reg_File[7][9]  ; 3       ;
-; InstructionDecode:decode_unit|reg_File[2][9]  ; 2       ;
-; InstructionDecode:decode_unit|reg_File[3][9]  ; 3       ;
-; InstructionDecode:decode_unit|reg_File[5][4]  ; 2       ;
-; InstructionDecode:decode_unit|reg_File[7][4]  ; 3       ;
-; InstructionDecode:decode_unit|reg_File[1][4]  ; 2       ;
-; InstructionDecode:decode_unit|reg_File[3][4]  ; 3       ;
-; InstructionDecode:decode_unit|reg_File[5][6]  ; 2       ;
-; InstructionDecode:decode_unit|reg_File[6][6]  ; 2       ;
-; InstructionDecode:decode_unit|reg_File[4][6]  ; 3       ;
-; InstructionDecode:decode_unit|reg_File[7][6]  ; 3       ;
-; InstructionDecode:decode_unit|reg_File[6][5]  ; 2       ;
-; InstructionDecode:decode_unit|reg_File[7][5]  ; 3       ;
-; InstructionDecode:decode_unit|reg_File[2][5]  ; 2       ;
-; InstructionDecode:decode_unit|reg_File[3][5]  ; 3       ;
 ; InstructionDecode:decode_unit|reg_File[5][0]  ; 2       ;
 ; InstructionDecode:decode_unit|reg_File[7][0]  ; 3       ;
 ; InstructionDecode:decode_unit|reg_File[1][0]  ; 2       ;
 ; InstructionDecode:decode_unit|reg_File[3][0]  ; 3       ;
-; InstructionDecode:decode_unit|reg_File[5][2]  ; 2       ;
-; InstructionDecode:decode_unit|reg_File[6][2]  ; 2       ;
-; InstructionDecode:decode_unit|reg_File[4][2]  ; 3       ;
-; InstructionDecode:decode_unit|reg_File[7][2]  ; 3       ;
 ; InstructionDecode:decode_unit|reg_File[6][1]  ; 2       ;
 ; InstructionDecode:decode_unit|reg_File[7][1]  ; 3       ;
 ; InstructionDecode:decode_unit|reg_File[2][1]  ; 2       ;
 ; InstructionDecode:decode_unit|reg_File[3][1]  ; 3       ;
+; InstructionDecode:decode_unit|reg_File[6][2]  ; 2       ;
+; InstructionDecode:decode_unit|reg_File[5][2]  ; 2       ;
+; InstructionDecode:decode_unit|reg_File[4][2]  ; 3       ;
+; InstructionDecode:decode_unit|reg_File[7][2]  ; 3       ;
+; InstructionDecode:decode_unit|reg_File[5][4]  ; 2       ;
+; InstructionDecode:decode_unit|reg_File[7][4]  ; 3       ;
+; InstructionDecode:decode_unit|reg_File[1][4]  ; 2       ;
+; InstructionDecode:decode_unit|reg_File[3][4]  ; 3       ;
+; InstructionDecode:decode_unit|reg_File[6][5]  ; 2       ;
+; InstructionDecode:decode_unit|reg_File[7][5]  ; 3       ;
+; InstructionDecode:decode_unit|reg_File[2][5]  ; 2       ;
+; InstructionDecode:decode_unit|reg_File[3][5]  ; 3       ;
+; InstructionDecode:decode_unit|reg_File[6][6]  ; 2       ;
+; InstructionDecode:decode_unit|reg_File[5][6]  ; 2       ;
+; InstructionDecode:decode_unit|reg_File[4][6]  ; 3       ;
+; InstructionDecode:decode_unit|reg_File[7][6]  ; 3       ;
+; InstructionDecode:decode_unit|reg_File[5][8]  ; 2       ;
+; InstructionDecode:decode_unit|reg_File[7][8]  ; 3       ;
+; InstructionDecode:decode_unit|reg_File[1][8]  ; 2       ;
+; InstructionDecode:decode_unit|reg_File[3][8]  ; 3       ;
+; InstructionDecode:decode_unit|reg_File[6][9]  ; 2       ;
+; InstructionDecode:decode_unit|reg_File[7][9]  ; 3       ;
+; InstructionDecode:decode_unit|reg_File[2][9]  ; 2       ;
+; InstructionDecode:decode_unit|reg_File[3][9]  ; 3       ;
+; InstructionDecode:decode_unit|reg_File[6][10] ; 2       ;
+; InstructionDecode:decode_unit|reg_File[5][10] ; 2       ;
+; InstructionDecode:decode_unit|reg_File[4][10] ; 3       ;
+; InstructionDecode:decode_unit|reg_File[7][10] ; 3       ;
+; InstructionDecode:decode_unit|reg_File[5][12] ; 2       ;
+; InstructionDecode:decode_unit|reg_File[7][12] ; 3       ;
+; InstructionDecode:decode_unit|reg_File[1][12] ; 2       ;
+; InstructionDecode:decode_unit|reg_File[3][12] ; 3       ;
+; InstructionDecode:decode_unit|reg_File[6][13] ; 2       ;
+; InstructionDecode:decode_unit|reg_File[7][13] ; 3       ;
+; InstructionDecode:decode_unit|reg_File[2][13] ; 2       ;
+; InstructionDecode:decode_unit|reg_File[3][13] ; 3       ;
+; InstructionDecode:decode_unit|reg_File[6][14] ; 2       ;
+; InstructionDecode:decode_unit|reg_File[5][14] ; 2       ;
+; InstructionDecode:decode_unit|reg_File[4][14] ; 3       ;
+; InstructionDecode:decode_unit|reg_File[7][14] ; 3       ;
+; InstructionDecode:decode_unit|reg_File[5][16] ; 2       ;
+; InstructionDecode:decode_unit|reg_File[7][16] ; 3       ;
+; InstructionDecode:decode_unit|reg_File[1][16] ; 2       ;
+; InstructionDecode:decode_unit|reg_File[3][16] ; 3       ;
+; InstructionDecode:decode_unit|reg_File[6][17] ; 2       ;
+; InstructionDecode:decode_unit|reg_File[7][17] ; 3       ;
+; InstructionDecode:decode_unit|reg_File[2][17] ; 2       ;
+; InstructionDecode:decode_unit|reg_File[3][17] ; 3       ;
+; InstructionDecode:decode_unit|reg_File[6][18] ; 2       ;
+; InstructionDecode:decode_unit|reg_File[5][18] ; 2       ;
+; InstructionDecode:decode_unit|reg_File[4][18] ; 3       ;
+; InstructionDecode:decode_unit|reg_File[7][18] ; 3       ;
+; InstructionDecode:decode_unit|reg_File[5][20] ; 2       ;
+; InstructionDecode:decode_unit|reg_File[7][20] ; 3       ;
+; InstructionDecode:decode_unit|reg_File[1][20] ; 2       ;
+; InstructionDecode:decode_unit|reg_File[3][20] ; 3       ;
+; InstructionDecode:decode_unit|reg_File[6][21] ; 2       ;
+; InstructionDecode:decode_unit|reg_File[7][21] ; 3       ;
+; InstructionDecode:decode_unit|reg_File[2][21] ; 2       ;
+; InstructionDecode:decode_unit|reg_File[3][21] ; 3       ;
+; InstructionDecode:decode_unit|reg_File[6][22] ; 2       ;
+; InstructionDecode:decode_unit|reg_File[5][22] ; 2       ;
+; InstructionDecode:decode_unit|reg_File[4][22] ; 3       ;
+; InstructionDecode:decode_unit|reg_File[7][22] ; 3       ;
+; InstructionDecode:decode_unit|reg_File[5][24] ; 2       ;
+; InstructionDecode:decode_unit|reg_File[7][24] ; 3       ;
+; InstructionDecode:decode_unit|reg_File[1][24] ; 2       ;
+; InstructionDecode:decode_unit|reg_File[3][24] ; 3       ;
+; InstructionDecode:decode_unit|reg_File[6][25] ; 2       ;
+; InstructionDecode:decode_unit|reg_File[7][25] ; 3       ;
+; InstructionDecode:decode_unit|reg_File[2][25] ; 2       ;
+; InstructionDecode:decode_unit|reg_File[3][25] ; 3       ;
+; InstructionDecode:decode_unit|reg_File[6][26] ; 2       ;
+; InstructionDecode:decode_unit|reg_File[5][26] ; 2       ;
+; InstructionDecode:decode_unit|reg_File[4][26] ; 3       ;
+; InstructionDecode:decode_unit|reg_File[7][26] ; 3       ;
+; InstructionDecode:decode_unit|reg_File[5][28] ; 2       ;
+; InstructionDecode:decode_unit|reg_File[7][28] ; 3       ;
+; InstructionDecode:decode_unit|reg_File[1][28] ; 2       ;
+; InstructionDecode:decode_unit|reg_File[3][28] ; 3       ;
+; InstructionDecode:decode_unit|reg_File[6][29] ; 2       ;
+; InstructionDecode:decode_unit|reg_File[7][29] ; 3       ;
+; InstructionDecode:decode_unit|reg_File[2][29] ; 2       ;
+; InstructionDecode:decode_unit|reg_File[3][29] ; 3       ;
+; InstructionDecode:decode_unit|reg_File[6][30] ; 2       ;
+; InstructionDecode:decode_unit|reg_File[5][30] ; 2       ;
+; InstructionDecode:decode_unit|reg_File[4][30] ; 3       ;
+; InstructionDecode:decode_unit|reg_File[7][30] ; 3       ;
 ; Total number of inverted registers = 96       ;         ;
 +-----------------------------------------------+---------+
 
@@ -610,30 +604,29 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |execute|InstructionDecode:decode_unit|reg_File[0][24] ;
-; 3:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |execute|InstructionDecode:decode_unit|reg_File[1][29] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |execute|InstructionDecode:decode_unit|reg_File[0][17] ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |execute|InstructionDecode:decode_unit|reg_File[1][18] ;
 ; 3:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |execute|InstructionDecode:decode_unit|reg_File[2][30] ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |execute|InstructionDecode:decode_unit|reg_File[3][26] ;
-; 3:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |execute|InstructionDecode:decode_unit|reg_File[4][24] ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |execute|InstructionDecode:decode_unit|reg_File[5][31] ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |execute|InstructionDecode:decode_unit|reg_File[6][28] ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |execute|InstructionDecode:decode_unit|reg_File[7][3]  ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |execute|InstructionDecode:decode_unit|reg_File[1][4]  ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |execute|InstructionDecode:decode_unit|reg_File[2][25] ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |execute|InstructionDecode:decode_unit|reg_File[3][13] ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |execute|InstructionDecode:decode_unit|reg_File[3][7]  ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |execute|InstructionDecode:decode_unit|reg_File[4][16] ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |execute|InstructionDecode:decode_unit|reg_File[5][9]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |execute|InstructionDecode:decode_unit|reg_File[6][23] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |execute|InstructionDecode:decode_unit|reg_File[7][11] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |execute|InstructionDecode:decode_unit|reg_File[1][24] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |execute|InstructionDecode:decode_unit|reg_File[2][21] ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |execute|InstructionDecode:decode_unit|reg_File[3][21] ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |execute|InstructionDecode:decode_unit|reg_File[4][10] ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |execute|InstructionDecode:decode_unit|reg_File[5][2]  ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |execute|InstructionDecode:decode_unit|reg_File[6][22] ;
-; 3:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |execute|InstructionDecode:decode_unit|reg_File[7][24] ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |execute|InstructionDecode:decode_unit|reg_File[5][8]  ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |execute|InstructionDecode:decode_unit|reg_File[6][13] ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |execute|InstructionDecode:decode_unit|reg_File[7][0]  ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |execute|executeModule:execute_unit|Mux19              ;
 ; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |execute|fetch:fetch_unit|pc                           ;
 ; 3:1                ; 22 bits   ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |execute|fetch:fetch_unit|pc                           ;
-; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |execute|InstructionDecode:decode_unit|Mux6            ;
-; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |execute|InstructionDecode:decode_unit|Mux33           ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |execute|executeModule:execute_unit|Mux29              ;
-; 6:1                ; 29 bits   ; 116 LEs       ; 87 LEs               ; 29 LEs                 ; No         ; |execute|InstructionDecode:decode_unit|write_value     ;
-; 23:1               ; 15 bits   ; 225 LEs       ; 120 LEs              ; 105 LEs                ; No         ; |execute|Mux26                                         ;
-; 17:1               ; 10 bits   ; 110 LEs       ; 80 LEs               ; 30 LEs                 ; No         ; |execute|Mux12                                         ;
-; 18:1               ; 6 bits    ; 72 LEs        ; 54 LEs               ; 18 LEs                 ; No         ; |execute|Mux9                                          ;
+; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |execute|InstructionDecode:decode_unit|Mux25           ;
+; 8:1                ; 32 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; No         ; |execute|InstructionDecode:decode_unit|Mux49           ;
+; 23:1               ; 15 bits   ; 225 LEs       ; 135 LEs              ; 90 LEs                 ; No         ; |execute|Mux59                                         ;
+; 18:1               ; 10 bits   ; 120 LEs       ; 90 LEs               ; 30 LEs                 ; No         ; |execute|Mux33                                         ;
+; 18:1               ; 6 bits    ; 72 LEs        ; 54 LEs               ; 18 LEs                 ; No         ; |execute|Mux41                                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
 
 
@@ -661,23 +654,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 62                          ;
+; boundary_port         ; 94                          ;
 ; cycloneiii_ff         ; 246                         ;
 ;     ENA               ; 228                         ;
 ;     SCLR              ; 12                          ;
 ;     plain             ; 6                           ;
-; cycloneiii_lcell_comb ; 1540                        ;
-;     arith             ; 99                          ;
+; cycloneiii_lcell_comb ; 1549                        ;
+;     arith             ; 68                          ;
 ;         2 data inputs ; 3                           ;
-;         3 data inputs ; 96                          ;
-;     normal            ; 1441                        ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 70                          ;
-;         3 data inputs ; 447                         ;
-;         4 data inputs ; 923                         ;
+;         3 data inputs ; 65                          ;
+;     normal            ; 1481                        ;
+;         1 data inputs ; 7                           ;
+;         2 data inputs ; 60                          ;
+;         3 data inputs ; 481                         ;
+;         4 data inputs ; 933                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 12.30                       ;
-; Average LUT depth     ; 8.15                        ;
+; Max LUT depth         ; 14.30                       ;
+; Average LUT depth     ; 9.80                        ;
 +-----------------------+-----------------------------+
 
 
@@ -686,7 +679,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -696,12 +689,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Tue Dec 17 04:13:50 2024
+    Info: Processing started: Tue Dec 17 11:26:15 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off execute -c execute
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file execute.vhd
-    Info (12022): Found design unit 1: execute-Behavioral File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 16
+    Info (12022): Found design unit 1: execute-Behavioral File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 17
     Info (12023): Found entity 1: execute File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file fetch.vhd
     Info (12022): Found design unit 1: fetch-bhv File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 23
@@ -733,11 +726,11 @@ Info (12021): Found 2 design units, including 1 entities, in source file control
     Info (12022): Found design unit 1: controlUnit-bhv File: D:/5th-Semester/COA LAB/LABS/LAB11/controlUnit.vhd Line: 15
     Info (12023): Found entity 1: controlUnit File: D:/5th-Semester/COA LAB/LABS/LAB11/controlUnit.vhd Line: 5
 Info (12127): Elaborating entity "execute" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at execute.vhd(20): object "zero_flagWire" assigned a value but never read File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 20
-Info (12128): Elaborating entity "fetch" for hierarchy "fetch:fetch_unit" File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 24
-Info (12128): Elaborating entity "InstructionDecode" for hierarchy "InstructionDecode:decode_unit" File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 37
-Info (12128): Elaborating entity "controlUnit" for hierarchy "controlUnit:control_unit" File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 55
-Info (12128): Elaborating entity "executeModule" for hierarchy "executeModule:execute_unit" File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 71
+Warning (10036): Verilog HDL or VHDL warning at execute.vhd(21): object "zero_flagWire" assigned a value but never read File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 21
+Info (12128): Elaborating entity "fetch" for hierarchy "fetch:fetch_unit" File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 25
+Info (12128): Elaborating entity "InstructionDecode" for hierarchy "InstructionDecode:decode_unit" File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 38
+Info (12128): Elaborating entity "controlUnit" for hierarchy "controlUnit:control_unit" File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 56
+Info (12128): Elaborating entity "executeModule" for hierarchy "executeModule:execute_unit" File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 72
 Warning (10492): VHDL Process Statement warning at executeModule.vhd(29): signal "register_rs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/5th-Semester/COA LAB/LABS/LAB11/executeModule.vhd Line: 29
 Warning (10492): VHDL Process Statement warning at executeModule.vhd(29): signal "register_rt" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/5th-Semester/COA LAB/LABS/LAB11/executeModule.vhd Line: 29
 Warning (10492): VHDL Process Statement warning at executeModule.vhd(31): signal "register_rs" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/5th-Semester/COA LAB/LABS/LAB11/executeModule.vhd Line: 31
@@ -749,7 +742,7 @@ Warning (10492): VHDL Process Statement warning at executeModule.vhd(40): signal
 Warning (10492): VHDL Process Statement warning at executeModule.vhd(45): signal "immediate" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/5th-Semester/COA LAB/LABS/LAB11/executeModule.vhd Line: 45
 Warning (10492): VHDL Process Statement warning at executeModule.vhd(46): signal "PC4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/5th-Semester/COA LAB/LABS/LAB11/executeModule.vhd Line: 46
 Warning (10631): VHDL Process Statement warning at executeModule.vhd(21): inferring latch(es) for signal or variable "zero", which holds its previous value in one or more paths through the process File: D:/5th-Semester/COA LAB/LABS/LAB11/executeModule.vhd Line: 21
-Info (12128): Elaborating entity "memory" for hierarchy "memory:memory_unit" File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 87
+Info (12128): Elaborating entity "memory" for hierarchy "memory:memory_unit" File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 88
 Warning (10492): VHDL Process Statement warning at memory.vhd(24): signal "MemWrite" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 24
 Warning (10492): VHDL Process Statement warning at memory.vhd(26): signal "MemRead" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 26
 Warning (10631): VHDL Process Statement warning at memory.vhd(17): inferring latch(es) for signal or variable "read_data", which holds its previous value in one or more paths through the process File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
@@ -785,24 +778,48 @@ Info (10041): Inferred latch for "read_data[28]" at memory.vhd(17) File: D:/5th-
 Info (10041): Inferred latch for "read_data[29]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
 Info (10041): Inferred latch for "read_data[30]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
 Info (10041): Inferred latch for "read_data[31]" at memory.vhd(17) File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
-Info (12128): Elaborating entity "sevenSegement" for hierarchy "sevenSegement:u7" File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 109
+Info (12128): Elaborating entity "sevenSegement" for hierarchy "sevenSegement:u7" File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 120
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276004): RAM logic "fetch:fetch_unit|mem" is uninferred due to inappropriate RAM size File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 35
-Warning (13012): Latch memory:memory_unit|read_data[31] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Warning (13012): Latch memory:memory_unit|read_data[0] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
     Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
-Warning (13012): Latch memory:memory_unit|read_data[28] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Warning (13012): Latch memory:memory_unit|read_data[1] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
     Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
-Warning (13012): Latch memory:memory_unit|read_data[29] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Warning (13012): Latch memory:memory_unit|read_data[2] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
     Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
-Warning (13012): Latch memory:memory_unit|read_data[30] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Warning (13012): Latch memory:memory_unit|read_data[3] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
     Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
-Warning (13012): Latch memory:memory_unit|read_data[27] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Warning (13012): Latch memory:memory_unit|read_data[4] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
     Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
-Warning (13012): Latch memory:memory_unit|read_data[24] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Warning (13012): Latch memory:memory_unit|read_data[5] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
     Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
-Warning (13012): Latch memory:memory_unit|read_data[25] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Warning (13012): Latch memory:memory_unit|read_data[6] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
     Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
-Warning (13012): Latch memory:memory_unit|read_data[26] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Warning (13012): Latch memory:memory_unit|read_data[7] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
+Warning (13012): Latch memory:memory_unit|read_data[8] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
+Warning (13012): Latch memory:memory_unit|read_data[9] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
+Warning (13012): Latch memory:memory_unit|read_data[10] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
+Warning (13012): Latch memory:memory_unit|read_data[11] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
+Warning (13012): Latch memory:memory_unit|read_data[12] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
+Warning (13012): Latch memory:memory_unit|read_data[13] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
+Warning (13012): Latch memory:memory_unit|read_data[14] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
+Warning (13012): Latch memory:memory_unit|read_data[15] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
+Warning (13012): Latch memory:memory_unit|read_data[16] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
+Warning (13012): Latch memory:memory_unit|read_data[17] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
+Warning (13012): Latch memory:memory_unit|read_data[18] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
+Warning (13012): Latch memory:memory_unit|read_data[19] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
     Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
 Warning (13012): Latch memory:memory_unit|read_data[20] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
     Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
@@ -812,173 +829,341 @@ Warning (13012): Latch memory:memory_unit|read_data[22] has unsafe behavior File
     Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
 Warning (13012): Latch memory:memory_unit|read_data[23] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
     Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
-Warning (13012): Latch memory:memory_unit|read_data[19] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Warning (13012): Latch memory:memory_unit|read_data[24] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
     Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
-Warning (13012): Latch memory:memory_unit|read_data[16] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Warning (13012): Latch memory:memory_unit|read_data[25] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
     Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
-Warning (13012): Latch memory:memory_unit|read_data[17] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Warning (13012): Latch memory:memory_unit|read_data[26] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
     Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
-Warning (13012): Latch memory:memory_unit|read_data[18] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Warning (13012): Latch memory:memory_unit|read_data[27] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
     Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
-Warning (13012): Latch memory:memory_unit|read_data[12] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Warning (13012): Latch memory:memory_unit|read_data[28] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
     Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
-Warning (13012): Latch memory:memory_unit|read_data[15] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Warning (13012): Latch memory:memory_unit|read_data[29] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
     Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
-Warning (13012): Latch memory:memory_unit|read_data[13] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Warning (13012): Latch memory:memory_unit|read_data[30] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
     Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
-Warning (13012): Latch memory:memory_unit|read_data[14] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
+Warning (13012): Latch memory:memory_unit|read_data[31] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
     Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
-Warning (13012): Latch memory:memory_unit|read_data[11] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
-Warning (13012): Latch memory:memory_unit|read_data[8] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
-Warning (13012): Latch memory:memory_unit|read_data[9] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
-Warning (13012): Latch memory:memory_unit|read_data[10] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
-Warning (13012): Latch memory:memory_unit|read_data[7] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
-Warning (13012): Latch memory:memory_unit|read_data[4] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
-Warning (13012): Latch memory:memory_unit|read_data[5] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
-Warning (13012): Latch memory:memory_unit|read_data[6] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
-Warning (13012): Latch memory:memory_unit|read_data[3] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
-Warning (13012): Latch memory:memory_unit|read_data[0] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
-Warning (13012): Latch memory:memory_unit|read_data[1] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
-Warning (13012): Latch memory:memory_unit|read_data[2] has unsafe behavior File: D:/5th-Semester/COA LAB/LABS/LAB11/memory.vhd Line: 17
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal reset File: D:/5th-Semester/COA LAB/LABS/LAB11/execute.vhd Line: 9
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~95 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~64 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~63 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~32 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~31 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~0 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~127 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~96 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~191 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~160 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~223 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~192 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~159 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~128 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~255 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~224 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~92 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~65 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~60 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~33 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~28 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~1 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~124 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~97 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~188 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~161 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~220 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~193 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~156 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~129 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~252 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~225 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~93 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~66 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~61 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~34 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~29 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~2 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~125 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~98 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~189 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~162 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~221 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~194 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~157 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~130 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~253 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~226 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~94 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~67 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~62 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~35 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~30 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~3 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~126 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~99 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~190 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~163 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~222 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~195 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~158 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~131 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~254 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~227 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~91 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~68 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~59 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~36 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~27 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~4 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~123 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~100 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~187 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~164 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~219 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~196 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~155 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~132 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~251 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~228 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~88 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~69 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~56 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~37 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~24 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~5 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~120 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~101 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~184 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~165 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~216 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~197 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~152 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~133 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~248 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~229 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~89 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~70 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~57 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~38 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~25 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~6 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~121 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~102 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~185 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~166 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~217 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~198 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~153 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~134 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~249 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~230 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~90 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~71 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~58 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~39 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~26 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~7 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~122 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~103 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~186 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~167 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~218 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~199 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~154 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~135 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~250 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~231 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~72 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~40 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~8 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~104 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~168 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~200 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~136 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~232 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~73 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~41 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~9 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~105 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~169 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~201 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~137 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~233 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~74 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~42 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~10 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~106 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~170 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~202 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~138 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~234 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~75 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~43 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~11 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~107 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~171 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~203 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~139 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~235 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~76 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~44 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~12 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~108 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~172 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~204 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~140 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~236 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~77 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~45 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~13 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~109 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~173 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~205 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~141 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~237 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~78 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~46 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~14 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~110 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~174 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~206 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~142 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~238 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~79 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~47 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~15 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~111 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~175 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~207 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~143 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~239 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~80 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~48 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~16 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~112 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~176 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~208 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~144 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~240 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~81 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~49 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~17 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~113 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~177 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~209 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~145 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~241 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~82 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~50 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~18 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~114 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~178 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~210 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~146 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~242 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~83 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~51 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~19 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~115 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~179 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~211 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~147 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~243 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
 Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~84 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
@@ -1044,338 +1229,146 @@ Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~151 has unsafe be
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
 Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~247 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~83 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~88 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~51 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~56 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~19 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~24 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~115 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~120 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~179 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~184 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~211 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~216 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~147 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~152 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~243 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~248 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~80 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~89 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~48 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~57 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~16 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~25 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~112 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~121 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~176 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~185 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~208 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~217 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~144 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~153 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~240 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~249 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~81 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~90 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~49 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~58 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~17 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~26 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~113 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~122 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~177 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~186 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~209 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~218 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~145 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~154 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~241 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~250 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~82 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~91 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~50 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~59 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~18 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~27 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~114 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~123 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~178 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~187 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~210 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~219 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~146 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~155 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~242 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~251 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~76 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~92 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~44 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~60 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~12 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~28 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~108 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~124 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~172 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~188 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~204 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~220 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~140 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~156 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~236 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~252 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~79 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~93 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~47 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~61 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~15 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~29 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~111 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~125 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~175 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~189 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~207 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~221 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~143 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~157 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~239 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~253 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~77 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~94 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~45 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~62 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~13 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~30 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~109 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~126 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~173 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~190 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~205 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~222 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~141 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~158 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~237 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~254 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~78 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~95 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~46 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~63 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~14 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~31 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~110 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~127 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~174 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~191 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~206 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~223 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~142 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~159 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~238 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~75 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~43 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~11 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~107 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~171 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~203 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~139 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~235 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~72 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~40 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~8 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~104 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~168 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~200 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~136 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~232 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~73 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~41 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~9 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~105 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~169 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~201 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~137 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~233 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~74 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~42 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~10 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~106 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~170 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~202 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~138 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~234 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~71 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~39 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~7 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~103 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~167 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~199 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~135 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~231 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~68 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~36 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~4 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~100 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~164 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~196 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~132 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~228 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~69 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~37 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~5 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~101 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~165 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~197 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~133 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~229 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~70 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~38 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~6 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~102 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~166 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~198 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~134 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~230 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~67 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~35 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~3 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~99 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~163 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~195 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~131 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~227 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~64 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~32 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~0 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~96 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~160 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~192 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~128 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~224 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~65 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~33 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~1 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~97 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~161 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~193 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~129 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~225 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~66 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~34 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~2 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~98 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~162 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~194 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~130 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
-Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~226 has unsafe behavior
+Warning (13012): Latch memory:memory_unit|\ReadWrite1:data_mem~255 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal fetch:fetch_unit|instruction[18] File: D:/5th-Semester/COA LAB/LABS/LAB11/fetch.vhd Line: 31
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 56 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1606 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1641 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
-    Info (21059): Implemented 56 output pins
-    Info (21061): Implemented 1544 logic cells
+    Info (21059): Implemented 88 output pins
+    Info (21061): Implemented 1547 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 592 warnings
-    Info: Peak virtual memory: 4860 megabytes
-    Info: Processing ended: Tue Dec 17 04:13:59 2024
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:07
+    Info: Peak virtual memory: 4857 megabytes
+    Info: Processing ended: Tue Dec 17 11:26:25 2024
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:05
 
 

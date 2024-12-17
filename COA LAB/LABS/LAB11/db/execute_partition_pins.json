@@ -4,6 +4,134 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "outPut[0]",
+					"strict" : false
+				},
+				{
+					"name" : "outPut[1]",
+					"strict" : false
+				},
+				{
+					"name" : "outPut[2]",
+					"strict" : false
+				},
+				{
+					"name" : "outPut[3]",
+					"strict" : false
+				},
+				{
+					"name" : "outPut[4]",
+					"strict" : false
+				},
+				{
+					"name" : "outPut[5]",
+					"strict" : false
+				},
+				{
+					"name" : "outPut[6]",
+					"strict" : false
+				},
+				{
+					"name" : "outPut[7]",
+					"strict" : false
+				},
+				{
+					"name" : "outPut[8]",
+					"strict" : false
+				},
+				{
+					"name" : "outPut[9]",
+					"strict" : false
+				},
+				{
+					"name" : "outPut[10]",
+					"strict" : false
+				},
+				{
+					"name" : "outPut[11]",
+					"strict" : false
+				},
+				{
+					"name" : "outPut[12]",
+					"strict" : false
+				},
+				{
+					"name" : "outPut[13]",
+					"strict" : false
+				},
+				{
+					"name" : "outPut[14]",
+					"strict" : false
+				},
+				{
+					"name" : "outPut[15]",
+					"strict" : false
+				},
+				{
+					"name" : "outPut[16]",
+					"strict" : false
+				},
+				{
+					"name" : "outPut[17]",
+					"strict" : false
+				},
+				{
+					"name" : "outPut[18]",
+					"strict" : false
+				},
+				{
+					"name" : "outPut[19]",
+					"strict" : false
+				},
+				{
+					"name" : "outPut[20]",
+					"strict" : false
+				},
+				{
+					"name" : "outPut[21]",
+					"strict" : false
+				},
+				{
+					"name" : "outPut[22]",
+					"strict" : false
+				},
+				{
+					"name" : "outPut[23]",
+					"strict" : false
+				},
+				{
+					"name" : "outPut[24]",
+					"strict" : false
+				},
+				{
+					"name" : "outPut[25]",
+					"strict" : false
+				},
+				{
+					"name" : "outPut[26]",
+					"strict" : false
+				},
+				{
+					"name" : "outPut[27]",
+					"strict" : false
+				},
+				{
+					"name" : "outPut[28]",
+					"strict" : false
+				},
+				{
+					"name" : "outPut[29]",
+					"strict" : false
+				},
+				{
+					"name" : "outPut[30]",
+					"strict" : false
+				},
+				{
+					"name" : "outPut[31]",
+					"strict" : false
+				},
+				{
 					"name" : "SevenSegement7[0]",
 					"strict" : false
 				},
@@ -228,11 +356,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "DisplayDecision[2]",
-					"strict" : false
-				},
-				{
-					"name" : "DisplayDecision[3]",
+					"name" : "DisplayDecision[1]",
 					"strict" : false
 				},
 				{
@@ -240,11 +364,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "DisplayDecision[1]",
+					"name" : "DisplayDecision[2]",
 					"strict" : false
 				},
 				{
 					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "DisplayDecision[3]",
 					"strict" : false
 				},
 				{
