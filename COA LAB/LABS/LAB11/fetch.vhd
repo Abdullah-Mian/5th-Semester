@@ -33,17 +33,17 @@ begin
         
         -- Initialize the instruction memory with machine code
         variable mem    : mem_array := (
-				X"ac640000", -- sw $4, 0($3) ; mem[0+$3] <=$4
-				X"00622022", -- sub $4, $3, $2 ; $4 <= $3 - $2
-            X"8c640001", -- lw $4, 1($3) ; $4 <= mem[1+$3] 
-            X"1022fffb", -- beq $1, $2, L ; if ($1=$2), branch_addr<=L 
-            X"00822022", -- sub $4, $4, $3   -- Subtract			
-            X"ac400000", -- sw $4, 0($3)     -- Store word		
-            X"1022fffb", -- beq $1, $2, L    -- Branch if equal
-				X"8c220000", --L: lw $2, 0($1) ; $2 <= mem[0+$1]
-            X"00612064", -- and $4, $3, $1 ; $4 <= $3 and $4 
-            X"08000000", -- j L ; jump_addr <= L 
-            others => X"00000000"  -- Initialize remaining locations
+				X"8C221234", -- lw $v0, 0x1234($a0)      # Load word from address in $a0 + 0x1234 to $v0
+				X"AC220000", -- sw $v0, 0($a0)            # Store word from $v0 to address in $a0
+				X"00A12300", -- and $v0, $a1, $a2        # Bitwise AND of $a1 and $a2, result in $v0
+				X"10220002", -- beq $v0, $v0, 0x2        # Branch if $v0 == $v0 (infinite loop)
+				X"00821020", -- add $v0, $a0, $v0        # Add $a0 and $v0, result in $v0
+				X"8C220000", -- lw $v0, 0($a0)           # Load word from address in $a0 to $v0
+				X"AC220000", -- sw $v0, 0($a0)           # Store word from $v0 to address in $a0
+				X"10220002", -- beq $v0, $v0, 0x2        # Branch if $v0 == $v0 (infinite loop)
+				X"10020000", -- beq $zero, $v0, 0        # Branch if $v0 == $zero (conditional branch)
+				X"20220000", -- addi $v0, $v0, 0         # Add immediate value 0 to $v0, result in $v0
+            others => X"00000000"  -- 
         );
     begin
         
