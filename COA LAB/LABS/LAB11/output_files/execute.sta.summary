@@ -3,75 +3,75 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clock'
-Slack : -15.498
-TNS   : -2069.186
+Slack : -15.463
+TNS   : -2177.901
 
 Type  : Slow 1200mV 85C Model Setup 'reset'
-Slack : -10.772
-TNS   : -2136.398
+Slack : -11.724
+TNS   : -2915.187
 
 Type  : Slow 1200mV 85C Model Hold 'reset'
-Slack : -1.816
-TNS   : -11.993
+Slack : -6.680
+TNS   : -29.736
 
 Type  : Slow 1200mV 85C Model Hold 'clock'
-Slack : 0.719
+Slack : 1.011
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'reset'
-Slack : -3.000
-TNS   : -4398.302
+Slack : -4.154
+TNS   : -6336.814
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock'
 Slack : -3.000
 TNS   : -233.015
 
 Type  : Slow 1200mV 0C Model Setup 'clock'
-Slack : -14.220
-TNS   : -1920.735
+Slack : -14.161
+TNS   : -2021.556
 
 Type  : Slow 1200mV 0C Model Setup 'reset'
-Slack : -9.717
-TNS   : -2004.681
+Slack : -10.636
+TNS   : -2722.195
 
 Type  : Slow 1200mV 0C Model Hold 'reset'
-Slack : -1.726
-TNS   : -10.873
+Slack : -5.929
+TNS   : -26.025
 
 Type  : Slow 1200mV 0C Model Hold 'clock'
-Slack : 0.660
+Slack : 0.963
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'reset'
-Slack : -3.000
-TNS   : -3960.392
+Slack : -3.763
+TNS   : -5660.657
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock'
 Slack : -3.000
 TNS   : -233.015
 
 Type  : Fast 1200mV 0C Model Setup 'clock'
-Slack : -7.659
-TNS   : -973.659
+Slack : -7.376
+TNS   : -1017.241
 
 Type  : Fast 1200mV 0C Model Setup 'reset'
-Slack : -5.686
-TNS   : -1173.106
+Slack : -6.264
+TNS   : -1539.125
 
 Type  : Fast 1200mV 0C Model Hold 'reset'
-Slack : -1.196
-TNS   : -10.415
+Slack : -3.720
+TNS   : -24.702
 
 Type  : Fast 1200mV 0C Model Hold 'clock'
-Slack : 0.335
+Slack : 0.365
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'reset'
 Slack : -3.000
-TNS   : -1682.742
+TNS   : -2540.567
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock'
 Slack : -3.000
-TNS   : -214.410
+TNS   : -217.477
 
 ------------------------------------------------------------

@@ -46,7 +46,7 @@ begin
             beq_control <= '0';
             AluOp       <= "10";
 
-        when "100011" => -- Load instruction
+        when "101011" => -- Store instruction
             RegDst      <= '0';
             RegWrite    <= '1';
             MemToReg    <= '1';
@@ -56,8 +56,8 @@ begin
             Jump        <= '0';
             beq_control <= '0';
             AluOp       <= "00";
-
-        when "101011" => -- Store instruction
+					
+        when "100011" => -- Load instruction
             RegDst      <= '0';
             RegWrite    <= '0';
             MemToReg    <= '0';

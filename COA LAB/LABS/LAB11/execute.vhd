@@ -15,7 +15,7 @@ entity execute is
 end execute;
 
 architecture Behavioral of execute is
-    signal PC_outWire, instructionWire, branch_addrWire, jump_addrWire, rsWire, rtWire, rdWire, immediateWire, alu_resultWire, memory_dataWire : std_logic_vector(31 downto 0);
+    signal PC_outWire, instructionWire, branch_addrWire, jump_addrWire, rsWire, rtWire, rdWire, immediateWire, alu_resultWire, memory_dataWire,tempoutWire : std_logic_vector(31 downto 0);
     signal branch_decisionWire, jump_decisionWire, resetWire, ClockWire, RegDstWire, RegWriteWire, MemToRegWire, ALUSrcWire, MemReadWire, MemWriteWire, Jump, beq_controlWire : std_logic;
     signal ALUOpWire : std_logic_vector(1 downto 0);
     signal zero_flagWire : std_logic;
@@ -91,7 +91,8 @@ begin
             write_data  => rtWire,
             MemWrite    => MemWriteWire,
             MemRead     => MemReadWire,
-            read_data   => memory_dataWire
+            read_data   => memory_dataWire,
+				tempout 		=> tempoutWire
         );
 
 
@@ -115,6 +116,7 @@ begin
 	immediateWire when "0011",
 	jump_addrWire when "0100",
 	alu_resultWire when "0101",
+	tempoutWire    when "0110",
 	(others => '0') when others;
 	
 	 u7: sevenSegement port map (

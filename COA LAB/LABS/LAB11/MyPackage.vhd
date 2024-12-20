@@ -71,7 +71,8 @@ package MyPackage is
         address    : in STD_LOGIC_VECTOR (31 downto 0);
         write_data : in STD_LOGIC_VECTOR (31 downto 0);
         MemWrite, MemRead : in std_logic;
-        read_data  : out STD_LOGIC_VECTOR (31 downto 0)
+        read_data  : out STD_LOGIC_VECTOR (31 downto 0);
+		  tempout 	 : out STD_LOGIC_VECTOR (31 downto 0)
     );
 	end component;
 	

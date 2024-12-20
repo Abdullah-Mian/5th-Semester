@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "12/17/2024 11:11:31"
+-- Generated on "12/20/2024 05:04:37"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          execute
 -- 
@@ -88,7 +88,15 @@ BEGIN
 	clock <= '1';
 	WAIT FOR 80000 ps;
 	clock <= '0';
-	WAIT FOR 810000 ps;
+	WAIT FOR 230000 ps;
+	clock <= '1';
+	WAIT FOR 140000 ps;
+	clock <= '0';
+	WAIT FOR 70000 ps;
+	clock <= '1';
+	WAIT FOR 120000 ps;
+	clock <= '0';
+	WAIT FOR 250000 ps;
 	clock <= '1';
 WAIT;
 END PROCESS t_prcs_clock;
@@ -109,9 +117,17 @@ END PROCESS t_prcs_DisplayDecision_3;
 t_prcs_DisplayDecision_2: PROCESS
 BEGIN
 	DisplayDecision(2) <= '0';
-	WAIT FOR 420000 ps;
+	WAIT FOR 260000 ps;
 	DisplayDecision(2) <= '1';
-	WAIT FOR 110000 ps;
+	WAIT FOR 60000 ps;
+	DisplayDecision(2) <= '0';
+	WAIT FOR 130000 ps;
+	DisplayDecision(2) <= '1';
+	WAIT FOR 80000 ps;
+	DisplayDecision(2) <= '0';
+	WAIT FOR 100000 ps;
+	DisplayDecision(2) <= '1';
+	WAIT FOR 200000 ps;
 	DisplayDecision(2) <= '0';
 WAIT;
 END PROCESS t_prcs_DisplayDecision_2;
@@ -119,15 +135,19 @@ END PROCESS t_prcs_DisplayDecision_2;
 t_prcs_DisplayDecision_1: PROCESS
 BEGIN
 	DisplayDecision(1) <= '0';
+	WAIT FOR 190000 ps;
+	DisplayDecision(1) <= '1';
+	WAIT FOR 70000 ps;
+	DisplayDecision(1) <= '0';
 WAIT;
 END PROCESS t_prcs_DisplayDecision_1;
 -- DisplayDecision[0]
 t_prcs_DisplayDecision_0: PROCESS
 BEGIN
 	DisplayDecision(0) <= '0';
-	WAIT FOR 260000 ps;
+	WAIT FOR 100000 ps;
 	DisplayDecision(0) <= '1';
-	WAIT FOR 270000 ps;
+	WAIT FOR 730000 ps;
 	DisplayDecision(0) <= '0';
 WAIT;
 END PROCESS t_prcs_DisplayDecision_0;

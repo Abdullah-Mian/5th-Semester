@@ -356,15 +356,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "reset",
-					"strict" : false
-				},
-				{
 					"name" : "DisplayDecision[2]",
-					"strict" : false
-				},
-				{
-					"name" : "DisplayDecision[3]",
 					"strict" : false
 				},
 				{
@@ -373,6 +365,14 @@
 				},
 				{
 					"name" : "DisplayDecision[0]",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "DisplayDecision[3]",
 					"strict" : false
 				},
 				{
