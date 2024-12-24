@@ -1,0 +1,23 @@
+LIBRARY ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity LAB is 
+port(
+	operation 	  : in std_logic_vector(1 downto 0);
+	displaySwitch : in std_logic_vector(1 downto 0);
+	clock			  : in  std_logic;
+	sevenSegment  : out std_logic_vector(6 downto 0);
+	Operationleds : out std_logic_vector(1 downto 0)
+	--result 	 	  : out std_logic
+);
+
+end LAB;
+architecture behav of LAB is
+type matrix is array( 1 to 8) of std_logic_vector(3 downto 0);
+
+--	shared variable twoCrosTwoMatirx : matrix := (
+--		
+--	);
+begin
+end behav;

@@ -1,0 +1,13 @@
+-- begin_signature
+-- LAB
+-- end_signature
+WIDTH=16;
+DEPTH=2;
+
+ADDRESS_RADIX=UNS;
+DATA_RADIX=BIN;
+
+CONTENT BEGIN
+	1 :	0001010000100011;
+	0 :	0000000100100011;
+END;
