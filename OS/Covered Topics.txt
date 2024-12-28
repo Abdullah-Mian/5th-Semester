@@ -89,3 +89,7 @@ Triple pointers -> double pointers -> single pointers -> direct pointers
 USP book page 200
 figure 5.5, 5.6, 5.7 , 5.8, 5.9 
 prepare all these for exam
+
+
+Process creation forking, pipes, 
+Process scheduling with I/O bound processes, Threads synchronization, mutexes, semaphore, condition variable, producer consumer, reader-writer locks, contiguous memory allocation, best fit, worst fit  first fit,  paging, virtual to physical address translation, page replacement strategies, multilevel paging, deadlock detection using RAG, deadlock avoidance using Bankers Algo, File storage metadata inode, links, hard link, soft links
