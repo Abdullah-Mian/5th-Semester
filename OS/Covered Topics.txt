@@ -65,7 +65,14 @@ FIFO
 LRU
 OPTIMAL the best but can't implement
 
--DeadLock Identifcation
+---Dead Lock
+--4 conditions to occur simultaneously
+-mutual exclusion only one thread at a time
+-hold and wait
+-no preemption
+-circular wait
+
+--DeadLock Identifcation
 
 -Synchronization 
 Producer Consumer LAB using Semaphores and mutex
@@ -93,3 +100,8 @@ prepare all these for exam
 
 Process creation forking, pipes, 
 Process scheduling with I/O bound processes, Threads synchronization, mutexes, semaphore, condition variable, producer consumer, reader-writer locks, contiguous memory allocation, best fit, worst fit  first fit,  paging, virtual to physical address translation, page replacement strategies, multilevel paging, deadlock detection using RAG, deadlock avoidance using Bankers Algo, File storage metadata inode, links, hard link, soft links
+
+
+
+
+
