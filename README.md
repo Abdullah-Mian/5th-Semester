@@ -28,7 +28,7 @@ So, for all the dumbass chickens who can’t even `git clone` a repo properly,
 | **COA Theory** 💻            | Cheat sheets and notes you’ll inevitably cram the night before the exam.                                                                |
 | **Databases** 🗄️             | SQL queries, ER diagrams, schemas, and my **magnum opus database project** that’s a work of art.                                        |
 | **Engineering Economics** 📈 | Course content and the insights that finally explain why engineers suddenly care about money.                                           |
-| **OS** 🖥️                    | Course content, my **autonomous car project**—an ESP32 masterpiece with threads, and a mini-guide to pretend you know how kernels work. |
+| **OS** 🖥️                    | Course content, my **autonomous car project**—an ESP32 masterpiece with multi-threads, and a mini-guide to pretend you know how kernels work. |
 
 ---
 
