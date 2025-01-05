@@ -1,0 +1,7 @@
+Kindly note the following paper pattern for the terminal exam:
+Q#1: Computer Arithmetic (Floating Point)
+Q#2: Assembly Programming
+Q#3: Datapath Design for Pipelined Architecture
+Q#4: Hazards
+Q#5: CPU performance
+Q#6: Cache
